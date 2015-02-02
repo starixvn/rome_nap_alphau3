@@ -1,0 +1,181 @@
+﻿@using Fanex.Razorbill.Module.Core.Extensions;
+@{
+    Page.Title = Resources.Report.FoobetFinancal;
+    Layout = "../Shared/_Layout.cshtml";
+    string today = String.Format("{0:MM/dd/yyyy}", DateTime.Now);
+    string yesterday = String.Format("{0:MM/dd/yyyy}", DateTime.Now.AddDays(-1));
+
+    var yesterday_Day = DateTime.Now.AddDays(-1).Day;
+    var today_Day = DateTime.Now.Day;
+}
+@section Head{
+    <link href="@Url.Content("~/_Components/DateTimeControl/JSCalendar/css/steel/steel.css?06")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Scripts/_Libs/FanexGrid/Fanex.Grid.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Scripts/_Libs/FanexGrid/Fanex.Pagination.css")" rel="stylesheet" type="text/css" />
+    <link  href="@Url.Content("~/Scripts/_Libs/jQuery/Styles/jquery-ui-1.9.1.custom.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Scripts/_Libs/MonthPicker/monPickr-0.0.3.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Scripts/_Libs/MonthPicker/monPickr-0.0.3-custom.less")" rel="stylesheet" />
+    <link href="@Url.Content("~/Areas/Report/Views/Foobet/Style/Foobet.css?ver=1")" rel="stylesheet" type="text/css" />
+}
+@section Scripts {
+    <script src="@Url.Content("~/Scripts/_Libs/FanexGrid-MultiLang/Fanex.Grid.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/FanexGrid-MultiLang/Language/Fanex.Gird.Lang.en-US.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/FanexGrid-MultiLang/Language/Fanex.Gird.Lang.ja-JP.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/FanexGrid-MultiLang/Language/Fanex.Gird.Lang.ko-KR.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/FanexGrid-MultiLang/Language/Fanex.Gird.Lang.th-TH.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/FanexGrid-MultiLang/Language/Fanex.Gird.Lang.vi-VN.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/FanexGrid-MultiLang/Language/Fanex.Gird.Lang.zh-CN.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/FanexGrid-MultiLang/Language/Fanex.Gird.Lang.zh-TW.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/FanexGrid/Fanex.Pagination.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/FanexGrid/moment.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/FanexGrid/numeral.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/_Libs/MonthPicker/monPickr-0.0.3.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Areas/Report/Views/Foobet/Scripts/FoobetManager.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Areas/Report/Views/Foobet/Scripts/FoobetManager.HistoryReport.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        var resources =
+                  {
+                      Member: "@Resources.Report.Member",
+                      Turnover: "@Resources.Report.Turnover",
+                      BetCount: "@Resources.Report.BetCount",
+                      Win: "@Resources.Report.Win",
+                      Lose: "@Resources.Report.Lose",
+                      Total: "@Resources.Report.Total",
+                      Foobet: "@Resources.Report.Foobet",
+                      LosingTax: "@Resources.Report.LosingTax",
+                      Rebate: "@Resources.Report.Rebate",
+                      Winning: "@Resources.Report.Winning",
+                      Losing: "@Resources.Report.Losing",
+                      After: "@Resources.Report.After",
+                      TotalFBIncome: "@Resources.Report.TotalFBIncome",
+                      Company: "@Resources.Report.Company",
+                      Title: "@Resources.Report.FoobetTitle"
+                  };
+
+        var percentFirst = " 0.3% ";
+        var percentSecond = " 0.5% ";
+
+        var labelFrom = "@Resources.Report.From";
+        var labelTo = "@Resources.Report.To";
+        var today = '@today';
+        var minHistoryReportDate = new Date(2013, 4, 19);
+
+        function CalendarOnSelect() {
+            if ($("ddlSelectDate"))
+                $("ddlSelectDate").value = 8;
+        }
+
+        var renderMonthPicker = function (fromDay, toDay) {
+            jQuery('#ddlMonth').monPickr({
+                toDay: toDay,
+                fromDay: fromDay,
+                maxDate: today,
+                minDate: minHistoryReportDate,
+                showDateRange: true,
+                monthFormat: 'MMMM yyyy',
+                fromDayId: 'ddlFromDay',
+                toDayId: 'ddlToDay',
+                fromDayLabel: labelFrom,
+                toDayLabel: labelTo,
+                sortDesc: true,
+                log: function (msg) {
+                    console.warn(msg);
+                }
+            });
+        };
+
+        renderMonthPicker(1, @today_Day);
+
+        jQuery(document).ready(function () {
+            FoobetManager.HistoryReport.Submit();
+
+            jQuery('#submitBtn').click(function () {
+                FoobetManager.HistoryReport.Submit();
+            });
+
+            jQuery('#yesterdayBtn').click(function () {
+                FoobetManager.GenerateData('@yesterday', '@yesterday');
+                jQuery('#monthPickerID').html(" <div id='ddlMonth'> </div>");
+                 renderMonthPicker(@yesterday_Day, @yesterday_Day);
+
+            });
+
+            jQuery('#todayBtn').click(function () {
+                FoobetManager.GenerateData('@today', '@today');
+                  jQuery('#monthPickerID').html(" <div id='ddlMonth'> </div>");
+                 renderMonthPicker(@today_Day, @today_Day);
+            });
+
+            jQuery('#exporttoexcel').click(function () {
+                FoobetManager.HistoryReport.ExportExcel();
+            });
+        });
+    </script>
+}
+<div class="row-fluid">
+    <div id="header_main" class="span36">
+        @Resources.Report.FoobetFinancal</div>
+</div>
+<div class="row-fluid">
+    <div style="padding-left: 10px; padding-right: 16px;">
+        <div id="box_header" class="span36">
+            <div >
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <div id="spDateTimeSearch">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td>
+                                            <div style="display: inline-block; vertical-align: middle; margin-top:-18px;">
+                                                <div>
+                                                    @Resources.Report.ViewDataInMonth</div>
+                                            </div>
+                                            <div id="monthPickerID" style="display: inline-block; margin-top: 8px;">
+                                                <div id="ddlMonth">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="l">
+                                        <div style="display: inline-block; vertical-align: middle; height: 17px;">
+                                            &nbsp;&nbsp;&nbsp;<input type="button" class="btn" style="width: 55px;margin-right: -1px;" id="submitBtn" value="@Resources.Lang.submit" />
+                                            <input type="button" class="btn" style="width: 70px;margin-right: -1px;" id="todayBtn" value="@today" />
+                                            <input type="button" class="btn" style="width: 70px" id="yesterdayBtn" value="@yesterday" />
+                                                </div>
+                                        </td>
+                                        <td valign="top">
+                                            <div id="loading" class="" style="float: left;">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td align="right">
+                            <input alt="@Resources.Lang.exporttoexcel" src="@Url.Content("~/_GlobalResources/Images/excel.gif")"
+                                            type="image" id="exporttoexcel" name="exporttoexcel" nofocus="true" title="@Resources.Lang.exporttoexcel"
+                                            class="hand"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="dvMsg" class="warning l" >
+                <ul>
+                    <li><a style="font-weight:bold; color: Blue; cursor:pointer;" href="@Url.Action("Index", "Foobet")">@Resources.Report.BackToCurrentReport</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-fluid">
+    <div style="padding-left: 10px; padding-right: 10px;">
+        <div id="tbl-container" class="span36">
+            <div id="boderRight">
+                <div id="GridContainer" class="freegrid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<iframe id="frm1" width="0" height="0" frameborder="0" style="display: none"></iframe>

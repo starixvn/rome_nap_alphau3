@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "../Shared/_HandHistoryDetailLayout.cshtml";
+}
+@using Fanex.Razorbill.Module.RnGCasino.DTOs;
+@using Fanex.Razorbill.Module.RnGCasino.Enums
+@using Fanex.Razorbill.Module.RnGCasino.Extensions;
+@model HandHistoryDetail
+@{
+    SushiBarResult firstRowSushiBar = (SushiBarResult)Model.GameResults[0];
+    BaseballBattleScratchBetTypeMoney betTypeMoney = (BaseballBattleScratchBetTypeMoney)Model.BetTypeMoneys[0];
+    string currency = betTypeMoney.Currency;
+}
+<table id="casino-betlist-a" style="width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="5" class="hd2 b">
+                @firstRowSushiBar.TableName - @firstRowSushiBar.BetTime
+            </th>
+        </tr>
+    </thead>
+    <tr class="th b">
+        <td colspan="5" class="c">
+            @RnGCasinoLang.Player: @firstRowSushiBar.UserName
+        </td>
+    </tr>
+    <tr class="th b">
+        <td colspan="5" class="c">
+            @firstRowSushiBar.ResultName
+        </td>
+    </tr>
+    <tr class="bg_eb">
+        <td colspan="5" class="c">
+            @Html.Raw(firstRowSushiBar.Result)
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowSushiBar.PlayerHistoryNo
+        </td>
+        <td colspan="4" class="l">
+            @firstRowSushiBar.PlayerHistoryNoResult
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowSushiBar.AutoPlay
+        </td>
+        <td colspan="4" class="l">
+            @firstRowSushiBar.AutoPlayResult
+        </td>
+    </tr>
+    <tr class="th b">
+        <td class="l">
+            @firstRowSushiBar.Bet
+        </td>
+        <td colspan="4" class="r" >
+            @Html.FormatNumber(betTypeMoney.Bet, currency)
+        </td>
+    </tr>
+    <tr class="th b">
+        <td class="l">
+            @firstRowSushiBar.Odds
+        </td>
+        <td colspan="4" class="r" >
+             @Html.FormatNumber(betTypeMoney.Odds, 2)
+        </td>
+    </tr>
+    <tr class="th b">
+        <td class="l">
+            @firstRowSushiBar.WinLoss
+        </td>
+        <td colspan="4" class="r" >
+            @Html.FormatNumber(betTypeMoney.WinLoss, currency)
+        </td>
+    </tr>
+</table>

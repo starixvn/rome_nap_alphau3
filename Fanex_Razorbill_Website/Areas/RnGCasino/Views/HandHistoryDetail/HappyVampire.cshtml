@@ -1,0 +1,194 @@
+﻿@{
+    Layout = "../Shared/_HandHistoryDetailLayout.cshtml";
+}
+@using Fanex.Razorbill.Module.RnGCasino.DTOs;
+@using Fanex.Razorbill.Module.RnGCasino.Enums
+@using Fanex.Razorbill.Module.RnGCasino.Extensions;
+@model HandHistoryDetail
+@{
+    HappyVampireResult firstRowHappyVampire = (HappyVampireResult)Model.GameResults[0];
+    BetTypeMoney betTypeMoney = Model.BetTypeMoneys[0];
+    string currency = betTypeMoney.Currency;
+    int colspan = 6;
+}
+<table id="casino-betlist-a" style="width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="@colspan" class="hd2 b">
+                @firstRowHappyVampire.TableName - @firstRowHappyVampire.BetTime
+            </th>
+        </tr>
+    </thead>
+    <tr class="th b">
+        <td colspan="@colspan" class="c">
+            @RnGCasinoLang.Player: @firstRowHappyVampire.UserName
+        </td>
+    </tr>
+    <tr class="th b">
+        <td colspan="@colspan" class="c">
+            @firstRowHappyVampire.ResultName
+        </td>
+    </tr>
+    <tr class="bg_eb">
+        <td colspan="@colspan" class="c">
+            @Html.Raw(firstRowHappyVampire.Result)
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowHappyVampire.PlayerHistoryNo
+        </td>
+        <td colspan="@(colspan - 1)" class="l">
+            @firstRowHappyVampire.PlayerHistoryNoResult
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowHappyVampire.Mode
+        </td>
+        <td colspan="@(colspan - 1)" class="l">
+            @firstRowHappyVampire.ModeResult
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowHappyVampire.AutoSpin
+        </td>
+        <td colspan="@(colspan - 1)" class="l">
+            @firstRowHappyVampire.AutoSpinResult
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowHappyVampire.FreeSpin
+        </td>
+        <td colspan="@(colspan - 1)" class="l">
+            @firstRowHappyVampire.FreeSpinResult
+        </td>
+    </tr>
+    @foreach (GameResult gameResult in Model.GameResults)
+    {
+        HappyVampireResult happyVampire = (HappyVampireResult)gameResult;
+        HandHistoryShowType showType = happyVampire.ShowType;
+        if (showType == HandHistoryShowType.AddRow_HitBetLine || showType == HandHistoryShowType.AddRow_HitScatter)
+        {
+            string firstTitle = showType == HandHistoryShowType.AddRow_HitBetLine
+                ? RnGCasinoLang.LineNo
+                : RnGCasinoLang.TotalLineBet;
+            <tr class="hd2 b">
+                <td class="c">@firstTitle</td>
+                <td class="c">@RnGCasinoLang.Symbol</td>
+                <td class="c">@RnGCasinoLang.CoinSize</td>
+                <td class="c">@RnGCasinoLang.BetPerLine</td>
+                <td class="c">@RnGCasinoLang.Odds</td>
+                <td class="c">@RnGCasinoLang.Win</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.Result_HitBetLine || showType == HandHistoryShowType.Result_HitScatter)
+        {
+            <tr class="bg_eb2">
+                <td class="c">@Html.Raw(happyVampire.LineNo_TotalLineBet)</td>
+                <td class="c">@Html.Raw(happyVampire.Symbol)</td>
+                <td class="c">@happyVampire.CoinSize</td>
+                <td class="c">@happyVampire.BetPerLine</td>
+                <td class="c">@happyVampire.Odds</td>
+                <td class="c">@happyVampire.WinResult</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.AddRow_RollingReel)
+        {
+            <tr class="hd2 b">
+                <td colspan="@colspan" class="c">@happyVampire.ResultName</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.AddRow_TotalLineWin)
+        {
+            <tr class="th b">
+                <td class="l">
+                    @happyVampire.Win
+                </td>
+                <td colspan="@(colspan - 1)" class="r">
+                    @happyVampire.WinResult
+                </td>
+            </tr>
+             
+        }
+        else if (showType == HandHistoryShowType.MaxMultiply)
+        {
+            <tr class="th b">
+                <td class="l">@happyVampire.Multiplier</td>
+                <td colspan="@(colspan - 1)" class="r" >
+                    @happyVampire.MultiplierResult
+                </td>
+            </tr> 
+        }
+        else if (showType == HandHistoryShowType.AddRow_HitBonusGame)
+        {
+            <tr class="hd2 b">
+                <td class="c" colspan="@colspan">@RnGCasinoLang.BonusGame</td>
+            </tr>
+            <tr class="hd2 b">
+                <td class="c">@RnGCasinoLang.Name</td>
+                <td class="c" colspan="@(colspan - 1)">@RnGCasinoLang.Win</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.AddRow_HitBonusGame1 ||
+                showType == HandHistoryShowType.AddRow_HitBonusGame2)
+        {
+            <tr class="th b">
+                <td class="c">@happyVampire.BonusName</td>
+                <td class="r" colspan="@(colspan - 1)">@Html.FormatNumber(happyVampire.WinResult, currency)</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.AddRow_HitBonusGame3)
+        {
+            <tr class="th b">
+                <td class="l">@happyVampire.BonusName</td>
+                <td class="r" colspan="@(colspan - 1)">@Html.FormatNumber(happyVampire.WinResult, currency)</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.AddRow_HitFreeSpin)
+        {
+            <tr class="hd2 b">
+                <td class="c" colspan="@colspan">@happyVampire.FreeSpinName</td>
+            </tr>
+            <tr class="th b">
+                <td class="l">@happyVampire.FreeSpin</td>
+                <td colspan="@(colspan - 1)" class="r" >
+                    @happyVampire.FreeSpinResult
+                </td>
+            </tr>
+            <tr class="th b">
+                <td class="l">@happyVampire.Multiplier</td>
+                <td colspan="@(colspan - 1)" class="r" >
+                    @happyVampire.MultiplierResult
+                </td>
+            </tr>
+            if (!string.IsNullOrWhiteSpace(happyVampire.Wild))
+            {
+                <tr class="th b">
+                    <td class="l">@happyVampire.Wild</td>
+                    <td colspan="@(colspan - 1)" class="r" >
+                        @happyVampire.WildResult
+                    </td>
+                </tr>
+            }
+        }
+    }
+    <tr class="th b">
+        <td class="l">
+            @firstRowHappyVampire.Bet
+        </td>
+        <td colspan="@(colspan - 1)" class="r" >
+            @Html.FormatNumber(betTypeMoney.Bet, currency)
+        </td>
+    </tr>
+    <tr class="th b">
+        <td class="l">
+            @firstRowHappyVampire.WinLoss
+        </td>
+        <td colspan="@(colspan - 1)" class="r" >
+            @Html.FormatNumber(betTypeMoney.WinLoss, currency)
+        </td>
+    </tr>
+</table>

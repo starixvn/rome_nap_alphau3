@@ -1,0 +1,79 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Agent site - Statement</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <link href="@Url.Content("~/_GlobalResources/Css/Agent.css?06")" rel="stylesheet"
+        type="text/css" />
+           <link href="@Url.Content("~/Areas/ContextualCustomer/Views/Style/ContextualCostomer.css")"  rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/_Components/ErrorMsg/ErrorMsg.css")"  rel="stylesheet" type="text/css" />
+    @RenderSection("Head", false)
+</head>
+<body>
+<div class="row-fluid">
+    <div id="header_main" class="span36">
+       @Resources.ProfilePicture.EditProfile</div>
+</div>
+    @RenderBody()
+    @Html.Hidden("RootURL", Url.Content("~/"))
+</body>
+</html>
+
+<script src="@Url.Content("~/Js/jQuery/jquery-1.8.2.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    var domain;
+
+    jQuery(document).ready(function () {
+        domain = location.protocol + '//' + location.host + jQuery('#RootURL').val();
+    });
+
+    function ShowMsgs(msg, success) {
+        if (success) {
+            $('#spmsgerr').addClass("msgscc");
+            $('#msg_1_1').addClass("succ_1_1");
+            $('#msg_1_2').addClass("succ_1_2");
+            $('#msg_1_3').addClass("succ_1_3");
+            $('#msg_2_1').addClass("succ_2_1");
+            $('#msg_2_2').addClass("succ_2_2");
+            $('#msg_3_1').addClass("succ_3_1");
+            $('#msg_3_2').addClass("succ_3_2");
+            $('#msg_3_3').addClass("succ_3_3");
+        }
+        else {
+            $('#spmsgerr').addClass("msgerr");
+            $('#msg_1_1').addClass("emsg_1_1");
+            $('#msg_1_2').addClass("emsg_1_2");
+            $('#msg_1_3').addClass("emsg_1_3");
+            $('#msg_2_1').addClass("emsg_2_1");
+            $('#msg_2_2').addClass("emsg_2_2");
+            $('#msg_3_1').addClass("emsg_3_1");
+            $('#msg_3_2').addClass("emsg_3_2");
+            $('#msg_3_3').addClass("emsg_3_3");
+        }
+
+        $("#spmsgerr").text(msg);
+        $("#diverrmsg").css({ display: '' });
+    }
+
+    function HideMsg() {
+        $("#diverrmsg").css({ display: 'none' });
+    }
+
+
+    function DisableButtonById(id) {
+        $("#" + id).attr("disabled", "disabled");
+        $("#" + id).addClass("btn2");
+    }
+
+    function EnableButtonById(id) {
+        $("#" + id).removeAttr("disabled");
+        $("#" + id).removeClass("btn2");
+    }
+
+</script>
+
+@RenderSection("Scripts", false)

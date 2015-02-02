@@ -1,0 +1,20 @@
+﻿body
+{
+	background:  url(../../_GlobalResources/Images/bgtop_f4.jpg) repeat-x top;
+}
+
+
+#logo .userName{font-weight:bold; color:#CC000B}
+#banner
+{
+	background: url(../../_GlobalResources/Images/bg_banner4.jpg) no-repeat top left;
+}
+
+#g_left
+{
+    background: url(../../_GlobalResources/Images/gLeft_button4.jpg) no-repeat scroll center top transparent;
+}
+
+#g_right {
+    background: url(../../_GlobalResources/Images/gRight_button4.jpg) no-repeat scroll center top transparent;
+}

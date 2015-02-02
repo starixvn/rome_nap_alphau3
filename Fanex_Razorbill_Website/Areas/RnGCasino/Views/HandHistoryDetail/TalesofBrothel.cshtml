@@ -1,0 +1,141 @@
+﻿@{
+    Layout = "../Shared/_HandHistoryDetailLayout.cshtml";
+}
+@using Fanex.Razorbill.Module.RnGCasino.DTOs;
+@using Fanex.Razorbill.Module.RnGCasino.Enums
+@using Fanex.Razorbill.Module.RnGCasino.Extensions;
+@model HandHistoryDetail
+@{
+    TalesOfBrothelResult firstRowTalesBrothel = (TalesOfBrothelResult)Model.GameResults[0];
+    BetTypeMoney betTypeMoney = Model.BetTypeMoneys[0];
+    string currency = betTypeMoney.Currency;
+    int colspan = 6;
+}
+<table id="casino-betlist-a" style="width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="@colspan" class="hd2 b">
+                @firstRowTalesBrothel.TableName - @firstRowTalesBrothel.BetTime
+            </th>
+        </tr>
+    </thead>
+    <tr class="th b">
+        <td colspan="@colspan" class="c">
+            @RnGCasinoLang.Player: @firstRowTalesBrothel.UserName
+        </td>
+    </tr>
+    <tr class="th b">
+        <td colspan="@colspan" class="c">
+            @firstRowTalesBrothel.ResultName
+        </td>
+    </tr>
+    <tr class="bg_eb">
+        <td colspan="@colspan" class="c">
+            @Html.Raw(firstRowTalesBrothel.Result)
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowTalesBrothel.PlayerHistoryNo
+        </td>
+        <td colspan="@(colspan - 1)" class="l">
+            @firstRowTalesBrothel.PlayerHistoryNoResult
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowTalesBrothel.Mode
+        </td>
+        <td colspan="@(colspan - 1)" class="l">
+            @firstRowTalesBrothel.ModeResult
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowTalesBrothel.AutoSpin
+        </td>
+        <td colspan="@(colspan - 1)" class="l">
+            @firstRowTalesBrothel.AutoSpinResult
+        </td>
+    </tr>
+    @foreach (GameResult gameResult in Model.GameResults)
+    {
+        TalesOfBrothelResult talesBrothel = (TalesOfBrothelResult)gameResult;
+        HandHistoryShowType showType = talesBrothel.ShowType;
+        if (showType == HandHistoryShowType.AddRow_HitBetLine)
+        {
+            <tr class="hd2 b">
+                <td class="c">@RnGCasinoLang.LineNo</td>
+                <td class="c">@RnGCasinoLang.Symbol</td>
+                <td class="c">@RnGCasinoLang.CoinSize</td>
+                <td class="c">@RnGCasinoLang.BetPerLine</td>
+                <td class="c">@RnGCasinoLang.Odds</td>
+                <td class="c">@RnGCasinoLang.Win</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.Result_HitBetLine)
+        {
+            <tr class="bg_eb2">
+                <td class="c">@Html.Raw(talesBrothel.LineNo)</td>
+                <td class="c">@Html.Raw(talesBrothel.Symbol)</td>
+                <td class="c">@talesBrothel.CoinSize</td>
+                <td class="c">@talesBrothel.BetPerLine</td>
+                <td class="c">@talesBrothel.Odds</td>
+                <td class="c">@talesBrothel.WinResult</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.AddRow_TotalLineWin)
+        {
+            <tr class="th b">
+                <td class="l">
+                    @talesBrothel.Win
+                </td>
+                <td colspan="@(colspan - 1)" class="r">
+                    @Html.FormatNumber(talesBrothel.WinResult, currency)
+                </td>
+            </tr>
+             
+        }
+        else if (showType == HandHistoryShowType.AddRow_HitBonusGame)
+        {
+            <tr class="hd2 b">
+                <td class="c" colspan="@colspan">@RnGCasinoLang.BonusGame</td>
+            </tr>
+            <tr class="hd2 b">
+                <td class="c">@RnGCasinoLang.Name</td>
+                <td class="c" colspan="@(colspan - 1)">@RnGCasinoLang.Win</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.AddRow_HitBonusGame1 ||
+                showType == HandHistoryShowType.AddRow_HitBonusGame2)
+        {
+            <tr class="th b">
+                <td class="c">@talesBrothel.BonusName</td>
+                <td class="r" colspan="@(colspan - 1)">@Html.FormatNumber(talesBrothel.WinResult, currency)</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.AddRow_HitBonusGame3)
+        {
+            <tr class="th b">
+                <td class="l">@talesBrothel.BonusName</td>
+                <td class="r" colspan="@(colspan - 1)">@Html.FormatNumber(talesBrothel.WinResult, currency)</td>
+            </tr>
+        }
+    }
+    <tr class="th b">
+        <td class="l">
+            @firstRowTalesBrothel.Bet
+        </td>
+        <td colspan="@(colspan - 1)" class="r" >
+            @Html.FormatNumber(betTypeMoney.Bet, currency)
+        </td>
+    </tr>
+    <tr class="th b">
+        <td class="l">
+            @firstRowTalesBrothel.WinLoss
+        </td>
+        <td colspan="@(colspan - 1)" class="r" >
+            @Html.FormatNumber(betTypeMoney.WinLoss, currency)
+        </td>
+    </tr>
+</table>

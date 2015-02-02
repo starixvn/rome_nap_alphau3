@@ -1,0 +1,1594 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FileDB>
+    <!--effectdate format: dd/mm/yyyy-->
+    <!--
+    announcementid noted:
+    - bingo = 4,
+      virtual sports: 20130404,
+      LCS: 7,
+      domain: 5
+  -->
+
+  <PopupAnnouncement id="20141231" name="Tennis - Sporting Solution" startdate="12/31/2014" enddate="01/31/2015"  effectdate="01/01/2015" width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to offer you 8 new bet types of Tennis with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/Tennis/en-US.SportingSolutionBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Tennis product and all setttings will be configured as follows:
+      </p>
+      <p>
+        &#8226; Default setting of Tennis "Others" will be copied from Tennis "Handicap" and it can be changed later on if desired.<br />
+        &#8226; Position Taking settings of <b>Set x Winner</b> and <b>Set x Game y Winner</b> bet types will be copied from Tennis "Money Line".<br />
+        &#8226; Position Taking settings of <b>Match Correct Score</b> and <b>Set x Correct Score</b> bet types will be copied from Tennis "Others".<br />
+        &#8226; Position Taking settings of <b>Game Handicap</b> and <b>Set x Game Handicap</b> bet types will be copied from Tennis "Handicap".<br />
+        &#8226; Position Taking settings of <b>Set x Total Game Odd/Even</b> bet type will be copied Tennis "Odd/Even".<br />
+        &#8226; Position Taking settings of <b>Set x Total Game Over/Under</b> bet type will be copied Tennis "Over/Under".<br />
+        &#8226; Commission settings of <b>Set x Winner, Match Correct Score, Set x Correct Score and Set x Game y Winner</b> bet types will be copied from Other Bet types.<br />
+        &#8226; Commission settings of <b>Game Handicap, Set x Game Handicap, Set x Total Games Over/Under and Set x Total Game Odd/Even</b> bet types will be copied from Asian HDP, OU, OE.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      敬爱的代理们，<br />
+      <p>
+        于 <b>{effectdate}</b> 网球将推出八项新的投注设定,  您可以点击<a href='_Announcement/Template/NewProduct/Tennis/zh-CN.SportingSolutionBettypes.htm' target='_blank'>此处</a>以查看完整的设定项目。 在设定方面， 本公司已在网球占成数页面增添了新的设定， 名为“其他”。 所有设定都将被配置如下：
+      </p>
+      <p>
+        &#8226; 网球"其他"的默认设置将复制网球"亚洲盘"或可以依照需要而更改。<br />
+        &#8226; <b>第 x 盘获胜者</b> 和 <b>第 x 盘 - 第 y 局获胜者</b> 投注类型占成数设定将复制网球"独赢"<br />
+        &#8226; <b>盘数波胆</b> 和 <b>第 x 盘波胆</b> 投注类型占成数设定将复制网球"其他"<br />
+        &#8226; <b>局数获胜者</b> 和 <b>第 x 盘局数获胜者</b> 投注类型占成数设定将复制网球"亚洲盘"<br />
+        &#8226; <b>第 x 盘局数单双盘</b> 投注类型占成数设定将复制网球"单/双"<br />
+        &#8226; <b>第 x 盘局数大小盘</b> 投注类型占成数设定将复制网球"大/小"<br />
+        &#8226; <b>第 x 盘获胜者, 盘数波胆, 第 x 盘波胆 和 第 x 盘 - 第 y 局获胜者</b> 投注类型佣金设定将复制其他投注类别<br />
+        &#8226; <b>局数获胜者, 第 x 盘局数获胜者, 第 x 盘局数大小盘 和 第 x 盘局数单双盘</b> 投注类型佣金设定将复制亚洲盘、单双、大小盘
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      敬愛的代理們，<br />
+      <p>
+        於 <b>{effectdate}</b> 網球將推出八項新的投註設定,  您可以點擊<a href='_Announcement/Template/NewProduct/Tennis/zh-TW.SportingSolutionBettypes.htm' target='_blank'>此處</a>以查看完整的設定項目。 在設定方面， 本公司已在網球占成數頁面增添了新的設定， 名為“其他”。 所有設定都將被配置如下：
+      </p>
+      <p>
+        &#8226; 網球"其他"的默認設置將復製網球"亞洲盤"或日後依照需要而更改。<br />
+        &#8226; <b>第 x 盤獲勝者</b>和 <b>第 x 盤 - 第 y 局獲勝者</b> 投注類型占成數設定將復制網球"獨贏"<br />
+        &#8226; <b>盤數波膽</b> 和 <b>第 x 盤波膽</b> 投注類型占成數設定將復制網球"其他"<br />
+        &#8226; <b>局數獲勝者</b> 和 <b>第 x 盤局數獲勝者</b> 投注類型占成數設定將復制網球"亞洲盤"<br />
+        &#8226; <b>第 x 盤局數單雙盤</b> 投注類型占成數設定將復制網球"單/雙"<br />
+        &#8226; <b>第 x 盤局數大小盤</b> 投注類型占成數設定將復制網球"大/小"<br />
+        &#8226; <b>第 x 盤獲勝者, 盤數波膽, 第 x 盤波膽 和 第 x 盤 - 第 y 局獲勝者</b> 投注類型佣金設定將復制其他投注類別<br />
+        &#8226; <b>局數獲勝者, 第 x 盤局數獲勝者, 第 x 盤局數大小盤 和 第 x 盤局數單雙盤</b> 投注類型佣金設定將復制亞洲盤、單雙、大小盤<br />
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to offer you 8 new bet types of Tennis with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/Tennis/ja-JP.SportingSolutionBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Tennis product and all setttings will be configured as follows:
+      </p>
+      <p>
+        &#8226; Default setting of Tennis "Others" will be copied from Tennis "Handicap" and it can be changed later on if desired.<br />
+        &#8226; Position Taking settings of <b>Set x Winner</b> and <b>Set x Game y Winner</b> bet types will be copied from Tennis "Money Line".<br />
+        &#8226; Position Taking settings of <b>Match Correct Score</b> and <b>Set x Correct Score</b> bet types will be copied from Tennis "Others".<br />
+        &#8226; Position Taking settings of <b>Game Handicap</b> and <b>Set x Game Handicap</b> bet types will be copied from Tennis "Handicap".<br />
+        &#8226; Position Taking settings of <b>Set x Total Game Odd/Even</b> bet type will be copied Tennis "Odd/Even".<br />
+        &#8226; Position Taking settings of <b>Set x Total Game Over/Under</b> bet type will be copied Tennis "Over/Under".<br />
+        &#8226; Commission settings of <b>Set x Winner, Match Correct Score, Set x Correct Score and Set x Game y Winner</b> bet types will be copied from Other Bet types.<br />
+        &#8226; Commission settings of <b>Game Handicap, Set x Game Handicap, Set x Total Games Over/Under and Set x Total Game Odd/Even</b> bet types will be copied from Asian HDP, OU, OE.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to offer you 8 new bet types of Tennis with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/Tennis/ko-KR.SportingSolutionBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Tennis product and all setttings will be configured as follows:
+      </p>
+      <p>
+        &#8226; Default setting of Tennis "Others" will be copied from Tennis "Handicap" and it can be changed later on if desired.<br />
+        &#8226; Position Taking settings of <b>Set x Winner</b> and <b>Set x Game y Winner</b> bet types will be copied from Tennis "Money Line".<br />
+        &#8226; Position Taking settings of <b>Match Correct Score</b> and <b>Set x Correct Score</b> bet types will be copied from Tennis "Others".<br />
+        &#8226; Position Taking settings of <b>Game Handicap</b> and <b>Set x Game Handicap</b> bet types will be copied from Tennis "Handicap".<br />
+        &#8226; Position Taking settings of <b>Set x Total Game Odd/Even</b> bet type will be copied Tennis "Odd/Even".<br />
+        &#8226; Position Taking settings of <b>Set x Total Game Over/Under</b> bet type will be copied Tennis "Over/Under".<br />
+        &#8226; Commission settings of <b>Set x Winner, Match Correct Score, Set x Correct Score and Set x Game y Winner</b> bet types will be copied from Other Bet types.<br />
+        &#8226; Commission settings of <b>Game Handicap, Set x Game Handicap, Set x Total Games Over/Under and Set x Total Game Odd/Even</b> bet types will be copied from Asian HDP, OU, OE.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียน ท่านเอเจนต์ ทุกอ่าน <br />
+      <p>
+        ทางบริษัทยินดีที่จะเสนอการทายผลเทนนิสรูปแบบใหม่ 8 ชนิดด้วยกัน ซึ่งจะมีผลตั้งแต่ <b>{effectdate}</b>. ท่านสามารถ <a href='_Announcement/Template/NewProduct/Tennis/th-TH.SportingSolutionBettypes.htm' target='_blank'>คลิ๊กที่นี่</a> เพื่อดูรายละเอียดรายการต่าง ๆ ทั้งหมด เพื่อเป็นการอำนวยความสะดวก ทางเราได้ทำการเพิ่มเติมในส่วนการตั้งค่าความเสี่ยงให้ใหม่ โดยตั้งชื่อว่า "ชนิดอื่นๆ" ซึ่งจะอยู่ภายใต้การตั้งค่ากีฬาเทนนิส และการตั้งค่าต่าง ๆ จะเป็นดังต่อไปนี้
+      </p>
+      <p>
+        &#8226; การตั้งค่าดั่งเดิมของเทนนิส "ชนิดอื่นๆ" จะคัดลอกมาจากราคาต่อรองเทนนิสและจะสามารถเปลี่ยนในภายหลังได้หากต้องการ<br />
+        &#8226; การตั้งค่าความเสี่ยงของชนิดการทายผล <b>ผู้ชนะเซท X</b> และ <b>ผู้ชนะเซท X เกม Y</b> จะคัดลอกมาจากการทายผู้เล่นหรือทีมที่จะ "ชนะ" ในกีฬาเทนนิส<br />
+        &#8226; การตั้งค่าความเสี่ยงของชนิดการทายผล <b>ทายผลคะแนนรวมของการแข่งขัน</b> และ <b>ทายผลคะแนนรวมในเซทX</b> จะทำการคัดลอกมาจาก เทนนิส "ชนิดอื่นๆ"<br />
+        &#8226; การตั้งค่าความเสี่ยงใน <b>ราคาต่อรองในเกม</b> และ <b>ราคาต่อรองในเซท X</b> การตั้งค่าจะถูกคัดลอกมาจาก ราคาต่อรอง "เทนนิส"<br />
+        &#8226; การตั้งค่าความเสี่ยงของ <b>เซท X ผลคะแนนรวมในเกม คู่/คี่</b> การตั้งค่าจะถูกคัดลอกมาจาก เทนนิส "คู่/คี่"<br />
+        &#8226; การตั้งค่าความเสี่ยงของ <b>เซท X  ผลคะแนนรวมในเกม สุง/ต่ำ</b> การตั้งค่าจะถูกคัดลอกมาจากเทนนิส "สุง/ต่ำ"<br />
+        &#8226; การตั้งค่าคอมมิชชั่นของ <b>ผู้ชนะในเซท X, ทายผลคะแนนของการแข่งขัน,  การทายผลคะแนนของเซท X เกม Y และเซท X เกมY</b> การตั้งค่าจะถูกคัดลอกมาจาก ชนิดอื่น ๆ<br />
+        &#8226; การตั้งค่าคอมมิชั่นของ <b>ราคาต่อรองในเกม, ราคาต่อรองในเกมเซท X, เซท X  ผลคะแนนรวมในเกม สุง/ต่ำ และ เซท X ผลคะแนนรวมในเกม คู่/คี่</b> การตั้งค่าทั้งหมดจะถูกคัดลอกมาจาก ราคาต่อรอง, สูง/ต่ำ, คู่/คี่
+      </p>
+      <p>
+        กราบขอบพระคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Chào quý khách hàng,<br />
+      <p>
+        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 8 loại cược mới cho Tennis. Bạn có thể xem thêm chi tiết các loại cược mới <a href='_Announcement/Template/NewProduct/Tennis/vi-VN.SportingSolutionBettypes.htm' target='_blank'>ở đây</a>. Nhằm hỗ trợ cho các loại cược mới, chúng tôi đã thêm phần "Others" bên dưới mục Tennis trong trang thiết lập Position Taking. Tất cả các thiết lập sẽ được cấu hình như sau:
+      </p>
+      <p>
+        &#8226; Cấu hình mặc định của Tennis "Others" sẽ được sao chép từ Tennis "Handicap" và nó có thể tuỳ chỉnh nếu muốn.<br />
+        &#8226; Position Taking của loại cược <b>Set x Winner</b> và <b>Set x Game y Winner</b> sẽ được sao chép từ Tennis "Money Line".<br />
+        &#8226; Position Taking của loại cược <b>Match Correct Score</b> và <b>Set x Correct Score</b> sẽ được sao chép từ Tennis "Others"<br />
+        &#8226; Position Taking của loại cược <b>Game Handicap</b> và <b>Set x Game Handicap</b> sẽ được sao chép từ Tennis "Handicap".<br />
+        &#8226; Position Taking của loại cược <b>Set x Total Game Odd/Even</b> sẽ được sao chép từ Tennis "Odd/Even".<br />
+        &#8226; Position Taking của loại cược <b>Set x Total Game Over/Under</b> sẽ được sao chép từ Tennis "Over/Under".<br />
+        &#8226; Thiết lập hoa hồng của loại cược <b>Set x Winner, Match Correct Score, Set x Correct Score and Set x Game y Winner</b> sẽ được sao chép từ "Các loại cược khác".<br />
+        &#8226; Thiết lập hoa hồng của loại cược <b>Game Handicap, Set x Game Handicap, Set x Total Games Over/Under and Set x Total Game Odd/Even</b> sẽ được sao chép từ Asian HDP, OU, OE.
+      </p>
+      <p>
+        Trân trọng.
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+
+  <PopupAnnouncement id="20141221" startdate="12/10/2014" enddate="12/22/2014"  effectdate="10/12/2014" width="650" height="300" top="110" left="350">
+    <en-US src="_Announcement/Template/Dongzhi/DongzhiFlash.html?1234">
+      Dongzhi 2014
+    </en-US>
+    <zh-CN src="_Announcement/Template/Dongzhi/DongzhiFlash_cn.html">
+      Dongzhi 2014
+    </zh-CN>
+    <zh-TW src="_Announcement/Template/Dongzhi/DongzhiFlash_tw.html">
+      Dongzhi 2014
+    </zh-TW>
+    <ja-JP src="_Announcement/Template/Dongzhi/DongzhiFlash.html">
+      Dongzhi 2014
+    </ja-JP>
+    <ko-KR src="_Announcement/Template/Dongzhi/DongzhiFlash.html">
+      Dongzhi 2014
+    </ko-KR>
+    <th-TH src="_Announcement/Template/Dongzhi/DongzhiFlash.html">
+      Dongzhi 2014
+    </th-TH>
+    <vi-VN src="_Announcement/Template/Dongzhi/DongzhiFlash.html">
+      Dongzhi 2014
+    </vi-VN>
+  </PopupAnnouncement>
+
+  <PopupAnnouncement id="26071" name="Limited Country Access" startdate="11/01/2014" enddate="12/30/2014"  effectdate="11/26/2014" width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued customer,<br />
+      <p>
+        Due to recent regulatory developments, we will no longer offer our products and services in <b>Singapore</b>.
+      </p>
+      <p>
+        For this reason, you will cease to have access to our website in your location from <b>November 26, 2014</b>.
+      </p>
+      <p>
+        We apologize for any inconvenience caused.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      尊敬的客户，<br />
+      <p>
+        由于政府近期的监管动态， 本公司将不提供任何产品和服务于<b>新加坡</b>地区。
+      </p>
+      <p>
+        因此从<b>2014年11月26日起</b>， 在新加坡的客户将无法链接我们的网站。
+      </p>
+      <p>
+        不便之处， 敬请原谅。
+      </p>
+      <p>
+        谢谢。
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      尊敬的客戶，<br />
+      <p>
+        由於政府近期的監管動態， 本公司將不提供任何產品和服務於<b>新加坡</b>地區。
+      </p>
+      <p>
+        因此從<b>2014年11月26日起</b>， 在新加坡的客戶將無法鏈接我們的網站。
+      </p>
+      <p>
+        不便之處， 敬請原諒。
+      </p>
+      <p>
+        謝謝。
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued customer,<br />
+      <p>
+        Due to recent regulatory developments, we will no longer offer our products and services in <b>Singapore</b>.
+      </p>
+      <p>
+        For this reason, you will cease to have access to our website in your location from <b>November 26, 2014</b>.
+      </p>
+      <p>
+        We apologize for any inconvenience caused.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued customer,<br />
+      <p>
+        Due to recent regulatory developments, we will no longer offer our products and services in <b>Singapore</b>.
+      </p>
+      <p>
+        For this reason, you will cease to have access to our website in your location from <b>November 26, 2014</b>.
+      </p>
+      <p>
+        We apologize for any inconvenience caused.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      Dear valued customer,<br />
+      <p>
+        Due to recent regulatory developments, we will no longer offer our products and services in <b>Singapore</b>.
+      </p>
+      <p>
+        For this reason, you will cease to have access to our website in your location from <b>November 26, 2014</b>.
+      </p>
+      <p>
+        We apologize for any inconvenience caused.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Dear valued customer,<br />
+      <p>
+        Due to recent regulatory developments, we will no longer offer our products and services in <b>Singapore</b>.
+      </p>
+      <p>
+        For this reason, you will cease to have access to our website in your location from <b>November 26, 2014</b>.
+      </p>
+      <p>
+        We apologize for any inconvenience caused.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+  
+  <PopupAnnouncement id="2023" name="Keno Setting" startdate="10/17/2014" enddate="11/17/2014"  effectdate="10/24/2014" width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to announce that you can start updating
+        the settings for Keno product which means dedicated,
+        separate settings for Keno are supported with effect
+        from <b>{effectdate}</b> and Number Game settings are no
+        longer used for Keno product.
+      </p>
+      <p>
+        If you wish to update the settings for Keno, please access
+        Account Info function on the Left Panel and choose Edit Keno.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      尊敬的代理们,<br />
+      <p>
+        我们非常荣幸地宣布，快乐彩将拥有独立的投注限额及占成设定，于<b>{effectdate}</b> 您可以开始为快乐彩的产品做设置 。快乐彩的设置将不再根据"百练赛"的投注设定。
+      </p>
+      <p>
+        如果您想更换快乐彩的设置，请点击左侧面板上的功能用户资料，然后选择修改快乐彩。
+      </p>
+      <p>
+        谢谢.
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      尊敬的代理們,<br />
+      <p>
+        我們非常榮幸地宣布，快樂彩將擁有獨立的投注限額及佔成設定，於<b>{effectdate}</b> 您可以開始為快樂彩的產品做設置。快樂彩的設置將不再根據"百練賽"的投注設定。
+      </p>
+      <p>
+        如果您想更換快樂彩的設置，請點擊左側面板上的功能用戶資料，然後選擇修改快樂彩。
+      </p>
+      <p>
+        謝謝.
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to announce that you can start updating
+        the settings for Keno product which means dedicated,
+        separate settings for Keno are supported with effect
+        from <b>{effectdate}</b> and Number Game settings are no
+        longer used for Keno product.
+      </p>
+      <p>
+        If you wish to update the settings for Keno, please access
+        Account Info function on the Left Panel and choose Edit Keno.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to announce that you can start updating
+        the settings for Keno product which means dedicated,
+        separate settings for Keno are supported with effect
+        from <b>{effectdate}</b> and Number Game settings are no
+        longer used for Keno product.
+      </p>
+      <p>
+        If you wish to update the settings for Keno, please access
+        Account Info function on the Left Panel and choose Edit Keno.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียนลูกค้าที่เคารพรัก<br />
+      <p>
+        เรายินดีที่จะเรียนให้ท่านทราบว่า โปรดักคีโนสามารถแยกการตั้งค่าวงเงินเดิมพันและค่าความเสี่ยงได้แล้ว เริ่มตั้งแต่วันที่ <b>{effectdate}</b>  และค่าการตั้งค่าของโปรดักเกมหมายเลขจะไม่ใช้ร่วมกับคีโนอีกต่อไป
+      </p>
+      <p>
+        หากคุณต้องการที่เปลี่ยนการตั้งค่าของโปรดักคีโน, กรุณากดที่ข้อมูลบัญชีตรงมุมซ้ายมือ และเลือกเกมคิโน
+      </p>
+      <p>
+        ขอบคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Chào quý khách hàng,<br />
+      <p>
+        Bắt đầu từ ngày <b>{effectdate}</b>, bạn có thể cập nhật các thiết lập dành riệng cho Keno. Các thiết lập của Keno sẽ không còn dùng chung với các thiết lập của Number Game nữa.
+      </p>
+      <p>
+        Nếu bạn muốn cập nhật các thiết lập cho Keno, vui lòng vào menu Account Info ở bảng điều khiển bên trái và chọn Edit Keno.        
+      </p>
+      <p>
+        Trân trọng.
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+
+  <PopupAnnouncement id="20140915" name="ESports" startdate="09/23/2014" enddate="10/23/2014"  effectdate="23/09/2014" width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to announce you the launching of the new sport called "E-Sports" with effect from <b>{effectdate}</b>. All settings will be configured as follows:
+      </p>
+      <p>
+        &#8226; Position Taking of E-Sports Money Line will be copied from Other Sports Money Line.<br />
+        &#8226; Position Taking of E-Sport Handicap will be copied from Other Sports Handicap.<br />
+        &#8226; Position Taking of E-Sport Over/Under will be copied from Other Sports Over/Under.<br />
+        &#8226; Bet Setting of E-Sport will be copied from Other Sports.<br />
+        &#8226; Commission Setting of E-Sport – Money Line will be copied from Other Bettypes.<br />
+        &#8226; Commission Setting of E-Sport – Handicap, Over/Under will be copied from Asian HDP, Over/Under.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      尊敬的代理们,<br />
+      <p>
+        我们非常荣幸地宣布将于<b>{effectdate}</b>推出称为"电子游戏"的新产品. 所有设定将如下配置:
+      </p>
+      <p>
+        &#8226; 电子游戏独赢的占成数将复制其他独赢的占成数.<br />
+        &#8226; 电子游戏亚洲盘的占成数将复制其他亚洲盘的占成数.<br />
+        &#8226; 电子游戏大小盘的占成数将复制其他大小盘的占成数.<br />
+        &#8226; 电子游戏的投注设定将复制其他的投注设定.<br />
+        &#8226; 电子游戏独赢的佣金将复制其他投注类别的佣金.<br />
+        &#8226; 电子游戏亚洲盘及大小盘的佣金将复制亚洲盘及大小盘的佣金.
+      </p>
+      <p>
+        谢谢.
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      尊敬的代理們,<br />
+      <p>
+        我們非常榮幸地宣布將於<b>{effectdate}</b>推出稱為"電子遊戲"的新產品. 所有設定將如下配置:
+      </p>
+      <p>
+        &#8226; 電子遊戲獨贏的佔成數將復制其他獨贏的佔成數.<br />
+        &#8226; 電子遊戲亞洲盤的佔成數將復制其他亞洲盤的佔成數.<br />
+        &#8226; 電子遊戲大小盤的佔成數將復制其他大小盤的佔成數.<br />
+        &#8226; 電子遊戲的投注設定將復制其他的投注設定.<br />
+        &#8226; 電子遊戲獨贏的佣金將復制其他投注類別的佣金.<br />
+        &#8226; 電子遊戲亞洲盤及大小盤的佣金將復制亞洲盤及大小盤的佣金.
+      </p>
+      <p>
+        謝謝.
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to announce you the launching of the new sport called "E-Sports" with effect from <b>{effectdate}</b>. All settings will be configured as follows:
+      </p>
+      <p>
+        &#8226; Position Taking of E-Sports Money Line will be copied from Other Sports Money Line.<br />
+        &#8226; Position Taking of E-Sport Handicap will be copied from Other Sports Handicap.<br />
+        &#8226; Position Taking of E-Sport Over/Under will be copied from Other Sports Over/Under.<br />
+        &#8226; Bet Setting of E-Sport will be copied from Other Sports.<br />
+        &#8226; Commission Setting of E-Sport – Money Line will be copied from Other Bettypes.<br />
+        &#8226; Commission Setting of E-Sport – Handicap, Over/Under will be copied from Asian HDP, Over/Under.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to announce you the launching of the new sport called "E-Sports" with effect from <b>{effectdate}</b>. All settings will be configured as follows:
+      </p>
+      <p>
+        &#8226; Position Taking of E-Sports Money Line will be copied from Other Sports Money Line.<br />
+        &#8226; Position Taking of E-Sport Handicap will be copied from Other Sports Handicap.<br />
+        &#8226; Position Taking of E-Sport Over/Under will be copied from Other Sports Over/Under.<br />
+        &#8226; Bet Setting of E-Sport will be copied from Other Sports.<br />
+        &#8226; Commission Setting of E-Sport – Money Line will be copied from Other Bettypes.<br />
+        &#8226; Commission Setting of E-Sport – Handicap, Over/Under will be copied from Asian HDP, Over/Under.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียนท่านเอเจนต์ที่เคารพ<br />
+      <p>
+        ทางบริษัทยินดีที่จะประกาศให้ท่านทราบว่า การเปิดตัวเกมใหม่ชื่อ "อี-สปอร์ต" จะมีผลตั้งแต่วันที่ <b>{effectdate}</b> การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้
+      </p>
+      <p>
+        &#8226; ค่าความเสี่ยงของอี-สปอร์ตทายผลผู้ชนะหรือทีมที่ชนะ นั้นจะคัดลอกมาจาก การตั้งค่าทายผลผู้ชนะหรือทีมที่ชนะกีฬาชนิดอื่น<br />
+        &#8226; ค่าความเสี่ยงของราคาต่อรอง อี-สปอร์ต นั้นจะคัดลอกการตั้งค่ามาจาก การตั้งค่าราคาต่อรองกีฬาชนิดอื่น<br />
+        &#8226; ค่าความเสี่ยงของสูง/ต่ำ อี-สปอร์ต นั้นจะคัดลอกการตั้งค่ามาจาก การตั้งค่าสุงต่ำกีฬาชนิดอื่น<br />
+        &#8226; การตั้งค่าเดิมพันของ อี-สปอร์ต จะคัดลอกจากกีฬาชนิดอื่น<br />
+        &#8226; การตั้งค่าคอมมิชชั่นของ อีสปอร์ต-ทายผลผู้ชนะหรือทีมที่ชนะ จะคัดลอกมาจาก การเดิมพันชนิดอื่นๆ<br />
+        &#8226; การตั้งค่าคอมมิชชั่นของ อีสปอร์ต-แต้มต่อ, สูง/ต่ำ จะคัดลอกมาจาก แต้มต่อเอเชีย, สูง/ต่ำ
+      </p>
+      <p>
+        ขอบพระคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to announce you the launching of the new sport called "E-Sports" with effect from <b>{effectdate}</b>. All settings will be configured as follows:
+      </p>
+      <p>
+        &#8226; Position Taking of E-Sports Money Line will be copied from Other Sports Money Line.<br />
+        &#8226; Position Taking of E-Sport Handicap will be copied from Other Sports Handicap.<br />
+        &#8226; Position Taking of E-Sport Over/Under will be copied from Other Sports Over/Under.<br />
+        &#8226; Bet Setting of E-Sport will be copied from Other Sports.<br />
+        &#8226; Commission Setting of E-Sport – Money Line will be copied from Other Bettypes.<br />
+        &#8226; Commission Setting of E-Sport – Handicap, Over/Under will be copied from Asian HDP, Over/Under.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+
+  <PopupAnnouncement id="20140827" name="BetRadar - Change PT and Comm" startdate="08/28/2014" enddate="09/28/2014"  effectdate="28/08/2014" width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the changes in Position Taking setting and Commission setting applied for 2 bet types Double Chance, Both/One/Neither Team to Score with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        &#8226; Position Taking setting of Soccer-Others will be applied instead of Soccer-Handicap.<br />
+        &#8226; Others Commission setting will be applied instead of commission of "Asian HDC, OU, OE" group.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      尊敬的代理们<br />
+      <p>
+        我们非常荣幸地宣布将于<b>{effectdate}</b>针对两种投注类型: "双重机会" 及 "双方/一方/两者皆不得分" 的占成数及佣金设定进行调整.
+      </p>
+      <p>
+        &#8226; 占成数将复制足球-其他的设定 (而非足球-亚洲盘)<br />
+        &#8226; 将从其他佣金复制 (而非 "亚洲盘, 大小盘, 单双" 的佣金组)
+      </p>
+      <p>
+        谢谢.
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      尊敬的代理們<br />
+      <p>
+        我們非常榮幸地宣布將於<b>{effectdate}</b>針對兩種投注類型: "雙重機會" 及"雙方/一方/兩者皆不得分" 的佔成數及佣金設定進行調整.
+      </p>
+      <p>
+        &#8226; 佔成數將復制足球-其他的設定(而非足球-亞洲盤)<br />
+        &#8226; 將從其他佣金複製(而非"亞洲盤, 大小盤, 單雙" 的佣金組)
+      </p>
+      <p>
+        謝謝.
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the changes in Position Taking setting and Commission setting applied for 2 bet types Double Chance, Both/One/Neither Team to Score with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        &#8226; Position Taking setting of Soccer-Others will be applied instead of Soccer-Handicap.<br />
+        &#8226; Others Commission setting will be applied instead of commission of "Asian HDC, OU, OE" group.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the changes in Position Taking setting and Commission setting applied for 2 bet types Double Chance, Both/One/Neither Team to Score with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        &#8226; Position Taking setting of Soccer-Others will be applied instead of Soccer-Handicap.<br />
+        &#8226; Others Commission setting will be applied instead of commission of "Asian HDC, OU, OE" group.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียน เอเจนต์ทุกท่าน<br />
+      <p>
+        ทางบริษัทใคร่ขอแจ้งให้ทราบการเปลี่ยนแปลงว่าด้วย การตั้งค่าเปอร์เซ็นความเสี่ยงและ การตั้งค่าคอมมิชชั่นทั้ง 2 ชนิดการเดิมพัน ทั้ง ดับเบิลชานซ์ และ ทั้งสองทีม/หนึ่งทีม/ไม่ทั้งสองทีมที่ทำคะแนนได้ จะมีผลบังคับใช้ตั้งแต่ <b>{effectdate}</b>.
+      </p>
+      <p>
+        &#8226; การตั้งค่าเปอร์เซ็นความเสี่ยง ซอคเกอร์-อื่น ๆ จะถูกนำไปใช้แทน ซอคเกอร์-แต้มต่อ<br />
+        &#8226; การตั้งค่าค่าคอมมิชชั่นอื่น ๆ จะถูกนำไปใช้แทนที่คอมมิชชั่นในกลุ่มของ "ราคาต่อรองแบบเอเชีย, สุงต่ำ,คู่คี่"
+      </p>
+      <p>
+        ขอบพระคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Chào quý khách hàng,<br />
+      <p>
+        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ thay đổi các thiết lập Position Taking và Hoa Hồng áp dụng cho 2 loại cược Double Chance và Both/One/Neither Team to Score.
+      </p>
+      <p>
+        &#8226; Thiết lập Position Taking của Bóng Đá - Loại Cược Khác sẽ được áp dụng cho 2 loại cược này thay thế cho Bóng Đá - Handicap.<br />
+        &#8226; Thiết lập Hoa Hồng - Loại Cược Khác sẽ được áp dụng cho 2 loại cược này thay thế cho nhóm Hoa Hồng - "Asian HDP, OU, OE".
+      </p>
+      <p>
+        Trân trọng.
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+  
+  <PopupAnnouncement id="20140729" name="BetRadar - 14 new bettypes" startdate="07/29/2014" enddate="09/15/2014"  effectdate="15/08/2014" width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to offer you 14 new bet types of Soccer with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/BetRardar/en-US.14NewBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Soccer product.
+      </p>
+      <p>
+        Additional information:
+      </p>
+      <p>
+        &#8226; Position Taking settings of Others will be applied to these new bet type except Half time/Fulltime Correct Score.<br />
+        &#8226; For Half time/Fulltime Correct Score, the Position Taking settings will be copied from Soccer – Correct Score.<br />
+        &#8226; For some existing bet types i.e First Goal/Last Goal, Half Time/ Full Time, 1H First Goal/ Last Goal, the Position Taking settings will now be copied from Soccer– Others  as well.<br />
+        &#8226; Commission settings of these new bet types will be copied from Others Comm.<br />
+        &#8226; Bet settings of these new bet types will be copied from Soccer.<br />
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      尊敬的代理们<br />
+      <p>
+        我们非常荣幸地将于<b>{effectdate}</b>为您提供足球新的14种投注类别. 您可点击<a href='_Announcement/Template/NewProduct/BetRardar/zh-CN.14NewBettypes.htm' target='_blank'>这里</a>以查看完整的列表. 为了配合这些新的投注类别, 我们在占成数设定页面的足球产品下增加了新的设定命名为"其他".
+      </p>
+      <p>
+        附加信息:
+      </p>
+      <p>
+        &#8226; 其他的占成数设定将适用于这些新的投注类别除了半场/全场波胆.<br />
+        &#8226; 半场/全​​场波胆之占成数将复制足球- 波胆的设定<br />
+        &#8226; 对于一些现有的投注类别, 即最先进球/最后进球、半场/全场、上半场最先进球/最后进球, 占成数设定也将复制足球- 其他的设定<br />
+        &#8226; 这些新投注类别之佣金将从其他佣金复制<br />
+        &#8226; 这些新投注类别投注设定将从足球中复制<br />
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      尊敬的代理們<br />
+      <p>
+        我們非常榮幸地將於<b>{effectdate}</b>為您提供足球新的14種投注類別. 您可點擊這裡以<a href='_Announcement/Template/NewProduct/BetRardar/zh-TW.14NewBettypes.htm' target='_blank'>查看</a>完整的列表. 爲了配合這些新的投注類別, 我們在占成數設定頁面的足球產品下增加了新的設定命名為"其他".
+      </p>
+      <p>
+        附加信息:
+      </p>
+      <p>
+        &#8226; 其他的占成數設定將適用於這些新的投注類別除了半場/全場波膽.<br />
+        &#8226; 半場/全場波膽之占成數將複製足球 - 波膽的設定<br />
+        &#8226; 對於一些現有的投注類別, 即最先進球/最後進球、半場/全場、上半場最先進球/最後進球, 占成數設定也將複製足球 - 其他的設定<br />
+        &#8226; 這些新投注類別之傭金將從其他傭金複製<br />
+        &#8226; 這些新投注類別投注設定將從足球中複製<br />
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to offer you 14 new bet types of Soccer with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/BetRardar/ja-JP.14NewBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Soccer product.
+      </p>
+      <p>
+        Additional information:
+      </p>
+      <p>
+        &#8226; Position Taking settings of Others will be applied to these new bet type except Half time/Fulltime Correct Score.<br />
+        &#8226; For Half time/Fulltime Correct Score, the Position Taking settings will be copied from Soccer – Correct Score.<br />
+        &#8226; For some existing bet types i.e First Goal/Last Goal, Half Time/ Full Time, 1H First Goal/ Last Goal, the Position Taking settings will now be copied from Soccer– Others  as well.<br />
+        &#8226; Commission settings of these new bet types will be copied from Others Comm.<br />
+        &#8226; Bet settings of these new bet types will be copied from Soccer.<br />
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        We’re pleased to offer you 14 new bet types of Soccer with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/BetRardar/ko-KR.14NewBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Soccer product.
+      </p>
+      <p>
+        Additional information:
+      </p>
+      <p>
+        &#8226; Position Taking settings of Others will be applied to these new bet type except Half time/Fulltime Correct Score.<br />
+        &#8226; For Half time/Fulltime Correct Score, the Position Taking settings will be copied from Soccer – Correct Score.<br />
+        &#8226; For some existing bet types i.e First Goal/Last Goal, Half Time/ Full Time, 1H First Goal/ Last Goal, the Position Taking settings will now be copied from Soccer– Others  as well.<br />
+        &#8226; Commission settings of these new bet types will be copied from Others Comm.<br />
+        &#8226; Bet settings of these new bet types will be copied from Soccer.<br />
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียนเอเย่นท์<br />
+      <p>
+        เรายินดีที่จะแจ้งให้ทราบว่า เราได้เพิ่มรูปแบบการเล่นใหม่อีก 14 ชนิดสำหรับฟุตบอล ซึ่งจะเริ่มใช้ตั้งแต่วันที่ <b>{effectdate}</b> ท่านสามารถ กดที่นี่ เพื่อดูรายการทั้งหมด <a href='_Announcement/Template/NewProduct/BetRardar/th-TH.14NewBettypes.htm' target='_blank'>ทั้งนี้</a> เราได้เพิ่มการตั้งค่าสำหรับการตั้งค่าความเสี่ยง "อื่นๆ" ในหัวข้อ ฟุตบอล
+      </p>
+      <p>
+        ข้อมูลเพิ่มเติม:
+      </p>
+      <p>
+        &#8226; ค่าความเสี่ยงของ "อื่นๆ" จะนำไปใช้กับรูปแบบการเล่นใหม่ ยกเว้น ผลคะแนนครึ่งแรก/ครึ่งหลัง<br />
+        &#8226; สำหรับ ผลคะแนนครึ่งแรก/ครึ่งหลัง ค่าความเสี่ยงจะใช้ค่าจาก "ฟุตบอล - ผลคะแนน"<br />
+        &#8226; สำหรับรูปแบบการเล่นอื่นๆ ที่มีอยู่เดิม เช่น ครึ่งแรก/ครึ่งหลัง , ครึ่งแรก/เต็มเวลา, ประตูแรก/ประตูสุดท้าย ในครึ่งแรก  ค่าความเสี่ยงจะใช้ค่าจาก "ฟุตบอล - อื่นๆ" เช่นเดียวกัน<br />
+        &#8226; ค่าคอมมิชชั่นของรูปแบบการเล่นใหม่ จะใช้ค่าจาก "คอมมิชชั่น อื่นๆ"<br />
+        &#8226; ค่าการเล่น ของรูปแบบการเล่นใหม่ จะใช้ค่าจากกีฬาฟุตบอล<br />
+      </p>
+      <p>
+        ขอขอบพระคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Chào quý khách hàng,<br />
+      <p>
+        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 14 loại cược mới cho Soccer. Để xem danh sách 14  loại cược này, vui lòng <a href='_Announcement/Template/NewProduct/BetRardar/vi-VN.14NewBettypes.htm' target='_blank'>nhấp vào đây</a>. Các thiết lập của những loại cược mới này sẽ được đặt trong phần "Loại cược khác" của Soccer trong trang Position Taking.
+      </p>
+      <p>
+        Một số lưu ý khác:
+      </p>
+      <p>
+        &#8226; Các thiết lập Position Taking sẽ được áp dụng cho các loại cược mới ngoại trừ Half Time/Full Time Correct Score.<br />
+        &#8226; Đối với loại cược Half Time/Full Time Correct Score, các thiết lập Position Taking sẽ được sao chép từ loại cược Correct Score của Soccer.<br />
+        &#8226; Đối với các loại cược đang tồn tại như First Goal/Last Goal, Half Time/ Full Time, 1H First Goal/ Last Goal, các thiết lập Position Taking sẽ được sao chép từ "Loại cược khác" trong Soccer.<br />
+        &#8226; Các thiết lập về hoa hồng của những loại cược mới này sẽ được sao chép từ "Loại cược khác".<br />
+        &#8226; Thiết lập cá cược của những loại cược mới này sẽ được sao chép từ Soccer.<br />
+      </p>
+      <p>
+        Trân trọng.
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+
+    <PopupAnnouncement id="20140512" name="Security Code" startdate="05/13/2014" enddate="06/13/2014"  effectdate="05/13/2013" width="1000" height="220" top="110" left="350">
+        <en-US src="">
+            Dear valued customers,<br />
+            <p>
+                In order to protect your account, we would like to introduce new function called "Security Code".
+            </p>
+            <p>
+                You will be prompt to set you own Security Code if you don't have one.
+            </p>
+            <p>
+                Once you already have your own Security Code, you are required to input it each time you log-in for additional authentication.
+            </p>
+            <p>
+                Please contact your upline or CSD for further information. Thanks
+            </p>
+        </en-US>
+        <zh-CN src="">
+            尊敬的客户,<br />
+            <p>
+                为了保护您的账号, 我们将引入一项称为"保安码"的新功能。
+            </p>
+            <p>
+                您将被提示设置您的保安码若您尚未对此进行设置。
+            </p>
+            <p>
+                一旦您设置了您的保安码，日后的每一次登录您将被要求输入您的保安密码加以验证。
+            </p>
+            <p>
+                请联系您的上线或客服部以了解更多详情, 谢谢
+            </p>
+        </zh-CN>
+        <zh-TW src="">
+            尊敬的客戶,<br />
+            <p>
+                為了保護您的賬號, 我們將引入一項稱為"保安碼"的新功能。
+            </p>
+            <p>
+                您將被提示設置您的保安碼若您尚未對此進行設置。
+            </p>
+            <p>
+                一旦您設置了您的保安碼，日後的每一次登錄您將被要求輸入您的保安密碼加以驗證。
+            </p>
+            <p>
+                請聯系您的上線或客服部以了解更多詳情, 謝謝
+            </p>
+        </zh-TW>
+        <ja-JP src="">
+            Dear valued customers,<br />
+            <p>
+                In order to protect your account, we would like to introduce new function called "Security Code".
+            </p>
+            <p>
+                You will be prompt to set you own Security Code if you don't have one.
+            </p>
+            <p>
+                Once you already have your own Security Code, you are required to input it each time you log-in for additional authentication.
+            </p>
+            <p>
+                Please contact your upline or CSD for further information. Thanks
+            </p>
+        </ja-JP>
+        <ko-KR src="">
+            친애하는 고객님께,<br />
+            <p>
+                귀하의 계정을 보호하기위해 새로운 "보안코드" 기능을 알려드립니다.
+            </p>
+            <p>
+                아직 보안코드를 설정하지 않았다면 귀하의 보안코드를 신속히 설정해야 합니다.
+            </p>
+            <p>
+                귀하의 보안코드를 설정한 후에는 로그인을 할때마다 본인인증을 위하여 설정한 보안코드를 추가 입력하셔야 합니다.
+            </p>
+            <p>
+                보다 자세한 내용은 상부라인이나 고객센터에 문의하시기 바랍니다.감사합니다.
+            </p>
+        </ko-KR>
+        <th-TH src="">
+            เรียน ลูกค้าที่เคารพ<br />
+            <p>
+                เพื่อปกป้องบัญชีของคุณ เราขอแนะนำฟังก์ชั่นใหม่ที่เรียกว่า"รหัสลับ"
+            </p>
+            <p>
+                หากคุณยังไม่มีรหัสลับ ระบบจะขอร้องให้คุณสร้างรหัสลับ
+            </p>
+            <p>
+                ทันทีที่คุณมีรหัสลับแล้ว ทุกครั้งที่คุณเข้าสู่ระบบ คุณต้องป้อนรหัสลับทุกครั้งเพื่อความปลอดภัย
+            </p>
+            <p>
+                กรุณาติดต่อต้นสายหรือพนักงานให้บริการเพื่อสอบถามข้อมูลเพิ่มเติม ขอบพระคุณ
+            </p>
+        </th-TH>
+        <vi-VN src="">
+            Chào bạn,<br />
+            <p>
+                Nhằm để bảo vệ tài khoản của bạn, chúng tôi đã thêm một chức năng mới là "Mã bảo vệ".
+            </p>
+            <p>
+                Bạn sẽ được nhắc nhở để thiết lập mã bảo vệ nếu bạn vẫn chưa có.
+            </p>
+            <p>
+                Khi bạn đã có mã bảo vệ của riêng mình, bạn cần phải nhập mã bảo vệ này sau mỗi lần đăng nhập để xác thực tài khoản.
+            </p>
+            <p>
+                Vui lòng liên hệ cấp trên của bạn hoặc dịch vụ khách hàng để được hỗ trợ nhiều hơn. Cảm ơn.
+            </p>
+        </vi-VN>
+    </PopupAnnouncement>
+
+    <PopupAnnouncement id="2024" name="Keno Game - New Markets" startdate="06/04/2014" enddate="07/04/2014"  effectdate="13/06/2014" width="1000" height="220" top="110" left="350">
+      <en-US src="">
+        Dear valued agents,<br />
+        <p>
+          We wish to announce the launching of 2 new games Kentucky and Michigan of Keno product on <b>{effectdate}</b>.<br />
+        </p>        
+        <p>
+          These new games will be offered by default to all members that were enabled Keno product and if you wish to disable for a specific downline, please access Account Info section on the left menu to proceed. Thank you.
+        </p>        
+      </en-US>
+      <zh-CN src="">
+        尊敬的代理们,<br />
+        <p>
+          我们在此宣布将于<b>{effectdate}</b>推出两款新的快乐彩游戏: 肯塔基州及密歇根州<br />
+        </p>
+        <p>
+          这些新增的游戏将默认提供给所有已启用快乐彩产品的会员. 若您希望禁用这些游戏于特定的下线, 请访问菜单左上方的用户资料进行设定. 谢谢.
+        </p>
+      </zh-CN>
+      <zh-TW src="">
+        尊敬的代理們,<br />
+        <p>
+          我們在此宣佈將於<b>{effectdate}</b>推出兩款新的快樂彩遊戲: 肯塔基州及密歇根州<br />
+        </p>
+        <p>
+          這些新增的遊戲將默認提供給所有已啟用快樂彩產品的會員. 若您希望禁用這些遊戲於特定的下線, 請訪問菜單左上方的用戶資料進行設定. 謝謝.
+        </p>
+      </zh-TW>
+      <ja-JP src="">
+        Dear valued agents,<br />
+        <p>
+          We wish to announce the launching of 2 new games Kentucky and Michigan of Keno product on <b>{effectdate}</b>.<br />
+        </p>
+        <p>
+          These new games will be offered by default to all members that were enabled Keno product and if you wish to disable for a specific downline, please access Account Info section on the left menu to proceed. Thank you.
+        </p>
+      </ja-JP>
+      <ko-KR src="">
+        Dear valued agents,<br />
+        <p>
+          We wish to announce the launching of 2 new games Kentucky and Michigan of Keno product on <b>{effectdate}</b>.<br />
+        </p>
+        <p>
+          These new games will be offered by default to all members that were enabled Keno product and if you wish to disable for a specific downline, please access Account Info section on the left menu to proceed. Thank you.
+        </p>
+      </ko-KR>
+      <th-TH src="">
+        เรียน เอเจนต์ ทุกท่าน<br />
+        <p>
+          ทางบริษัทใคร่ขอแจ้งให้ทราบว่า 2 เกมส์ใหม่ที่กำลังจะเปิดตัวได้แก่ คีโน ของ เคนตักกี้ และ มิชิแกน ในวันที่ <b>{effectdate}</b>.<br />
+        </p>
+        <p>
+          เกมส์ดังกล่าวจะทำการเปิดตลาดให้กับสมาชิกทุกท่านที่มีการเปิดการใช้งาน คีโน่ อยู่ก่อนหน้านี้แล้ว และหากท่านต้องการปิดการใช้งานในแต่ละดาวน์ไลน์ของท่าน รบกวนเข้าไปตรวจเชค ในส่วนของ รายละเอียดบัญชี ทางเมนูซ้ายมือเพื่อทำการตั้งค่า ขอบพระคุณ
+        </p>
+      </th-TH>
+      <vi-VN src="">
+        Kính gửi quý khách hàng,<br />
+        <p>
+          Chúng tôi xin chân thành thông báo đến quý khách 2 game mới Kentucky và Michigan của Keno sẽ ra mắt vào ngày <b>{effectdate}</b>.<br />
+        </p>
+        <p>
+          Tất cả các thành viên đã được kích hoạt Keno sẽ được chơi 2 game mới này theo mặc định và nếu bạn muốn vô hiệu hóa cho một tuyến dưới cụ thể, xin vui lòng truy cập vào mục Thông tin Tài khoản trên menu bên trái. Xin cảm ơn.
+        </p>
+      </vi-VN>
+    </PopupAnnouncement>
+  
+    <PopupAnnouncement id="20140424" name="Virtual Sport" startdate="04/22/2014" enddate="05/22/2014"  effectdate="22/04/2014" width="260" height="220" top="110" left="350">
+        <en-US src="">
+            Dear Valued Agents,<br />
+            <p>
+                We wish to announce the launching of our new product – Virtual Speedway and Virtual Cycling with effect from <b>{effectdate}</b>, all settings will be configured as follows:<br />
+            </p>
+            <p>
+                &#8226; Position taking and Bet setting will be copied from Virtual Soccer.<br />
+                &#8226; No commission setting for this product.<br />
+            </p>
+            <p>
+                Should you wish to have different settings, please contact your upline.<br />Thanks.
+            </p>
+        </en-US>
+        <zh-CN src="">
+            尊敬的代理們,<br />
+            <p>
+                我們在此宣佈於<b>{effectdate}</b>將推出新產品 - 虛擬摩多賽車及虛擬自行車, 所有設定將如下配置:<br />
+            </p>
+            <p>
+                &#8226; 佔成數及投注設定將應用虛擬足球之設定.<br />
+                &#8226; 此產品並無佣金.<br />
+            </p>
+            <p>
+                若您希望有別的設定, 請聯繫您的上線.<br />謝謝!
+            </p>
+        </zh-CN>
+        <zh-TW src="">
+            尊敬的代理們,<br />
+            <p>
+                我們在此宣佈於<b>{effectdate}</b>將推出新產品 - 虛擬摩多賽車及虛擬自行車, 所有設定將如下配置:<br />
+            </p>
+            <p>
+                &#8226; 佔成數及投注設定將應用虛擬足球之設定.<br />
+                &#8226; 此產品並無佣金.<br />
+            </p>
+            <p>
+                若您希望有別的設定, 請聯繫您的上線.<br />謝謝!
+            </p>
+        </zh-TW>
+        <ja-JP src="">
+            Dear Valued Agents,<br />
+            <p>
+                We wish to announce the launching of our new product – Virtual Speedway and Virtual Cycling with effect from <b>{effectdate}</b>, all settings will be configured as follows:<br />
+            </p>
+            <p>
+                &#8226; Position taking and Bet setting will be copied from Virtual Soccer.<br />
+                &#8226; No commission setting for this product.<br />
+            </p>
+            <p>
+                Should you wish to have different settings, please contact your upline.<br />Thanks.
+            </p>
+        </ja-JP>
+        <ko-KR src="">
+            친애하는 에이전트 고객님,<br />
+            <p>
+                새로운 가상온라인 스포츠 - "온라인 오토바이경주" 및 "온라인 사이클경기"가 <b>{effectdate}</b>일부터 제공되어 이용하실수 있음을 알려들립니다. 온라인 오토바이경주 및 온라인 사이클경기는 다음과 같은 설정을 구성합니다.<br />
+            </p>
+            <p>
+                &#8226; 포지션테이킹 및 베팅세팅은 온라인 축구의 설정을 따릅니다.<br />
+                &#8226; 이 게임에 대한 커미션 설정은 없습니다.<br />
+            </p>
+            <p>
+                다른 포지션 설정 및 베팅설정을 하고자하는 경우, 상위라인에 문의하시기 바랍니다. <br />감사합니다!
+            </p>
+        </ko-KR>
+        <th-TH src="">
+            เรียนเอเจนต์ทุกท่าน,<br />
+            <p>
+                ทางบริษัทใคร่ขอแจ้งให้ทราบว่า ทางเราจะเปิดตัวเกมใหม่นั้นคือ มอเตอร์ไซค์ Speedway เหมือนจริง และ จักยานเสมือนจริง ซึ่งจะมีผลตั้งแต่วันที่<b>{effectdate}</b> การตั้งค่าทั้งหมดจะถูกกำหนดไว้ดังนี้.<br />
+            </p>
+            <p>
+                &#8226; ค่าความเสี่ยง และการตั้งค่าเดิมพันจะถูกคัดลอกจากฟุตบอลอนิเมชั่น.<br />
+                &#8226; ไม่มีการตั้งค่าคอมมิชชั่นสำหรับเกม ๆ นี้.<br />
+            </p>
+            <p>
+                หากท่านต้องการทำการตั้งค่าที่แตกต่างไปจากนี้ รบกวนติดต่อทางต้นสายของท่านอีกครั้ง <br />กราบขอบพระคุณ
+            </p>
+        </th-TH>
+        <vi-VN src="">
+            Kính gửi quí khách hàng,<br />
+            <p>
+                Chúng tôi xin được giới thiệu sản phẩm mới –  Đua xe Mô tô ảo và Đua Xe đạp ảo sẽ chính thức có mặt  vào ngày <b>{effectdate}</b>, tất cả thiết lập sẽ được cấu hình như sau:<br />
+            </p>
+            <p>
+                &#8226; Position Taking và tiền cược sẽ được sao chép từ bóng đá ảo.<br />
+                &#8226; Sản phẩm này sẽ không có hoa hồng.<br />
+            </p>
+            <p>
+                Nếu quí khách muốn có các cài đặt khác nhau, xin vui lòng liên hệ với cấp trên của quí khách. <br />Xin Cảm ơn!
+            </p>
+        </vi-VN>
+    </PopupAnnouncement>
+    <PopupAnnouncement id="2022" name="Keno Game" startdate="03/26/2014" enddate="04/28/2014"  effectdate="03/28/2014" width="1000" height="220" top="110" left="350">
+        <en-US src="">
+            Dear Valued Agents,<br />
+            <p>
+                We wish to announce the launching of our new product – Keno Game with effect from <b>{effectdate}</b>, all settings will be configured as follows:<br />
+            </p>
+            <p>
+                &#8226; Position taking is applied by using the settings of Number Game – 1st Last Over/Under.<br />
+                &#8226; Bet Setting is applied by using the settings of Number Game.<br />
+                &#8226; No commission settings for this product.<br />
+            </p>
+            <p>
+                All members will be enabled to allow to play Keno by default but if you wish to disable for a specific downline, please access Account Info section on the left menu. Thanks.
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_en.jpg" width="420"/>
+        </en-US>
+        <zh-CN src="">
+            尊敬的代理们,<br />
+            <p>
+                我们在此宣布于<b>{effectdate}</b>将推出新产品 - 快乐彩游戏,所有设定将如下配置:
+            </p>
+            <p>
+                &#8226; 占成数将应用百练赛 - 第一球/最后一球之设定.<br />
+                &#8226; 投注设定将应用百练赛之设定.<br />
+                &#8226; 此产品并无佣金.<br />
+            </p>
+            <p>
+                所有会员将被启用并默认允许玩快乐彩游戏. 若您希望禁用特定的下线, 请访问菜单左上方的用户资料. 谢谢.
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_cn.jpg" width="420"/>
+
+        </zh-CN>
+        <zh-TW src="">
+            尊敬的代理們,<br />
+            <p>
+                我們在此宣佈於<b>{effectdate}</b>將推出新產品- 快樂彩遊戲, 所有設定將如下配置:<br />
+            </p>
+            <p>
+                &#8226; 佔成數將應用百練賽- 第一球/最後一球之設定.<br />
+                &#8226; 投注設定將應用百練賽之設定.<br />
+                &#8226; 此產品並無佣金.<br />
+            </p>
+            <p>
+                所有會員將被啟用並默認允許玩快樂彩遊戲. 若您希望禁用特定的下線, 請訪問菜單左上方的用戶資料. 謝謝.
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_tw.jpg" width="420"/>
+        </zh-TW>
+        <ja-JP src="">
+            Dear Valued Agents,<br />
+            <p>
+                We wish to announce the launching of our new product – Keno Game with effect from <b>{effectdate}</b>, all settings will be configured as follows:<br />
+            </p>
+            <p>
+                &#8226; Position taking is applied by using the settings of Number Game – 1st Last Over/Under.<br />
+                &#8226; Bet Setting is applied by using the settings of Number Game.<br />
+                &#8226; No commission settings for this product.<br />
+            </p>
+            <p>
+                All members will be enabled to allow to play Keno by default but if you wish to disable for a specific downline, please access Account Info section on the left menu. Thanks.
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_en.jpg" width="420"/>
+        </ja-JP>
+        <ko-KR src="">
+            친애하는 고객님께<br />
+            <p>
+                <b>{effectdate}</b>부터 새로운 케노 게임을 제공되어 이용하실 수 있습니다. 모든 설정은 다음과 같이 구성 할 것입니다:<br />
+            </p>
+            <p>
+                &#8226; 포지션테이킹은 넘버게임의 1st Last Over/Under 의 설정이 적용됩니다.<br />
+                &#8226; 베팅 설정은 넘버게임의 설정이 적용됩니다.<br />
+                &#8226; 케노게임은 커미션 설정이 없습니다.<br />
+            </p>
+            <p>
+                케노게임은 모든 회원에게 활성화되며 특정 회원이나 다운라인에게 이 게임의 비활성화를 원할 경우, 에이전시사이트의 계정정보 섹션의 왼쪽메뉴를 참고하세요. 감사합니다.
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_en.jpg" width="420"/>
+        </ko-KR>
+        <th-TH src="">
+            เรียน เอเย่นต์<br />
+            <p>
+                เรามีความประสงค์ที่จะเรียนให้ท่านทราบว่า ผลิตภัณฑ์ใหม่ของเรา เกมคีโน จะเปิดตัวในวันที่ <b>{effectdate}</b> - การตั้งค่าทั้งหมดจะได้รับการกำหนดค่าดังต่อไปนี้<br />
+            </p>
+            <p>
+                &#8226; ใช้ค่าความเสี่ยง(Position Taking) ร่วมกับ เกมหมายเลข 1st Last Over/Under.<br />
+                &#8226; ใช้การตั้งค่าเดิมพันร่วมกับ เกมหมายเลข(Number Game).<br />
+                &#8226; ผลิตภัณฑ์นี้ไม่มีค่าคอมมิสชั่น.<br />
+            </p>
+            <p>
+                สมาชิกทั้งหมดจะถูกเปิดให้เล่นเกมคีโนโดยอัตโนมัติ หากท่านต้องการปิดการใช้งาน คุณสามารถปิดได้ที่  Account Info ขอบพระคุณ
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_en.jpg" width="420"/>
+        </th-TH>
+        <vi-VN src="">
+            Kính gửi quí khách hàng,<br />
+            <p>
+                Chúng tôi xin được giới thiệu sản phẩm mới – Keno Game sẽ chính thức có mặt từ ngày <b>{effectdate}</b>,tất cả những thiết lập sẽ được cấu hình như sau:<br />
+            </p>
+            <p>
+                &#8226; Position taking được áp dụng của Number Game - 1st Last Over/Under.<br />
+                &#8226; Giới hạn tiền cược được áp dụng của Number Game.<br />
+                &#8226; Sản phẩm này sẽ không có hoa hồng.<br />
+            </p>
+            <p>
+                Tất cả các thành viên sẽ được kích hoạt để chơi Keno theo mặc định nhưng nếu bạn muốn vô hiệu hóa cho thành viên cấp dưới, xin vui lòng truy cập vào mục Thông tin Tài khoản trên menu bên trái. Cảm ơn.
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_en.jpg" width="420"/>
+        </vi-VN>
+    </PopupAnnouncement>
+
+    <PopupAnnouncement id="202" name="Keno Game" startdate="03/18/2014" enddate="04/18/2014"  effectdate="03/18/2014" width="1000" height="220" top="110" left="350">
+        <en-US src="">
+            Dear Valued Agents,<br />
+            <p>
+                We wish to announce the launching of our new product – Keno Game with effect from <b>{effectdate}</b>, all settings will be configured as follows:<br />
+            </p>
+            <p>
+                &#8226; Position taking is applied by using the settings of Number Game – 1st Last Over/Under.<br />
+                &#8226; Bet Setting is applied by using the settings of Number Game.<br />
+                &#8226; No commission settings for this product.<br />
+            </p>
+            <p>
+                Currently, there’s no dedicated setting page for Keno product. Please contact your upline if you wish to enable any games. Thanks.
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_en.jpg" width="420"/>
+        </en-US>
+        <zh-CN src="">
+            尊敬的代理们,<br />
+            <p>
+                我们在此宣布于<b>{effectdate}</b>将推出新产品 - 快乐彩游戏,所有设定将如下配置:
+            </p>
+            <p>
+                &#8226; 占成数将应用百练赛 - 第一球/最后一球之设定.<br />
+                &#8226; 投注设定将应用百练赛之设定.<br />
+                &#8226; 此产品并无佣金.<br />
+            </p>
+            <p>
+                目前, 快乐彩产品并无专有的设定页面. 欲启用此游戏, 请联系您的上线. 谢谢!
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_cn.jpg" width="420"/>
+
+        </zh-CN>
+        <zh-TW src="">
+            尊敬的代理們,<br />
+            <p>
+                我們在此宣佈於<b>{effectdate}</b>將推出新產品- 快樂彩遊戲, 所有設定將如下配置:<br />
+            </p>
+            <p>
+                &#8226; 佔成數將應用百練賽- 第一球/最後一球之設定.<br />
+                &#8226; 投注設定將應用百練賽之設定.<br />
+                &#8226; 此產品並無佣金.<br />
+            </p>
+            <p>
+                目前, 快樂彩產品並無專有的設定頁面. 欲啟用此遊戲, 請聯繫您的上線. 謝謝!
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_tw.jpg" width="420"/>
+        </zh-TW>
+        <ja-JP src="">
+            Dear Valued Agents,<br />
+            <p>
+                We wish to announce the launching of our new product – Keno Game with effect from <b>{effectdate}</b>, all settings will be configured as follows:<br />
+            </p>
+            <p>
+                &#8226; Position taking is applied by using the settings of Number Game – 1st Last Over/Under.<br />
+                &#8226; Bet Setting is applied by using the settings of Number Game.<br />
+                &#8226; No commission settings for this product.<br />
+            </p>
+            <p>
+                Currently, there’s no dedicated setting page for Keno product. Please contact your upline if you wish to enable any games. Thanks.
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_en.jpg" width="420"/>
+        </ja-JP>
+        <ko-KR src="">
+            친애하는 고객님께<br />
+            <p>
+                <b>{effectdate}</b>부터 새로운 케노 게임을 제공되어 이용하실 수 있습니다. 모든 설정은 다음과 같이 구성 할 것입니다:<br />
+            </p>
+            <p>
+                &#8226; 포지션테이킹은 넘버게임의 1st Last Over/Under 의 설정이 적용됩니다.<br />
+                &#8226; 베팅 설정은 넘버게임의 설정이 적용됩니다.<br />
+                &#8226; 케노게임은 커미션 설정이 없습니다.<br />
+            </p>
+            <p>
+                현재 케노게임의 설정 페이지가 없습니다. 이 게임의 활성화를 원할 경우 고객님의 업라인에게 문의하시기 바랍니다. 감사합니다.
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_en.jpg" width="420"/>
+        </ko-KR>
+        <th-TH src="">
+            เรียน เอเย่นต์<br />
+            <p>
+                เรามีความประสงค์ที่จะเรียนให้ท่านทราบว่า ผลิตภัณฑ์ใหม่ของเรา เกมคีโน จะเปิดตัวในวันที่ <b>{effectdate}</b> - การตั้งค่าทั้งหมดจะได้รับการกำหนดค่าดังต่อไปนี้<br />
+            </p>
+            <p>
+                &#8226; ใช้ค่าความเสี่ยง(Position Taking) ร่วมกับ เกมหมายเลข 1st Last Over/Under.<br />
+                &#8226; ใช้การตั้งค่าเดิมพันร่วมกับ เกมหมายเลข(Number Game).<br />
+                &#8226; ผลิตภัณฑ์นี้ไม่มีค่าคอมมิสชั่น.<br />
+            </p>
+            <p>
+                ขณะนี้ไม่มีหน้าสำหรับตั้งค่าผลิตภัณฑ์เกมคีโนโดยเฉพาะ. โปรดติดต่อ upline ของคุณหากคุณต้องการที่จะเปิดใช้งานเกมชนิดใดๆ . ขอบพระคุณ
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_en.jpg" width="420"/>
+        </th-TH>
+        <vi-VN src="">
+            Dear Valued Agents,<br />
+            <p>
+                We wish to announce the launching of our new product – Keno Game with effect from <b>{effectdate}</b>, all settings will be configured as follows:<br />
+            </p>
+            <p>
+                &#8226; Position taking is applied by using the settings of Number Game – 1st Last Over/Under.<br />
+                &#8226; Bet Setting is applied by using the settings of Number Game.<br />
+                &#8226; No commission settings for this product.<br />
+            </p>
+            <p>
+                Currently, there’s no dedicated setting page for Keno product. Please contact your upline if you wish to enable any games. Thanks.
+            </p>
+            <img src="_Announcement/Template/NewProduct/Keno/Keno_en.jpg" width="420"/>
+        </vi-VN>
+    </PopupAnnouncement>
+
+    <PopupAnnouncement id="12" startdate="01/20/2014" enddate="02/28/2014"  effectdate="03/12/2013" width="254" height="320" top="110" left="350">
+        <en-US src="_Announcement/Template/NewProduct/NumberWheel/Banner_en.html?20140121">
+            Number Wheel
+        </en-US>
+        <zh-CN src="_Announcement/Template/NewProduct/NumberWheel/Banner_cn.html?20140121">
+            Number Wheel
+        </zh-CN>
+        <zh-TW src="_Announcement/Template/NewProduct/NumberWheel/Banner_tw.html?20140121">
+            Number Wheel
+        </zh-TW>
+        <ja-JP src="_Announcement/Template/NewProduct/NumberWheel/Banner_en.html?20140121">
+            Number Wheel
+        </ja-JP>
+        <ko-KR src="_Announcement/Template/NewProduct/NumberWheel/Banner_en.html?20140121">
+            Number Wheel
+        </ko-KR>
+        <th-TH src="_Announcement/Template/NewProduct/NumberWheel/Banner_en.html?20140121">
+            Number Wheel
+        </th-TH>
+        <vi-VN src="_Announcement/Template/NewProduct/NumberWheel/Banner_en.html?20140121">
+            Number Wheel
+        </vi-VN>
+    </PopupAnnouncement>
+    <PopupAnnouncement id="11" startdate="11/28/2013" enddate="12/22/2013"  effectdate="03/12/2013" width="488" height="334" top="110" left="350">
+        <en-US src="_Announcement/Template/Dongzhi/DongzhiFlash.html">
+            Dongzhi,<br /><br />
+        </en-US>
+        <zh-CN src="_Announcement/Template/Dongzhi/DongzhiFlash_cn.html?20131210">
+            Dongzhi
+        </zh-CN>
+        <zh-TW src="_Announcement/Template/Dongzhi/DongzhiFlash_tw.html?20131210">
+            Dongzhi
+        </zh-TW>
+        <ja-JP src="_Announcement/Template/Dongzhi/DongzhiFlash.html?20131210">
+            Dongzhi
+        </ja-JP>
+        <ko-KR src="_Announcement/Template/Dongzhi/DongzhiFlash.html?20131210">
+            Dongzhi
+        </ko-KR>
+        <th-TH src="_Announcement/Template/Dongzhi/DongzhiFlash.html?20131210">
+            Dongzhi
+        </th-TH>
+    </PopupAnnouncement>
+    <PopupAnnouncement id="20131128" name="HR Fixed Odds" startdate="12/03/2013" enddate="03/01/2014"  effectdate="04/12/2013" width="260" height="220" top="110" left="350">
+        <en-US src="">
+            Dear Valued Agents,<br />
+            <p>
+                We wish to announce the launching of our new product – Horse Racing Fixed Odds with effect from <b>{effectdate}</b>, all settings will be configured as follows:<br />
+            </p>
+            <p>
+                &#8226; Position taking will be copied from Other Sports – Money Line.<br />
+                &#8226; Commission settings will be copied from Other Commissions.<br />
+                &#8226; Bet settings will be copied from Other Sports.<br />
+            </p>
+            <p>
+                For more information, kindly click <a href='_HowToUse/Resources/HTML/HRFixedOdds/AnnouncementHRFixedOdds_en-US.aspx?roleId={roleId}' target='_blank'> here.</a>
+            </p>
+        </en-US>
+        <zh-CN src="">
+            尊敬的代理们,<br />
+            <p>
+                我们 非常 荣幸 的 宣布 我们 将于 推出 我们 的新产品 - 赛马固定赔率生效于 <b>{effectdate}</b><br />
+            </p>
+            <p>
+                &#8226; 占成数将从”其它“独赢进行复制.<br />
+                &#8226; 此产品佣金设置将从其它佣金进行复制.<br />
+                &#8226; 投注设定将从“其它”进行复制.<br />
+            </p>
+            <p>
+                投注设定将从“其它”进行 <a href='_HowToUse/Resources/HTML/HRFixedOdds/AnnouncementHRFixedOdds_zh-CN.aspx?roleId={roleId}'  target='_blank'> 复制.</a>
+            </p>
+
+        </zh-CN>
+        <zh-TW src="">
+            尊敬的代理們,<br />
+            <p>
+                我們非常榮幸的宣布我們將於推出我們的新產品 - 賽馬固定賠率生效於 <b>{effectdate}</b><br />
+            </p>
+            <p>
+                &#8226; 佔成數將從“其它”獨贏進行複製.<br />
+                &#8226; 此產品佣金設置將從其它佣金進行複製.<br />
+                &#8226; 投注設定將從“其它”進行複製.<br />
+            </p>
+            <p>
+                有關詳細信息請點擊  <a href='_HowToUse/Resources/HTML/HRFixedOdds/AnnouncementHRFixedOdds_zh-TW.aspx?roleId={roleId}'  target='_blank'> 這裡.</a>
+            </p>
+        </zh-TW>
+        <ja-JP src="">
+            Dear Valued Agents,<br />
+            <p>
+                We wish to announce the launching of our new product – Horse Racing Fixed Odds with effect from <b>{effectdate}</b>, all settings will be configured as follows:<br />
+            </p>
+            <p>
+                &#8226; Position taking will be copied from Other Sports – Money Line.<br />
+                &#8226; Commission settings will be copied from Other Commissions.<br />
+                &#8226; Bet settings will be copied from Other Sports.<br />
+            </p>
+            <p>
+                For more information, kindly click  <a href='_HowToUse/Resources/HTML/HRFixedOdds/AnnouncementHRFixedOdds_ja-JP.aspx?roleId={roleId}'  target='_blank'> here.</a>
+            </p>
+        </ja-JP>
+        <ko-KR src="">
+            친애하는 고객님께,<br />
+            <p>
+                새로운 제품- 경마 레이싱 고정 배당률이 출시되며 이는 <b>{effectdate}</b> 부터 모든 설정을 다음과 같이 구성됨을 알려드립니다:<br />
+            </p>
+            <p>
+                &#8226; 포지션테이킹은 기타스포츠를 따릅니다– 머니라인.<br />
+                &#8226; 커미션 세팅은 기타 커미션를 따릅니다.<br />
+                &#8226; 베팅 설정은 기타 스포츠를 따릅니다.<br />
+            </p>
+            <p>
+                자세한 내용은  <a href='_HowToUse/Resources/HTML/HRFixedOdds/AnnouncementHRFixedOdds_ko-KR.aspx?roleId={roleId}'  target='_blank'> 여기에.</a> 클릭하여 참조하십시오.
+            </p>
+        </ko-KR>
+        <th-TH src="">
+            เรียนลูกค้าที่เคารพ,<br />
+            <p>
+                เรายินดีที่จะประกาศให้ทราบว่าเรามีการเปิดตัวผลิตภัณฑ์ใหม่-แข่งม้าราคาคงที่ในวันที่ <b>{effectdate}</b>, การตั้งค่าทังหมดจะเป็นไปตามดังนี้<br />
+            </p>
+            <p>
+                &#8226; ค่าหุ้นส่วนคัดลอกจาก กีฬาชนิดอื่น - การทายผู้เล่นหรือทีมที่จะชนะ.<br />
+                &#8226; ค่าคอมมิชั่นคัดลอกจาก การเดิมพันชนิดอื่นอื่น. <br />
+                &#8226; ค่าเดิมพันคัดลอกจาก กีฬาชนิดอื่น. <br />
+            </p>
+            <p>
+                สำหรับข้อมูลเพิ่มเติมกรุณาคลิ<a href='_HowToUse/Resources/HTML/HRFixedOdds/AnnouncementHRFixedOdds_th-TH.aspx?roleId={roleId}'  target='_blank'> กที่นี่.</a>
+            </p>
+        </th-TH>
+        <vi-VN src="">
+            Chào quý khách hàng,<br />
+            <p>
+                Bắt đầu từ ngày  <b>{effectdate}</b>, chúng tôi sẽ cung cấp sản phẩm cá cược mới - HR Racing Fixed Odds, tất cả các thiết lập sẽ được cấu hình như sau:<br />
+            </p>
+            <p>
+                &#8226; Position Taking sẽ được sao chép từ Other Sports - Money Line.<br />
+                &#8226; Các thiết lập về hoa hồng sẽ được sao chép từ Other Commissions.<br />
+                &#8226; Các thiết lập về đặt cược sẽ được sao chép từ Other Sports. <br />
+            </p>
+            <p>
+                Để biết thêm thông tin, vui lòng nhấn vào <a href='_HowToUse/Resources/HTML/HRFixedOdds/AnnouncementHRFixedOdds_vi-VN.aspx?roleId={roleId}'  target='_blank'> đây.</a>
+            </p>
+        </vi-VN>
+    </PopupAnnouncement>
+
+    <PopupAnnouncement id="20130404" name="Virtual Sports" startdate="11/26/2013" enddate="12/26/2013" effectdate="26/11/2013" width="450" height="220" top="110" left="350">
+        <en-US src="">
+            Dear Valued Customer:<br />
+            <p>
+                We wish to announce the launching of our new product – Virtual Greyhounds and Virtual Motor Racing with effect from <b>{effectdate}</b>, all settings will be configured as follows:
+            </p>
+            <p>&#8226; Position taking and Bet setting will be copied from Virtual Soccer</p>
+            <p>&#8226; No commission setting for this product.</p>
+            <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+        </en-US>
+        <zh-CN src="">
+            尊敬的代理们,<br />
+            <p>
+                我们非常荣幸的宣布我们将于<b>{effectdate}</b>推出我们的新产品 - 虚拟赛狗以及虚拟賽車, 所有设定之配置如下:
+            </p>
+            <p>&#8226; 占成数及投注设定将从虚拟足球进行复制</p>
+            <p>&#8226; 此产品无佣金设置</p>
+            <p>若您希望拥有不同的设置, 请联系您的上线。谢谢!</p>
+        </zh-CN>
+        <zh-TW src="">
+            尊敬的代理們，<br />
+            <p>
+                我們非常榮幸的宣布我們將於<b>{effectdate}</b>推出我們的新產品 - 虛擬賽狗以及虚拟賽車，所有設定之配置如下：
+            </p>
+            <p>&#8226; 佔成數及投注設定將從虛擬足球進行複製</p>
+            <p>&#8226; 此產品無佣金設置</p>
+            <p>
+                若您希望擁有不同的設置，請聯繫您的上線。謝謝!
+            </p>
+        </zh-TW>
+        <ja-JP src="">
+            Dear Valued Customer:<br />
+            <p>
+                We wish to announce the launching of our new product – Virtual Greyhounds and Virtual Motor Racing with effect from <b>{effectdate}</b>, all settings will be configured as follows:
+            </p>
+            <p>&#8226; Position taking and Bet setting will be copied from Virtual Soccer</p>
+            <p>&#8226; No commission setting for this product.</p>
+            <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+        </ja-JP>
+        <ko-KR src="">
+            Dear Valued Customer:<br />
+            <p>
+                We wish to announce the launching of our new product – Virtual Greyhounds and Virtual Motor Racing with effect from <b>{effectdate}</b>, all settings will be configured as follows:
+            </p>
+            <p>&#8226; Position taking and Bet setting will be copied from Virtual Soccer</p>
+            <p>&#8226; No commission setting for this product.</p>
+            <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+        </ko-KR>
+        <th-TH src="">
+            Dear Valued Customer:<br />
+            <p>
+                We wish to announce the launching of our new product – Virtual Greyhounds and Virtual Motor Racing with effect from <b>{effectdate}</b>, all settings will be configured as follows:
+            </p>
+            <p>&#8226; Position taking and Bet setting will be copied from Virtual Soccer</p>
+            <p>&#8226; No commission setting for this product.</p>
+            <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+        </th-TH>
+        <vi-VN src="">
+            Dear Valued Customer:<br />
+            <p>
+                We wish to announce the launching of our new product – Virtual Greyhounds and Virtual Motor Racing with effect from <b>{effectdate}</b>, all settings will be configured as follows:
+            </p>
+            <p>&#8226; Position taking and Bet setting will be copied from Virtual Soccer</p>
+            <p>&#8226; No commission setting for this product.</p>
+            <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+        </vi-VN>
+    </PopupAnnouncement>
+
+    <PopupAnnouncement id="7" name="LiveRoulette" startdate="11/04/2013" enddate="12/05/2013" effectdate="05/11/2013" width="450" height="220" top="110" left="350">
+        <en-US src="">
+            We are happy to announce that we are going to launch the new Live Roulette under our VIP casino "Regal Casino" on <font color='red'>
+                <strong>{effectdate} 12PM (GMT+8)</strong>
+            </font>.
+            Higher betting limit will be offered in this product, kindly check your Live Casino setting.
+            You may now start to do the setting for your downlines or check with your upline.
+            <br />Thanks!
+        </en-US>
+        <zh-CN src="">
+            VIP 皇玺娱乐厅将在<font color='red'>
+                <strong>{effectdate}中午十二时（GMT+8）</strong>
+            </font>正式推出轮盘游戏！在此我们将提供更高的投注限额，请检查您的娱乐厅设定。请即刻与您的上线查询或为您的下线们设置并启动。谢谢！
+        </zh-CN>
+        <zh-TW src="">
+            VIP 皇璽娛樂廳將在<font color='red'>
+                <strong>{effectdate}中午十二時（GMT+8）</strong>
+            </font>正式推出輪盤游戲！在此我們將提供更高的投注限額，請檢查您的娛樂廳設定。請即刻與您的上線查詢或為您的下線們設置並啟動。謝謝！
+        </zh-TW>
+        <ja-JP src="">
+            We are happy to announce that we are going to launch the new Live Roulette under our VIP casino "Regal Casino" on <font color='red'>
+                <strong>{effectdate} 12PM (GMT+8)</strong>
+            </font>.
+            Higher betting limit will be offered in this product, kindly check your Live Casino setting.
+            You may now start to do the setting for your downlines or check with your upline.
+            <br />Thanks!
+        </ja-JP>
+        <ko-KR src="">
+            <font color='red'>
+                <strong>{effectdate} 오후12시(GMT+8)</strong>
+            </font>부터 새로운 VIP 카지노 게임!! "왕좌 카지노"를 이용하실 수 있습니다. VIP카지노에서는 좀더 높은 베팅한도가 제공되니 고객님의 라이브카지노 설정을 확인해 보세요. 지금부터 하부라인의 세팅설정을 하실 수 있으며 또는 상부라인과 확인하시기 바랍니다.감사합니다.!
+        </ko-KR>
+        <th-TH src="">
+            We are happy to announce that we are going to launch the new Live Roulette under our VIP casino "Regal Casino" on <font color='red'>
+                <strong>{effectdate} 12PM (GMT+8)</strong>
+            </font>.
+            Higher betting limit will be offered in this product, kindly check your Live Casino setting.
+            You may now start to do the setting for your downlines or check with your upline.
+            <br />Thanks!
+        </th-TH>
+        <vi-VN src="">
+            Chúng tôi trân trọng thông báo chuẩn bị ra mắt sòng bài VIP mới lạ, "Sòng Bài Đế Vương", vào lúc <font color='red'>
+                <strong>12 chiều (GMT+8) ngày {effectdate}</strong>
+            </font>.
+            Sản phẩm mới này sẽ mang đến cho người chơi giới hạn cược cao hơn, vui lòng kiểm tra chức năng Thiết lập trong Sòng Bài Trực Tuyến của bạn.
+            <br />Xin chân thành cảm ơn!
+        </vi-VN>
+    </PopupAnnouncement>
+
+    <PopupAnnouncement id="8" name="MinPT" startdate="10/03/2013" enddate="11/04/2013" effectdate="07/10/2013" width="460" height="220" top="110" left="350">
+        <en-US src="">
+            Dear Valued Customer:<br />
+            <p>
+                [Position Taking] Kindly be informed that effective from <b>{effectdate}</b>, our Company will request all SMAs level must set the <font color='red'>
+                    <strong>Sportsbook Min PT as 40%</strong>
+                </font>.
+            </p>
+            <p>For more details, please refer to Settlement Department or Customer Service Department. Thank you!</p>
+
+        </en-US>
+        <zh-CN src="">
+            尊敬的客户:<br />
+            <p>
+                在此通知您于 <b>{effectdate}</b> 起本公司将要求所有管理阶层之<font color='red'>
+                    <strong>最低占成总数为40%</strong>
+                </font>.
+            </p>
+            <p>请联系财务部或客服部以获取此项调整之更多详情。谢谢!</p>
+
+        </zh-CN>
+        <zh-TW src="">
+            尊敬的客戶:<br />
+            <p>
+                在此通知您於 <b>{effectdate}</b> 起本公司將要求所有管理階層之<font color='red'>
+                    <strong>最低佔成總數為40%</strong>
+                </font>.
+            </p>
+
+            <p>請聯繫財務部或客服部以獲取此項調整之更多詳情。謝謝!</p>
+
+        </zh-TW>
+        <ja-JP src="">
+            Dear Valued Customer:<br />
+            <p>
+                [Position Taking] Kindly be informed that effective from <b>{effectdate}</b>, our Company will request all SMAs level must set the <font color='red'>
+                    <strong>Sportsbook Min PT as 40%</strong>
+                </font>.
+            </p>
+            <p>For more details, please refer to Settlement Department or Customer Service Department. Thank you!</p>
+
+        </ja-JP>
+        <ko-KR src="">
+            Dear Valued Customer:<br />
+            <p>
+                [Position Taking] Kindly be informed that effective from <b>{effectdate}</b>, our Company will request all SMAs level must set the <font color='red'>
+                    <strong>Sportsbook Min PT as 40%</strong>
+                </font>.
+            </p>
+            <p>For more details, please refer to Settlement Department or Customer Service Department. Thank you!</p>
+
+        </ko-KR>
+        <th-TH src="">
+            เรียนลูกค้าที่เคารพ: <br />
+            <p>
+                [หุ้นส่วนแบ่ง]  บริษัทใคร่ขอเรียนให้ทราบว่า นับตั้งแต่ วันที่ <b>{effectdate}</b> เป็นต้นไป เรามีนโยบายให้ทุกระดับชั้นต้อง<font color='red'>
+                    <strong> ค่าหุ้นส่วนแบ่งในหน้ากีฬาขั้นต่ำที่ 40%</strong>
+                </font>.
+            </p>
+            <p>และมีผลตั้งแต่ตอนนี้เป็นต้นไป  สอบถามข้อมูลเพิ่มเติมกรุณาติดต่อฝ่ายธรกรรม หรือ ฝ่ายบริการลูกค้า. ขอบพระคุณ!!</p>
+
+        </th-TH>
+        <vi-VN src="">
+            Dear Valued Customer:<br />
+            <p>
+                [Position Taking] Kindly be informed that effective from <b>{effectdate}</b>, our Company will request all SMAs level must set the <font color='red'>
+                    <strong>Sportsbook Min PT as 40%</strong>
+                </font>.
+            </p>
+            <p>For more details, please refer to Settlement Department or Customer Service Department. Thank you!</p>
+
+        </vi-VN>
+    </PopupAnnouncement>
+
+
+
+
+</FileDB>

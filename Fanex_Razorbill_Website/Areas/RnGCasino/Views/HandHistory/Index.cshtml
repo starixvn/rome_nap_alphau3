@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = RnGCasinoLang.CasinoHandHistory;
+    Layout = "~/Areas/RnGCasino/Views/Shared/_Layout.cshtml";
+}
+
+@using System.Collections.Generic;
+@using Fanex.Razorbill.Module.RnGCasino.DTOs;
+@model IList<GroupHandHistory>
+@section css {
+    @Styles.Render("~/App_Themes/AgencyV2/AgencyV2Styles")
+}
+@section js {
+    <script src="@Url.Content("~/_Components/AGEWnd/AGEWnd.js")" type="text/javascript"></script>
+    @Scripts.Render("~/bundles/Areas/RnGCasino/HandHistoryScripts")
+    <script type="text/javascript">
+        var rootUrl = '@Url.Content("~/")';
+    </script>
+}
+
+<div id="page_main">
+    <div style="position: relative; left: -2px;" id="header_main"><b>@RnGCasinoLang.CasinoHandHistory</b></div>
+    <div id="body_main">
+        <div class="filter">
+            <span class="b blue">
+                <span>@RnGCasinoLang.Username: @ViewBag.Username</span>
+                @if ((long)ViewBag.RefNo != 0)
+                {
+                    <span style="margin-left:10px;">@RnGCasinoLang.RefNo: @ViewBag.RefNo</span>
+                }
+            </span>
+            <label for="chkResultsWithPics" class="marginLeft100">
+                <input type="checkbox" id="chkResultsWithPics" style="position:relative;top:2px;" @((bool)ViewBag.ShowPic ? "checked" : string.Empty)/>
+                @RnGCasinoLang.ResultsWithPictures
+            </label>
+        </div>
+        <div style="clear:both;">
+            @Html.Partial("_HandHistoryResult", Model)
+        </div>
+        <div class="paddingTop15"><input type="button" class="btn" value="@RnGCasinoLang.Back" onclick="javascript:history.go(-1);" /></div>
+    </div>
+</div>

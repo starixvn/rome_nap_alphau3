@@ -1,0 +1,28 @@
+﻿@model string
+@{
+    Layout = null;
+}
+<table class="width370 @(string.IsNullOrEmpty(Model) ? "display-none" : "")" cellspacing="0" cellpadding="0" id="error-wrap">
+    <tbody>
+        <tr>
+            <td class="emsg_1_1" id="msg_1_1">&nbsp;</td>
+            <td class="emsg_1_2" id="msg_1_2">&nbsp;</td>
+            <td class="emsg_1_3" id="msg_1_3">&nbsp;</td>
+        </tr>
+        <tr>
+            <td valign="top" class="emsg_2_1" id="msg_2_1">&nbsp;</td>
+            <td valign="top" class="errorSection" id="errorSection">
+                @if (!string.IsNullOrEmpty(Model))
+                {
+                    @:@Html.Raw(Model)
+                }
+            </td>
+            <td class="emsg_2_2" id="msg_2_2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="emsg_3_1" id="msg_3_1">&nbsp;</td>
+            <td class="emsg_3_2" id="msg_3_2">&nbsp;</td>
+            <td class="emsg_3_3" id="msg_3_3">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>

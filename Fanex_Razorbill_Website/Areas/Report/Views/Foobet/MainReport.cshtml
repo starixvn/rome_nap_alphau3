@@ -1,0 +1,188 @@
+﻿@using System.Web.Optimization;
+@using Fanex.Razorbill.Module.Core.Extensions;
+@using Fanex.Razorbill.Module.Common.Enums;
+@using Fanex.Razorbill.Module.Common.Services;
+@{
+    Page.Title =  Resources.Report.FoobetFinancal;
+    Layout = "../Shared/_Layout.cshtml";
+    DateTime currentDate = DateTime.Today;
+    string firstDateOfMonth = string.Format("{0:MM/dd/yyyy}", currentDate.FirstDayOfMonth());
+    string today = string.Format("{0:MM/dd/yyyy}", currentDate);
+    
+    DateTime reportMinDate = (DateTime)ViewBag.ReportMinDate;
+    string reportMinDateString = string.Format("{0:yyyyMMdd}", reportMinDate);
+}
+@section Head {
+    @Styles.Render("~/_Components/DateRangeSelect/DateRangeSelectStyles",
+                "~/_Components/DateTimeControl/JSCalendar/css/JSCalendarStyles",
+                "~/_Components/DateTimeControl/JSCalendar/css/steel/JSCalendarSteelStyles",
+                "~/Scripts/_Libs/FanexGrid/FanexGridStyles",
+                "~/Areas/Report/Foobet/FoobetStyles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/_Components/DateTimeControl/JSCalendar/JSCalendarScripts",
+                "~/Scripts/_Libs/FanexGrid/FanexGridScripts",
+                "~/Areas/Report/Foobet/FoobetScripts")
+    <script type="text/javascript">
+        var resources = {
+            Month: "@Resources.Report.Month",
+            Turnover: "@Resources.Report.Turnover",
+            BetCount: "@Resources.Report.BetCount",
+            FBWinLoss: "@Resources.Report.FBWinLoss",
+            Win: "@Resources.Report.Win",
+            Lose: "@Resources.Report.Lose",
+            Total: "@Resources.Report.Total",
+            LosingTax: "@Resources.Report.LosingTax",
+            FBRebate: "@Resources.Report.FBRebate",
+            CompanyIncome: "@Resources.Report.CompanyIncome"
+        };
+
+        var minDate = @reportMinDateString;
+
+        function CalendarOnSelect() {
+            if ($("ddlSelectDate"))
+                $("ddlSelectDate").value = 8;
+        }
+
+        var fdate = Calendar.setup({
+            animation: false,
+            trigger: "fdate_trigger",
+            inputField: "fdate",
+            min: minDate,
+            dateFormat: "%m/%d/%Y",
+            weekNumbers: true,
+            onSelect: function () {
+                CalendarOnSelect();
+                this.hide();
+            }
+        });
+
+        var tdate = Calendar.setup({
+            animation: false,
+            trigger: "tdate_trigger",
+            inputField: "tdate",
+            min: minDate,
+            dateFormat: "%m/%d/%Y",
+            weekNumbers: true,
+            onSelect: function () {
+                CalendarOnSelect();
+                this.hide();
+            }
+        });
+
+        jQuery(document).ready(function () {
+            FoobetManager.GenerateData('@firstDateOfMonth', '@today');
+
+            jQuery('#submitBtn').click(function () {
+                FoobetManager.MainReport.Submit();
+            });
+
+            jQuery('#exporttoexcel').click(function () {
+                FoobetManager.MainReport.ExportExcel();
+            });
+        });
+    </script>
+}
+<div class="row-fluid">
+    <div id="header_main" class="span36">
+        @Resources.Report.FoobetFinancal</div>
+</div>
+<div class="row-fluid">
+    <div style="padding-left: 10px; padding-right: 16px;">
+        <div id="box_header" class="span36">
+            <div style="padding-left: 5px; padding-top: 5px;">
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <div id="spDateTimeSearch">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                       <td id="tdfdatetext" style="padding-left: 6px;" class="l">
+                                            <span id="spfdatetext">@Resources.Lang.from:</span>
+                                        </td>
+                                        <td id="tdFromDateCal" class="l">
+                                            <span id="spFromDateCal">
+                                                <table  cellpading="0" cellspacing="0" border="0">
+                                                    <tr>
+                                                        <td>
+                                                            <input id="fdate" name="FromDate" class="date_no" value="@firstDateOfMonth" type="text"
+                                                                size="13" name="fdate" readonly="readonly" style=" margin-top: -1px;" />
+                                                        </td>
+                                                        <td>
+                                                            <input type="image" alt="" src="@Url.Content("~/_GlobalResources/Images/cal.gif")"
+                                                                        id="fdate_trigger" title="Date selector" style="margin-top: 2px; cursor: pointer"
+                                                                        onclick="javascript:return false;" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </span>
+                                        </td>
+                                        <td id="tdtdatetext" class="l">
+                                            &nbsp;&nbsp; <span id="sptdatetext">@Resources.Lang.to:</span>
+                                        </td>
+                                        <td id="tdToDateCal" class="l">
+                                            <span id="spToDateCal">
+                                                <table cellpading="0" cellspacing="0" border="0">
+                                                    <tr>
+                                                        <td>
+                                                            <input id="tdate" name="ToDate" class="date_no" value="@today" type="text" size="13"
+                                                                name="tdate" readonly="readonly" style=" margin-top: -1px;"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="image" alt="" src="@Url.Content("~/_GlobalResources/Images/cal.gif")"
+                                                                        id="tdate_trigger" title="Date selector" style="margin-top: 2px; cursor: pointer"
+                                                                        onclick="javascript:return false;" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </span>
+                                        </td>
+                                     
+                                        <td class="l">
+                                            <div style="display: inline-block; vertical-align: middle; height: 17px; margin-top: -8px;">
+                                            &nbsp;&nbsp;&nbsp;<input type="button" class="btn" style="width: 55px;margin-right: -1px;" id="submitBtn" value="@Resources.Lang.submit" />
+                                            </div>
+                                        </td>
+                                        <td valign="top">
+                                            <div id="loading" class="" style="float: left;">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td align="right">
+                            <input alt="@Resources.Lang.exporttoexcel" src="@Url.Content("~/_GlobalResources/Images/excel.gif")"
+                                            type="image" id="exporttoexcel" name="exporttoexcel" nofocus="true" title="@Resources.Lang.exporttoexcel"
+                                            class="hand"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="dvMsg" class="warning l" style="margin-bottom: 5px; margin-top: 10px; padding: 0 2px;">
+                <ul>
+                    <li>@Resources.Report.FirstQuote</li>
+                </ul>
+                <ul>
+                    <li>@Resources.Report.SecondQuote</li>
+                </ul>
+                <ul>
+                    <li>@string.Format(Resources.Lang.ViewDataFromDate, reportMinDate.ToShortFormatedDateWithSlash())</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-fluid">
+    <div style="padding-left: 10px; padding-right: 10px;">
+        <div id="tbl-container" class="span36">
+            <div id="boderRight">
+                <div id="GridContainer" class="freegrid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<iframe id="frm" width="0" height="0" frameborder="0" style="display: none"></iframe>

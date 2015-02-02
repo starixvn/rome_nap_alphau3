@@ -1,0 +1,56 @@
+﻿@font-face {
+    font-family: Roboto;
+    src: url(../../../../App_Themes/Fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Light";
+    src: url(../../../../App_Themes/Fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Bold";
+    src: url(../../../../App_Themes/Fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: url(../../../../App_Themes/Fonts/Roboto/Roboto-Medium.ttf);
+}
+
+body
+{
+	font-size: 12px;
+	font-family: "Roboto",Tahoma,Arial,Helvetica,sans-serif;
+}
+div
+{
+	line-height: 30px;
+}
+.b
+{
+	font-weight: bold;
+}
+.u
+{
+	text-decoration: underline;
+	font-weight: bold;
+}
+.c
+{
+	text-align: center;
+}
+.upper
+{
+	text-transform: uppercase;
+	color: Blue;
+}
+.r
+{
+	color: Red;
+	font-weight: bold;
+}
+.tab
+{
+	margin-left: 40px;
+}

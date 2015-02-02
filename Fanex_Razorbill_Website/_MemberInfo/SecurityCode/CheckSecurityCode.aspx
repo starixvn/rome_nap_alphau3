@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="false" CodeFile="CheckSecurityCode.aspx.cs" Inherits="Sunplus.Agent.UI._MemberInfo.SecurityCode.CheckSecurityCode_Page" %>

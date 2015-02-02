@@ -1,0 +1,131 @@
+﻿@using Newtonsoft.Json
+@using Newtonsoft.Json.Serialization
+@using Fanex.CustomerSetting.Module.Keno.Resources
+@using Sunplus.Agent.Model.BL
+<!DOCTYPE html>
+<html ng-app='kenoSettingModule' id="ng-app">
+
+<head>
+  <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Areas/CustomerSetting/Views/Keno/Setting/Styles/keno-setting.less"
+        rel="stylesheet" type="text/css" />
+    <link href="~/Areas/CustomerSetting/Views/Keno/Setting/Styles/Agent/theme-color.less"
+        rel="stylesheet" type="text/css" />
+            <link href="~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/directives/dialog/ngDialog.css" rel="stylesheet"
+        type="text/css" />
+          <link href="~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/directives/dialog/ngDialog-theme-default.css" rel="stylesheet"
+        type="text/css" />
+          <link href="~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/directives/dialog/ngDialog-theme-plain.css" rel="stylesheet"
+        type="text/css" />
+
+          <link href="~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/Tipsy/tipsy.css" rel="stylesheet"
+        type="text/css" />
+        <link href="~/_GlobalResources/Css/Agent.css" rel="stylesheet" type="text/css" />
+    @{
+        var KenoSetting = JsonConvert.SerializeObject(Model, Formatting.None, new JsonSerializerSettings
+        {
+            ContractResolver = new CamelCasePropertyNamesContractResolver(),
+            NullValueHandling = NullValueHandling.Ignore
+        });
+
+       var  _CurrentUserSession = UserSessionService.GetUserSessionInstance(HttpContext.Current.Session.SessionID);
+        
+        var langKey = _CurrentUserSession.LangKey;
+    }
+</head>
+<body>
+<div ng-controller="mainController" class="content">
+<div id="page_main">
+    <div id="header_main" style="margin-bottom: 5px;>
+            <div style="float: left;">@LayoutTexts.EditKeno</div>
+            
+        </div>
+
+    <div id="divShowInfo"  style="display: none;" class="maincontent_box tableWidth">
+    </div>
+    <div id="customerInfo">
+        @Html.Partial("~/Areas/CustomerSetting/Views/Keno/Setting/Views/Partial/CustomerInfo/_Information.cshtml")
+        @RenderBody()
+    </div>
+    <div >
+        <input ng-class-name="btnUpdate" check-disable-element ng-model="isUpdatedKeno" ng-click="updated(false)"  value=" @LayoutTexts.Update" 
+            type="button" class="btnUpdate b" />
+    </div>
+     <div id="loadingDiv" style="display: none; position: absolute; top: 0px; left: 0px; opacity: 0.5; background-color: white; width: 1058px; height: 778px;">
+        <div class="MaskLoadingDiv" style="width: 100px; height: 100px; position: relative; left: 530px; top: 0px;"></div>
+    </div>
+</div>
+</div>
+</body>
+
+
+<script src="@Url.Content("~/Areas/CustomerSetting/Scripts/jquery.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Scripts/jquery.blockUI.1.33.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Scripts/jquery-ui-1.9.1.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Scripts/angular.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Scripts/Validators.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Scripts/Fanex.CustomerSetting.Core.js")" type="text/javascript"></script>
+
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/modules/module.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/repositories/repository.js")" type="text/javascript"></script>
+
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/controllers/main.controller.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/controllers/bet-setting.controller.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/controllers/position-taking.controller.js")" type="text/javascript"></script>
+
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/directives/CommonDirective.js")" type="text/javascript"></script>
+
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/directives/betSetting/BetSettingDirective.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/directives/betSetting/MaxBetDirective.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/directives/betSetting/MaxPerMatchDirective.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/directives/betSetting/MinBetDirective.js")" type="text/javascript"></script>
+
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/services/commonService.js")" type="text/javascript"></script>
+
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/directives/dialog/ngDialog.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/Setting/Scripts/Tipsy/jquery.tipsy.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    var model = JSON.parse(Fanex.CustomerSetting.Core.DecodeHtml('@KenoSetting'));
+    var domain = '@Url.Content("~")';
+    var resources = {
+        successful: "@Messages.Msg_0",
+        failed: "@Messages.UpdatedFail",
+        more_than: "@Messages.MoreThan",
+        less_than: "@Messages.LessThan",
+        lblChangePTTo: "@Html.Raw(LayoutTexts.lblChangePTTo)",
+        lblHaveChangeAgentPositionTaking: "@Html.Raw(LayoutTexts.lblHaveChangeAgentPositionTaking)",
+        lblHaveChangeMasterPositionTaking: "@Html.Raw(LayoutTexts.lblHaveChangeMasterPositionTaking)",
+        lblConfirm: "@Html.Raw(LayoutTexts.lblConfirm)",
+        lblYes: "@LayoutTexts.lblYes",
+        lblNo: "@LayoutTexts.lblNo",
+        lblMaxBet: "@LayoutTexts.lblMaxBet",
+        lblMinBet: "@LayoutTexts.lblMinBet",
+        lblMaxPerMatch: "@LayoutTexts.lblMaxPerMatch",
+        lblCopyAllSetting: "@LayoutTexts.lblCopyAllBetSetting"
+    };
+    var custids;
+    var usernames;
+    var isMultipleEdit;
+
+    var _langKey = '@langKey';
+
+    function InitMultipleEditInformation() {
+        if (custids == null || custids == undefined) {
+            var elementByCustids = window.top.frames["main"].document.getElementById('arrayCustID');
+            var bb = parent.$("arrayCustID");
+            if (elementByCustids != null) {
+                custids = elementByCustids.value.split('^');
+                custids.pop();
+                usernames = window.top.frames["main"].document.getElementById('arrayUserName').value.split('^');
+                usernames.pop();
+            }
+        }
+
+        isMultipleEdit = custids != null && custids != undefined && custids.length > 1 ? true : false;
+    }
+
+    InitMultipleEditInformation();
+</script>
+@RenderSection("scripts", required: false)
+</html>

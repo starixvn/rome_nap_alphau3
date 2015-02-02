@@ -1,0 +1,142 @@
+﻿@{
+    Layout = "../Shared/_HandHistoryDetailLayout.cshtml";
+}
+@using Fanex.Razorbill.Module.RnGCasino.DTOs;
+@using Fanex.Razorbill.Module.RnGCasino.Enums
+@using Fanex.Razorbill.Module.RnGCasino.Extensions;
+@model HandHistoryDetail
+@{
+    NinjaHeroResult firstRowNinjaHero = (NinjaHeroResult)Model.GameResults[0];
+    BetTypeMoney betTypeMoney = Model.BetTypeMoneys[0];
+    string currency = betTypeMoney.Currency;
+    int colspan = 6;
+}
+<table id="casino-betlist-a" style="width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="@colspan" class="hd2 b">
+                @firstRowNinjaHero.TableName - @firstRowNinjaHero.BetTime
+            </th>
+        </tr>
+    </thead>
+    <tr class="th b">
+        <td colspan="@colspan" class="c">
+            @RnGCasinoLang.Player: @firstRowNinjaHero.UserName
+        </td>
+    </tr>
+    <tr class="th b">
+        <td colspan="@colspan" class="c">
+            @firstRowNinjaHero.ResultName
+        </td>
+    </tr>
+    <tr class="bg_eb">
+        <td colspan="@colspan" class="c">
+            @Html.Raw(firstRowNinjaHero.Result)
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowNinjaHero.PlayerHistoryNo
+        </td>
+        <td colspan="@(colspan - 1)" class="l">
+            @firstRowNinjaHero.PlayerHistoryNoResult
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowNinjaHero.Mode
+        </td>
+        <td colspan="@(colspan - 1)" class="l">
+            @firstRowNinjaHero.ModeResult
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowNinjaHero.AutoSpin
+        </td>
+        <td colspan="@(colspan - 1)" class="l">
+            @firstRowNinjaHero.AutoSpinResult
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowNinjaHero.FreeSpin
+        </td>
+        <td colspan="@(colspan - 1)" class="l">
+            @firstRowNinjaHero.FreeSpinResult
+        </td>
+    </tr>
+    @foreach (GameResult gameResult in Model.GameResults)
+    {
+        NinjaHeroResult ninjaHero = (NinjaHeroResult)gameResult;
+        HandHistoryShowType showType = ninjaHero.ShowType;
+        if (showType == HandHistoryShowType.AddRow_HitBetLine || showType == HandHistoryShowType.AddRow_HitScatter)
+        {
+            string firstTitle = showType == HandHistoryShowType.AddRow_HitBetLine
+                ? RnGCasinoLang.LineNo
+                : RnGCasinoLang.TotalLineBet;
+            <tr class="hd2 b">
+                <td class="c">@firstTitle</td>
+                <td class="c">@RnGCasinoLang.Symbol</td>
+                <td class="c">@RnGCasinoLang.CoinSize</td>
+                <td class="c">@RnGCasinoLang.BetPerLine</td>
+                <td class="c">@RnGCasinoLang.Odds</td>
+                <td class="c">@RnGCasinoLang.Win</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.Result_HitBetLine || showType == HandHistoryShowType.Result_HitScatter)
+        {
+            <tr class="bg_eb2">
+                <td class="c">@Html.Raw(ninjaHero.LineNo_TotalLineBet)</td>
+                <td class="c">@Html.Raw(ninjaHero.Symbol)</td>
+                <td class="c">@ninjaHero.CoinSize</td>
+                <td class="c">@ninjaHero.BetPerLine</td>
+                <td class="c">@ninjaHero.Odds</td>
+                <td class="c">@ninjaHero.WinResult</td>
+            </tr>
+        }
+        else if (showType == HandHistoryShowType.AddRow_RollingReel)
+	    {
+            <tr class="hd2 b">
+                <td colspan="@colspan" class="c">@ninjaHero.ResultName</td>
+            </tr>
+	    }
+        else if (showType == HandHistoryShowType.AddRow_TotalLineWin)
+        {
+            <tr class="th b">
+                <td class="l">
+                    @ninjaHero.Win
+                </td>
+                <td colspan="@(colspan - 1)" class="r">
+                    @ninjaHero.WinResult
+                </td>
+            </tr>
+             
+        }
+        else if (showType == HandHistoryShowType.MaxMultiply)
+        {
+            <tr class="th b">
+                <td class="l">@ninjaHero.Multiplier</td>
+                <td colspan="@(colspan - 1)" class="r" >
+                    @ninjaHero.MultiplierResult
+                </td>
+            </tr> 
+        }
+    }
+    <tr class="th b">
+        <td class="l">
+            @firstRowNinjaHero.Bet
+        </td>
+        <td colspan="@(colspan - 1)" class="r" >
+            @Html.FormatNumber(betTypeMoney.Bet, currency)
+        </td>
+    </tr>
+    <tr class="th b">
+        <td class="l">
+            @firstRowNinjaHero.WinLoss
+        </td>
+        <td colspan="@(colspan - 1)" class="r" >
+            @Html.FormatNumber(betTypeMoney.WinLoss, currency)
+        </td>
+    </tr>
+</table>

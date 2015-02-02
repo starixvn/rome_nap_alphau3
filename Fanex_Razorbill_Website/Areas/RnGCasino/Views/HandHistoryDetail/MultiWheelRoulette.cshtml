@@ -1,0 +1,98 @@
+﻿@{
+    Layout = "../Shared/_HandHistoryDetailLayout.cshtml";
+}
+@using Fanex.Razorbill.Module.RnGCasino.DTOs;
+@using Fanex.Razorbill.Module.RnGCasino.Enums
+@using Fanex.Razorbill.Module.RnGCasino.Extensions;
+@model HandHistoryDetail
+@{
+    MultiWheelRouletteResult basicInfo = (MultiWheelRouletteResult)Model.GameResults[0];
+    var bettypesMoneys = Model.BetTypeMoneys;
+    string currency = bettypesMoneys[0].Currency;
+    int colspan = 3;
+    MultiWheelRouletteBetTypeMoney multiWheelRouletteBettypeMoney;
+}
+<table id="casino-betlist-a" style="width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="@colspan" class="hd2 b">
+                @basicInfo.TableName - @basicInfo.BetTime
+            </th>
+        </tr>
+    </thead>
+    <tr class="th b">
+        <td colspan="@colspan" class="c">
+            @RnGCasinoLang.Player: @basicInfo.UserName
+        </td>
+    </tr>
+    <tr class="th b">
+        <td colspan="@colspan" class="c">
+            @basicInfo.ResultName
+        </td>
+    </tr>
+    <tr class="bg_eb">
+        <td colspan="@colspan" class="c">
+            @Html.Raw(basicInfo.Result)
+        </td>
+    </tr>
+    @foreach (GameResult gameResult in Model.GameResults)
+    {
+        MultiWheelRouletteResult multiWheelRoulette = (MultiWheelRouletteResult)gameResult;
+        HandHistoryShowType showType = multiWheelRoulette.ShowType;
+        string rouletteNumber = string.Empty;
+        if (showType == HandHistoryShowType.AddRow_EnableRoulette1 ||
+            showType == HandHistoryShowType.AddRow_EnableRoulette2 ||
+            showType == HandHistoryShowType.AddRow_EnableRoulette3 ||
+            showType == HandHistoryShowType.AddRow_EnableRoulette4)
+        {
+            <tr class="hd2 b c">
+                <td colspan="@colspan">@multiWheelRoulette.RouletteResult</td>
+            </tr>
+            <tr class="hd2 b">
+                <td></td>
+                <td class="c">@basicInfo.Bet</td>
+                <td class="c">@basicInfo.WinLoss</td>
+            </tr>
+            if (showType == HandHistoryShowType.AddRow_EnableRoulette1)
+            {
+                rouletteNumber = "1;";
+            }
+            else if (showType == HandHistoryShowType.AddRow_EnableRoulette2)
+            {
+                rouletteNumber = "2;";
+            }
+            else if (showType == HandHistoryShowType.AddRow_EnableRoulette3)
+            {
+                rouletteNumber = "3;";
+            }
+            else if (showType == HandHistoryShowType.AddRow_EnableRoulette4)
+            {
+                rouletteNumber = "4;";
+            }
+
+            foreach (var item in bettypesMoneys)
+            {
+                multiWheelRouletteBettypeMoney = (MultiWheelRouletteBetTypeMoney)item;
+                if (multiWheelRouletteBettypeMoney.BetContent.StartsWith(rouletteNumber, StringComparison.OrdinalIgnoreCase))
+                {
+                    <tr class="bg_eb2">
+                        <td>@multiWheelRouletteBettypeMoney.BetTypeName</td>
+                        <td class="r">@Html.FormatNumber(multiWheelRouletteBettypeMoney.Bet, multiWheelRouletteBettypeMoney.Currency)</td>
+                        <td class="r">@Html.FormatNumber(multiWheelRouletteBettypeMoney.WinLoss, multiWheelRouletteBettypeMoney.Currency)</td>
+                    </tr>
+                }
+            }
+        }
+    }
+    <tr class="th b">
+        <td class="l">
+            @basicInfo.Summary
+        </td>
+        <td class="r">
+            @Html.FormatNumber(basicInfo.TotalBet, currency)
+        </td>
+        <td class="r" >
+            @Html.FormatNumber(basicInfo.TotalWinLoss, currency)
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,35 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Agent site - Statement</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <link href="@Url.Content("~/_GlobalResources/Css/Agent.css?06")" rel="stylesheet"
+        type="text/css" />
+    <link href="@Url.Content("~/_Reports/Resources/Reports.css?06")" rel="stylesheet"
+        type="text/css" />
+    @RenderSection("Head", false)
+</head>
+<body>
+    @RenderBody()
+    @Html.Hidden("RootURL", Url.Content("~/"))
+</body>
+</html>
+<script src="@Url.Content("~/Js/jQuery/jquery-1.8.2.min.js")" type="text/javascript"></script>
+<script>
+    var domain;
+
+    jQuery(document).ready(function () {
+        domain = location.protocol + '//' + location.host + jQuery('#RootURL').val();
+    });
+
+    jQuery(window).resize(function () {
+        var width = jQuery(window).width() - 20; //padding-right: 10 + padding-left: 10       
+        jQuery("#GridContainer-grid-title").css("width", width + "px");
+    });  
+</script>
+
+@RenderSection("Scripts", false)

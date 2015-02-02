@@ -1,0 +1,32 @@
+﻿
+.MemberCommissionInfo
+{
+	cursor: pointer;
+	background: url("../../../_GlobalResources/Images/info.png") no-repeat right;
+	width: 20px;
+}
+body
+{
+	background-color: #454545 !important;
+}
+.MemberCommissionInfoTitle
+{
+	background-color: #454545;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+.MemberCommissionInfoCloseButton
+{
+	background: url("../../../_GlobalResources/Images/Close_ico.png") no-repeat center;
+	cursor: pointer;
+	display: block;
+	height: 17px;
+	line-height: 0px;
+	width: 17px;
+}
+#page
+{
+	line-height: 20px;
+	padding-left: 20px;
+	color: White;
+}

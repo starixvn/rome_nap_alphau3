@@ -1,0 +1,81 @@
+﻿@font-face {
+    font-family: Roboto;
+    src: url(../../../App_Themes/Fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Light";
+    src: url(../../../App_Themes/Fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Bold";
+    src: url(../../../App_Themes/Fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: url(../../../App_Themes/Fonts/Roboto/Roboto-Medium.ttf);
+}
+
+body
+{
+    font-family: "Roboto",Tahoma,Arial,helvetica,sans-serif !important;
+    font-size: 11px !important;
+}
+.edit-setting-livecs .title, .pt-container .pt-title
+{
+    background: url("Images/bgHeader.jpg") repeat-x scroll left top rgba(0, 0, 0, 0) !important;
+}
+.edit-setting-livecs table, .edit-setting-livecs table tr, .edit-setting-livecs table td {
+    border: 1px solid #999999 !important;
+}
+/*Loading css*/
+.block-ui-loading
+{
+ 	height:100px !important;
+	width:100px !important;
+    background: url(Images/loader-agency.gif) no-repeat !important;
+}
+
+#tblSetting {
+    margin-left: -15px !important;
+}
+
+.edit-setting-livecs .cust-info, .edit-setting-livecs .pt-setting, .edit-setting-livecs .win-limit {
+    background: none repeat scroll 0 0 #f7f0e4 !important;
+}
+
+.game-setting {
+    background: none repeat scroll 0 0 #f7f0e4 !important;
+}
+
+.pt-setting table, .pt-setting tr, .pt-setting td, .pt-setting th {
+    border: 1px solid #999999 !important;
+}
+
+body {
+    background: url("../../../_GlobalResources/Images/bg_conts.jpg") repeat-x fixed center top #f5f6f8;
+    margin: 0;
+    padding: 2px;
+}
+
+table td, th {
+    height: 23px !important;
+}
+
+.edit-setting-livecs {
+    padding:  0px !important;
+}
+
+.edit-setting-livecs .updated-result .main-icon-error {
+    background-image: none !important;
+}
+
+.edit-setting-livecs .updated-result .main-icon-success {
+    background-image: none !important;
+}
+
+.edit-setting-livecs .updated-result .main-message {
+    margin-left:  0px !important;
+}

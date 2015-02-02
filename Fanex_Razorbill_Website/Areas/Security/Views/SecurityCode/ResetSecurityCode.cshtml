@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = Lang.titleResetSecCode + " - " + Request["username"];
+    Layout = "~/Areas/Security/Views/Shared/_Layout.cshtml";
+}
+@section js {
+    @System.Web.Optimization.Scripts.Render("~/bundles/resetsecuritycode-js")
+    <script type="text/javascript">
+        var custid = '@Request["custid"]';
+        var subaccid = '@Request["subaccid"]';
+        var securityCodeResource = {
+            alertSecCodeEmpty: '@Fanex.Razorbill.Security.Resources.Lang.alertSecCodeEmpty',
+            alertSecCodeWrongRule: '@Fanex.Razorbill.Security.Resources.Lang.lblSecCodeWrongRule',
+            alertErrorSecCodeConfirm: '@Fanex.Razorbill.Security.Resources.Lang.alertErrorSecCodeConfirm'
+        };
+    </script>
+}
+<div class="container-wrap">
+    <div class="header_wrap">@Fanex.Razorbill.Security.Resources.Lang.SecurityCode</div>
+    <br />
+    @using (Html.BeginForm("ResetSecurityCode", "SecurityCode", System.Web.Mvc.FormMethod.Post,
+                             new { id = "frmResetSecurityCode" }))
+    {
+        @Html.Partial("../Shared/_HeaderMessage", null)
+        <table class="content-wrap width370" cellspacing="1" cellpadding="0">
+            <tr>
+                <td colspan="2" class="header bg_eb">@(Fanex.Razorbill.Security.Resources.Lang.titleResetSecCode + " - " + Request["username"])</td>
+            </tr>
+            <tr class="bg_eb">
+                <td class="left-align widthPercent40">@Fanex.Razorbill.Security.Resources.Lang.SecurityCode</td>
+                <td class="left-align">
+                    <input id="txtSecCode" onkeyup="return validateSecurityCode(this,'spnSecCodeIcon');" type="password" name="securityCode" autocomplete="off" maxlength="6" />
+                    <span id="spnSecCodeIcon" class="">&nbsp;</span>
+                </td>
+            </tr>
+            <tr class="bg_eb">
+                <td class="left-align">@Fanex.Razorbill.Security.Resources.Lang.ConfirmSecurityCode</td>
+                <td class="left-align">
+                    <input id="txtConfirmSecCode" onkeyup="return validateSecurityCode(this,'spnConfirmSecCodeIcon');" type="password" name="confirmSecurityCode" autocomplete="off" maxlength="6" />
+                    <span id="spnConfirmSecCodeIcon" class="">&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="bg_eb center-align" colspan="2">
+                    <input type="submit" value="@Fanex.Razorbill.Security.Resources.Lang.Submit" class="btn" />
+                    <input type="reset" value="@Fanex.Razorbill.Security.Resources.Lang.Reset" class="btn" />
+                </td>
+            </tr>
+        </table>
+    }
+    @Html.Partial("../Shared/_SecurityCodeHint", Fanex.Razorbill.Security.Resources.Lang.lblRequiredSecCode)
+    <div class="learn-more width370">
+        <hr size="1" />
+        @Html.ActionLink(Fanex.Razorbill.Security.Resources.Lang.LearnMore, "HowToUse", "SecurityCode", null, new { style = "padding:4px", target = "_blank" })
+    </div>
+</div>

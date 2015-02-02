@@ -1,0 +1,126 @@
+﻿@using Fanex.Razorbill.Module.PositionTaking.Resources;
+@using Sunplus.Agent.Model.Entities.Permission;
+@using Newtonsoft.Json;
+@model dynamic
+@{
+    Page.Title = Labels.View_Position_Taking;
+    Layout = "../Shared/_Layout.cshtml";
+    var bootstrapData = JsonConvert.SerializeObject(Model);
+}
+@section Head{
+    <link rel="stylesheet" type="text/css" href="~/_Components/PagingHeader/PagingHeader.css?ver=1" />
+    <link rel="stylesheet" type="text/css" href="~/_Components/Paging/Paging.css?ver=1" />
+    <link rel="stylesheet" type="text/css" href="~/_GlobalResources/Css/Agent.css" />
+    <link rel="stylesheet" type="text/css" href="~/Areas/PositionTakingInformation/Views/Keno/Styles/ViewPT.css?ver=1" />
+}
+<body>
+    <div id="page_main">
+        <div id="header_main">
+            @Resources.Lang.lblPositionTaking
+        </div>
+        <div id="tbl-container">
+            <div id="boderRight">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td>
+                            <div id="box_header">
+                                <div style="float:left;">
+                                    <input id="radSportbook" name="rdPositionTaking" type="radio" value="@Resources.Lang.sportBook" />
+                                    <label for="radSportbook">@Resources.Lang.sportBook</label>
+                                    <input id="radRacing" type="radio" name="rdPositionTaking" value="@Resources.Lang.Racebook" />
+                                    <label for="radRacing">@Resources.Lang.Racebook</label>
+                                    <input id="radNumberGame" type="radio" name="rdPositionTaking" value="@Resources.Lang.numbergame" />
+                                    <label for="radNumberGame">@Resources.Lang.numbergame</label>
+                                    <input id="radLiveCasino" type="radio" name="rdPositionTaking" value="@Resources.Lang.LiveCasino" />
+                                    <label for="radLiveCasino">@Resources.Lang.LiveCasino</label>
+                                    <input id="radVirtualSports" type="radio" name="rdPositionTaking" value="@Resources.Lang.VirtualSports" />
+                                    <label for="radVirtualSports">@Resources.Lang.VirtualSports</label>
+                                    <input id="radKeno" type="radio" name="rdPositionTaking" value="@Resources.Lang.Keno" checked="checked"/>
+                                    <label for="radKeno">@Resources.Lang.Keno</label>
+                                </div>
+                                <div style="float:right;">
+                                    <a id="iconBettypesRef" class="infoIco" style="margin-right:5px;height:16px;display:inline-block"
+                                        href="@(Url.Content("~") + "PositionTakingInformation/PositionTakingBetTypeReference")" target="_blank" title="@Resources.Lang.ClickToViewPTInfo"></a>
+                                    </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table id="tblHeader" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="bgleft">
+                                    </td>
+                                    <td class="bgcenter">
+                                    </td>
+                                    <td class="bgright pagingcontrol">
+                                    </td>
+                                </tr>
+                            </table>
+                            <table id="tblMain" border="1" cellpadding="2" cellspacing="0">
+                                <thead>
+                                    <tr id="headerBottom">
+                                        <td class="RptHeader">
+                                            @Labels.Symbol_No
+                                        </td>
+                                        <td class="RptHeader">
+                                            @Resources.Lang.username
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2" class="no-data">
+                                            @Labels.No_Data
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot id="pagingcontrol-footer" class="display-none">
+                                    <tr>
+                                        <td id="pagingcontrol-footer-column" colspan="2">
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+     <input type="hidden" id="arrayCustID" name="arrayCustID" />
+     <input type="hidden" id="arrayUserName" name="arrayUserName" />
+    @{
+        var isShowNumberGame = UserPermission.IsShowNumberGame ? 1 : 0;
+        var isShowLiveCasino = UserPermission.IsShowLiveCasino ? 1 : 0;
+        var isShowVirtualSports = UserPermission.IsShowVirtualSports ? 1 : 0;
+        var isShowKeno = UserPermission.IsShowKenoSetting ? 1 : 0;
+    }
+    @section Scripts {
+        <script type="text/javascript" src="~/Scripts/_Libs/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="~/_Components/AGEWnd/AGEWnd.js"></script>
+        <script type="text/javascript" src="~/Areas/PositionTakingInformation/Views/Keno/Scripts/ViewPT.js?ver=4"></script>
+        <script type="text/javascript" src="~/Js/Numeral/numeral.js"></script>
+    }
+    <script type="text/javascript">
+        window.rootUrl = '@Url.Content("~")';
+        var viewResources = {
+            Page_Size: '@Resources.Lang.pagesize',
+            Symbol_No: '@Labels.Symbol_No',
+            Username: '@Resources.Lang.username',
+            Page: '@Labels.Page',
+            of: '@Labels.of',
+            noInfo: '@Html.Raw(Resources.Lang.noInfo)'
+        };
+
+        var bootstrapData = @Html.Raw(JsonConvert.DeserializeObject(bootstrapData));
+
+        var cachedData = {
+            isShowNumberGame: @isShowNumberGame,
+            isShowLiveCasino: @isShowLiveCasino,
+            isShowVirtualSports: @isShowVirtualSports,
+            isShowKeno: @isShowKeno
+        };
+
+    </script>
+</body>

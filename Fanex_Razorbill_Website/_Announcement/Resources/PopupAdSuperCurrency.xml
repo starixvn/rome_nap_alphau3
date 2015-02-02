@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FileDB>
+  <PopupAnnouncement id="20120817" width="600" height="550" top="110" left="280">
+    <en-US src="">
+      Dear valued agents,<br />
+      We wish to announce the launching of our new product – Poker with effect from <strong>17/08/2012</strong>, by default all settings will be configured as follows:
+      <ul>
+        <li>No position taking offered for <strong>Poker product</strong>.</li>
+        <li>Member Max Transfer Credit</li>
+        - Super and Master will be set maximum value by default.<br/>
+        - Agent and Member will be set 30% on Super/Master default value.<br/>
+        - Daily auto reset limit will be set by default.
+        <li>Game Setting</li>
+        - Super and Master will be offered all stake levels.<br/>
+        - Agent and Member will only be offered the 2 lowest stake levels.
+        <li>Commission</li>
+        - Super will be set the maximum of 67% commission.<br/>
+        - Master will be set the maximum of 55% commission.<br/>
+        - Agent will be set by default 0 for commission, but the maximum value is 40% commission.<br/>
+        - Member will be set by default 0 for commission, but the maximum value is 30% commission.
+        <li>No currency play, otherwise, agents shall bear the risk and loss</li>
+      </ul>
+      Should you wish to have different settings for your downlines, please go to Poker setting page. Thanks
+    </en-US>
+    <zh-CN src="">
+      敬爱的代理们,<br />
+      我们很荣幸的宣布，您们所期待的扑克将于 <strong>17/08/2012</strong> 隆重推出。以下为基本的系统预设值：
+      <ul>
+        <li><strong>扑克</strong>没有占成设定</li>
+        <li>玩家最高可转移额</li>
+        - 超级总代理和总代理享有系统预设的最高值<br/>
+        - 代理和玩家的预设值为超级总代理的值中的30%<br/>
+        - 每日限额自动重设为--是
+        <li>游戏设定</li>
+        - 超级总代理和总代理享有所有的桌面限额<br/>
+        - 代理与玩家只有最低的两组桌面限额
+        <li>佣金</li>
+        - 超级总代理的佣金是67%<br/>
+        - 总代理的最高佣金为55%，预设值也是55%<br/>
+        - 代理的最高佣金为40%，预设值为0<br/>
+        - 会员的最高佣金为30%，预设值为0
+        <li>若任何代理层在此扑克中使用自设兑换率或倍数将自负其所带来与造成的风险和损失</li>
+      </ul>
+      若您需要更改下线设定，请到下线名单中点击修改扑克。谢谢
+    </zh-CN>
+    <zh-TW src="">
+      敬愛的代理們,<br />
+      我們很榮幸的宣布，您們所期待的扑克將於 <strong>17/08/2012</strong> 隆重推出。以下為基本的系統預設值：
+      <ul>
+        <li><strong>扑克</strong>沒有佔成設定</li>
+        <li>玩家最高可轉移額</li>
+        - 超級總代理和總代理享有系統預設的最高值<br/>
+        - 代理和玩家的預設值為超級總代理的值中的30%<br/>
+        - 每日限額自動重設為--是
+        <li>游戲設定</li>
+        - 超級總代理和總代理享有所有的桌面限額<br/>
+        - 代理與玩家隻有最低的兩組桌面限額
+        <li>佣金</li>
+        - 超級總代理的佣金是67%<br/>
+        - 總代理的最高佣金為55%，預設值也是55%<br/>
+        - 代理的最高佣金為40%，預設值為0<br/>
+        - 會員的最高佣金為30%，預設值為0
+        <li>若任何代理層在此扑克中使用自設兌換率或倍數將自負其所帶來與造成的風險和損失</li>
+      </ul>
+      若您需要更改下線設定，請到下線名單中點擊修改扑克。謝謝
+    </zh-TW>
+    <ja-JP src="">
+      Dear valued agents,<br />
+      We wish to announce the launching of our new product – Poker with effect from <strong>17/08/2012</strong>, by default all settings will be configured as follows:
+      <ul>
+        <li>No position taking offered for <strong>Poker product</strong>.</li>
+        <li>Member Max Transfer Credit</li>
+        - Super and Master will be set maximum value by default.<br/>
+        - Agent and Member will be set 30% on Super/Master default value.<br/>
+        - Daily auto reset limit will be set by default.
+        <li>Game Setting</li>
+        - Super and Master will be offered all stake levels.<br/>
+        - Agent and Member will only be offered the 2 lowest stake levels.
+        <li>Commission</li>
+        - Super will be set the maximum of 67% commission.<br/>
+        - Master will be set the maximum of 55% commission.<br/>
+        - Agent will be set by default 0 for commission, but the maximum value is 40% commission.<br/>
+        - Member will be set by default 0 for commission, but the maximum value is 30% commission.
+        <li>No currency play, otherwise, agents shall bear the risk and loss</li>
+      </ul>
+      Should you wish to have different settings for your downlines, please go to Poker setting page. Thanks
+    </ja-JP>
+    <ko-KR src="">
+      Dear valued agents,<br />
+      We wish to announce the launching of our new product – Poker with effect from <strong>17/08/2012</strong>, by default all settings will be configured as follows:
+      <ul>
+        <li>No position taking offered for <strong>Poker product</strong>.</li>
+        <li>Member Max Transfer Credit</li>
+        - Super and Master will be set maximum value by default.<br/>
+        - Agent and Member will be set 30% on Super/Master default value.<br/>
+        - Daily auto reset limit will be set by default.
+        <li>Game Setting</li>
+        - Super and Master will be offered all stake levels.<br/>
+        - Agent and Member will only be offered the 2 lowest stake levels.
+        <li>Commission</li>
+        - Super will be set the maximum of 67% commission.<br/>
+        - Master will be set the maximum of 55% commission.<br/>
+        - Agent will be set by default 0 for commission, but the maximum value is 40% commission.<br/>
+        - Member will be set by default 0 for commission, but the maximum value is 30% commission.
+        <li>No currency play, otherwise, agents shall bear the risk and loss</li>
+      </ul>
+      Should you wish to have different settings for your downlines, please go to Poker setting page. Thanks
+    </ko-KR>
+    <th-TH src="">
+      Dear valued agents,<br />
+      We wish to announce the launching of our new product – Poker with effect from <strong>17/08/2012</strong>, by default all settings will be configured as follows:
+      <ul>
+        <li>No position taking offered for <strong>Poker product</strong>.</li>
+        <li>Member Max Transfer Credit</li>
+        - Super and Master will be set maximum value by default.<br/>
+        - Agent and Member will be set 30% on Super/Master default value.<br/>
+        - Daily auto reset limit will be set by default.
+        <li>Game Setting</li>
+        - Super and Master will be offered all stake levels.<br/>
+        - Agent and Member will only be offered the 2 lowest stake levels.
+        <li>Commission</li>
+        - Super will be set the maximum of 67% commission.<br/>
+        - Master will be set the maximum of 55% commission.<br/>
+        - Agent will be set by default 0 for commission, but the maximum value is 40% commission.<br/>
+        - Member will be set by default 0 for commission, but the maximum value is 30% commission.
+        <li>No currency play, otherwise, agents shall bear the risk and loss</li>
+      </ul>
+      Should you wish to have different settings for your downlines, please go to Poker setting page. Thanks
+    </th-TH>
+  </PopupAnnouncement>
+</FileDB>

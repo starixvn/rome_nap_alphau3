@@ -1,0 +1,19 @@
+﻿.marginLeft100 { margin-left: 100px; }
+
+.paddingTop15 { padding-top: 15px; }
+
+.filter { margin: 0  0 5px 100px; }
+
+.tblRpt .RptHeader th { font-size: 11px; font-weight: normal; padding: 2px; }
+
+.tblRpt tr td.number { color: #7D7D7D; }
+
+.tblRpt tr td { background-color: #fff; }
+
+.tblRpt tr.odd td { background-color: #f9f9f7; }
+
+.tblRpt tr td div.hand { color: #1BA4ED; }
+
+.tblRpt tr.session td { background-color: #E8DFCA; }
+
+.tblRpt tr:hover td { background-color: #ffff00; }

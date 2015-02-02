@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Functions>
+  <Function Name="Update setting: Live Casino">
+    <Setting Key="Acc_BalanceGameResetYesterday" SpName="Acc_BalanceGameResetYesterday_xpre" DbName="DBTXN.BODB02.bodbDownlineNetView"  />
+    <Setting Key="Acc_CustomerSelWinLimitLiveCS" SpName="Acc_CustomerSelWinLimitLiveCS_xpre" DbName="DBTXN.BODB02.bodbDownlineNetView"  />
+  </Function>
+
+  <Function Name="Transfer">
+    <Setting Key="Age_Transfer_Ins_Ag" SpName="Age_Transfer_Ins_Ag_xpre" DbName="DBTXN.BODB02.bodbDownlineNetView" Plain="0" />
+    <Setting Key="Age_Transfer_Ins_MAg" SpName="Age_Transfer_Ins_MAg_xpre" DbName="DBTXN.BODB02.bodbDownlineNetView" Plain="0" />
+    <Setting Key="Age_Transfer_Ins_SAg" SpName="Age_Transfer_Ins_SAg_xpre" DbName="DBTXN.BODB02.bodbDownlineNetView" Plain="0" />
+    <Setting Key="Age_Transfer_InsClearBalance_Ag" SpName="Age_Transfer_InsClearBalance_Ag_xpre" DbName="DBTXN.BODB02.bodbDownlineNetView" Plain="0" />
+  </Function>
+</Functions>

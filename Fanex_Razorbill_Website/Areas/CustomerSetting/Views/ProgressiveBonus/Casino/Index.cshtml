@@ -1,0 +1,49 @@
+﻿@using Fanex.CustomerSetting.Module.ProgressiveBonus.Resources;
+@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Areas/CustomerSetting/Views/ProgressiveBonus/Shared/_Layout.cshtml";
+}
+
+<div class="span5">
+   <div class="filter-bar">
+       <div class="filter-row tick-list progressive-box" ng-controller="ProgressiveBonusController" ng-app="ProgressiveBonus" id="ng-app">
+			<div id="err">
+				<div ng-class="getClass()"><div>{{error.ErrorMessage}}</div></div>
+			</div>
+           <table class="tbl-progressive">
+               <thead>
+                   <tr>
+                       <th colspan="2" class="row-title">
+                           @Language.Bonus
+                       </th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr ng-repeat="product in products">
+                       <td class="col-left">
+                           <input ng-init="product.preVal = product.Enable" type="checkbox" name="BetTypes" ng-model="product.Enable" ng-disabled="!directDownline || !product.EnableButton" id="chk-bettype-{{product.Id}}" class="chkbettype" ng-change="parentChange(product)"/><label
+                               for="chk-bettype-{{product.Id}}">{{product.Name}}</label>
+                            <input type="hidden" id="hidden-bettype-{{product.Id}}" value="{{product.Enable}}" />
+                       </td>
+                       <td colspan="col-right" ng-hide="hideEnableDownlineLink()">
+                           <input type="checkbox" name="BetTypes" ng-model="product.EnableDownlines" ng-disabled="!product.EnableDownlinesButton" id="chk-downline-{{product.Id}}" class="chkbettype" />
+						   <label for="chk-downline-{{product.Id}}" ng-disabled="!product.EnableDownlinesButton">@Language.Downlines</label>
+                       </td>                    
+                   </tr>
+               </tbody>
+           </table>
+		   <div style="text-align:center;margin-top:3px;">
+				<input type="button" value="@Language.Update" ng-click="update()" ng-class="{'submitbutton': !DisableUpdateButton()}" ng-disabled="DisableUpdateButton()"/>
+				<input type="button" value="@Language.Cancel" class="submitbutton" ng-click="cancel()"/>
+		   </div>
+       </div>
+   </div>
+</div>
+<script type="text/javascript">
+	var viewResources = {
+		confirm: '@Language.UpdateConfirm',
+		memberConfirm: '@Language.MemberUpdateConfirm'
+	}
+</script>

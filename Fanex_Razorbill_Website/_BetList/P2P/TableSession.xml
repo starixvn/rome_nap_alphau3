@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TableSession>
+  <Item>
+    <Date>1/17/2011 23:01</Date>
+    <Table id="23" name="Chatila" />
+    <Tournament id="" name="" />
+    <TableCurrency currency="USD">
+      <WinLoss>26.95</WinLoss>
+      <Comm>0.11</Comm>
+      <GrossComm>1.22</GrossComm>
+    </TableCurrency>
+    <XRate>7.77294</XRate>
+  </Item>
+  <Item>
+    <Date>1/17/2011 23:32</Date>
+    <Table id="" name="" />
+    <Tournament id="55" name="$98 NLH Heads Up" />
+    <TableCurrency currency="VND">
+      <WinLoss>-98.00</WinLoss>
+      <Comm>0.30</Comm>
+      <GrossComm>3.00</GrossComm>
+    </TableCurrency>
+    <XRate>2.1234</XRate>
+  </Item>
+</TableSession>

@@ -1,0 +1,70 @@
+﻿@using System.Threading
+@using Fanex.Game.Keno.Resources
+@{
+    Layout = null;
+
+    Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(Fanex.Razorbill.Module.ContextualCustomer.Utils.SessionExtension.Language);
+    Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
+
+    var normalResult = Url.Content("~") + "_Reports/Result/Result.aspx?is_outright=false";
+    var outRightResultUrl = Url.Content("~") + "_Reports/Result/Result.aspx?is_outright=true";
+    var deailResultUrl = Url.Content("~") + "game/keno/kenoresult/resultdetail?date=" + ViewBag.date + "&language=" + ViewBag.language +
+                         "&customerId=" + ViewBag.customerId;
+	var extendTokenUrl = Url.Content("~") + "game/keno/kenoresult/ExtendToken?userId=" + ViewBag.customerId;					 
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Message.Keno</title>
+    <link href="~/_GlobalResources/Css/Agent.css" rel="stylesheet" type="text/css" />
+    <link href="~/_Reports/Resources/Reports.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="page_main">
+        <div id="header_main" style="float: left; width: 95%;">
+            <div style="float: left;">@Resources.Lang.result</div>
+            <div style="float: right; width: 60%; text-align: right; margin-right: 15px;">
+                <input  type="button" class="btn " style="width: 65px; margin-right: 3px;" id="btnNormal" value="@Resources.Lang.lblNormal" onclick="location.href='@normalResult'"/>
+                <input  type="button" class="btn" style="width: 65px; margin-right: 3px;" id="btnoutRight" value="@Resources.Lang.lblOutRight" onclick="location.href='@outRightResultUrl'"/>
+                <input disabled="disabled" type="button" class="btn btn2" style="width: 65px;  margin-right: 3px;"
+                    id="btnKeno" value="@Message.Keno" />
+            </div>
+        </div>
+        <!--/multiple language-->
+    </div>
+    <div>
+    <form  ENCTYPE="multipart/form-data"  id="target" action="@deailResultUrl" target="iframeId" method="POST">
+    </form>
+    <iframe id="iframeId" name='iframeId'  width="800px" height="580px" frameborder="0"
+        style="overflow-x: hidden" left="0" top="0"></iframe>
+    </div>
+     <script src="@Url.Content("~/Js/jQuery/jquery-1.8.2.min.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#target').submit();
+            setInterval(function () {
+                extendToken();
+            }, 60000)
+            var iframe = window.parent.document.getElementById("main");
+            var height = iframe.scrollHeight - 50;
+            var width = iframe.scrollWidth - 10;
+
+            iframe.contentWindow.document.getElementById("iframeId").height = height + 'px';
+            iframe.contentWindow.document.getElementById("iframeId").width = width + 'px';
+        })
+
+        function extendToken() {
+            $.ajax({
+                type: 'POST',
+                url: '@extendTokenUrl',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (rs) { },
+                error: function (e) { },
+                complete: function (e) { }
+            });
+        }
+    </script>
+</body>
+</html>

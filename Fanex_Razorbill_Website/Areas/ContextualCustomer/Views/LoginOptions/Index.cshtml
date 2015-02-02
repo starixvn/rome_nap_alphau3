@@ -1,0 +1,103 @@
+﻿@using Sunplus.Agent.Model.Entities;
+@{
+    Page.Title = "Login Option";
+    Layout = "../Shared/_Layout.cshtml";
+}
+@{
+    IUserSession currentUserSession = UserSession.Current;
+    bool isSubAcc = currentUserSession.IsSubAcc;
+    bool isInternal = currentUserSession.IsInternal;
+    var nickname = @ViewBag.Nickname;
+    var msgNicknameValid = @Resources.LoginOptions.msgValidNickName;
+    var custID = @ViewBag.CustId;
+}
+@section Head{
+    <link href="~/Areas/ContextualCustomer/Views/LoginOptions/Style/LoginOption.css"
+        rel="stylesheet" type="text/css" />
+}
+<div id="tab_menu">
+    <div id="tab_menu_m">
+        <a id="loginTabId" class="tab_menu01AC" style="cursor: default;">@Resources.ProfilePicture.EditLoginOption</a>
+    </div>
+    <div id="tab_menu_L">
+        <a id="profileId" class="tab_menu02" target="main" href="@Url.Action("Index", "ProfilePicture", new { custId = @custID })">
+            @Resources.ProfilePicture.EditProfilePicture </a>
+    </div>
+</div>
+<div id="leftpane">
+    <div style="padding-left: 20px; padding-top: 10px; width: 700px; border: 1px solid #D8D8D8;">
+       @Html.Raw(new Fanex.Age.UI.Components.ErrorMsg.ErrorMsg_Template())
+        <div class="bg">
+            <div class="clear">
+            </div>
+            <div class="floatleft nicknameblock">
+                <div class="floatleft nicknamebox">
+                    <div class="fontblack">
+                        <b>@Resources.LoginOptions.nickname</b></div>
+                    <div class="mt5">
+                        <input type="text" style="width:130px" id="textNickName" title="@msgNicknameValid" autocomplete="off" value="@nickname"  maxlength="15" />
+                    </div>
+                </div>
+                <div class="floatleft loginoptions" style="width: 260px">
+                    <div>
+                        <label style="font-weight:bold;">
+                            <input type="radio" name="username" id="chkUserName" />
+                            @Resources.LoginOptions.usernameOrNickname</label></div>
+                    <div class="mt5">
+                        <label style="font-weight:bold;">
+                            <input type="radio" name="username" id="chkNickName" />
+                            @Resources.LoginOptions.nicknameOnly</label></div>
+                </div>
+                <div class="clear">
+                </div>
+                <div class="note">
+                    @Html.Raw(Resources.LoginOptions.msgNicknameOnly)
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="floatleft">
+                <div class="bg_arrow float_l">
+                    <div id="loading" class="loading" style="display: none; margin-top: 10px; margin-left: 5px">
+                    </div>
+                    <div id="msgError" class="error" style="display: none;">
+                    </div>
+                </div>
+                <div class="arrow float_l">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="btnLeft">
+                <button id="submitId" class="btnRight" type="button" onclick="return loginOption.updatingLoginOption();">@Resources.LoginOptions.submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Js/jQuery/jquery-1.8.2.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/ContextualCustomer/Views/LoginOptions/Scripts/LoginOption.js")" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+    var resources =
+                  {
+                      _notAuthorized: "@Html.Raw(@Resources.ProfilePicture.NotAuthorized)"
+                  };
+
+    var nickname = "@nickname";
+    var isLoginByNicknameOnly = "@ViewBag.LoginByNicknameOnly";
+    var msgNicknameValid = "@msgNicknameValid";
+    window.rootUrl = '@Url.Content("~")';
+
+    var _isInternal = '@isInternal';
+    var _isSubAcc = '@isSubAcc';
+
+    if (nickname.length > 0) {
+        $('#textNickName').prop('disabled', 'disabled');
+    }
+
+    if (isLoginByNicknameOnly == 'True') {
+        $('#chkNickName').prop('checked', 'true');
+    }
+    else {
+        $('#chkUserName').prop('checked', 'true');
+    }
+</script>

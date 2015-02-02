@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E6E7532E-AC83-4EC2-BA9A-94327AD54B1A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fanex.BetList.Age</RootNamespace>
+    <AssemblyName>Fanex.BetList.Age</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fanex.Age.Utility">
+      <HintPath>..\Fanex.Age.Utility\Bin\Fanex.Age.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.BetList.Core">
+      <HintPath>..\..\packages\Fanex.BetList.Core.2.0.5.11\lib\net40\Fanex.BetList.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Data">
+      <HintPath>..\..\_Dependencies\_FanexLib\Fanex.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="IBCFile">
+      <HintPath>..\..\packages\Fanex.File.1.0.0\lib\net40\IBCFile.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\packages\NPOI.2.0.6\lib\net40\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\packages\NPOI.2.0.6\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="RemotingRef">
+      <HintPath>..\..\packages\RemotingRef.1.0.0.1\lib\net40\RemotingRef.dll</HintPath>
+    </Reference>
+    <Reference Include="SPSRemoting">
+      <HintPath>..\..\packages\SPSRemoting.1.0.0\lib\net40\SPSRemoting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Core.Common">
+      <HintPath>..\..\packages\Sunplus.Core.Common.1.1.4505.19054\lib\net40\Sunplus.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TplCore">
+      <HintPath>..\..\packages\TplCore.1.0.4694.29951\lib\net40\TplCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\BetList.designer.cs">
+      <DependentUpon>BetList.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Lang.Designer.cs">
+      <DependentUpon>Lang.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Racing.designer.cs">
+      <DependentUpon>Racing.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="BetListCmd\BetListFactory.cs" />
+    <Compile Include="BetListCmd\BettypeCmd.cs" />
+    <Compile Include="BetListCmd\BettypeMatchCmd.cs" />
+    <Compile Include="BetListCmd\BLDailySTCmd.cs" />
+    <Compile Include="BetListCmd\CancelBetListCmd.cs" />
+    <Compile Include="BetListCmd\CombinationMixParlayCmd.cs" />
+    <Compile Include="BetListCmd\CombMixParlayBetListCmd.cs" />
+    <Compile Include="BetListCmd\CombMixParlayBetListDetailCmd.cs" />
+    <Compile Include="BetListCmd\CorrectScoreCmd.cs" />
+    <Compile Include="BetListCmd\MixParlayBetListCmd.cs" />
+    <Compile Include="BetListCmd\MixParlayByMatchCmd.cs" />
+    <Compile Include="BetListCmd\MixParlayCmd.cs" />
+    <Compile Include="BetListCmd\RacingBettypeMatchCmd.cs" />
+    <Compile Include="BetListCmd\RunningBettypeMatchCmd.cs" />
+    <Compile Include="BetListCmd\WLByBettypeMatchCmd.cs" />
+    <Compile Include="BetListCmd\WLByDateCmd.cs" />
+    <Compile Include="BetListExcelBuilderExt\BetListExcelBuilderExt.cs" />
+    <Compile Include="BetListHTMLBuilderExt\AgentPTBuilder\AgentPT1.cs" />
+    <Compile Include="BetListHTMLBuilderExt\AgentPTBuilder\AgentPT1233.cs" />
+    <Compile Include="BetListHTMLBuilderExt\AgentPTBuilder\AgentPT33.cs" />
+    <Compile Include="BetListHTMLBuilderExt\AgentPTBuilder\AgentPT71.cs" />
+    <Compile Include="BetListHTMLBuilderExt\AgentPTBuilder\AgentPT73.cs" />
+    <Compile Include="BetListHTMLBuilderExt\AgentPTBuilder\IAgentPT.cs" />
+    <Compile Include="BetListHTMLBuilderExt\BetListHTMLBuilderExt.cs" />
+    <Compile Include="BetListHTMLBuilderExt\ChoiceBuilder\Choice29.cs" />
+    <Compile Include="BetListHTMLBuilderExt\ChoiceBuilder\Choice9.cs" />
+    <Compile Include="BetListHTMLBuilderExt\FooterBuilder\BlankFooter.cs" />
+    <Compile Include="BetListHTMLBuilderExt\FooterBuilder\Footer0.cs" />
+    <Compile Include="BetListHTMLBuilderExt\FooterBuilder\Footer1.cs" />
+    <Compile Include="BetListHTMLBuilderExt\FooterBuilder\IFooter.cs" />
+    <Compile Include="BetListHTMLBuilderExt\MasterPTBuilder\IMasterPT.cs" />
+    <Compile Include="BetListHTMLBuilderExt\MasterPTBuilder\MasterPT1.cs" />
+    <Compile Include="BetListHTMLBuilderExt\MasterPTBuilder\MasterPT1233.cs" />
+    <Compile Include="BetListHTMLBuilderExt\MasterPTBuilder\MasterPT33.cs" />
+    <Compile Include="BetListHTMLBuilderExt\MasterPTBuilder\MasterPT71.cs" />
+    <Compile Include="BetListHTMLBuilderExt\MasterPTBuilder\MasterPT73.cs" />
+    <Compile Include="BetListHTMLBuilderExt\NoBuilder\INo.cs" />
+    <Compile Include="BetListHTMLBuilderExt\NoBuilder\No1.cs" />
+    <Compile Include="BetListHTMLBuilderExt\SuperPTBuilder\ISuperPT.cs" />
+    <Compile Include="BetListHTMLBuilderExt\SuperPTBuilder\SuperPT1.cs" />
+    <Compile Include="BetListHTMLBuilderExt\SuperPTBuilder\SuperPT1233.cs" />
+    <Compile Include="BetListHTMLBuilderExt\SuperPTBuilder\SuperPT33.cs" />
+    <Compile Include="BetListHTMLBuilderExt\SuperPTBuilder\SuperPT71.cs" />
+    <Compile Include="BetListHTMLBuilderExt\SuperPTBuilder\SuperPT73.cs" />
+    <Compile Include="BetListHTMLBuilderExt\WinLostBuilder\IWinLost.cs" />
+    <Compile Include="BetListHTMLBuilderExt\WinLostBuilder\WinLost1.cs" />
+    <Compile Include="BetListCmd\BetListCmd.cs" />
+    <Compile Include="Definition\BetListType.cs" />
+    <Compile Include="BetListCmd\IBetListCmd.cs" />
+    <Compile Include="DTO\TicketMapper.cs" />
+    <Compile Include="DTO\TicketDataMapper.cs" />
+    <Compile Include="DTO\TicketDataTransformer.cs" />
+    <Compile Include="DTO\TicketTransformer.cs" />
+    <Compile Include="ExtTemplate\AgentPT.htm.cs" />
+    <Compile Include="ExtTemplate\BetList.htm.cs" />
+    <Compile Include="ExtTemplate\BetListTemplate.cs" />
+    <Compile Include="ExtTemplate\Footer0.htm.cs" />
+    <Compile Include="ExtTemplate\Footer1.htm.cs" />
+    <Compile Include="ExtTemplate\Header1.htm.cs" />
+    <Compile Include="ExtTemplate\MasterPT.htm.cs" />
+    <Compile Include="ExtTemplate\No.htm.cs" />
+    <Compile Include="ExtTemplate\OpenBetList.htm.cs" />
+    <Compile Include="ExtTemplate\Status.htm.cs" />
+    <Compile Include="ExtTemplate\SuperPT.htm.cs" />
+    <Compile Include="ExtTemplate\Trans.htm.cs" />
+    <Compile Include="ExtTemplate\WinLoss.htm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExtTemplate\BetList.htm" />
+    <Content Include="ExtTemplate\AgentPT.htm" />
+    <Content Include="ExtTemplate\Footer1.htm" />
+    <Content Include="ExtTemplate\Footer0.htm" />
+    <Content Include="ExtTemplate\MasterPT.htm" />
+    <Content Include="ExtTemplate\OpenBetList.htm" />
+    <Content Include="ExtTemplate\SuperPT.htm" />
+    <Content Include="ExtTemplate\Header1.htm" />
+    <Content Include="ExtTemplate\No.htm" />
+    <Content Include="ExtTemplate\Status.htm" />
+    <Content Include="ExtTemplate\Trans.htm" />
+    <Content Include="ExtTemplate\WinLoss.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\BetList.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>BetList.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Lang.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Racing.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Racing.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fanex.Age.UI\Fanex.Age.UI.csproj">
+      <Project>{8CF3E76A-81DB-4D8C-B999-9B4D428591F5}</Project>
+      <Name>Fanex.Age.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Agent.Model\Sunplus.Agent.Model.csproj">
+      <Project>{8831EE6F-7EF9-48F3-9DA2-82C6C5EB6E47}</Project>
+      <Name>Sunplus.Agent.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Agent.Utilities\Sunplus.Agent.Utilities.csproj">
+      <Project>{016F274C-1F76-450B-B80D-E7FB59BE6A2B}</Project>
+      <Name>Sunplus.Agent.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

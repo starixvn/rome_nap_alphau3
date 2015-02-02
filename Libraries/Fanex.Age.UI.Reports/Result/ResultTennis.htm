@@ -1,0 +1,267 @@
+<!--TableMain--> 
+<table class="tblRpt_center" width="100%" border="0" cellpadding="0" cellspacing="1" id="tbl-rpt" style="display:table;">
+    <tr class="RptHeader">
+        <td style="width: 90px" columnname="kickofftime">
+            {static:Resources.Lang.kickofftime}
+        </td>
+        <td>
+            {static:Resources.Lang.match}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {static:Resources.Lang.S1}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {static:Resources.Lang.S2}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {static:Resources.Lang.S3}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {static:Resources.Lang.S4}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {static:Resources.Lang.S5}
+        </td>
+        <td style="width: 77px; word-wrap: break-word; white-space: normal">
+            {static:Resources.Lang.totalgame}
+        </td>
+        <td style="width: 77px; word-wrap: break-word; white-space: normal">
+            {static:Resources.Lang.totalset}
+        </td>
+        <td style="width: 121px; word-wrap: break-word; white-space: normal">
+            {static:Resources.Lang.status}
+        </td>
+    </tr>
+    <!--RowData-->
+    <!--League-->
+    <tr>
+        <td colspan="10" class="league" style="padding-left: 20px;">
+            {LeagueName}
+        </td>
+    </tr>
+    <!--/League-->
+    <!--Row-->
+    <tr bgcolor="{ColorClass}" onmouseover="this.style.backgroundColor='{static:Fanex.Age.UI.Common.RowBgOver}'" onmouseout="this.style.backgroundColor='{ColorClass}'">
+        <td class="bl_time_nowrap" rowspan="2">
+            {KickOffTime}
+        </td>
+        <td class="l">
+            {Home}
+        </td>
+        <td>
+            {S1Home}
+        </td>
+        <td>
+            {S2Home}
+        </td>
+        <td>
+            {S3Home}
+        </td>
+        <td>
+            {S4Home}
+        </td>
+        <td>
+            {S5Home}
+        </td>
+        <td>
+            {TotalGameHome}
+        </td>
+        <td>
+            {TotalSetHome}
+        </td>
+        <td rowspan="2">
+            {EventStatus}
+            <!--MatchDetail-->
+            <div class="ps"><a href="javascript:;" onclick="ViewTennisDetail({matchId}, {race:0}, {betType:1}, {sportType:5}, {refNo}, {league}, {is_outright:0});" title="{DetailTooltip}">[i]</a></div>
+            <!--/MatchDetail-->
+        </td>
+    </tr>
+    <tr bgcolor="{ColorClass}" onmouseover="this.style.backgroundColor='{static:Fanex.Age.UI.Common.RowBgOver}'" onmouseout="this.style.backgroundColor='{ColorClass}'">
+        <td class="l">
+            {Away}
+        </td>
+        <td>
+            {S1Away}
+        </td>
+        <td>
+            {S2Away}
+        </td>
+        <td>
+            {S3Away}
+        </td>
+        <td>
+            {S4Away}
+        </td>
+        <td>
+            {S5Away}
+        </td>
+        <td>
+            {TotalGameAway}
+        </td>
+        <td>
+            {TotalSetAway}
+        </td>
+    </tr>
+    <!--/Row-->
+    <!--/RowData-->
+    <!--LimitNotFound-->
+    {load:Fanex.Age.UI.Reports.Components.NoInfo_Template NoInfoRow=new Fanex.Age.UI.Reports.Components.NoInfo_Template()}
+    <!--/LimitNotFound-->
+</table>
+<!--/TableMain--> 
+<!--SetDetail-->
+<!--TableDetail--> 
+<table class="tblRpt_center" width="{WidthPercent:97}%" border="0" cellpadding="0" cellspacing="1" id="setDetail" style="display:table; margin-top: {MarginTop:15}px; margin-left: {MarginLeft:16.5}px;">
+    <!--DetailHeader-->
+    <tr class="RptHeader">
+        <!--TitleNameBlock-->
+        <td "width: 200px;">
+            {Set_X_Game_Result}
+        </td>
+        <!--/TitleNameBlock-->
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S1:1}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S2:2}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S3:3}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S4:4}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S5:5}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S6:6}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S7:7}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S8:8}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S9:9}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S10:10}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S11:11}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S12:12}
+        </td>
+        <td style="width: 50px; word-wrap: break-word; white-space: normal">
+            {S13:13}
+        </td> 
+    </tr>
+    <!--/DetailHeader-->
+    <!--DetailRow-->
+    <tr bgcolor="#faf9ee" onmouseover="this.style.backgroundColor='{static:Fanex.Age.UI.Common.RowBgOver}'" onmouseout="this.style.backgroundColor='#faf9ee'">
+        <!--HomeNameBlock-->
+        <td class="l" rowspan="{mergeNum:1}">
+            {Home}
+        </td>
+        <!--/HomeNameBlock-->
+        <!--HomeValueBlock-->
+        <td >
+            {S1Home: -}
+        </td>
+        <td >
+            {S2Home: -}
+        </td>
+        <td >
+            {S3Home: -}
+        </td>
+        <td >
+            {S4Home: -}
+        </td>
+        <td >
+            {S5Home: -}
+        </td>
+        <td >
+            {S6Home: -}
+        </td>
+        <td >
+            {S7Home: -}
+        </td>
+        <td >
+            {S8Home: -}
+        </td>
+        <td >
+            {S9Home: -}
+        </td>
+        <td >
+            {S10Home: -}
+        </td>
+        <td >
+            {S11Home: -}
+        </td>
+        <td >
+            {S12Home: -}
+        </td>
+        <td >
+            {S13Home: -}
+        </td>
+        <!--/HomeValueBlock-->
+    </tr>
+    <tr bgcolor="#faf9ee" onmouseover="this.style.backgroundColor='{static:Fanex.Age.UI.Common.RowBgOver}'" onmouseout="this.style.backgroundColor='#faf9ee'">
+        <!--AwayNameBlock-->
+        <td class="l">
+            {Away}
+        </td>
+        <!--/AwayNameBlock-->
+        <!--AwayValueBlock-->
+        <td >
+            {S1Away: -}
+        </td>
+        <td >
+            {S2Away: -}
+        </td>
+        <td >
+            {S3Away: -}
+        </td>
+        <td >
+            {S4Away: -}
+        </td>
+        <td >
+            {S5Away: -}
+        </td>
+        <td >
+            {S6Away: -}
+        </td>
+        <td >
+            {S7Away: -}
+        </td>
+        <td >
+            {S8Away: -}
+        </td>
+        <td >
+            {S9Away: -}
+        </td>
+        <td >
+            {S10Away: -}
+        </td>
+        <td >
+            {S11Away: -}
+        </td>
+        <td >
+            {S12Away: -}
+        </td>
+        <td >
+            {S13Away: -}
+        </td>
+        <!--/AwayValueBlock-->
+    </tr>
+    <!--/DetailRow--> 
+    <!--NoData-->
+    {load:Fanex.Age.UI.Reports.Components.NoInfo_Template NoInfoRow=new Fanex.Age.UI.Reports.Components.NoInfo_Template()}
+    <!--/NoData-->
+</table>
+<!--/TableDetail-->
+<!--/SetDetail-->
+

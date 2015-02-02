@@ -1,0 +1,115 @@
+﻿@{
+    Layout = "../Shared/_HandHistoryDetailLayout.cshtml";
+}
+@using Fanex.Razorbill.Module.RnGCasino.DTOs;
+@using Fanex.Razorbill.Module.RnGCasino.Enums
+@using Fanex.Razorbill.Module.RnGCasino.Extensions;
+@model HandHistoryDetail
+@{
+    CowboyFeverResult firstRowCowboyFever = (CowboyFeverResult)Model.GameResults[0];
+    CowboyFeverBetTypeMoney betTypeMoney = (CowboyFeverBetTypeMoney)Model.BetTypeMoneys[0];
+    string currency = betTypeMoney.Currency;
+}
+<table id="casino-betlist-a" style="width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="5" class="hd2 b">
+                @firstRowCowboyFever.TableName - @firstRowCowboyFever.BetTime
+            </th>
+        </tr>
+    </thead>
+    <tr class="th b">
+        <td colspan="5" class="c">
+            @RnGCasinoLang.Player: @firstRowCowboyFever.UserName
+        </td>
+    </tr>
+    <tr class="th b">
+        <td colspan="5" class="c">
+            @firstRowCowboyFever.ResultName
+        </td>
+    </tr>
+    <tr class="bg_eb">
+        <td colspan="5" class="c">
+            @Html.Raw(firstRowCowboyFever.Result)
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowCowboyFever.PlayerHistoryNo
+        </td>
+        <td colspan="4" class="l">
+            @firstRowCowboyFever.PlayerHistoryNoResult
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowCowboyFever.AutoSpin
+        </td>
+        <td colspan="4" class="l">
+            @firstRowCowboyFever.AutoSpinResult
+        </td>
+    </tr>
+    @foreach (GameResult gameResult in Model.GameResults)
+    {
+        CowboyFeverResult cowboyFever = (CowboyFeverResult)gameResult;
+        if (cowboyFever.ShowType == HandHistoryShowType.AddRow_HitBetLine)
+        {
+            <tr class="hd2 b">
+                <td class="c">@RnGCasinoLang.LineNo</td>
+                <td class="c">@RnGCasinoLang.Symbol</td>
+                <td class="c">@RnGCasinoLang.CoinSize</td>
+                <td class="c">@RnGCasinoLang.Odds</td>
+                <td class="c">@RnGCasinoLang.Win</td>
+            </tr>
+        }
+        else if (cowboyFever.ShowType == HandHistoryShowType.Result_HitBetLine)
+        {
+            <tr class="bg_eb2">
+                <td class="c">@Html.Raw(cowboyFever.LineNo)</td>
+                <td class="c">@Html.Raw(cowboyFever.Symbol)</td>
+                <td class="c">@cowboyFever.CoinSize</td>
+                <td class="c">@cowboyFever.Odds</td>
+                <td class="c">@cowboyFever.Win</td>
+            </tr>
+        }
+        else if (cowboyFever.ShowType == HandHistoryShowType.Add_TotalLineWinLoss)
+        {
+            <tr class="th b">
+                <td class="l">
+                    @cowboyFever.WinLoss
+                </td>
+                <td colspan="4" class="r" >
+                    @Html.FormatNumber(cowboyFever.WinLossResult, currency)
+                </td>
+            </tr>
+             
+        }
+        else if (cowboyFever.ShowType == HandHistoryShowType.Add_Bonus)
+        {
+            <tr class="th b">
+                <td class="l">
+                    @cowboyFever.Bonus
+                </td>
+                <td colspan="4" class="r" >
+                    @cowboyFever.BonusResult
+                </td>
+            </tr>
+        }
+    }
+    <tr class="th b">
+        <td class="l">
+            @firstRowCowboyFever.TotalBet
+        </td>
+        <td colspan="4" class="r" >
+            @Html.FormatNumber(betTypeMoney.Bet, currency)
+        </td>
+    </tr>
+    <tr class="th b">
+        <td class="l">
+            @firstRowCowboyFever.TotalWinLoss
+        </td>
+        <td colspan="4" class="r" >
+            @Html.FormatNumber(betTypeMoney.WinLoss, currency)
+        </td>
+    </tr>
+</table>

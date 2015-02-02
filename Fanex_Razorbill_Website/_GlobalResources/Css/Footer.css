@@ -1,0 +1,38 @@
+﻿@font-face {
+    font-family: Roboto;
+    src: url(../../App_Themes/Fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Light";
+    src: url(../../App_Themes/Fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Bold";
+    src: url(../../App_Themes/Fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: url(../../App_Themes/Fonts/Roboto/Roboto-Medium.ttf);
+}
+
+#footer
+{
+	height: 22px;
+	border: 1px #c8c8c8 solid;
+	background: url(../Images/bg_footer.jpg) repeat-x top;
+	text-align: right;
+	padding-right: 10px;
+	line-height: 19px;
+	font-family: "Roboto",Tahoma,Arial,helvetica,sans-serif;
+	font-size: 11px;
+}
+html, body
+{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	cursor: default;
+}
+

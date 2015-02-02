@@ -1,0 +1,116 @@
+﻿@{
+    const int MasterRole = 3, SuperRole = 4;
+    int roleId = (int)ViewBag.RoleId;
+    string ptPercent = RnGCasinoLang.AGPercent;
+    string commPercent = RnGCasinoLang.ACommPercent;
+    if (roleId >= MasterRole)
+    {
+        ptPercent = RnGCasinoLang.MAPercent + "<br/>" + ptPercent;
+        commPercent = RnGCasinoLang.MCommPercent + "<br/>" + commPercent;
+    }
+    if (roleId >= SuperRole)
+    {
+        ptPercent = RnGCasinoLang.SAPercent + "<br/>" + ptPercent;
+        commPercent = RnGCasinoLang.SCommPercent + "<br/>" + commPercent;
+    }
+}
+@helper DisplayDecimal(decimal dec) {
+    string twoDigits = DNAide.Utils.NumberFormat.DecFormat(dec, 2);
+    if (dec >= 0)
+    {
+        @twoDigits
+    }
+    else
+    {
+        <span class="bl_favorite">@twoDigits</span>    
+    }
+}
+@helper DisplaySMAStruct(Fanex.Razorbill.Module.RnGCasino.DTOs.SMAStruct data, int roleId) {
+    const int MasterRole = 3, SuperRole = 4;
+    string result = DNAide.Utils.NumberFormat.DecFormat(data.AG, 0);
+    if (roleId >= MasterRole)
+    {
+        result = DNAide.Utils.NumberFormat.DecFormat(data.MA, 0) + "<br/>" + result;
+    }
+    if (roleId >= SuperRole)
+    {
+        result = DNAide.Utils.NumberFormat.DecFormat(data.SA, 0) + "<br/>" + result;
+    }
+    
+    @Html.Raw(result)
+}
+
+<table id="tblHandHistoryResult" class="tblRpt" border="0" cellpadding="0" cellspacing="1">
+    <thead>
+        <tr class="RptHeader">
+            <th style="width:20px;">#</th>
+            <th>@RnGCasinoLang.GameId</th>
+            <th>@RnGCasinoLang.PlayerHistoryNo</th>
+            <th>@RnGCasinoLang.GameType</th>
+            <th>@RnGCasinoLang.GameGroup</th>
+            <th>@RnGCasinoLang.StartDate</th>
+            <th>@RnGCasinoLang.EndDate</th>
+            <th>@RnGCasinoLang.StartBalance</th>
+            <th>@RnGCasinoLang.EndBalance</th>
+            <th>@RnGCasinoLang.Stake</th>
+            <th>@RnGCasinoLang.Bet</th>
+            <th>@RnGCasinoLang.WinLoss</th>
+            <th>@RnGCasinoLang.RollingComm</th>
+            <th>@RnGCasinoLang.Results</th>
+            <th>@Html.Raw(ptPercent)</th>
+            <th>@Html.Raw(commPercent)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model == null || Model.Count == 0)
+        {
+            <tr><td class="c" colspan="16">@RnGCasinoLang.NoInfo</td></tr> 
+        }
+        else
+        {
+            foreach (var group in Model)
+            {
+                int number = 0;
+                foreach (var handHistory in group.HandHistories)
+                {
+                    <tr class="@(++number % 2 == 0 ? string.Empty : "odd")">
+                        <td class="r number">@(number)</td>
+                        <td class="r">@handHistory.GameId</td>
+                        <td class="r">@handHistory.PlayerHistoryNo</td>
+                        <td>@Html.Raw(handHistory.GameType)</td>
+                        <td>@handHistory.GameGroup</td>
+                        <td class="bl_time">@handHistory.StartDate</td>
+                        <td class="bl_time">@handHistory.EndDate</td>
+                        <td class="b r">@DisplayDecimal(handHistory.StartBalance)</td>
+                        <td class="b r">@DisplayDecimal(handHistory.EndBalance)</td>
+                        <td class="b r">@DisplayDecimal(handHistory.Stake)</td>
+                        <td class="b r">@DisplayDecimal(handHistory.Bet)</td>
+                        <td class="b r">@DisplayDecimal(handHistory.WinLoss)</td>
+                        <td class="b r">@DisplayDecimal(handHistory.RollingComm)</td>
+                        <td>
+                            @* PB(Status=[31,32]) no need to click "handhistory detail". *@
+                            @if (handHistory.Status != 31 && handHistory.Status != 32)
+                            {
+                                <div class="hand" data-url="@handHistory.Url" data-width="@handHistory.Width">
+                                    @Html.Raw(handHistory.Result)
+                                </div>
+                            }
+                        </td>
+                        <td class="b r">@DisplaySMAStruct(handHistory.PositionTaking, roleId)</td>
+                        <td class="b r">@DisplaySMAStruct(handHistory.CommissionRate, roleId)</td>
+                    </tr>                
+                }
+            
+                <tr class="b session">
+                    <td colspan="8">@(RnGCasinoLang.SessionId + ": " + group.SessionId)</td>
+                    <td class="r">@RnGCasinoLang.Total</td>
+                    <td class="r">@DisplayDecimal(group.Total.Stake)</td>
+                    <td class="r">@DisplayDecimal(group.Total.Bet)</td>
+                    <td class="r">@DisplayDecimal(group.Total.WinLoss)</td>
+                    <td class="r">@DisplayDecimal(group.Total.RollingComm)</td>
+                    <td colspan="3"></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

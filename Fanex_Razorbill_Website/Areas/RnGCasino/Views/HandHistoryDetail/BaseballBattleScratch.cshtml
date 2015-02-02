@@ -1,0 +1,84 @@
+﻿@{
+    Layout = "../Shared/_HandHistoryDetailLayout.cshtml";
+}
+@using Fanex.Razorbill.Module.RnGCasino.DTOs;
+@using Fanex.Razorbill.Module.RnGCasino.Enums
+@using Fanex.Razorbill.Module.RnGCasino.Extensions;
+@model HandHistoryDetail
+@{
+    BaseballBattleScratchResult firstRowBaseballBattle = (BaseballBattleScratchResult)Model.GameResults[0];
+    BaseballBattleScratchBetTypeMoney betTypeMoney = (BaseballBattleScratchBetTypeMoney)Model.BetTypeMoneys[0];
+    string currency = betTypeMoney.Currency;
+}
+<table id="casino-betlist-a" style="width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="5" class="hd2 b">
+                @firstRowBaseballBattle.TableName - @firstRowBaseballBattle.BetTime
+            </th>
+        </tr>
+    </thead>
+    <tr class="th b">
+        <td colspan="5" class="c">
+            @RnGCasinoLang.Player: @firstRowBaseballBattle.UserName
+        </td>
+    </tr>
+    <tr class="th b">
+        <td colspan="5" class="c">
+            @firstRowBaseballBattle.ResultName
+        </td>
+    </tr>
+    <tr class="bg_eb">
+        <td colspan="5" class="c">
+            @Html.Raw(firstRowBaseballBattle.Result)
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowBaseballBattle.PlayerHistoryNo
+        </td>
+        <td colspan="4" class="l">
+            @firstRowBaseballBattle.PlayerHistoryNoResult
+        </td>
+    </tr>
+    <tr>
+        <td class="b c">
+            @firstRowBaseballBattle.AutoPlay
+        </td>
+        <td colspan="4" class="l">
+            @firstRowBaseballBattle.AutoPlayResult
+        </td>
+    </tr>
+    <tr class="th b">
+        <td class="l">
+            @firstRowBaseballBattle.Bet
+        </td>
+        <td colspan="4" class="r" >
+            @Html.FormatNumber(betTypeMoney.Bet, currency)
+        </td>
+    </tr>
+    <tr class="th b">
+        <td class="l">
+            @firstRowBaseballBattle.Odds
+        </td>
+        <td colspan="4" class="r" >
+             @Html.FormatNumber(betTypeMoney.Odds, 2)
+        </td>
+    </tr>
+    <tr class="th b">
+        <td class="l">
+            @firstRowBaseballBattle.Multiplier
+        </td>
+        <td colspan="4" class="r" >
+            @firstRowBaseballBattle.MultiplierResult
+        </td>
+    </tr>
+    <tr class="th b">
+        <td class="l">
+            @firstRowBaseballBattle.WinLoss
+        </td>
+        <td colspan="4" class="r" >
+            @Html.FormatNumber(betTypeMoney.WinLoss, currency)
+        </td>
+    </tr>
+</table>

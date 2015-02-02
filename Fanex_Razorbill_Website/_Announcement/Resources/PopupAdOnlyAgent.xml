@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FileDB>
+  <PopupAnnouncement id="0" width="800" height="285" top="110" left="250">
+    <en-US src="">
+      Dear valued agents,<br />
+      We wish to announce the launching of our new product – Live Casino and Casino with effect from <strong>18/05/2012</strong>, all settings will be configured as follows:
+      <ul>
+        <li>Position taking will be copied from Soccer Live Handicap.</li>
+        <li>Betting limit will only be offered lowest stake level.</li>
+        <li>Member will only have one stake level in Live Casino.</li>
+      </ul>
+      Should you wish to have different settings, please contact your upline. Thanks
+    </en-US>
+    <zh-CN src="">
+      敬爱的代理们,<br />
+      我们很荣幸的宣布，您们所期待的娱乐厅（真人荷官）与娱乐城将于 <strong>18/05/2012</strong> 隆重推出。以下为基本系统预设值:
+      <ul>
+        <li>占成依据您足球中亚洲盘的滚球设定。</li>
+        <li>您只拥有投注限额中的最低投注组合。</li>
+        <li>您的会员在娱乐厅（现场荷官）只能享有一组投注组合。</li>
+      </ul>
+      若您对设定值有任何需求，请联系您的上线。谢谢
+    </zh-CN>
+    <zh-TW src="">
+      敬愛的代理們,<br />
+      我們很榮幸的宣布，您們所期待的娛樂廳（真人荷官）与娱乐城將於 <strong>18/05/2012</strong> 隆重推出。以下為基本系統預設值:
+      <ul>
+        <li>佔成依據您足球中亞洲盤的滾球設定。</li>
+        <li>您隻擁有投注限額中的最低投注組合。</li>
+        <li>您的会员在娱乐厅（现场荷官）只能享有一组投注组合。</li>
+      </ul>
+      若您對設定值有任何需求，請聯系您的上線。謝謝
+    </zh-TW>
+    <ja-JP src="">
+      Dear valued agents,<br />
+      We wish to announce the launching of our new product – Live Casino and Casino with effect from <strong>18/05/2012</strong>, all settings will be configured as follows:
+      <ul>
+        <li>Position taking will be copied from Soccer Live Handicap.</li>
+        <li>Betting limit will be offered all stake levels.</li>
+        <li>Member will only have one stake level in Live Casino.</li>
+      </ul>
+      Should you wish to have different settings, please contact your upline. Thanks
+    </ja-JP>
+    <ko-KR src="">
+      친애하는 고객님께,<br />
+      라이브 카지노 오픈 공지 - <strong>18/05/2012</strong> 부터 라이브 딜러 카지노와 카지노 제공으로 모든 설정은 다음과 같이 구성됩니다:
+      <ul>
+        <li>포지션테이킹은 축구 라이브 핸디캡과 동일하게 적용됩니다.</li>
+        <li>베팅 한도는 모든 베팅 금액의 레벨에 제공됩니다.</li>
+        <li>라이브 카지노에서 회원은 오직 하나의 베팅금액 레벨을 가질수 있습니다.</li>
+      </ul>
+      고객님의 설정 변경을 원하시면 업라인에 문의하시기 바랍니다. 감사합니다.
+    </ko-KR>
+    <th-TH src="">
+      เรียน เอเจนต์ ที่มีอุปการคุณ,<br />
+      ทางบริษัทใคร่ขอประกาศให้ทราบว่า ทางเราจะทำการเปิดตัวผลิตภันฑ์ใหม่ - คาซิโน เกมสด และคาสิโน จะมีผลตั้งแต่ <strong>18/05/2012</strong>, การตั้งค่าทั้งหมดจะเป็นการกำหนดดังต่อไปนี้      
+      <ul>
+        <li>การตั้งค่าแบ่งสู้ จะคัดลอกจาก  ราคาต่อรอง ฟุตบอล เกมสด.</li>
+        <li>วงเงินการเดิมพัน จะได้รับในระดับการวางเดิมพันต่ำสุด เท่านั้น.</li>
+        <li>สมาชิกจะมีการเดิมพันระดับเดียวในคาสิโนเกมสดเท่านั้น.</li>
+      </ul>
+      หากท่านต้องการการตั้งค่าทีนอกเหนือไปจากนี้ รบกวนติดต่อทาง อัพไลด์ของท่าน. ขอบพระคุณเป็นอย่างสูง      
+    </th-TH>
+  </PopupAnnouncement>
+</FileDB>

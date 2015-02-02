@@ -1,0 +1,48 @@
+﻿@using Fanex.CustomerSetting.Module.Keno.Resources
+@{
+    string hide = ViewBag.roleId == 1 ? "true" : "false";
+}
+@*<link href="@Url.Content("~/Areas/CustomerSetting/Views/LeftPanel/Styles/LeftPanel.css")" rel="stylesheet" type="text/css" />*@
+@*<link href="@Url.Content("~/Areas/CustomerSetting/Styles/Common.css")" rel="stylesheet" type="text/css" />*@
+<link href="@Url.Content("~/Areas/CustomerSetting/Views/Keno/EnableStatus/Styles/Enablekeno.css")" rel="stylesheet" type="text/css" />
+<div id="ng-app" data-ng-app="kenoStatusApp" data-ng-controller="KenoStatusController" style="display: none; width: 96%">
+    <div id="errMsg" style="display: none" class="successMsg">
+    </div>
+    <table class="tableInfo" cellpadding="0" cellspacing="0" border="0">
+        <tr class="title">
+            <td colspan="2" class="bold enableTitle"><div><div style="float: left"><input id="chkAll" data-ng-init="Init()" data-ng-disabled="{{isDisabledAll || (currentLoginRoleId - model.roleID != 1)}}" type="checkbox" data-ng-click="CheckAll()" />@Fanex.CustomerSetting.Module.Keno.Resources.LayoutTexts.All</div>
+           <div style="text-align: center">{{model.roleID == 4 ? '@ViewLang.Super: ' : model.roleID == 3 ? '@ViewLang.Master: ' : model.roleID == 2 ? '@ViewLang.Agent: ' : '@ViewLang.Member: '}}&nbsp;{{model.userName}}</div></div></td>
+        </tr>
+        <tr data-ng-repeat="item in betTypes" data-ng-hide="item.isHide" data-ng-init="item.disable = false; item.enable = !item.isDisabled; item.preVal = item.enable; item.disableDownline = true; item.enableDownline = !item.isDisabledDownlines; item.preValDownline = item.enableDownline">
+           <td style="width: 50%">
+                <input name="betTypes0" type="checkbox" data-ng-click="item.disable = !item.enable; item.isDisabledDownlines = !item.enableDownline; CheckStatus({{item.preVal}}, this)" data-ng-model="item.enable" data-ng-disabled="{{item.isDisabledUpline || (currentLoginRoleId - model.roleID != 1)}}" /><span>{{item.betTypeName}}</span>
+            </td>
+            <td>
+                <input id="{{item.betTypeID}}" name="betTypes1" data-ng-hide="@hide || !model.hasDownline" type="checkbox" data-ng-click="CheckDownline('{{item.betTypeID}}', this)" data-ng-model="item.enableDownline" data-ng-disabled="item.disableDownline" /><span data-ng-hide="@hide || !model.hasDownline">@Fanex.CustomerSetting.Module.Keno.Resources.LayoutTexts.EnableDownlines</span>
+            </td>
+        </tr>
+    </table>
+    <div style="text-align: left" >
+        <input class="buttonPopup" data-ng-disabled="{{isDisabledAll || (currentLoginRoleId - model.roleID != 1)}}" type="button" value="@ViewLang.Submit" data-ng-click="Update()" style="margin-right: 0" />
+    </div>
+</div>
+<script src="@Url.Content("~/Areas/CustomerSetting/Scripts/jquery.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Scripts/jquery.blockUI.1.33.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Scripts/angular.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Scripts/Fanex.CustomerSetting.Core.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/CustomerSetting/Keno/EnableStatus/GetKenoStatusData?id=" + ViewBag.id + "&uplineId=" + ViewBag.uplineId + "&roleId=" + ViewBag.roleId + "&subAccountId=" + ViewBag.subAccountId + "&userId=" + ViewBag.userId)" type="text/javascript"></script>
+<script type="text/javascript">
+    var custId = parseInt('@ViewBag.id');
+    var uplineId = parseInt('@ViewBag.uplineId');
+    var userId = parseInt('@ViewBag.userId');
+    var roleId = parseInt('@ViewBag.roleId');
+    var subAccountId = parseInt('@ViewBag.subAccountId');
+    var successMsg = '@Fanex.CustomerSetting.Module.Keno.Resources.Messages.UpdatedSuccess';
+    var errMsgAccountDisabled = '@Fanex.CustomerSetting.Module.Keno.Resources.Messages.AccountDisabled';
+    var currentLoginRoleId = parseInt('@Sunplus.Agent.Model.Entities.UserSession.Current.RoleId');
+    function resolveClientUrl(url) {
+        return '@Url.Content("~/")' + url;
+    }
+
+</script>
+<script src="@Url.Content("~/Areas/CustomerSetting/Views/Keno/EnableStatus/Scripts/KenoStatusController.js?ver=2014030702")" type="text/javascript"></script>

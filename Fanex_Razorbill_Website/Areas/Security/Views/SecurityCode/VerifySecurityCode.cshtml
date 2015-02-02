@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "VerifySecurityCode";
+    Layout = "~/Areas/Security/Views/Shared/_Layout.cshtml";
+}
+@section js {
+    @System.Web.Optimization.Scripts.Render("~/bundles/verifysecuritycode-js")
+    <script type="text/javascript">
+        var securityCodeToken = '@ViewBag.SecurityCodeToken';
+        var securitySalt = '@ViewBag.SecuritySalt';
+        var securityCodeResource = {
+            informSecCode: '@Fanex.Razorbill.Security.Resources.Lang.informSecCode'
+        };
+    </script>
+}
+<div class="container-wrap">
+    <div class="header_wrap">@Fanex.Razorbill.Security.Resources.Lang.SecurityCodeValidation</div>
+    <br />
+    @using (Html.BeginForm("VerifySecurityCode", "SecurityCode", System.Web.Mvc.FormMethod.Post,
+                             new { id = "frmVerifySecurityCode" }))
+    {
+        @Html.Partial("../Shared/_HeaderMessage", Fanex.Razorbill.Security.Resources.Lang.informSecCode)
+        <table class="content-wrap width370" cellspacing="1" cellpadding="0">
+            <tr>
+                <td colspan="2" class="header bg_eb">@Fanex.Razorbill.Security.Resources.Lang.SecurityCode</td>
+            </tr>
+            <tr class="bg_eb">
+                <td class="right-align bold widthPercent40">@Fanex.Razorbill.Security.Resources.Lang.SecurityCode</td>
+                <td class="left-align">
+                    <input id="txtSecCode" type="password" name="securityCode" autocomplete="off" maxlength="6" />
+                </td>
+            </tr>
+            <tr>
+                <td class="bg_eb center-align" colspan="2">
+                    <input type="submit" value="@Fanex.Razorbill.Security.Resources.Lang.Submit" class="btn" />
+                    <input type="reset" value="@Fanex.Razorbill.Security.Resources.Lang.Reset" class="btn" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="bg_eb center-align">@Fanex.Razorbill.Security.Resources.Lang.contactMessage</td>
+            </tr>
+        </table>
+    }
+</div>

@@ -1,0 +1,86 @@
+﻿@{
+    Layout = "../Shared/_HandHistoryDetailLayout.cshtml";
+}
+@using Fanex.Razorbill.Module.RnGCasino.DTOs;
+@using Fanex.Razorbill.Module.RnGCasino.Enums
+@using Fanex.Razorbill.Module.RnGCasino.Extensions;
+@model HandHistoryDetail
+@{
+    GameResult firstRowGameResult = Model.GameResults.Count > 0 ? Model.GameResults[0] : null;
+    string currency = Model.BetTypeMoneys[0].Currency;
+    decimal betTotal = 0, winLossTotal = 0;
+}
+<table id="casino-betlist-a" style="width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="3" class="hd2 b">
+                @(firstRowGameResult != null ? string.Format("{0} - {1}", firstRowGameResult.TableName, @firstRowGameResult.BetTime) : "-")
+            </th>
+        </tr>
+    </thead>
+    <tr>
+        <td colspan="3" class="b c">
+            @RnGCasinoLang.Player: @(firstRowGameResult != null ? firstRowGameResult.UserName : "-")
+        </td>
+    </tr>
+    @if (Model.GameResults.Count > 0)
+    {
+        <tr class="th b">
+            <td colspan="3" class="c">
+                @RnGCasinoLang.Results
+            </td>
+        </tr>
+        foreach (GameResult gameResult in Model.GameResults)
+        {
+            <tr>
+                <td class="hd c">
+                    @gameResult.ResultName
+                </td>
+                <td colspan="2">
+                    @Html.Raw(gameResult.Result)
+                </td>
+            </tr>     
+        }
+    }
+    @if (Model.BetTypeMoneys.Count > 0)
+    {
+        <tr class="hd2 c">
+            <td class="c">
+                @RnGCasinoLang.Results
+            </td>
+            <td class="c">
+                @RnGCasinoLang.Bet
+            </td>
+            <td class="c">
+                @RnGCasinoLang.WinLoss
+            </td>
+        </tr>
+        foreach (BetTypeMoney betTypeMoney in Model.BetTypeMoneys)
+        {
+            betTotal += betTypeMoney.Bet;
+            winLossTotal += betTypeMoney.WinLoss;
+            <tr>
+                <td class="hd c">
+                    @betTypeMoney.BetTypeName
+                </td>
+                <td class="r">
+                    @Html.FormatNumber(betTypeMoney.Bet, currency)
+                </td>
+                <td class="r">
+                    @Html.FormatNumber(betTypeMoney.WinLoss, currency)
+                </td>
+            </tr>     
+        }
+        <tr class="th b">
+            <td class="c">
+                @RnGCasinoLang.Total
+            </td>
+            <td class="r" >
+                @Html.FormatNumber(betTotal, currency)
+            </td>
+            <td class="r" >
+                @Html.FormatNumber(winLossTotal, currency)
+            </td>
+        </tr>
+    }
+</table>

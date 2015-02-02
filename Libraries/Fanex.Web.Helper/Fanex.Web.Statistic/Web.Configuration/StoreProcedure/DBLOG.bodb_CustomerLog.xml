@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Functions>
+  <Function Name="Functions - Usage Statistic">
+    <Setting Key="WriteLog_UserLog_UsageStatistic" SpName="WriteLog_UserLog_UsageStatistic" DbName="DBLOG.bodb_CustomerLog.BODBDownlineNet"  />
+  </Function>
+</Functions>

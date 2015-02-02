@@ -1,0 +1,130 @@
+﻿.clear
+{
+    clear: both;
+}
+
+.floatleft
+{
+    float: left;
+}
+
+.nicknameblock
+{
+    width:430px;
+}
+
+.nicknameblock .nicknamebox
+{
+    width: 165px;
+}
+
+.nicknameblock .loginoptions
+{
+    width: 260px;
+}
+
+.note
+{
+    padding-top: 10px;
+    color: #3E3E3E;
+}
+
+.buttonReView
+{
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 14px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.buttonReView a
+{
+	background: url("Images/b_left.gif") no-repeat scroll left top transparent;
+	float: left;
+	font-size: 12px;
+	margin-right: 2px;
+	padding-left: 6px;
+	text-decoration: none;
+	width: 64px;
+}
+
+.buttonReView a .sbuttonReView
+{
+	background: url("Images/b_right.gif") no-repeat scroll right top transparent;
+	color: #333333;
+	display: block;
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 4px 17px 4px 5px;
+	width: 64px;
+}
+
+.buttonReView a:hover .sbuttonReView
+{
+	background-position: 100% -22px;
+	color: #000000;
+	cursor: pointer;
+}
+
+.btnLeft
+{
+    background: url("Images/b_left.gif") no-repeat scroll left top transparent;
+    height: 22px;
+    margin: 5px 0;
+    min-width: 64px;
+}
+
+.btnRight {
+    background: url("Images/b_right.gif") no-repeat scroll right top transparent;
+    border: medium none;
+    color: #333333;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-weight: 700;
+    height: 22px;
+    min-width: 70px !important;
+    margin-top: 0px;
+    padding-right: 8px;
+}
+
+.btnRight:hover {
+    background-position: 100% -22px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.error {
+    color: #FF0000;
+    line-height: 14px;
+    padding-left: 7px;
+    padding-top: 5px;
+}
+
+.warning {
+    color: #C28F06;
+    line-height: 14px;
+    padding-left: 7px;
+    padding-top: 5px;
+}
+
+.success {
+    color: #24B433;
+    line-height: 14px;
+    padding-left: 7px;
+    padding-top: 5px;
+}
+
+input[type=file]{
+    width:300px;
+    border: 1px solid gray;
+}
+
+input[type="checkbox"] {
+   margin: 0px !important;
+   padding: 0px !important;
+}

@@ -1,0 +1,120 @@
+﻿body {
+}
+
+.bold-td 
+{
+    font-weight: bold;
+}
+.bold-td.odd-column
+{
+    font-weight: bold;
+    background-color: #F6E3E9;
+}
+#page_main 
+{
+    padding-top: 8px;
+}
+.odd-column
+{
+    background-color: #F6E3E9 !important;
+}
+.page-tille
+{
+    padding:6px 0px 0px 10px;
+    }
+
+.filter-width 
+{
+    width: 674px
+}
+#GridContainer-grid-title
+{
+    background: url("../../../../../_GlobalResources/Images/icon_content.gif") no-repeat scroll 5px center #FFEFDE !important;
+    font-weight: bold !important;
+    text-align: left;
+}
+
+.freegrid .no-data-not-frozen {
+    color: black;
+    font-weight: normal !important;
+}
+
+.freegrid .free-top-left table thead th, .freegrid .col_header table thead th {
+    background: url("../../../../../_GlobalResources/Images/bg_header02.jpg") repeat-x scroll center top #6A6969;
+    color: #FFFFFF;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    border-color: #B7B7B7 !important;
+    text-align: center;
+}
+
+.freegrid .col_footer table thead th
+{
+    background: url( "../../../../../_GlobalResources/Images/bg_f01.jpg" ) repeat-x scroll center top #783819 !important;
+    color: #FFFFFF;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.grid-title 
+{
+    margin-bottom:0px;
+    border-bottom: none 0px;
+    }
+
+.freegrid .free-top-left table thead th.RptHeader02, .freegrid .col_header table thead th.RptHeader02 {
+    background-image:none;
+    background-color: #3F3F3F !important;
+}
+.altercol {
+    background-color: #F5F2D6 !important;
+    text-align: right;
+}
+.grid-title .grid-title-label
+{
+    padding-left:25px;
+    font-size: 11px;
+    color: Black;
+}
+
+.freegrid tr.highlight-row:hover td {
+     background-color: rgb(248, 255, 141) ;
+}
+
+.freegrid .mousehoverbeyond td {
+    background-color: rgb(248, 255, 141) !important;
+}
+
+.freegrid td.group-odd, .freegrid td.group-odd:hover
+{
+    background-color: #faf9ee !important;
+}
+
+.freegrid td.group-even, .freegrid td.group-even:hover
+{
+    background-color: #F6F8F9 !important;
+}
+
+.freegrid td, .freegrid .grid-fixed-table td
+{
+    background-color: #faf9ee;
+}
+
+.freegrid .freegrid-even td 
+{
+    background-color: #F6F8F9;
+}
+
+
+.bold
+{
+    font-weight: bold;
+}
+
+.sizeTime
+{
+    font-size: 7pt !important;
+}
+
+.freegrid .format-negative, .freegrid .format-positive {
+    color: #B50000 !important;
+}

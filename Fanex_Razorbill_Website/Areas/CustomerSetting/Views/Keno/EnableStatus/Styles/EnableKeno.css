@@ -1,0 +1,211 @@
+﻿@font-face {
+    font-family: Roboto;
+    src: url(../../../../../../App_Themes/Fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Light";
+    src: url(../../../../../../App_Themes/Fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Bold";
+    src: url(../../../../../../App_Themes/Fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: url(../../../../../../App_Themes/Fonts/Roboto/Roboto-Medium.ttf);
+}
+
+.racingTitle {
+    background-color: #E7F7FF;
+}
+
+.tableInfo {
+    border: 1px solid #999999;
+    border-collapse: collapse;
+    width: 100%;
+    font-family: "Roboto",Tahoma,Arial,helvetica,sans-serif;
+    font-size: 11px;
+    color: #333333;
+}
+
+.tableInfo .title {
+    background: url("images/bg_boxTop.jpg") repeat-x scroll 0 -30px #999999;
+    color: #333333;
+    line-height: 18px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.tableInfo td{
+		border: 1px solid #999999;
+		height: 24px;
+	}
+
+.buttonPopup 
+{
+	
+    border: 1px solid #4D4D4D;
+    border-radius: 3px 3px 3px 3px;
+    font-size: 11px;
+    height: 19px;
+    line-height: 15px;
+    padding: 0 5px 2px;
+    margin-top:6px;
+}
+
+.buttonPopup:hover {
+    background: url("images/bg_buttonsiteOV.jpg") repeat-x scroll center top transparent;
+    border: 1px solid #984D1A;
+    color: #CC4800;
+    cursor: pointer;
+}
+
+.successMsg
+{
+	background: url("Images/tick.png") no-repeat scroll left center transparent;
+    color: #2D9D3B;
+    height: 20px;
+    padding-left: 20px;
+    text-align: left;
+     margin-bottom:6px;
+      font-family: "Roboto",Tahoma,Arial,helvetica,sans-serif;
+    font-size: 11px;
+	}
+	
+.errMsg
+{
+	background: url("Images/cross.png") no-repeat scroll left center transparent;
+    color: #DF2267;
+    height: 20px;
+    padding-left: 20px;
+    text-align: left;
+    margin-bottom:6px;
+     font-family: "Roboto",Tahoma,Arial,helvetica,sans-serif;
+    font-size: 11px;
+	}	
+
+.emsg_1_1 {
+    background: url("Images/emsg_1_1.gif") no-repeat scroll right bottom transparent;
+    height: 9px;
+    width: 11px;
+}
+.emsg_1_2 {
+    background: url("Images/emsg_1_2.gif") repeat-x scroll left bottom transparent;
+}
+.emsg_1_3 {
+    background: url("Images/emsg_1_3.gif") no-repeat scroll left bottom transparent;
+    width: 9px;
+}
+.emsg_2_1 {
+    background: url("Images/emsg_2_1.gif") repeat-y scroll right top transparent;
+}
+.emsg_2_2 {
+    background: url("Images/emsg_2_2.gif") repeat-y scroll left top transparent;
+}
+.emsg_3_1 {
+    background: url("Images/emsg_3_1.gif") no-repeat scroll right top transparent;
+    height: 8px;
+}
+.emsg_3_2 {
+    background: url("Images/emsg_3_2.gif") repeat-x scroll left top transparent;
+}
+.emsg_3_3 {
+    background: url("Images/emsg_3_3.gif") no-repeat scroll left top transparent;
+}
+.msgerr {
+    background: url("Images/error-icon.gif") no-repeat scroll left top transparent;
+    color: #DF2267;
+    height: 24px;
+    list-style: none outside none;
+    margin-left: 5px;
+    padding: 1px 0 4px 30px;
+    text-align: left;
+    vertical-align: middle;
+}
+.succ_1_1 {
+    background: url("Images/succ_1_1.gif") no-repeat scroll right bottom transparent;
+    height: 9px;
+    width: 11px;
+}
+.succ_1_2 {
+    background: url("Images/succ_1_2.gif") repeat-x scroll left bottom transparent;
+}
+.succ_1_3 {
+    background: url("Images/succ_1_3.gif") no-repeat scroll left bottom transparent;
+    width: 9px;
+}
+.succ_2_1 {
+    background: url("Images/succ_2_1.gif") repeat-y scroll right top transparent;
+}
+.succ_2_2 {
+    background: url("Images/succ_2_2.gif") repeat-y scroll left top transparent;
+}
+.succ_3_1 {
+    background: url("Images/succ_3_1.gif") no-repeat scroll right top transparent;
+    height: 8px;
+}
+.succ_3_2 {
+    background: url("Images/succ_3_2.gif") repeat-x scroll left top transparent;
+}
+.succ_3_3 {
+    background: url("Images/succ_3_3.gif") no-repeat scroll left top transparent;
+}
+.msgscc {
+    background: url("Images/Success.gif") no-repeat scroll left top transparent;
+    color: #2D9D3B;
+    height: 24px;
+    list-style: none outside none;
+    margin-left: 5px;
+    padding: 1px 0 4px 30px;
+    text-align: left;
+    vertical-align: middle;
+}
+.EnrichScc {
+    background: url("Images/infoMsg.gif") no-repeat scroll left top transparent;
+    color: #2D9D3B;
+    height: 30px;
+    padding-left: 40px;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+}
+.Enrich {
+    background: url("Images/infoMsg.gif") no-repeat scroll left top transparent;
+    color: #DF2267;
+    height: 30px;
+    padding-left: 40px;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+}
+.EnrichErrmsg {
+    background: url("Images/cross.png") no-repeat scroll left top transparent;
+    color: #DF2267;
+    height: 16px;
+    padding-left: 20px;
+    text-align: left;
+}
+.EnrichSuccmsg {
+    background: url("Images/tick.png") no-repeat scroll left top transparent;
+    color: #2D9D3B;
+    height: 16px;
+    padding-left: 20px;
+    text-align: left;
+}
+.EnrichWarmsg {
+    background: url("Images/warning.gif") no-repeat scroll left top transparent;
+    color: #C28F06;
+    height: 16px;
+    padding-left: 20px;
+    text-align: left;
+}
+.EnrichUserName {
+    color: Blue;
+    font-weight: bold;
+    height: 16px;
+    text-align: left;
+}

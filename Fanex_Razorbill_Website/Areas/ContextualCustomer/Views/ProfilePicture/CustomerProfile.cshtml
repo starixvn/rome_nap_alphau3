@@ -1,0 +1,83 @@
+﻿@using Sunplus.Agent.Model.Entities;
+@{
+    IUserSession currentUserSession = UserSession.Current;
+    string displayProfile = string.Empty;
+     if(ViewBag.CountNicknameTooltip < 4 && ViewBag.IsDefaultAvatar){
+         displayProfile = "";
+     }
+
+}
+<div id="text_logo">
+    <a href="@Url.Action("Index", "ProfilePicture", new { custId = currentUserSession.CustId })" target="main">
+        <img id="logoProfileImg" src='@ViewBag.BinaryAvatar' alt=""  height="48" width="48" title="@Resources.ProfilePicture.ProfileClickTootip" style="border: 0px solid white;position: absolute; top: 13px; left: 10px; z-index: 1" />
+    </a>
+    <img src="../_GlobalResources/Images/icon_user_bg.png" style="position: absolute; top: 0px; left: 0px; z-index: -1; padding-left: 5px;" atl="" />
+    @if (currentUserSession.IsSubAcc)
+    {
+        <span class="userName">@HttpUtility.HtmlEncode(currentUserSession.UserName)</span>
+        <br />
+        <div class="adminAndSubAcc">@Html.Raw(Resources.Lang.subacc + " " + HttpUtility.HtmlEncode(currentUserSession.SubUserName))</div>
+    }
+    else if (currentUserSession.IsInternal)
+    {
+        <span class="userName">@HttpUtility.HtmlEncode(currentUserSession.UserName)</span>
+        <br />
+        <div class="adminAndSubAcc">@Html.Raw(Resources.Lang.admin + " " + HttpUtility.HtmlEncode(currentUserSession.AdminName))</div>
+    }
+    else
+    {
+        <span class="userName">@HttpUtility.HtmlEncode(currentUserSession.UserName)</span>
+        <br />
+        if (!string.IsNullOrEmpty(currentUserSession.NickName))
+        {
+        <div style="font-size: 11px; padding-top: 5px; color: Black">
+            <a href="@Url.Action("Index", "LoginOption", new { custId = currentUserSession.CustId })" class="linkNickName" id="linkNickNameID" target="main">
+                <span style="white-space: nowrap; font-weight: bold"><span id="labelNickname">@currentUserSession.NickName</span>
+                    <img src="../_GlobalResources/images/icondown.gif" width="10px" height="7px" border="0"
+                        id="iconSetNickname" style="display: " /></span></a>
+        </div>
+        }
+        else
+        {
+        <div style="font-size: 11px; padding-top: 5px; color: Black">
+            <span id="spanNickNameID">@Resources.Lang.nickname: </span><a  href="@Url.Action("Index", "LoginOption", new { custId = currentUserSession.CustId })" class="linkConfigNow" id="linkNickNameID" target="main">
+                <span style="white-space: nowrap; font-weight: bold"><span id="labelNickname">@Resources.Lang.configNow</span>
+                    <img src="../_GlobalResources/images/icondown.gif" width="10px" height="7px" border="0"
+                        id="iconSetNickname" style="display: none" /></span></a>
+        </div>
+            if (ViewBag.CountNicknameTooltip < 4)
+            {
+                displayProfile = "none";
+        <div id="tooltip_box" style="width: 500px;">
+            <div class="left">
+            </div>
+            <div class="bg">
+                <div class="normal">
+                    <div style="margin: 5px 5px; ">
+                        @Html.Raw(Resources.Lang.introNickname)
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+            </div>
+        </div>
+            }
+        }
+        if (ViewBag.IsDefaultAvatar && ViewBag.CountNicknameTooltip < 4 )
+        {
+        <div id="profileTooltip" style="display:@displayProfile ; width: 500px;">
+            <div class="left">
+            </div>
+            <div class="bg">
+                <div class="normal">
+                    <div style="margin: 2px 5px;">
+                        @Html.Raw(@Resources.ProfilePicture.ProfileLoginTip)<a onclick="customerProfle.HideProfileTooltip();" href="@Url.Action("Index", "ProfilePicture", new { custId = currentUserSession.CustId  })" target="main">@Resources.ProfilePicture.ClickHere</a>&nbsp;@Resources.ProfilePicture.Uploadnow
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+            </div>
+        </div>
+        }
+    }
+</div>

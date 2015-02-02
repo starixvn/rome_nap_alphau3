@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{66B9E06C-CA79-4F9A-ACE7-2905BE4628F6}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fanex.Razorbill.Module.Report</RootNamespace>
+    <AssemblyName>Fanex.Razorbill.Module.Report</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dotless.Core">
+      <HintPath>..\..\packages\dotless.1.3.1.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Caching, Version=1.0.404.95, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_Dependencies\_FanexLib\Fanex.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Common, Version=1.0.404.97, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_Dependencies\_FanexLib\Fanex.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Data, Version=0.5.404.59, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_Dependencies\_FanexLib\Fanex.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_Dependencies\_FanexLib\Fanex.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.NAP.Core, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_Dependencies\_FanexLib\Fanex.NAP.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.NAP.Framework, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\_Dependencies\_FanexLib\Fanex.NAP.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Result.Core, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_Dependencies\FanexResult\Fanex.Result.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HandHistoryLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_Dependencies\Casino\HandHistoryLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\packages\NPOI.2.0.6\lib\net40\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI">
+      <HintPath>..\..\packages\NPOI.2.0.6\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\..\packages\NPOI.2.0.6\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\..\packages\NPOI.2.0.6\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\..\packages\NPOI.2.0.6\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="RemotingRef, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_Dependencies\RemotingRef.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Core.Common">
+      <HintPath>..\..\packages\Sunplus.Core.Common.1.1.4505.19054\lib\net40\Sunplus.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Libraries.AOP, Version=1.0.4218.28561, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_Dependencies\SunplusLib\Sunplus.Libraries.AOP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\_Dependencies\_Web\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\_Dependencies\_Web\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\..\_Dependencies\_Web\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="TplCore">
+      <HintPath>..\..\packages\TplCore.1.0.4694.29951\lib\net40\TplCore.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\..\_Dependencies\_Web\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\..\_Dependencies\_Web\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AreaRegistrator.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ConsolidateController.cs" />
+    <Compile Include="Controllers\CommissionByBetTypeController.cs" />
+    <Compile Include="Controllers\ResultController.cs" />
+    <Compile Include="Controllers\FoobetController.cs" />
+    <Compile Include="Criteria\Consolidation\Age_Rpt_ConsolidatedGroupSelCurrency.cs" />
+    <Compile Include="Criteria\Consolidation\Age_Rpt_ConsolidatedGroup_Ag.cs" />
+    <Compile Include="Criteria\Consolidation\Age_Rpt_ConsolidatedGroup_isShownMenu.cs" />
+    <Compile Include="Criteria\Consolidation\Age_Rpt_ConsolidatedGroup_MAg.cs" />
+    <Compile Include="Criteria\Consolidation\Age_Rpt_ConsolidatedGroup_SAg.cs" />
+    <Compile Include="Criteria\Consolidation\Age_Rpt_ConsolidatedGroup.cs" />
+    <Compile Include="Criteria\Commission\CommissionByBettypeCriteria.cs" />
+    <Compile Include="Criteria\Foobet\FoobetCriteria.cs" />
+    <Compile Include="Criteria\ReportRequestTicket\AddNewRequestTicketCriteria.cs" />
+    <Compile Include="Criteria\ReportRequestTicket\DeleteRequestTicketCriteria.cs" />
+    <Compile Include="Criteria\ReportRequestTicket\GetMaxRequestNoCriteria.cs" />
+    <Compile Include="Criteria\ReportRequestTicket\GetRequestTicketReportCriteria.cs" />
+    <Compile Include="Criteria\ReportRequestTicket\UpdateRequestTicketCriteria.cs" />
+    <Compile Include="Criteria\Result\GetLiveCasinoPopupResultCriteria.cs" />
+    <Compile Include="Criteria\Result\GetNumberGamePopupResultCriteria.cs" />
+    <Compile Include="Criteria\Result\GetNumberGameResultCriteria.cs" />
+    <Compile Include="Criteria\Result\GetOutRightResultCriteria.cs" />
+    <Compile Include="Criteria\Result\GetParlayPopupResultCriteria.cs" />
+    <Compile Include="Criteria\Result\GetRacingPopupResultCriteria.cs" />
+    <Compile Include="Criteria\Result\GetRacingResultCriteria.cs" />
+    <Compile Include="Criteria\Result\GetSportsbookPopupResultCriteria.cs" />
+    <Compile Include="Criteria\Result\GetSportsbookResultCriteria.cs" />
+    <Compile Include="Criteria\Result\GetVirtualRacingResultCriteria.cs" />
+    <Compile Include="Entities\Consolidate\ConsolidateInfo.cs" />
+    <Compile Include="Entities\Commission\CommissionByBettype.cs" />
+    <Compile Include="Entities\FooBet\FoobetDTO.cs" />
+    <Compile Include="Entities\FooBet\FooBetReport.cs" />
+    <Compile Include="Entities\Result.cs" />
+    <Compile Include="Entities\ResultRequest.cs" />
+    <Compile Include="ExcelBuilder\CommissionByBettype\CommissionByBetTypeReportBuilder.cs" />
+    <Compile Include="ExcelBuilder\CommissionByBettype\CommissionByBetTypeReport.cs" />
+    <Compile Include="Extensions\HtmlExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Impl\ConsolidateRepository.cs" />
+    <Compile Include="Repositories\Impl\Result\BindingUtilities.cs" />
+    <Compile Include="Repositories\Interface\Result\ILiveCasinoPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\Result\INumberGamePopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\Result\INumberGameResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\Result\IOutRightResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\Result\IParlayPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\Result\IRacingPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\Result\IRacingResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\Result\ISportsbookPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\Result\ISportsbookResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\Result\IVirtualRacingResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\Result\LiveCasinoPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\Result\NumberGamePopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\Result\NumberGameResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\Result\OutRightResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\Result\ParlayPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\Result\RacingPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\Result\RacingResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\Result\SportsbookPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\Result\SportsbookResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\Result\VirtualRacingResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\IConsolidateRepository.cs" />
+    <Compile Include="Services\Implement\ConsolidateReportExcelService.cs" />
+    <Compile Include="Services\Implement\ConsolidateService.cs" />
+    <Compile Include="Services\Implement\CommissionService.cs" />
+    <Compile Include="Services\Implement\FoobetReportExcelService.cs" />
+    <Compile Include="Services\Implement\FoobetService.cs" />
+    <Compile Include="Services\Interface\Result\ILiveCasinoPopupResultService.cs" />
+    <Compile Include="Services\Interface\Result\INumberGamePopupResultService.cs" />
+    <Compile Include="Services\Interface\Result\INumberGameResultService.cs" />
+    <Compile Include="Services\Interface\Result\IOutRightResultService.cs" />
+    <Compile Include="Services\Interface\Result\IParlayPopupResultService.cs" />
+    <Compile Include="Services\Interface\Result\IRacingPopupResultService.cs" />
+    <Compile Include="Services\Interface\Result\IRacingResultService.cs" />
+    <Compile Include="Services\Interface\Result\ISportsbookPopupResultService.cs" />
+    <Compile Include="Services\Interface\Result\ISportsbookResultService.cs" />
+    <Compile Include="Services\Interface\Result\IVirtualRacingResultService.cs" />
+    <Compile Include="Services\Implement\Result\LiveCasinoPopupResultService.cs" />
+    <Compile Include="Services\Implement\Result\NumberGamePopupResultService.cs" />
+    <Compile Include="Services\Implement\Result\NumberGameResultService.cs" />
+    <Compile Include="Services\Implement\Result\OutRightResultService.cs" />
+    <Compile Include="Services\Implement\Result\ParlayPopupResultService.cs" />
+    <Compile Include="Services\Implement\Result\RacingPopupResultService.cs" />
+    <Compile Include="Services\Implement\Result\RacingResultService.cs" />
+    <Compile Include="Services\Implement\Result\SportsbookPopupResultService.cs" />
+    <Compile Include="Services\Implement\Result\SportsbookResultService.cs" />
+    <Compile Include="Services\Implement\Result\VirtualRacingResultService.cs" />
+    <Compile Include="Services\Interface\ICommissionService.cs" />
+    <Compile Include="Services\Interface\IConsolidateService.cs" />
+    <Compile Include="Services\Interface\IFoobetService.cs" />
+    <Compile Include="Utils\ReportUtils.cs" />
+    <Compile Include="ViewModels\Commission\CommissionByBettypeItem.cs" />
+    <Compile Include="ViewModels\Consolidation\ConsolidateReport.cs" />
+    <Compile Include="ViewModels\Commission\CommissionByBettypeList.cs" />
+    <Compile Include="ViewModels\ExchangeRate.cs" />
+    <Compile Include="ViewModels\LicenseeInformation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Report\Views\Consolidate\Scripts\" />
+    <Folder Include="ViewModels\Foobet\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Report\Views\Consolidate\Style\Consolidate.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Report\Views\Consolidate\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Report\Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Report\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Fanex.Age.Excel\Fanex.Age.Excel.csproj">
+      <Project>{85998BF3-454B-49BD-B137-F8CCAF973ABF}</Project>
+      <Name>Fanex.Age.Excel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Fanex.Age.UI.Components\Fanex.Age.UI.Components.csproj">
+      <Project>{AB0F7FCA-F8A6-407F-B9CC-CEF619FD42BE}</Project>
+      <Name>Fanex.Age.UI.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Fanex.Age.UI.Reports\Fanex.Age.UI.Reports.csproj">
+      <Project>{249C5EE9-5485-49A7-8F50-8D5ABC2EC6B8}</Project>
+      <Name>Fanex.Age.UI.Reports</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Fanex.Age.UI\Fanex.Age.UI.csproj">
+      <Project>{8CF3E76A-81DB-4D8C-B999-9B4D428591F5}</Project>
+      <Name>Fanex.Age.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Fanex.Age.Utility\Fanex.Age.Utility.csproj">
+      <Project>{1CE66B65-C500-48C9-9DA9-5ACE16F12B16}</Project>
+      <Name>Fanex.Age.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Sunplus.Agent.Model\Sunplus.Agent.Model.csproj">
+      <Project>{8831EE6F-7EF9-48F3-9DA2-82C6C5EB6E47}</Project>
+      <Name>Sunplus.Agent.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Sunplus.Agent.Utilities\Sunplus.Agent.Utilities.csproj">
+      <Project>{016F274C-1F76-450B-B80D-E7FB59BE6A2B}</Project>
+      <Name>Sunplus.Agent.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\_Common.csproj">
+      <Project>{9503B9B7-DAE3-41CC-905C-F1B27B64E0DD}</Project>
+      <Name>_Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fanex.Razorbill.Module.Core\_Core.csproj">
+      <Project>{AF2E11AA-2A92-47AC-86FA-4D48B0AEB5D7}</Project>
+      <Name>_Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Report\Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63311</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

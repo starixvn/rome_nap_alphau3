@@ -1,0 +1,165 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using Sunplus.Agent.Model.Entities;
+@{
+    Page.Title = "Profile Picture";
+    Layout = "../Shared/_Layout.cshtml";
+}
+@{
+    IUserSession currentUserSession = UserSession.Current;
+    bool isSubAcc = currentUserSession.IsSubAcc;
+    bool isInternal = currentUserSession.IsInternal;
+    var custID = @ViewBag.CustId;
+}
+@section Head{
+    <link href="~/Areas/ContextualCustomer/Views/LoginOptions/Style/LoginOption.css"
+        rel="stylesheet" type="text/css" />
+}
+@*
+hard code some thing*@
+<div id="tab_menu">
+    <div id="tab_menu_m">
+        <a id="profileId" class="tab_menu01" target="main" href="@Url.Action("Index", "LoginOption", new { custId = @custID })">@Resources.ProfilePicture.EditLoginOption</a>
+    </div>
+    <div id="tab_menu_L">
+        <a id="loginTabId" class="tab_menu02AC" style="cursor: default;">@Resources.ProfilePicture.EditProfilePicture</a>
+    </div>
+</div>
+<div id="leftpane">
+    <form id="uploadForm" method="post" enctype="multipart/form-data">
+    <div style="padding-left: 20px; padding-top: 10px; width: 700px; border: 1px solid #D8D8D8; float: left;">
+        @Html.Raw(new Fanex.Age.UI.Components.ErrorMsg.ErrorMsg_Template())
+        <table>
+            <tr>
+                <td style="vertical-align: top;">
+                    <span style="font-weight: bold;">@Resources.ProfilePicture.CurrentPicture : </span>
+                </td>
+                <td>
+                    <div>
+                        <img id="profileImg" src='@ViewBag.BinaryAvatar' alt=""  height="48" width="48"/></div>
+                    <div>
+                        <input type="checkbox" id="chkdelete" onclick="UseDefaultAvatar();" />
+                        @Resources.ProfilePicture.DeletePicture</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="uploadAvatar" value="false" onclick="CheckOptionUpload(false);"
+                        checked />
+                    <span style="font-weight: bold;">@Resources.ProfilePicture.UploadFromMachine </span>
+                    <br />
+                    @Html.Raw(Resources.ProfilePicture.UploadFromMachineTip)
+                </td>
+                <td>
+                    <input style="font-size: 11px;" id="uploadFromComputer" type="file" name="file" />
+                    <input id="Thumbnail" name="Thumbnail" type="hidden" value="" />
+                </td>
+            </tr>
+            <!--
+            <tr>
+                <td>
+                    <input type="radio" name="uploadAvatar" value="true" onclick="CheckOptionUpload(true);" />
+                    <span style="font-weight: bold;">@Resources.ProfilePicture.UploadFromURL </span>
+                    <br />
+                    @Html.Raw(Resources.ProfilePicture.UploadFromURLTip)
+                </td>
+                <td>
+                    <input style="width: 300px; border: 1px solid gray;font-size: 11px;" type="text" id="urlAvatar" name="urlAvatar"
+                        disabled="disabled" />
+                </td>
+            </tr>
+            -->
+        </table>
+        <input id="custId" name="custId" type="hidden" value="@custID" />
+        <input id="isFromURL" name="isFromURL" type="hidden" />
+        <input id="isDefaultAvatar" name="isDefaultAvatar" type="hidden" value="false" />
+        <div id="loading" class="loading" style="display: none; margin-top: 10px; margin-left: 5px; float: left;">
+        </div>
+        <div style="display: inline-block; width: 80px; float: left;">
+            <div class="btnLeft">
+                <input class="btnRight" id="resetId" type="button" value="@Resources.ProfilePicture.Reset" onclick="return Reset();" />
+            </div>
+        </div>
+        <div style="display: inline-block; width: 100px; margin-left: 10px; float: left;">
+            <div class="btnLeft">
+                <input class="btnRight" id="submitId" type="submit" value="@Resources.ProfilePicture.Submit" onclick="return ActionDeterminator(this);" />
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+@section Scripts {
+    <script src="@Url.Content("~/Js/jQuery/jquery.form.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        var resources =
+                  {
+                      _notAuthorized: "@Html.Raw(@Resources.ProfilePicture.NotAuthorized)"
+                  };
+
+
+        $(document).ready(function () {
+            Reset();
+        });
+
+        function ActionDeterminator(btnClicked) {
+            if ('@isSubAcc' == 'True' || '@isInternal' == 'True') {
+                ShowMsgs(resources._notAuthorized, false);
+                return false;
+            }
+
+            $('#loading').css({ display: '' });
+            var isFromURL = $("input:radio[name=uploadAvatar]:checked").val();
+            $("#isFromURL").val(isFromURL);
+
+            if ($("#chkdelete").prop('checked')) {
+                $("#urlAvatar").val("");
+            }
+            var $form = $(btnClicked).parents('form');
+            $form.attr('action', "ProfilePicture/UpdatingProfilePicture");
+
+            $('#uploadForm').ajaxForm(function (data) {
+                var result = JSON.parse(data);
+                if (result.ErrorCode != 0) {
+                    ShowMsgs(result.ErrorMessage, false);
+                    $('#loading').css({ display: 'none' });
+                    return false;
+                }
+                $('#loading').css({ display: 'none' });
+                ShowMsgs(result.ErrorMessage, true);
+                setTimeout(function () {
+                    location.reload();
+                    parent.frames["frHeader"].location.reload();
+                }, 1000);
+            });
+        }
+
+        function Reset() {
+            var $radios = $('input:radio[name=uploadAvatar]');
+            $radios.filter('[value=false]').attr('checked', true);
+
+            $("#uploadFromComputer").removeAttr("disabled");
+            $("#urlAvatar").attr("disabled", "disabled");
+
+            $("#chkdelete").prop('checked', false);
+            $("#urlAvatar").val("");
+            $("#isDefaultAvatar").val("false");
+        }
+
+        function CheckOptionUpload(isFromURL) {
+            if (isFromURL) {
+                $("#uploadFromComputer").attr("disabled", "disabled");
+                $("#urlAvatar").removeAttr("disabled");
+            }
+            else {
+                $("#urlAvatar").attr("disabled", "disabled");
+                $("#uploadFromComputer").removeAttr("disabled");
+            }
+        }
+
+        function UseDefaultAvatar() {
+            var isChecked = $("#chkdelete").prop('checked');
+            $("#isDefaultAvatar").val(isChecked);
+        }
+
+    </script>
+}

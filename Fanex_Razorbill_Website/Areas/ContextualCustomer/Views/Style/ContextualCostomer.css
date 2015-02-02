@@ -1,0 +1,130 @@
+﻿@font-face {
+    font-family: Roboto;
+    src: url(../../../../App_Themes/Fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Light";
+    src: url(../../../../App_Themes/Fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Bold";
+    src: url(../../../../App_Themes/Fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: url(../../../../App_Themes/Fonts/Roboto/Roboto-Medium.ttf);
+}
+
+html, body
+{
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+body
+{
+	font-family: "Roboto",Tahoma,Arial ,helvetica ,sans-serif;
+	font-size: 11px;
+	line-height: 21px;
+	color: #171717;
+	margin: 0px;
+	text-align: left;
+
+	background-attachment: fixed;
+	background-color: #f5f6f8;
+}
+td
+{
+	padding-left: 2px;
+	padding-right: 2px;
+}
+#tab_menu
+{
+	border-bottom: 1px solid #CCCCCC;
+	font-weight: bold;
+	height: 22px;
+	margin-top: 3px;
+	text-align: center;
+	width: 280px;
+}
+#tab_menu_m
+{
+	float: left;
+	height: 23px;
+	width:  146px;
+}
+#tab_menu_L
+{
+	float: right;
+	height: 23px;
+	width: 133px;
+}
+.tab_menu01AC
+{
+	background: transparent url(../Images/menutop_OV.jpg) no-repeat scroll right top;
+	color: red;
+	display: block;
+	margin-top: 2px;
+	padding-left: 10px;
+	text-decoration: none;
+	width: 130px;
+}
+a.tab_menu02
+{
+	background: transparent url(../Images/menutop_none.jpg) no-repeat scroll left top;
+	color: white;
+	display: block;
+	padding-right: 10px;
+	text-decoration: none;
+	width: 130px;
+}
+
+a.tab_menu02:hover
+{
+	background: transparent url(../Images/menutop_OV2.jpg) no-repeat scroll left top;
+	color: red;
+	margin-top: 2px;
+}
+.tab_menu02AC
+{
+	background: transparent url(../Images/menutop_OV2.jpg) no-repeat scroll left top;
+	color: red;
+	display: block;
+	margin-top: 2px;
+	padding-right: 10px;
+	text-decoration: none;
+		width: 130px;
+}
+a.tab_menu01:hover
+{
+	background: transparent url(../Images/menutop_OV.jpg) no-repeat scroll right top;
+	color: red;
+	margin-top: 2px;
+}
+a.tab_menu01
+{
+	background: transparent url(../Images/menutop_none.jpg) no-repeat scroll right top;
+	color: white;
+	display: block;
+	padding-left: 10px;
+	text-decoration: none;
+	width: 130px;
+}
+.tab_menu02Blink
+{
+	background: transparent url../Images/menutop_none.gif) no-repeat scroll left top;
+	color: white;
+	display: block;
+	padding-right: 10px;
+	text-decoration: none;
+}
+.tab_menu02Blink:hover
+{
+	background: transparent url(../Images/menutop_OV2.jpg) no-repeat scroll left top;
+	color: red;
+	margin-top: 2px;
+}

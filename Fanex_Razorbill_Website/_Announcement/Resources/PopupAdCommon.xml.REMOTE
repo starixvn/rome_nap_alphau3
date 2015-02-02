@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FileDB>
+  <!--
+    announcementid noted:
+    - bingo = 4,
+      virtual sports: 20130404,
+      LCS: 7,
+      domain: 5
+  -->
+  <PopupAnnouncement id="7" name="LiveRoulette" startdate="11/04/2013" enddate="12/05/2013" effectdate="05/11/2013" width="450" height="220" top="110" left="350">
+    <en-US src="">
+      We are happy to announce that we are going to launch the new Live Roulette under our VIP casino Regal Casino" on <font color='red'><strong>{effectdate} 12PM (GMT+8)</strong></font>. 
+      Higher betting limit will be offered in this product, kindly check your Live Casino setting. 
+      You may now start to do the setting for your downlines or check with your upline. 
+      <br />Thanks!
+    </en-US>
+    <zh-CN src="">
+      VIP 皇玺娱乐厅将在<font color='red'>
+      <strong>{effectdate}中午十二时（GMT+8）</strong>
+    </font>正式推出轮盘游戏！在此我们将提供更高的投注限额，请检查您的娱乐厅设定。请即刻与您的上线查询或为您的下线们设置并启动。谢谢！
+    </zh-CN>
+    <zh-TW src="">
+      VIP 皇璽娛樂廳將在<font color='red'>
+      <strong>{effectdate}中午十二時（GMT+8）</strong>
+    </font>正式推出輪盤游戲！在此我們將提供更高的投注限額，請檢查您的娛樂廳設定。請即刻與您的上線查詢或為您的下線們設置並啟動。謝謝！
+    </zh-TW>
+    <ja-JP src="">
+      We are happy to announce that we are going to launch the new Live Roulette under our VIP casino Regal Casino" on <font color='red'><strong>{effectdate} 12PM (GMT+8)</strong></font>.
+      Higher betting limit will be offered in this product, kindly check your Live Casino setting.
+      You may now start to do the setting for your downlines or check with your upline.
+      <br />Thanks!
+    </ja-JP>
+    <ko-KR src="">
+      <font color='red'><strong>{effectdate} 오후12시(GMT+8)</strong></font>부터 새로운 VIP 카지노 게임!! "왕좌 카지노"를 이용하실 수 있습니다. VIP카지노에서는 좀더 높은 베팅한도가 제공되니 고객님의 라이브카지노 설정을 확인해 보세요. 지금부터 하부라인의 세팅설정을 하실 수 있으며 또는 상부라인과 확인하시기 바랍니다.감사합니다.!
+    </ko-KR>
+    <th-TH src="">
+      เรามีความสุขต่อการประกาศว่าเรากำลังจะปล่อยคาสิโนวีไอพีใหม ที่เรียกว่า "Regal Casino" ในวันที่ <font color='red'><strong>11 สิงหาคม 2013 เวลาเที่ยงคืน (GMT+8)</strong></font> ข้อจำกัดของการการเดิมพัน ขั้น สูง จะถูกเสนอไว้ผลิตภัณฑ์นี้ กรุณาเช็คการตั้งค่าของ Live Casino ของคุณ ขอบพระคุณ!
+    </th-TH>
+    <vi-VN src="">
+      Chúng tôi trân trọng thông báo chuẩn bị ra mắt sòng bài VIP mới lạ, "Sòng Bài Đế Vương", vào lúc <font color='red'><strong>12 chiều (GMT+8) ngày {effectdate}</strong></font>. 
+      Sản phẩm mới này sẽ mang đến cho người chơi giới hạn cược cao hơn, vui lòng kiểm tra chức năng Thiết lập trong Sòng Bài Trực Tuyến của bạn. 
+      <br />Xin chân thành cảm ơn!
+    </vi-VN>
+  </PopupAnnouncement>
+
+  <PopupAnnouncement id="8" name="MInPT" startdate="10/03/2013" enddate="10/19/2013" effectdate="10/07/2013" width="460" height="220" top="110" left="350">
+    <en-US src="">
+      Dear Valued Customer:<br />
+      <p>
+        [Position Taking] Kindly be informed that effective from <b>{effectdate}</b>, our Company will request all SMAs level must set the <font color='red'><strong>Sportsbook Min PT as 40%</strong></font>.
+      </p>
+      <p>For more details, please refer to Settlement Department or Customer Service Department. Thank you!</p>
+
+    </en-US>
+    <zh-CN src="">
+      尊敬的客户:<br />
+      <p>
+        在此通知您于<b>{effectdate}</b>起本公司将要求所有管理阶层之<font color='red'><strong>最低占成总数为40%</strong></font>.
+      </p>
+      <p>请联系财务部或客服部以获取此项调整之更多详情。谢谢!</p>
+
+    </zh-CN>
+    <zh-TW src="">
+      尊敬的客戶:<br />
+      <p>
+        在此通知您於<b>{effectdate}</b>起本公司將要求所有管理階層之<font color='red'><strong>最低佔成總數為40%</strong></font>.
+      </p>
+      
+      <p>請聯繫財務部或客服部以獲取此項調整之更多詳情。謝謝!</p>
+
+    </zh-TW>
+    <ja-JP src="">
+      Dear Valued Customer:<br />
+      <p>
+        [Position Taking] Kindly be informed that effective from <b>{effectdate}</b>, our Company will request all SMAs level must set the <font color='red'>
+          <strong>Sportsbook Min PT as 40%</strong>
+        </font>.
+      </p>
+      <p>For more details, please refer to Settlement Department or Customer Service Department. Thank you!</p>
+
+    </ja-JP>
+    <ko-KR src="">
+      Dear Valued Customer:<br />
+      <p>
+        [Position Taking] Kindly be informed that effective from <b>{effectdate}</b>, our Company will request all SMAs level must set the <font color='red'>
+          <strong>Sportsbook Min PT as 40%</strong>
+        </font>.
+      </p>
+      <p>For more details, please refer to Settlement Department or Customer Service Department. Thank you!</p>
+
+    </ko-KR>
+    <th-TH src="">
+      เรียนลูกค้าที่เคารพ: <br />
+      <p>
+        [หุ้นส่วนแบ่ง]  บริษัทใคร่ขอเรียนให้ทราบว่า นับตั้งแต่ วันที่ <b>{effectdate}</b> เป็นต้นไป เรามีนโยบายให้ทุกระดับชั้นต้อง<font color='red'><strong> ค่าหุ้นส่วนแบ่งในหน้ากีฬาขั้นต่ำที่ 40%</strong></font>.
+      </p>
+      <p>และมีผลตั้งแต่ตอนนี้เป็นต้นไป  สอบถามข้อมูลเพิ่มเติมกรุณาติดต่อฝ่ายธรกรรม หรือ ฝ่ายบริการลูกค้า. ขอบพระคุณ!!</p>
+
+    </th-TH>
+    <vi-VN src="">
+      Dear Valued Customer:<br />
+      <p>
+        [Position Taking] Kindly be informed that effective from <b>{effectdate}</b>, our Company will request all SMAs level must set the <font color='red'>
+          <strong>Sportsbook Min PT as 40%</strong>
+        </font>.
+      </p>
+      <p>For more details, please refer to Settlement Department or Customer Service Department. Thank you!</p>
+
+    </vi-VN>
+  </PopupAnnouncement>
+  
+  
+  <PopupAnnouncement id="9" name="Bingo" startdate="10/20/2013" enddate="10/30/2013" effectdate="10/30/2013" width="460" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>We wish to announce the launching of our new product - Live Bingo with effect from <b>{effectdate}</b>, all settings will be configured as follows:</p>
+     
+      <ul>
+        <li>Position taking will be copied from Soccer Live Handicap.</li>
+        <li>High returns of Incentive and commission.</li>
+        <li>Betting limit will be offered to all stake levels.</li>
+        <li>By default, agents and members are only enabled with the lowest stake level.</li>
+        <li>Member setting will only consist one stake level, regardless how many stake levels you have set for agents.</li>
+      </ul>
+      <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+
+    </en-US>
+    <zh-CN src="">
+      尊敬的代理们,<br />
+      <p>
+        本公司将再 <b>{effectdate}</b> 推出新产品 - 现场宾果。<br />
+        所有的设定如下：<br />
+      </p>
+
+      <ul>
+        <li>将会根据占成数足球亚洲盘设定</li>
+        <li>高回报及佣金</li>
+        <li>本公司将会提供多种投注限额。</li>
+        <li>默认情况下代理和会员的投注将会设定为最低而已</li>
+        <li>
+          会员将可以设定一种投注限额而已。<br />
+        </li>
+      </ul>
+
+      <p>如果你希望有不同的设置，请联系您的上线，谢谢</p>
+      
+    </zh-CN>
+    <zh-TW src="">
+      尊敬的代理們,<br />
+      <p>
+        本公司將再 <b>{effectdate}</b> 推出新產品 - 現場賓果。<br />所有的設定如下：
+      </p>
+      <ul>
+        <li>將會根據佔成數足球亞洲盤設定</li>
+        <li>高回報及佣金</li>
+        <li>本公司將會提供多種投注限額。</li>
+        <li>默認情況下代理和會員的投注將會設定為最低而已</li>
+        <li>會員將可以設定一種投注限額而已。</li>
+      </ul>
+      <p>如果你希望有不同的設置，請聯繫您的上線, 謝謝</p>
+      
+    </zh-TW>
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>We wish to announce the launching of our new product - Live Bingo with effect from <b>{effectdate}</b>, all settings will be configured as follows:</p>
+
+      <ul>
+        <li>Position taking will be copied from Soccer Live Handicap.</li>
+        <li>High returns of Incentive and commission.</li>
+        <li>Betting limit will be offered to all stake levels.</li>
+        <li>By default, agents and members are only enabled with the lowest stake level.</li>
+        <li>Member setting will only consist one stake level, regardless how many stake levels you have set for agents.</li>
+      </ul>
+      <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+    </ja-JP>
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>We wish to announce the launching of our new product - Live Bingo with effect from <b>{effectdate}</b>, all settings will be configured as follows:</p>
+
+      <ul>
+        <li>Position taking will be copied from Soccer Live Handicap.</li>
+        <li>High returns of Incentive and commission.</li>
+        <li>Betting limit will be offered to all stake levels.</li>
+        <li>By default, agents and members are only enabled with the lowest stake level.</li>
+        <li>Member setting will only consist one stake level, regardless how many stake levels you have set for agents.</li>
+      </ul>
+      <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+    </ko-KR>
+    <th-TH src="">
+      เรียนท่านลูกค้า,<br />
+      <p>ทางเรามีความประสงค์ที่จะประกาศเปิดตัวผลิตภัณท์ตัวใหม่ คือ การถ่ายทอดสดบิงโก โดยจะมีผลจากวันที่ <b>{effectdate}</b> การตั้งค่าทั้งหมดนี้จะได้รับการกำหนดค่า ดังต่อไปนี้:</p>
+
+      <ul>
+        <li>การถือหุ้นจะถูกคัดลอกจาก Soccer Live Handicap</li>
+        <li>ค่าตอบแทนที่สูง และ มีค่าคอมมิชชั่น</li>
+        <li>ทางบริษัทฯจะเป็นผู้เสนอความหลากหลายของการจำกัดวงเงินเดิมพัน</li>
+        <li>โดยค่าเริ่มต้น ตัวแทน(Agent)และสมาชิกสามารถเปิดใช้งานได้เฉพาะเงินเดิมพันที่มีวงเงินต่ำสุด</li>
+        <li>การตั้งค่าสมาชิกจะประกอบไปด้วยวงเงินเดิมพันเพียงจำนวนเดียวเท่านั้น โดยไม่คำนึงว่าคุณมีวงเงินเดิมพันเท่าไหร่ที่คุณได้ให้ไว้กับตัวแทน(Agent)</li>
+      </ul>
+
+      <p>หากท่านมีความประสงค์ที่จะตั้งค่าที่แตกต่างไปจากนี้ กรุณาติดต่อผู้แทนจำหน่ายหลัก</p>
+
+    </th-TH>
+    <vi-VN src="">
+      Chào quí khách hàng, <br />
+      <p>Chúng tôi xin được giới thiệu sản phẩm mới – Trò chơi Bingo trực tuyến, có hiệu lực từ ngày <b>{effectdate}</b>, tất cả những thiết lập sẽ được cấu hình như sau:</p>
+
+      <li>Position taking sẽ được sao chép từ Soccer Live Handicap.</li>
+      <li>Mức thưởng và khích lệ cao.</li>
+      <li>Giới hạn đặt cược sẽ được cung cấp cho tất cả các cấp độ cược.</li>
+      <li>Theo mặc định, các đại lý và thành viên chỉ được kích hoạt với mức cược thấp nhất.</li>
+      <li>Việc thiết lập thành viên sẽ chỉ bao gồm một mức cược nhất định, bất kể bao nhiêu mức cược bạn đã thiết lập cho các đại lý.</li>
+
+      <p>Nếu bạn muốn có những thiết lập khác, xin vui lòng liên hệ với cấp trên. </p> <br /> Xin cảm ơn!
+    </vi-VN>
+  </PopupAnnouncement>
+
+  <PopupAnnouncement id="5" name="New office domain" startdate="05/18/2012" effectdate="05/18/2012" width="460" height="220" top="110" left="350">
+    <en-US src="">
+      Dear Valued Customer, <br />
+      <p>
+        Kindly be informed that effective from <font color='red'>
+          <strong>June 24, 2013 (Monday)</strong>
+        </font> onwards, the domain <font color='blue'> "www.rocksnake.net" </font> will be terminated.
+        <br />We will change to new official domain, for more information kindly refer to your upline.
+      </p>
+
+      <p>
+        Kindly be informed that effective from <font color='red'>
+          <strong>June 24, 2013 (Monday)</strong>
+        </font> onwards, the domain <font color='blue'>"www.ibet888.net"</font> will be terminated.
+
+        <br />We are pleased to announce that our official domain now is <font color='blue'>"www.bong88.com"</font>. <br/> <br />
+        Thank you for your continuing support.
+      </p>
+
+    </en-US>
+    <zh-CN src="">
+      尊敬的客戶,
+      <p>
+        在此通知您於即日起 <font color='red'>
+          <strong>2013/06/24 (星期一)</strong>
+        </font>, 域名 <font color='blue'>"www.rocksnake.net"</font> 將被終止使用。我們將會轉用全新的代理域名，請聯系您的上线 以了解更多詳情。
+      </p>
+
+      <p>
+        在此通知您於即日起 <font color='red'>
+          <strong>2013/06/24 (星期一)</strong>
+        </font>, 域名 <font color='blue'>"www.ibet888.net"</font> 將被終止使用。我們非常榮幸的宣佈目前我們的域名為 <font color='blue'>"www.bong88.com"</font>。<br/> <br/>
+
+        感謝您對我們一直以來的支持。
+      </p>
+
+    </zh-CN>
+    <zh-TW src="">
+      尊敬的客戶,
+      <p>
+        在此通知您於即日起 <font color='red'>
+          <strong>2013/06/24 (星期一)</strong>
+        </font>, 域名 <font color='blue'>"www.rocksnake.net"</font> 將被終止使用。我們將會轉用全新的代理域名，請聯系您的上线 以了解更多詳情。
+      </p>
+
+      <p>
+        在此通知您於即日起 <font color='red'>
+          <strong>2013/06/24 (星期一)</strong>
+        </font>, 域名 <font color='blue'>"www.ibet888.net"</font> 將被終止使用。我們非常榮幸的宣佈目前我們的域名為 <font color='blue'>"www.bong88.com"</font>。<br/> <br/>
+
+        感謝您對我們一直以來的支持。
+      </p>
+
+    </zh-TW>
+    <ja-JP src="">
+      Dear Valued Customer, <br />
+      <p>
+        Kindly be informed that effective from <font color='red'>
+          <strong>June 24, 2013 (Monday)</strong>
+        </font> onwards, the domain <font color='blue'> "www.rocksnake.net" </font> will be terminated.
+        <br />We will change to new official domain, for more information kindly refer to your upline.
+      </p>
+
+      <p>
+        Kindly be informed that effective from <font color='red'>
+          <strong>June 24, 2013 (Monday)</strong>
+        </font> onwards, the domain <font color='blue'>"www.ibet888.net"</font> will be terminated.
+
+        <br />We are pleased to announce that our official domain now is <font color='blue'>"www.bong88.com"</font>. <br/> <br />
+        Thank you for your continuing support.
+      </p>
+    </ja-JP>
+    <ko-KR src="">
+      Dear Valued Customer, <br />
+      <p>
+        Kindly be informed that effective from <font color='red'>
+          <strong>June 24, 2013 (Monday)</strong>
+        </font> onwards, the domain <font color='blue'> "www.rocksnake.net" </font> will be terminated.
+        <br />We will change to new official domain, for more information kindly refer to your upline.
+      </p>
+
+      <p>
+        Kindly be informed that effective from <font color='red'>
+          <strong>June 24, 2013 (Monday)</strong>
+        </font> onwards, the domain <font color='blue'>"www.ibet888.net"</font> will be terminated.
+
+        <br />We are pleased to announce that our official domain now is <font color='blue'>"www.bong88.com"</font>. <br/> <br />
+        Thank you for your continuing support.
+      </p>
+    </ko-KR>
+    <th-TH src="">
+      Dear Valued Customer, <br />
+      <p>
+        Kindly be informed that effective from <font color='red'>
+          <strong>June 24, 2013 (Monday)</strong>
+        </font> onwards, the domain <font color='blue'> "www.rocksnake.net" </font> will be terminated.
+        <br />We will change to new official domain, for more information kindly refer to your upline.
+      </p>
+
+      <p>
+        Kindly be informed that effective from <font color='red'>
+          <strong>June 24, 2013 (Monday)</strong>
+        </font> onwards, the domain <font color='blue'>"www.ibet888.net"</font> will be terminated.
+
+        <br />We are pleased to announce that our official domain now is <font color='blue'>"www.bong88.com"</font>. <br/> <br />
+        Thank you for your continuing support.
+      </p>
+
+    </th-TH>
+    <vi-VN src="">
+      Quý Khách hàng kính mến, <br/>
+      <p>
+        Xin chân thành thông báo đến quý khách bắt đầu từ ngày  <font color='red'>
+          <strong> 24/06/2013 (thứ Hai)</strong>
+        </font>, tên miền <font color='blue'>"www.rocksnake.net"</font> sẽ bị ngưng sử dụng. <br/>
+        Chúng tôi sẽ thay đổi và sử dụng một tên miền khác hoàn toàn mới, để biết thêm thông tin chi tiết, xin vui lòng liên hệ với đại lý cấp trên của quý khách.
+      </p>
+
+      <p>
+        Xin chân thành thông báo đến quý khách bắt đầu từ ngày  <font color='red'>
+          <strong> 24/06/2013 (thứ Hai) </strong>
+        </font>, tên miền <font color='blue'>"www.ibet888.net"</font> sẽ bị ngưng sử dụng. <br/>
+        Chúng tôi vinh hạnh thông báo tên miền mới đang được sử dụng là <font color='blue'>"www.bong88.com"</font>. <br/> <br/>
+        Chân thành cảm ơn sự ủng hộ của quý khách.
+      </p>
+
+
+    </vi-VN>
+  </PopupAnnouncement>
+
+  <PopupAnnouncement id="20130404" name="Virtual Sports" startdate="11/04/2013" enddate="12/05/2013" effectdate="?/?/2013" width="450" height="220" top="110" left="350">
+    <en-US src="">
+      Dear Valued Customer:<br />
+      <p>
+        We wish to announce the launching of our new product – Virtual Greyhounds and Virtual Motor Racing with effect from <b>{effectdate}</b>, all settings will be configured as follows:
+      </p>
+      <p>&#8226; Position taking and Bet setting will be copied from Virtual Soccer</p>
+      <p>&#8226; No commission setting for this product.</p>
+      <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+    </en-US>
+    <zh-CN src="">
+      尊敬的代理们,<br />
+      <p>
+        我们非常荣幸的宣布我们将于<b>{effectdate}</b>推出我们的新产品 - 虚拟赛狗以及虚拟賽車, 所有设定之配置如下:
+      </p>
+      <p>&#8226; 占成数及投注设定将从虚拟足球进行复制</p>
+      <p>&#8226; 此产品无佣金设置</p>
+      <p>若您希望拥有不同的设置, 请联系您的上线。谢谢!</p>
+    </zh-CN>
+    <zh-TW src="">
+      尊敬的代理們，<br />
+      <p>
+        我們非常榮幸的宣布我們將於<b>{effectdate}</b>推出我們的新產品 - 虛擬賽狗以及虚拟賽車，所有設定之配置如下：
+      </p>
+      <p>&#8226; 佔成數及投注設定將從虛擬足球進行複製</p>
+      <p>&#8226; 此產品無佣金設置</p>
+      <p>
+        若您希望擁有不同的設置，請聯繫您的上線。謝謝!
+      </p>
+    </zh-TW>
+    <ja-JP src="">
+      Dear Valued Customer:<br />
+      <p>
+        We wish to announce the launching of our new product – Virtual Greyhounds and Virtual Motor Racing with effect from <b>{effectdate}</b>, all settings will be configured as follows:
+      </p>
+      <p>&#8226; Position taking and Bet setting will be copied from Virtual Soccer</p>
+      <p>&#8226; No commission setting for this product.</p>
+      <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+    </ja-JP>
+    <ko-KR src="">
+      Dear Valued Customer:<br />
+      <p>
+        We wish to announce the launching of our new product – Virtual Greyhounds and Virtual Motor Racing with effect from <b>{effectdate}</b>, all settings will be configured as follows:
+      </p>
+      <p>&#8226; Position taking and Bet setting will be copied from Virtual Soccer</p>
+      <p>&#8226; No commission setting for this product.</p>
+      <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+    </ko-KR>
+    <th-TH src="">
+      Dear Valued Customer:<br />
+      <p>
+        We wish to announce the launching of our new product – Virtual Greyhounds and Virtual Motor Racing with effect from <b>{effectdate}</b>, all settings will be configured as follows:
+      </p>
+      <p>&#8226; Position taking and Bet setting will be copied from Virtual Soccer</p>
+      <p>&#8226; No commission setting for this product.</p>
+      <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+    </th-TH>
+    <vi-VN src="">
+      Dear Valued Customer:<br />
+      <p>
+        We wish to announce the launching of our new product – Virtual Greyhounds and Virtual Motor Racing with effect from <b>{effectdate}</b>, all settings will be configured as follows:
+      </p>
+      <p>&#8226; Position taking and Bet setting will be copied from Virtual Soccer</p>
+      <p>&#8226; No commission setting for this product.</p>
+      <p>Should you wish to have different settings, please contact your upline. Thanks</p>
+    </vi-VN>
+  </PopupAnnouncement>
+</FileDB>

@@ -1,0 +1,62 @@
+﻿@font-face {
+    font-family: "Roboto";
+    src: url(../../../../../App_Themes/Fonts/Roboto/Roboto-Regular.ttf);
+}
+
+body {
+    background: url("../Images/bg_conts.jpg") repeat-x fixed center top #F5F6F8;
+    margin-top: 20px;
+    padding: ss;
+    font-family: "Roboto";
+    font-size: 12px;
+}
+
+.box-border {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 80%;
+    background: #fff;
+}
+
+.contact {
+    margin: 40px 20px;
+}
+
+.contact a { 
+    color: #04aeda;
+    display: block;
+    text-decoration: none;
+}
+
+.icon-skype {
+    background: url("../Images/skype.png") no-repeat center;
+    display: inline-block;
+    width: 96px;
+    height: 96px;
+}
+
+.text-skype {
+   display: inline-block;
+   position: relative; 
+   left: 20px;
+   top: -30px;
+}
+
+.text-skype span {
+    color: #04aeda;
+    font-weight: bold;
+}
+
+.icon-hotline {
+    background: url("../Images/contact.png") no-repeat center;
+    display: inline-block;
+    width: 96px;
+    height: 96px;
+}
+
+.text-hotline {
+   display: inline-block;
+   position: relative; 
+   left: 20px;
+   top: -43px;
+}

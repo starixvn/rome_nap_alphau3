@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Functions>
+  <!--Default DB config -> DBAGE-->
+  <!--
+    -->
+  <Function Name="Update setting: PT/Comm/Bet setting">
+    
+    <Setting Key="Acc_CustomerSelMAgentInfo_Multiple" SpName="Acc_CustomerSelMAgentInfo_Multiple" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
+    <Setting Key="Acc_CustomerSelSAgentInfo_Multiple" SpName="Acc_CustomerSelSAgentInfo_Multiple" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
+    
+  </Function>
+
+  
+
+  <!--/End Default DB config -> DBAGE-->
+
+  <!--If u uncomment below settings pls comment above settings and reverse doing.-->
+
+  <!--Backup DB -> DBTXN.-->
+  <!--
+  
+  <Function Name="Update setting: PT/Comm/Bet setting">
+    
+    <Setting Key="Acc_CustomerSelMAgentInfo_Multiple" SpName="Acc_CustomerSelMAgentInfo_Multiple" DbName="DBTXN.bodb02.BODBDownlineNet" Plain="0" />    
+    <Setting Key="Acc_CustomerSelSAgentInfo_Multiple" SpName="Acc_CustomerSelSAgentInfo_Multiple" DbName="DBTXN.bodb02.BODBDownlineNet" Plain="0" />
+  </Function>
+  
+  -->
+  <!--/DBTXN-->
+</Functions>

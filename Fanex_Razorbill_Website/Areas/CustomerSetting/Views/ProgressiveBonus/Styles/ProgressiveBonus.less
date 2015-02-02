@@ -1,0 +1,157 @@
+﻿@import "../../../Styles/Bootstrap/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "../../../Styles/Bootstrap/responsive.less";
+@import "Color.less";
+@font-face {
+    font-family: Roboto;
+    src: url(../../../../../App_Themes/Fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Light";
+    src: url(../../../../../App_Themes/Fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Bold";
+    src: url(../../../../../App_Themes/Fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: url(../../../../../App_Themes/Fonts/Roboto/Roboto-Medium.ttf);
+}
+
+/* Common */
+.width-auto {
+	width: auto;
+}
+body {
+	font-family: "Roboto",Tahoma,Arial,helvetica,sans-serif;
+    font-size: @body-font-size;
+    line-height: @body-line-height;
+	padding:0;
+	margin:0;
+}
+/* Filter */
+.filter-bar {
+	background-color: @filterBarBackground;
+	//margin: 0 10px;
+
+	.filter-bar-inner {		
+		//padding: 10px 10px;
+		float: left;
+	}
+	
+	.filter-row {
+		margin-bottom: 0px;
+		.clearfix;
+		&:last-child { margin-bottom: 0 }
+	}
+
+	.filter-cell, .lbl-field, .edit-field {
+		float: left;
+		vertical-align: top;
+	}
+
+	.lbl-field {
+		text-align: right;
+		label {
+			padding: 0 4px 0 0;
+			margin: 0;
+		}
+	}
+
+	input[type=checkbox], input[type=radio], select {
+		outline: 0 none;
+		float:left;
+	}
+
+	input[type=text], select {
+		padding: 2px 6px;
+		color: @textColor;
+		width: 100px;
+		height: 16px;
+		line-height: 16px;
+		font-size: .85em;
+		border: 0;
+		.border-radius(0);
+
+		&:focus, &:active { .box-shadow(inset 0 0 3px @black) }
+	}
+
+	select {
+		height: 20px;
+	}
+
+	input[type=checkbox], input[type=radio] {
+		margin: 4px 4px 0 0;
+	}
+
+	.tick-list {
+		label, input[type=checkbox], input[type=radio] { float: left }
+		label {
+			margin: 0;			
+			//&:hover { text-decoration: none }
+		}
+	}
+
+	label {
+		font-size: 11px;
+		line-height: 18px;
+	}
+
+	input[type=button] {
+		border: 1px solid #4D4D4D;
+		font-size: 11px;
+		height: 19px;
+		line-height: 15px;
+		padding: 0 5px 2px;
+		border-radius: 3px;
+	}
+}
+
+/* ProgressiveBox */
+.progressive-box {
+		background-color: lighten(@filterBarBackground, 10%);		
+
+		.tbl-progressive {
+			width:100%;
+			border-collapse: collapse;
+			border: 1px solid @border-color;
+
+			th, td { 
+				padding: @table-padding;
+				background-color: #FFF;
+			}
+
+			th { 
+				border: 1px solid @border-color;
+			}
+
+			th.row-title {
+				background: url("images/bg_boxTop.jpg") repeat-x scroll 0 -30px #999999;
+				color: @table-header-title-text-color;
+				line-height: 18px;
+				text-align: center;
+			}
+
+			.col-left {
+				width: auto;
+			}
+
+			.col-right {
+				width: auto;
+			}
+		}
+
+		.submitbutton {
+			background: url("images/bg_buttonsite.jpg") repeat-x scroll center top transparent;
+		}
+
+		.submitbutton:hover {
+			background: url("images/bg_buttonsiteOV.jpg") repeat-x scroll center top transparent;
+			border: 1px solid #984D1A;
+			color: #CC4800;
+			cursor: pointer;
+		}
+	}

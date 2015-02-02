@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    @Styles.Render("~/Areas/Company/Views/ContactUs/Styles/ContactUsStyles")
+    @{
+        string skypeId = "maxcsd_agent";
+        string phone = "+63 729 8813";
+    }
+</head>
+<body>
+    <div class="box-border">
+        <div><strong>@Labels.ContactUs</strong></div>
+        <div>@Labels.ContactUs_Content</div>
+    </div> 
+    <div class="contact">
+        <div class="icon-skype"></div>
+        <div class="text-skype">
+            <div><span>@Labels.SkypeID:</span> <strong>@skypeId</strong></div>
+            <a href="skype:@skypeId?add">@Labels.AddNow</a>
+            <a href="skype:@skypeId?call">@Labels.CallNow</a>
+        </div>
+    </div> 
+    <div class="box-border">
+        <div><strong>@Labels.Hotline</strong></div>
+        <div>@Labels.Hotline_Content</div>
+    </div> 
+    <div class="contact">
+        <div class="icon-hotline"></div>
+        <div class="text-hotline">
+            <div><span>@Labels.CallUs:</span> <strong>@phone</strong></div>
+        </div>
+    </div>
+</body>
+</html>
