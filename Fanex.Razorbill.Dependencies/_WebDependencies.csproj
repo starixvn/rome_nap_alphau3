@@ -380,10 +380,6 @@
       <Project>{8CF3E76A-81DB-4D8C-B999-9B4D428591F5}</Project>
       <Name>Fanex.Age.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Libraries\Fanex.Age.Utility\Fanex.Age.Utility.csproj">
-      <Project>{1CE66B65-C500-48C9-9DA9-5ACE16F12B16}</Project>
-      <Name>Fanex.Age.Utility</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Libraries\Fanex.Betlist.Age\Fanex.BetList.Age.csproj">
       <Project>{E6E7532E-AC83-4EC2-BA9A-94327AD54B1A}</Project>
       <Name>Fanex.BetList.Age</Name>
@@ -391,10 +387,6 @@
     <ProjectReference Include="..\Libraries\Fanex.PTEngine.Age\Fanex.PTEngine.Age.csproj">
       <Project>{2D00F742-F9FF-4649-AAF5-51F1229CB5A1}</Project>
       <Name>Fanex.PTEngine.Age</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Libraries\Sunplus.Agent.Configurations\Sunplus.Agent.Configurations.csproj">
-      <Project>{8542F564-E19A-4DA0-AB5F-93668EA9D84E}</Project>
-      <Name>Sunplus.Agent.Configurations</Name>
     </ProjectReference>
     <ProjectReference Include="..\Libraries\Sunplus.Agent.Utilities\Sunplus.Agent.Utilities.csproj">
       <Project>{016F274C-1F76-450B-B80D-E7FB59BE6A2B}</Project>

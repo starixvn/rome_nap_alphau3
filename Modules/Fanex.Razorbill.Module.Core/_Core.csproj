@@ -179,10 +179,6 @@
       <Project>{95108A2C-7101-44A2-B9C5-3F1B6DB37E8F}</Project>
       <Name>Fanex.Razorbill.Security</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\Fanex.Age.Utility\Fanex.Age.Utility.csproj">
-      <Project>{1CE66B65-C500-48C9-9DA9-5ACE16F12B16}</Project>
-      <Name>Fanex.Age.Utility</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Libraries\Sunplus.Agent.Model\Sunplus.Agent.Model.csproj">
       <Project>{8831EE6F-7EF9-48F3-9DA2-82C6C5EB6E47}</Project>
       <Name>Sunplus.Agent.Model</Name>
