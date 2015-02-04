@@ -110,6 +110,9 @@ namespace Sunplus.Agent.Model.Entities
         private const string ISLIMITHOSTPERMISSIONONSUBACCOUNTFUNCTION = "ISLIMITHOSTPERMISSIONONSUBACCOUNTFUNCTION";
 
         private const string ISDISABLEDESPORTS = "ISDISABLEDESPORTS";
+
+        private const string ISSHOWSPORTBOOK = "IsShowSportbook";
+        private const string REDIRECTREPORTLINK = "RedirectReportLink";
         #endregion Contructors
 
         #region Misc
@@ -1330,11 +1333,11 @@ namespace Sunplus.Agent.Model.Entities
         }
 
         #endregion Controller
-        
+
         public bool IsLimitedHostPermisionOnSubAccountFunction
         {
             get
-            {                
+            {
                 object value = this.GetProperty(ISLIMITHOSTPERMISSIONONSUBACCOUNTFUNCTION);
                 return (null == value) ? false : (bool)value;
             }
@@ -1344,7 +1347,7 @@ namespace Sunplus.Agent.Model.Entities
                 this.SetProperty(ISLIMITHOSTPERMISSIONONSUBACCOUNTFUNCTION, value);
             }
         }
-        
+
         public bool IsDisabledESports
         {
             get
@@ -1356,6 +1359,34 @@ namespace Sunplus.Agent.Model.Entities
             set
             {
                 this.SetProperty(ISDISABLEDESPORTS, value);
+            }
+        }
+
+        public string RedirectReportLink
+        {
+            get
+            {
+                object value = this.GetProperty(REDIRECTREPORTLINK);
+                return (null == value) ? string.Empty : (string)value;
+            }
+
+            set
+            {
+                this.SetProperty(REDIRECTREPORTLINK, value);
+            }
+        }
+
+        public bool IsShowSportbook
+        {
+            get
+            {
+                object value = this.GetProperty(ISSHOWSPORTBOOK);
+                return (null == value) ? false : (bool)value;
+            }
+
+            set
+            {
+                this.SetProperty(ISSHOWSPORTBOOK, value);
             }
         }
     }

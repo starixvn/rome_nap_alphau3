@@ -590,5 +590,17 @@ namespace Sunplus.Agent.Model.Entities
             get;
             set;
         }
+
+        string RedirectReportLink
+        {
+            get;
+            set;
+        }
+
+        bool IsShowSportbook
+        {
+            get;
+            set;
+        }
     }
 }

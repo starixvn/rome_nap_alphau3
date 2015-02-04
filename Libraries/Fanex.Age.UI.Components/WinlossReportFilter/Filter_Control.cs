@@ -10,7 +10,7 @@ using Sunplus.Agent.Model.BL.Definitions;
 namespace Fanex.Age.UI.Components
 {
     public class Filter_Control : TplCore.Element.IComponent
-    { 
+    {
         #region Member Variables
 
         public const string SHOWALL = "all";
@@ -195,9 +195,9 @@ namespace Fanex.Age.UI.Components
                 return true;
             }
             else if ((!string.IsNullOrEmpty(paramValue)) && (string.Compare(paramValue.ToLower(), "off") == 0))
-                 {
-                    return false;
-                 }
+            {
+                return false;
+            }
             return string.IsNullOrEmpty(_request["FilterPostback"]);
         }
 
@@ -232,6 +232,11 @@ namespace Fanex.Age.UI.Components
         /// </summary>
         private void UpdateSportBookItem()
         {
+            if (!_filterCollections.ContainsKey(SHOWSB))
+            {
+                return;
+            }
+
             bool isNoPermission = true;
 
             // Check if user have permission on any item

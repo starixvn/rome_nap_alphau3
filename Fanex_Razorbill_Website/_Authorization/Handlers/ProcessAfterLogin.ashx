@@ -131,10 +131,10 @@ namespace Sunplus.Agent.UI._Authorization
             long timeTicks;
 
             // Verify customer information
-            if (ps == null 
-                || ps.Length < 9 
-                || !int.TryParse(ps[0], out custId) 
-                || !int.TryParse(ps[1], out subAccId) 
+            if (ps == null
+                || ps.Length < 9
+                || !int.TryParse(ps[0], out custId)
+                || !int.TryParse(ps[1], out subAccId)
                 || !long.TryParse(ps[2], out timeTicks)
                 )
             {
@@ -213,6 +213,8 @@ namespace Sunplus.Agent.UI._Authorization
                         TplCore.TplSettings.SetCookielessDomains(domains);
                     }
 
+                    UserSession.Current.IsShowSportbook = false;
+                    UserSession.Current.RedirectReportLink = string.Empty;
                     RedirectToDefaultPage();
                 }
             }

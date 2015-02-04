@@ -16,8 +16,7 @@ namespace Sunplus.Agent.Model.DL.Reports
     using System.Collections;
     using System.Collections.Generic;
     using System.Data;
-    using Fanex.Data;
-    using Sunplus.Agent.Model.Entities.BetListMonitoring;
+    using Sunplus.Agent.Model.Entities;
 
     public class ReportsDAO : Sunplus.Agent.Model.DL.Base.DAOBase
     {
@@ -104,6 +103,7 @@ namespace Sunplus.Agent.Model.DL.Reports
                 parameters.Add(element.Key, element.Value);
             }
 
+            AddDefaultParamsToHideSportbook(parameters);
             return this.ExecSpTable("Age_Rpt_WinLoss_SAg", parameters);
         }
 
@@ -150,6 +150,7 @@ namespace Sunplus.Agent.Model.DL.Reports
                 parameters.Add(element.Key, element.Value);
             }
 
+            AddDefaultParamsToHideSportbook(parameters);
             return this.ExecSpTable("Age_Rpt_WinLoss_MAg", parameters);
         }
 
@@ -196,6 +197,7 @@ namespace Sunplus.Agent.Model.DL.Reports
                 parameters.Add(element.Key, element.Value);
             }
 
+            AddDefaultParamsToHideSportbook(parameters);
             return this.ExecSpTable("Age_Rpt_WinLoss_Ag", parameters);
         }
 
@@ -358,6 +360,7 @@ namespace Sunplus.Agent.Model.DL.Reports
                 parameters.Add(paramName, pagingParams[paramName]);
             }
 
+            AddDefaultParamsToHideSportbook(parameters);
             DataTable result = null;
             DataSet dataSet = ExecSp("Age_Rpt_WinLossDetail_SAg", ref parameters);
             if ((dataSet != null) && (dataSet.Tables.Count > 0))
@@ -430,6 +433,7 @@ namespace Sunplus.Agent.Model.DL.Reports
                 parameters.Add(paramName, pagingParams[paramName]);
             }
 
+            AddDefaultParamsToHideSportbook(parameters);
             DataTable result = null;
             DataSet dataSet = ExecSp("Age_Rpt_WinLossDetail_MAg", ref parameters);
             if ((dataSet != null) && (dataSet.Tables.Count > 0))
@@ -467,6 +471,7 @@ namespace Sunplus.Agent.Model.DL.Reports
                 parameters.Add(paramName, pagingParams[paramName]);
             }
 
+            AddDefaultParamsToHideSportbook(parameters);
             DataTable result = null;
             DataSet dataSet = ExecSp("Age_Rpt_WinLossDetail_MAg_New", ref parameters);
             if ((dataSet != null) && (dataSet.Tables.Count > 0))
@@ -574,6 +579,7 @@ namespace Sunplus.Agent.Model.DL.Reports
                 parameters.Add(paramName, pagingParams[paramName]);
             }
 
+            AddDefaultParamsToHideSportbook(parameters);
             DataTable result = null;
             DataSet dataSet = ExecSp("Age_Rpt_WinLossDetail_Ag", ref parameters);
             if ((dataSet != null) && (dataSet.Tables.Count > 0))
@@ -1742,6 +1748,20 @@ namespace Sunplus.Agent.Model.DL.Reports
         }
 
         #endregion
+
+        private void AddDefaultParamsToHideSportbook(Hashtable parameters)
+        {
+            if (!UserSession.Current.IsShowSportbook)
+            {
+                // Default Params are not correct when don't have checkboxs on filter
+                parameters.Add("showsb", false);
+                parameters.Add("showcasino", false);
+                parameters.Add("showp2p", false);
+                parameters.Add("showrb", false);
+                parameters.Add("showvs", false);
+                parameters.Add("showkeno", false);
+            }
+        }
     }
 }
 

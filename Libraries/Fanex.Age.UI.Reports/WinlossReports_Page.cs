@@ -14,9 +14,8 @@ namespace Fanex.Age.UI.Reports
     using System.Data;
     using Fanex.Age.UI.Components;
     using Fanex.Age.UI.Reports.Components;
-    using Fanex.Razorbill.Module.Common.Enums;
-    using Fanex.Razorbill.Module.Common.Services;
     using Sunplus.Agent.Model.BL.Definitions;
+    using Sunplus.Agent.Model.Entities;
 
     public abstract class WinlossReports_Page : Reports_Page
     {
@@ -63,6 +62,19 @@ namespace Fanex.Age.UI.Reports
 
         protected virtual void InitCheckBox()
         {
+            if (!UserSession.Current.IsShowSportbook)
+            {
+                _filterCollection = new Dictionary<string, FilterElement>()
+                {
+                    {Filter_Control.SHOWALL, new FilterElement(Filter_Control.SHOWALL, Resources.Lang.all, "CheckAll()")},
+                    {Filter_Control.SHOW_NUMBER_GAME, new FilterElement(Filter_Control.SHOW_NUMBER_GAME, Resources.Lang.numbergame, "IsCheck()")},
+                    {Filter_Control.SHOW_LIVECASINO, new FilterElement(Filter_Control.SHOW_LIVECASINO, Resources.Lang.LiveCasino, "IsCheck()")},
+                    {Filter_Control.SHOW_IBC_BINGO, new FilterElement(Filter_Control.SHOW_IBC_BINGO, Resources.Bingo.bingo, "IsCheck()")}
+                };
+
+                return;
+            }
+
             _filterCollection = new Dictionary<string, FilterElement>()
                 {
                     {Filter_Control.SHOWALL, new FilterElement(Filter_Control.SHOWALL, Resources.Lang.all, "CheckAll()")},

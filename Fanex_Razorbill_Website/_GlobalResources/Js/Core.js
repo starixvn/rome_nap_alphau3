@@ -755,12 +755,16 @@ ajax = null;
 
 function _startup() {
 	// $ function
-	window.$ = $;
-	if (typeof window.parent.$ == 'undefined') {
-		window.parent.$ = function (id) {
-			return this.document.getElementById(id);
-		}
-	}
+    window.$ = $;
+    try{
+	    if (typeof window.parent.$ == 'undefined') {
+		    window.parent.$ = function (id) {
+			    return this.document.getElementById(id);
+		    }
+	    }
+    }catch(e){
+    }
+
 	age = new AGE();
 	ajax = new AJAX();
 	// Focus at startup

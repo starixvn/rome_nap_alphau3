@@ -56,8 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\LimtedCountryAccessSection.cs" />
+    <Compile Include="Configurations\ReportLink\ReportLinkCollection.cs" />
     <Compile Include="Configurations\ReportTimeRangeConfig.cs" />
     <Compile Include="Configurations\ReportTimeRangeSection.cs" />
+    <Compile Include="Configurations\ReportLink\ReportLinkElement.cs" />
+    <Compile Include="Configurations\ReportLink\ReportLinkSection.cs" />
     <Compile Include="Criteria\LimitedCountryAccessCriteria.cs" />
     <Compile Include="Criteria\ReportTimeRangeCriteria.cs" />
     <Compile Include="Enums\ReportTimeRangeType.cs" />

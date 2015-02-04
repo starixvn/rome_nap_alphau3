@@ -12,7 +12,12 @@
         }
 
         function setURL() {
-            var url = top.main.location;
+            var url = '';
+            try {
+                url = top.main.location;
+            } catch (e) {
+            }
+
             var start = url.toString().lastIndexOf(')/') + 2;
             var currentURL = url.toString().substring(start);
 
@@ -50,16 +55,6 @@
     <form id="agentSite" runat="server" style="height: 100%; width: 100%;">
     <table border="0" cellpadding="0" cellspacing="0" class="content">
         <tr>
-            <td colspan="2" class="header">
-                <iframe src="<%=headerPage %>" frameborder="0" scrolling="no" width="100%" height="90px"
-                    id="frHeader" name="frHeader"></iframe>
-            </td>
-        </tr>
-        <tr>
-            <td class="menu" valign="top">
-                <iframe src="<%=menuPage %>" frameborder="0" id="menu" name="menu" width="100%" height="100%"
-                    marginwidth="0" marginheight="0" allowtransparency="yes"></iframe>
-            </td>
             <td class="mainpage" valign="top">
                 <iframe src="<%=mainPage%>" onload="setURL();" frameborder="0" id="main" scrolling="auto"
                     name="main" width="100%" height="100%" marginwidth="0" marginheight="0" allowtransparency="yes">
@@ -67,7 +62,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" class="footer">
+            <td class="footer">
                 <iframe src="../Footer.html" frameborder="0" width="100%" scrolling="no" height="22px"
                     id="frFooter" name="frFooter"></iframe>
             </td>
@@ -79,7 +74,6 @@
     type="text/javascript"></script>
 <script src="../_GlobalResources/Js/Core.js?<%=TplCore.TplSettings.UrlVersion %>"
     type="text/javascript"></script>
-
 <script src="../_MemberInfo/SetNickName/Resources/SetNickName.js?<%=TplCore.TplSettings.UrlVersion %>"
     type="text/javascript"></script>
 <script src="../_Announcement/Resources/Announcement.js?<%=TplCore.TplSettings.UrlVersion %>"
@@ -96,7 +90,7 @@
         var popH = 360, popW = 480;
         ageWnd.open(url, '', 200, 200, popW, popH);
     }
-    AGE.prototype.ClosePopUp = function () { 
+    AGE.prototype.ClosePopUp = function () {
         ageWnd.close()
     }
     

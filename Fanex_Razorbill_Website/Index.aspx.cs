@@ -22,7 +22,7 @@ public partial class Index : System.Web.UI.Page
         ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
         bool newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
         SecurityCodeStatus status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
-        
+
         SCResult oldStatus = UserSession.Current.SecurityCodeResult;
         if (!UserPermission.IsShowSecurityVerify)
         {
@@ -67,7 +67,9 @@ public partial class Index : System.Web.UI.Page
         else
         {
             var currentURLCookie = Request.Cookies[CookieCurrentURLKey];
-            string url = DEFAULT_INDEX;
+            string url = string.IsNullOrEmpty(UserSession.Current.RedirectReportLink) ?
+                DEFAULT_INDEX :
+                UserSession.Current.RedirectReportLink;
 
             if (currentURLCookie != null && !string.IsNullOrEmpty(currentURLCookie.Value) && !UserSession.Current.IsInternal)
             {

@@ -88,8 +88,6 @@ namespace Fanex.Age.UI.Reports.Winloss
 
         #endregion
 
-
-
         #region Helper
 
         /// <summary>

@@ -110,7 +110,7 @@ function DoLogin() {
         $('txtCaptcha').focus();
         return false;
     }
-    
+
 
     $('btnLogin').disabled = true;
     $('btnLogin').className = 'buttondisable';
@@ -127,15 +127,18 @@ function GetValidateImage() {
 
 function InitLogin() {
     // Do not allow wrapping sign-in page
-    if (window.parent != window) {
-        window.parent.location = location.href;
+    try {
+        if (window.parent != window) {
+            window.parent.location = location.href;
+        }
+    } catch (e) {
     }
 
     var language = getCookie('LANGUAGE');
     if (!language) language = _page.language;
 
     SelectLanguage(language);
-    
+
     setTimeout(GetValidateImage, 120000);
 
     if (typeof _page.errCode != 'undefined' && _page.errCode != 0) {
@@ -146,14 +149,13 @@ function InitLogin() {
     }
 }
 //Script check HTML 5 for devices mobile
-if(document.getElementById("mobileId")!=undefined)
-{
-    var mydomain= document.domain.replace("ag.","").replace("qa.","");
+if (document.getElementById("mobileId") != undefined) {
+    var mydomain = document.domain.replace("ag.", "").replace("qa.", "");
     if (navigator.geolocation) {
-        document.getElementById("mobileId").href = "http://m."+mydomain;
+        document.getElementById("mobileId").href = "http://m." + mydomain;
     }
-    else{
-        document.getElementById("mobileId").href = "http://wap."+mydomain;
+    else {
+        document.getElementById("mobileId").href = "http://wap." + mydomain;
     }
 }
 
