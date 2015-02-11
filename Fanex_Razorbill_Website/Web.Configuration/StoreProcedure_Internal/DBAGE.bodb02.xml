@@ -93,7 +93,8 @@
     <Setting Key="Age_Rpt_CommByFinance_MAg" SpName="Age_Rpt_CommByFinance_MAg" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_CommByFinance_SAg" SpName="Age_Rpt_CommByFinance_SAg" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_MatchSelResultEntered" SpName="Age_Rpt_MatchSelResultEntered" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
-    <Setting Key="Age_Rpt_MatchWinLoss_Ag" SpName="U3_Rpt_MatchWinLoss_Ag" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
+    <Setting Key="Age_Rpt_MatchWinLoss_Ag" SpName="Age_Rpt_MatchWinLoss_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
+    <Setting Key="U3_Rpt_MatchWinLoss_Ag" SpName="U3_Rpt_MatchWinLoss_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
     <Setting Key="Age_Rpt_MatchWinloss_SelLeagueBySport" SpName="Age_Rpt_MatchWinloss_SelLeagueBySport" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_MatchWinLossDetail_Ag" SpName="Age_Rpt_MatchWinLossDetail_Ag" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_MatchWinLossDetail_MAg" SpName="Age_Rpt_MatchWinLossDetail_MAg" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />

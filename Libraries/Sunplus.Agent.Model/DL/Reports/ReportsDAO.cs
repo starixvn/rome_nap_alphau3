@@ -701,7 +701,9 @@ namespace Sunplus.Agent.Model.DL.Reports
             parameters.Add("custid", custId);
             parameters.Add("fromdate", dateFrom);
             parameters.Add("todate", dateTo);
-            return this.ExecSpTable("Age_Rpt_MatchWinLoss_Ag", parameters);
+            return this.ExecSpTable(
+                UserSession.Current.IsShowSportbook ? "Age_Rpt_MatchWinLoss_Ag" : "U3_Rpt_MatchWinLoss_Ag", 
+                parameters);
         }
         #endregion
 
