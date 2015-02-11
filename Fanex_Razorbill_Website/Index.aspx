@@ -61,12 +61,6 @@
                 </iframe>
             </td>
         </tr>
-        <tr>
-            <td class="footer">
-                <iframe src="../Footer.html" frameborder="0" width="100%" scrolling="no" height="22px"
-                    id="frFooter" name="frFooter"></iframe>
-            </td>
-        </tr>
     </table>
     </form>
 </body>
