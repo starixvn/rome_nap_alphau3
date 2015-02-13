@@ -8,7 +8,7 @@ using Sunplus.Agent.Model.Entities;
 using Sunplus.Agent.Model.Entities.Permission;
 using Sunplus.Agent.Utilities;
 
-public partial class Index : System.Web.UI.Page
+public partial class Index2 : System.Web.UI.Page
 {
     private const string DEFAULT_INDEX = "_Reports/PortalPage/PortalPage.aspx";
     protected string mainPage = null;

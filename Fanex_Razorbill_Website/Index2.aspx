@@ -1,8 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="false" EnableSessionState="True" CodeFile="Index2.aspx.cs"
-    Inherits="Index" %>
+    Inherits="Index2" %>
 
-<%--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">--%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/tr/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/tr/xhtml1/DTD/xhtml1-transitional.dtd">--%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
@@ -50,6 +50,16 @@
     <form id="agentSite" runat="server" style="height: 100%; width: 100%;">
     <table border="0" cellpadding="0" cellspacing="0" class="content">
         <tr>
+            <td colspan="2" class="header">
+                <iframe src="<%=headerPage %>" frameborder="0" scrolling="no" width="100%" height="90px"
+                    id="frHeader" name="frHeader"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td class="menu" valign="top">
+                <iframe src="<%=menuPage %>" frameborder="0" id="menu" name="menu" width="100%" height="100%"
+                    marginwidth="0" marginheight="0" allowtransparency="yes"></iframe>
+            </td>
             <td class="mainpage" valign="top">
                 <iframe src="<%=mainPage%>" onload="setURL();" frameborder="0" id="main" scrolling="auto"
                     name="main" width="100%" height="100%" marginwidth="0" marginheight="0" allowtransparency="yes">
@@ -69,6 +79,7 @@
     type="text/javascript"></script>
 <script src="../_GlobalResources/Js/Core.js?<%=TplCore.TplSettings.UrlVersion %>"
     type="text/javascript"></script>
+
 <script src="../_MemberInfo/SetNickName/Resources/SetNickName.js?<%=TplCore.TplSettings.UrlVersion %>"
     type="text/javascript"></script>
 <script src="../_Announcement/Resources/Announcement.js?<%=TplCore.TplSettings.UrlVersion %>"
