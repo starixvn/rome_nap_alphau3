@@ -14,7 +14,6 @@
 <%@ Import Namespace="Sunplus.Agent.Model.BL.Authorization" %>
 <%@ Import Namespace="CaptchaMvc.Infrastructure" %>
 <%@ Import Namespace="CaptchaMvc.Interface" %>
-
 <script RunAt="server">
 
     public static void RegisterRoutes(RouteCollection routes)
@@ -36,12 +35,12 @@
         AreaRegistration.RegisterAllAreas();
         RegisterRoutes(RouteTable.Routes);
         RegisterGlobalFilters(GlobalFilters.Filters);
-        
-        
+
+
     }
-    
-   
-    
+
+
+
     private static void RegisterGlobalFilters(GlobalFilterCollection filters)
     {
         filters.Add(new HandleErrorAttribute());
@@ -50,24 +49,24 @@
     void AppSettings_LoadComplete(object sender, bool error)
     {
         if (error) return;
-        
+
         string[] keys = Sunplus.Agent.Configurations.AppSettings.Configuration.GetKeys();
         foreach (string key in keys)
         {
             ConfigurationManager.AppSettings[key] = Sunplus.Agent.Configurations.AppSettings.Configuration.Get(key);
         }
 
-		// Domains.ini
+        // Domains.ini
         Sunplus.Agent.Configurations.IConfiguration domainConfiguration = Sunplus.Agent.Configurations.Domains.Configuration;
         string[] domainKeys = domainConfiguration.GetKeys();
         foreach (string key in domainKeys)
         {
             ConfigurationManager.AppSettings[key] = domainConfiguration.Get(key);
         }
-		
+
         TplCore.TplSettings.UrlVersion = Sunplus.Agent.Configurations.AppSettings.Configuration.Get("JsVersion");
     }
-    
+
     void Application_End(object sender, EventArgs e)
     {
         //  Code that runs on application shutdown
@@ -138,7 +137,7 @@
             || executeFileName.EndsWith("ProcessAfterLogin.ashx")
             || executeFileName.EndsWith("Captcha.ashx")
             || executeFileName.EndsWith("ChartImg.axd");
-            ;
+        ;
 
         if (UserSession.Current.CustId == 0 && !isNewSession)
         {
@@ -158,34 +157,10 @@
 
         // For master level: MemberCommission.aspx
         bool isValidMasterId = true;
-        if (masterId != 0)
-        {
-            isValidMasterId = authorization.CheckBelonging(masterId, transId, isDataWarehouse);
-        }
-
-        if (Request.QueryString["custids"] != null)
-        {
-            var items = Request.QueryString["custids"].Split('^');
-            var custids = string.Empty;
-            
-            foreach (var custid in items)
-            {
-                if (custid != string.Empty)
-                {
-                    var ret = 0; int.TryParse(custid, out ret);
-                    custids += ret.ToString() + "^";
-                }
-            }
-            
-            isValidMasterId = authorization.CheckBelonging(custids);
-        }
-
         if (!isValidMasterId || !authorization.AuthorizeUrl(custId, transId, isDataWarehouse, url))
         {
             string errUrl = (Sunplus.Agent.Model.BL.Definitions.AppSettings.LocalTest) ? "~/AccessNoData.aspx" : "~/_Authorization/SignIn.aspx";
-
             Server.Transfer(errUrl);
-
         }
     }
 
@@ -222,4 +197,3 @@
   
 
 </script>
-

@@ -43,7 +43,10 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
         public string GetResult(DateTime fromDate, int sportType, int leagueId)
         {
             var criteria = GetCriteria(fromDate, sportType, leagueId);
-            IEnumerable<Sportsbook> sportsbooks = this._scoreInformationDataAccess.GetSportbookResult(criteria);
+            IEnumerable<Sportsbook> sportsbooks =
+                UserSession.Current.IsShowSportbook || sportType != 0 ?
+                this._scoreInformationDataAccess.GetSportbookResult(criteria) :
+                new List<Sportsbook>();
             ResultSetting resultSetting = GetFanexResultSetting(criteria.SportType > 0 ? criteria.SportType : (int)SportType.Others);
 
             return ResultEngine.HtmlParser<Sportsbook>(sportsbooks.ToList(), resultSetting).Replace("original-title", " title ");

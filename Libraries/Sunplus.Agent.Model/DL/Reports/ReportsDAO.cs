@@ -249,6 +249,7 @@ namespace Sunplus.Agent.Model.DL.Reports
                 parameters.Add(element.Key, element.Value);
             }
 
+            AddDefaultParamsToHideSportbook(parameters);
             return this.ExecSpTable("Age_Rpt_WinlossAnalysis_SAg", parameters);
         }
 
@@ -275,6 +276,7 @@ namespace Sunplus.Agent.Model.DL.Reports
                 parameters.Add(element.Key, element.Value);
             }
 
+            AddDefaultParamsToHideSportbook(parameters);
             return this.ExecSpTable("Age_Rpt_WinlossAnalysis_MAg", parameters);
         }
 
@@ -301,6 +303,7 @@ namespace Sunplus.Agent.Model.DL.Reports
                 parameters.Add(element.Key, element.Value);
             }
 
+            AddDefaultParamsToHideSportbook(parameters);
             return this.ExecSpTable("Age_Rpt_WinlossAnalysis_Ag", parameters);
         }
 
@@ -702,7 +705,7 @@ namespace Sunplus.Agent.Model.DL.Reports
             parameters.Add("fromdate", dateFrom);
             parameters.Add("todate", dateTo);
             return this.ExecSpTable(
-                UserSession.Current.IsShowSportbook ? "Age_Rpt_MatchWinLoss_Ag" : "U3_Rpt_MatchWinLoss_Ag", 
+                UserSession.Current.IsShowSportbook ? "Age_Rpt_MatchWinLoss_Ag" : "U3_Rpt_MatchWinLoss_Ag",
                 parameters);
         }
         #endregion
@@ -752,6 +755,8 @@ namespace Sunplus.Agent.Model.DL.Reports
             parameters.Add("league", league);
             parameters.Add("lang", language);
             parameters.Add("movebetsday", moveBetsDate);
+
+            AddDefaultParamsToHideSportbook(parameters);
             return this.ExecSpTable("Age_Rpt_MatchWinLossDetail_Ag", parameters);
         }
 
@@ -778,6 +783,7 @@ namespace Sunplus.Agent.Model.DL.Reports
             parameters.Add("league", league);
             parameters.Add("lang", language);
             parameters.Add("movebetsday", moveBetsDate);
+            AddDefaultParamsToHideSportbook(parameters);
             return this.ExecSpTable("Age_Rpt_MatchWinLossDetail_MAg", parameters);
         }
 
@@ -804,6 +810,7 @@ namespace Sunplus.Agent.Model.DL.Reports
             parameters.Add("league", league);
             parameters.Add("lang", language);
             parameters.Add("movebetsday", moveBetsDate);
+            AddDefaultParamsToHideSportbook(parameters);
             return this.ExecSpTable("Age_Rpt_MatchWinLossDetail_SAg", parameters);
         }
         #endregion
@@ -825,7 +832,10 @@ namespace Sunplus.Agent.Model.DL.Reports
             parameters.Add("todate", dateTo);
             parameters.Add("balanceupday", balanceupDate);
 
-            return this.ExecSpTable("Age_Rpt_WinLossByBettype_Ag", parameters);
+            var storeProcedureName = UserSession.Current.IsShowSportbook ?
+                "Age_Rpt_WinLossByBettype_Ag" :
+                "U3_Rpt_WinLossByBettype_Ag";
+            return this.ExecSpTable(storeProcedureName, parameters);
         }
 
         /// <summary>
@@ -844,7 +854,10 @@ namespace Sunplus.Agent.Model.DL.Reports
             parameters.Add("todate", dateTo);
             parameters.Add("balanceupday", balanceupDate);
 
-            return this.ExecSpTable("Age_Rpt_WinLossByBettype_MAg", parameters);
+            var storeProcedureName = UserSession.Current.IsShowSportbook ?
+                "Age_Rpt_WinLossByBettype_MAg" :
+                "U3_Rpt_WinLossByBettype_MAg";
+            return this.ExecSpTable(storeProcedureName, parameters);
         }
 
         /// <summary>
@@ -863,7 +876,10 @@ namespace Sunplus.Agent.Model.DL.Reports
             parameters.Add("todate", dateTo);
             parameters.Add("balanceupday", balanceupDate);
 
-            return this.ExecSpTable("Age_Rpt_WinLossByBettype_SAg", parameters);
+            var storeProcedureName = UserSession.Current.IsShowSportbook ?
+                "Age_Rpt_WinLossByBettype_SAg" :
+                "U3_Rpt_WinLossByBettype_SAg";
+            return this.ExecSpTable(storeProcedureName, parameters);
         }
         #endregion
 
@@ -1190,7 +1206,10 @@ namespace Sunplus.Agent.Model.DL.Reports
             Hashtable parameters = new Hashtable();
             parameters.Add("eventdate", date);
 
-            return this.ExecSpTable("Age_Result_SportSelByDate", parameters);
+            var storeProcedureName = UserSession.Current.IsShowSportbook ?
+                "Age_Result_SportSelByDate" :
+                "U3_Result_SportSelByDate";
+            return this.ExecSpTable(storeProcedureName, parameters);
         }
         #endregion
 

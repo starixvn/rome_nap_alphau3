@@ -454,15 +454,6 @@ namespace Sunplus.Agent.Model.BL.Authorization
         /// <returns></returns>
         public bool AuthorizeUrl(int custId, long transId, bool isDataWarehouse, string url)
         {
-            // Check belonging
-            if (custId != 0 || transId != 0)
-            {
-                if (!this.CheckBelonging(custId, transId, isDataWarehouse))
-                {
-                    return false;
-                }
-            }
-
             // Check Role and PageAccess
             PageAccess pageAccess = CurrentSession.SubPageAccess;
             byte currentRoleId = CurrentSession.RoleId;

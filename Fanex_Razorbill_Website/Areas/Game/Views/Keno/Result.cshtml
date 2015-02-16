@@ -6,11 +6,11 @@
     Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(Fanex.Razorbill.Module.ContextualCustomer.Utils.SessionExtension.Language);
     Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
-    var normalResult = Url.Content("~") + "_Reports/Result/Result.aspx?is_outright=false";
-    var outRightResultUrl = Url.Content("~") + "_Reports/Result/Result.aspx?is_outright=true";
+    var normalResult = Url.Content("~") + "/Report/Result/GetResult";
+    var outRightResultUrl = Url.Content("~") + "/Report/Result/GetResult?IsOutRight=true";
     var deailResultUrl = Url.Content("~") + "game/keno/kenoresult/resultdetail?date=" + ViewBag.date + "&language=" + ViewBag.language +
                          "&customerId=" + ViewBag.customerId;
-	var extendTokenUrl = Url.Content("~") + "game/keno/kenoresult/ExtendToken?userId=" + ViewBag.customerId;					 
+    var extendTokenUrl = Url.Content("~") + "game/keno/kenoresult/ExtendToken?userId=" + ViewBag.customerId;
 }
 <!DOCTYPE html>
 <html>

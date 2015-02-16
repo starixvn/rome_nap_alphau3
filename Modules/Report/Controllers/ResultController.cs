@@ -644,7 +644,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             }
 
             string url = baseUrl + "game/keno/kenoresult/index?date=" + string.Format("{0:yyyyMMdd}", DateTime.Now)
-                + "&language=" + languageCode.ToLower() + "&customerId=" + resultRequest.CustId;
+                + "&language=" + languageCode.ToLower() + "&customerId=" + UserSession.Current.CustId;
             ViewBag.KenoURL = url;
             ViewBag.KenoResult = ResourceExtension.GetResource(_ResourceClass, "Keno");
         }

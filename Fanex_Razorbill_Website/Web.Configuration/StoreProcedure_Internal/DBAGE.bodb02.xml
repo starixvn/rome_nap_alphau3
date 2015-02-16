@@ -80,7 +80,10 @@
     <Setting Key="Age_Result_Outright" SpName="Age_Result_Outright" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Result_RaceSelByMeeting" SpName="Age_Result_RaceSelByMeeting" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Result_RBRaceSelByMeeting" SpName="Age_Result_RBRaceSelByMeeting" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
+   
     <Setting Key="Age_Result_SportSelByDate" SpName="Age_Result_SportSelByDate" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
+    <Setting Key="U3_Result_SportSelByDate" SpName="U3_Result_SportSelByDate" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
+    
     <Setting Key="Age_Result_VirtualHRSelByMeeting" SpName="Age_Result_VirtualHRSelByMeeting" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Result_VSRaceSelByMeeting" SpName="Age_Result_VSRaceSelByMeeting" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_CommByBettype_Ag" SpName="Age_Rpt_CommByBettype_Ag" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
@@ -111,9 +114,14 @@
     <Setting Key="Age_Rpt_WinlossAnalysis_Ag" SpName="Age_Rpt_WinlossAnalysis_Ag" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_WinlossAnalysis_MAg" SpName="Age_Rpt_WinlossAnalysis_MAg" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_WinlossAnalysis_SAg" SpName="Age_Rpt_WinlossAnalysis_SAg" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
+    
     <Setting Key="Age_Rpt_WinLossByBettype_Ag" SpName="Age_Rpt_WinLossByBettype_Ag" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_WinLossByBettype_MAg" SpName="Age_Rpt_WinLossByBettype_MAg" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_WinLossByBettype_SAg" SpName="Age_Rpt_WinLossByBettype_SAg" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
+    <Setting Key="U3_Rpt_WinLossByBettype_Ag" SpName="U3_Rpt_WinLossByBettype_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
+    <Setting Key="U3_Rpt_WinLossByBettype_MAg" SpName="U3_Rpt_WinLossByBettype_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
+    <Setting Key="U3_Rpt_WinLossByBettype_SAg" SpName="U3_Rpt_WinLossByBettype_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
+
     <Setting Key="Age_Rpt_WinLossDetail_Ag" SpName="Age_Rpt_WinLossDetail_Ag" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_WinLossDetail_Ag_bettrans" SpName="Age_Rpt_WinLossDetail_Ag_bettrans" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_WinLossDetail_MAg" SpName="Age_Rpt_WinLossDetail_MAg" DbName="DBAGE.bodb02.bodbDownlineNetView" Plain="0" />
