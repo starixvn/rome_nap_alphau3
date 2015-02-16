@@ -71,7 +71,7 @@ namespace Fanex.Age.UI.Reports.MatchWinloss
         public override object InvokeData(System.Collections.Hashtable p)
         {
             DataTable reportData = _ReportBO.GetMatchWinloss(_dateFrom, _dateTo);
-            reportData.Columns.Add("Total", typeof(decimal), "GrossComm+commission+positiontaking");
+            reportData.Columns.Add("Total", typeof(decimal), "commission+positiontaking");
             reportData = SortData(reportData);
             return reportData;
         }

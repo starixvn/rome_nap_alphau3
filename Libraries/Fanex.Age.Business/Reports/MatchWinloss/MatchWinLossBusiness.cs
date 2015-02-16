@@ -38,7 +38,7 @@ namespace Fanex.Age.Business.Reports.MatchWinloss
 
             foreach (var item in result)
             {
-                item.Total = item.GrossComm + item.Comm + item.PositionTaking;
+                item.Total = item.Comm + item.PositionTaking;
             }
 
             return result;
