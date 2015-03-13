@@ -100,7 +100,6 @@
     <Compile Include="SpamFilter\UserFilter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>

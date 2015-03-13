@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Functions>
-    <Function Name="Customer information">
-        <Setting Key="Age_CustomerSelCheckBelonging_OLD" SpName="Age_CustomerSelCheckBelonging_OLD" DbName="DBACC.bodb02.bodbDownlineNetView" Plain="0" />
-    </Function>
-</Functions>
