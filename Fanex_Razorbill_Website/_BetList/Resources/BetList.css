@@ -38,7 +38,7 @@ div.match + div.league{background: none; font-weight:normal; text-align: right; 
 #casino-betlist-a td.hd{background-color: #F7F0E4;color: #000;}
 
 #hor-minimalist-a{font-size: 12px;background: #fff;border-collapse: collapse;text-align: left;width: 100%;}
-#hor-minimalist-a th{font-weight: normal;color: #fff;background: url(Images/bgHeader.jpg) repeat-x scroll center top #6A6969;padding: 2px 2px;border: solid 1px #999;text-align: center;}
+#hor-minimalist-a th{font-weight: normal;color: #fff;background-color: #576b9d;padding: 2px 2px;border: solid 1px #999;text-align: center;}
 #hor-minimalist-a td{color: #000;vertical-align: top;padding: 2px 2px 0px 2px;border: solid 1px #999;text-align: right;}
 #hor-minimalist-a tbody tr:hover td{color: #009;background-color:#FFFF00;}
 #hor-minimalist-a tbody tr#tr_footer:hover td{color: #000000;background-color:#E8DFCA;}
@@ -78,7 +78,7 @@ a{text-decoration: none;}
 .float_l,.scoremap{float:left;}
 .iconScoreMap,.scoremapIcon{background: url(Images/ScoreMapWL.png) no-repeat;	height: 18px;width: 18px;margin: 3px 3px;}
 .strike_through{text-decoration: line-through;} 
-.bl_title{color: #B50000;font-size: 11px;font-weight: bold;text-transform: uppercase;background: url(../../_GlobalResources/Images/bg_header01.jpg) no-repeat scroll left bottom;line-height: 28px;}
+.bl_title{color: #B50000;font-size: 11px;font-weight: bold;text-transform: uppercase;line-height: 28px;}
 
 .hand_result{color: #1BA4ED; padding: 3px 3px 3px 3px;cursor:pointer}
 .no_info{text-align: center;background-color: #FFFFFF;font-weight: normal;}
