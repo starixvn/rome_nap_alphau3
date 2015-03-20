@@ -21,14 +21,15 @@ namespace Fanex.Age.UI.Reports.Result
     using System.Text;
     using System.Web;
     using System.Web.UI;
+    using Fanex.Age.UI.Reports.Components;
     using Fanex.Age.UI.Reports.DTO.Result.Entities;
     using Fanex.Age.UI.Reports.Result.Business;
     using Fanex.Common;
+    using Fanex.Razorbill.Module.Common.Helpers;
     using Sunplus.Agent.Model.BL.Definitions;
+    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
     using Sunplus.Agent.Utilities;
-    using Fanex.Age.UI.Reports.Components;
-    using Sunplus.Agent.Model.Entities;
 
     public partial class Result_Page : Reports_Page
     {
@@ -374,7 +375,7 @@ namespace Fanex.Age.UI.Reports.Result
             template.ResultTitle.disabledOutright = this.isOutright ? "disabled = 'disabled'" : string.Empty;
             template.ResultTitle.disabledOutrightClass = this.isOutright ? "btn2" : string.Empty;
 
-            if (UserPermission.EnableKeno && UserSession.Current.IsShowSportbook)
+            if (UserPermission.EnableKeno && UserSession.Current.IsShowSportbook && IPHelper.IsWebVpnAccess())
             {
                 HttpContext context = HttpContext.Current;
                 var sessionTmp = "/(S(" + CurrentUserSession.NetSessionId + "))/";

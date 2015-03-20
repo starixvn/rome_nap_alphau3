@@ -1,4 +1,5 @@
 ﻿@using Sunplus.Agent.Model.Entities;
+@using Fanex.Razorbill.Module.Common.Helpers;
 @model Fanex.Razorbill.Module.Report.Entities.ResultRequest
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -31,7 +32,7 @@
                         <input @ViewBag.DisabledNormal  type="button" class="btn @ViewBag.DisabledNormalClass" style="width: 65px; margin-right: 5px;" id="btnNormal" value="@ViewBag.NormalResultTitle" />
                         <input @ViewBag.DisabledOutright  type="button" class="btn @ViewBag.DisabledOutrightClass" style="width: 65px; margin-right: 5px;" id="btnOutRight" value="@ViewBag.OutrightResultTitle" />
                         <!--KenoTitle-->
-                        if (ViewBag.HideKenoTitle == false)
+                        if (ViewBag.HideKenoTitle == false && !IPHelper.IsWebVpnAccess())
                         {
                         <input type="button" class="btn" style="width: 65px; margin-right:5px;" id="btnKeno" value="@ViewBag.KenoResult" onclick="location.href='@ViewBag.KenoURL'"/>
                         }

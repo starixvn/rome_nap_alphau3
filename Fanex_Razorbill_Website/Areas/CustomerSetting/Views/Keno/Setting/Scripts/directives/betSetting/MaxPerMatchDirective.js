@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿// "use strict";
 
 KenoModule.directive('maxPerMatchInput', ['$filter', '$parse', 'commonService',
     function ($filter, $parse, commonService) {

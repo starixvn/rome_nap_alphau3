@@ -15,7 +15,7 @@ if (typeof document !== "undefined" && !("classList" in document.createElement("
 
     (function (view) {
 
-        "use strict";
+        // "use strict";
 
         var 
       classListProp = "classList"

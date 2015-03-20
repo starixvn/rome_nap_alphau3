@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿// "use strict";
 
 KenoModule.service('dataService', function () {
     var roleId = 0;

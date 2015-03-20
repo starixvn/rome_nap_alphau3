@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿// "use strict";
 
 KenoModule.directive('minBetInput', ['$filter', '$parse', 'commonService',
     function ($filter, $parse, commonService) {

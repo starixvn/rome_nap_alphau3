@@ -22,7 +22,7 @@
 }
 
 (function ($) {
-    "use strict";
+    // "use strict";
 
     /*
     Usage Note:
