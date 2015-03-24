@@ -1,7 +1,7 @@
 ﻿/* global _roleID, _custID, domain, resources, _userTypeMaster, _userTypeAgent */
 /*jshint freeze: false */
 
-"use strict";
+// "use strict";
 
 var ResultReportManager = function () {
     var self = this;

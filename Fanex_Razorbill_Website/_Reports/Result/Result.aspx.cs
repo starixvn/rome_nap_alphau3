@@ -21,13 +21,15 @@ namespace Fanex.Age.UI.Reports.Result
     using System.Text;
     using System.Web;
     using System.Web.UI;
+    using Fanex.Age.UI.Reports.Components;
     using Fanex.Age.UI.Reports.DTO.Result.Entities;
     using Fanex.Age.UI.Reports.Result.Business;
     using Fanex.Common;
+    using Fanex.Razorbill.Module.Common.Helpers;
     using Sunplus.Agent.Model.BL.Definitions;
+    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
     using Sunplus.Agent.Utilities;
-    using Fanex.Age.UI.Reports.Components;
 
     public partial class Result_Page : Reports_Page
     {
@@ -227,7 +229,7 @@ namespace Fanex.Age.UI.Reports.Result
                                 tennisDetailTable = CalculateTennisResult(resultDataset.Tables[1]);
                                 viewData.Add("TennisDetail", tennisDetailTable);
                             }
-                            
+
                         }
                         break;
                 }
@@ -366,15 +368,14 @@ namespace Fanex.Age.UI.Reports.Result
             }
 
             template.ResultTitle.NormalResult = Resources.Lang.lblNormal;
-            template.ResultTitle.OutrightResult = Resources.Lang.lblOutRight;
-
             template.ResultTitle.disabledNormal = this.isOutright ? string.Empty : "disabled = 'disabled'";
             template.ResultTitle.disabledNormalClass = this.isOutright ? string.Empty : "btn2";
 
+            template.ResultTitle.OutrightResult = Resources.Lang.lblOutRight;
             template.ResultTitle.disabledOutright = this.isOutright ? "disabled = 'disabled'" : string.Empty;
             template.ResultTitle.disabledOutrightClass = this.isOutright ? "btn2" : string.Empty;
 
-            if (UserPermission.EnableKeno)
+            if (UserPermission.EnableKeno && UserSession.Current.IsShowSportbook && IPHelper.IsWebVpnAccess())
             {
                 HttpContext context = HttpContext.Current;
                 var sessionTmp = "/(S(" + CurrentUserSession.NetSessionId + "))/";
@@ -1357,7 +1358,7 @@ namespace Fanex.Age.UI.Reports.Result
             rowBlock.PenaltyShootout.PSResult = psStatus;
             rowBlock.PenaltyShootout.PSResultTooltip = GetLogResource(psStatus.Replace(':', '_'));
         }
-        
+
         #endregion SoccerResult
 
         #region BasketBall
@@ -1616,7 +1617,7 @@ namespace Fanex.Age.UI.Reports.Result
                 {
                     template.SetDetail.Hide();
                 }
-                
+
                 template.TableMain.LimitNotFound.Hide();
             }
             else
@@ -1842,7 +1843,7 @@ namespace Fanex.Age.UI.Reports.Result
 
                     int maxGame = Converter.ToInt(currentGameList.Keys.Max(), MAX_GAME_PER_RESULT_LINE) % 100;
 
-                    while(game < maxGame)
+                    while (game < maxGame)
                     {
                         game++;
                         line = ((game - 1) / MAX_GAME_PER_RESULT_LINE) + 1;
@@ -1910,7 +1911,7 @@ namespace Fanex.Age.UI.Reports.Result
             }
         }
 
-        private void RenderTennisGame(int matchId, ResultTennis_Template template,  Dictionary<int, TennisMatchStatistics> matchDetailDict, ref string awayTeamText, ref string homeTeamText, DataTable reportData)
+        private void RenderTennisGame(int matchId, ResultTennis_Template template, Dictionary<int, TennisMatchStatistics> matchDetailDict, ref string awayTeamText, ref string homeTeamText, DataTable reportData)
         {
             int game = 0;
             int line = 0;
@@ -2097,7 +2098,7 @@ namespace Fanex.Age.UI.Reports.Result
                         {
                             continue;
                         }
-                        
+
                         int maxGame = Converter.ToInt(currentGameList.Keys.Max(), MAX_GAME_PER_RESULT_LINE) % 100;
 
                         detailHeaders[0].TitleNameBlock.Set_X_Game_Result = string.Format("Set {0} Game Result", i);
@@ -2226,100 +2227,100 @@ namespace Fanex.Age.UI.Reports.Result
             switch (order % MAX_GAME_PER_RESULT_LINE)
             {
                 case 0:
-                {
-                    headerRow.S13 = order.ToString();
-                    row.HomeValueBlock.S13Home = homeValue;
-                    row.AwayValueBlock.S13Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S13 = order.ToString();
+                        row.HomeValueBlock.S13Home = homeValue;
+                        row.AwayValueBlock.S13Away = awayValue;
+                        break;
+                    }
                 case 1:
-                {
-                    headerRow.S1 = order.ToString();
-                    row.HomeValueBlock.S1Home = homeValue;
-                    row.AwayValueBlock.S1Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S1 = order.ToString();
+                        row.HomeValueBlock.S1Home = homeValue;
+                        row.AwayValueBlock.S1Away = awayValue;
+                        break;
+                    }
                 case 2:
-                {
-                    headerRow.S2 = order.ToString();
-                    row.HomeValueBlock.S2Home = homeValue;
-                    row.AwayValueBlock.S2Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S2 = order.ToString();
+                        row.HomeValueBlock.S2Home = homeValue;
+                        row.AwayValueBlock.S2Away = awayValue;
+                        break;
+                    }
                 case 3:
-                {
-                    headerRow.S3 = order.ToString();
-                    row.HomeValueBlock.S3Home = homeValue;
-                    row.AwayValueBlock.S3Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S3 = order.ToString();
+                        row.HomeValueBlock.S3Home = homeValue;
+                        row.AwayValueBlock.S3Away = awayValue;
+                        break;
+                    }
                 case 4:
-                {
-                    headerRow.S4 = order.ToString();
-                    row.HomeValueBlock.S4Home = homeValue;
-                    row.AwayValueBlock.S4Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S4 = order.ToString();
+                        row.HomeValueBlock.S4Home = homeValue;
+                        row.AwayValueBlock.S4Away = awayValue;
+                        break;
+                    }
                 case 5:
-                {
-                    headerRow.S5 = order.ToString();
-                    row.HomeValueBlock.S5Home = homeValue;
-                    row.AwayValueBlock.S5Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S5 = order.ToString();
+                        row.HomeValueBlock.S5Home = homeValue;
+                        row.AwayValueBlock.S5Away = awayValue;
+                        break;
+                    }
                 case 6:
-                {
-                    headerRow.S6 = order.ToString();
-                    row.HomeValueBlock.S6Home = homeValue;
-                    row.AwayValueBlock.S6Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S6 = order.ToString();
+                        row.HomeValueBlock.S6Home = homeValue;
+                        row.AwayValueBlock.S6Away = awayValue;
+                        break;
+                    }
                 case 7:
-                {
-                    headerRow.S7 = order.ToString();
-                    row.HomeValueBlock.S7Home = homeValue;
-                    row.AwayValueBlock.S7Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S7 = order.ToString();
+                        row.HomeValueBlock.S7Home = homeValue;
+                        row.AwayValueBlock.S7Away = awayValue;
+                        break;
+                    }
                 case 8:
-                {
-                    headerRow.S8 = order.ToString();
-                    row.HomeValueBlock.S8Home = homeValue;
-                    row.AwayValueBlock.S8Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S8 = order.ToString();
+                        row.HomeValueBlock.S8Home = homeValue;
+                        row.AwayValueBlock.S8Away = awayValue;
+                        break;
+                    }
                 case 9:
-                {
-                    headerRow.S9 = order.ToString();
-                    row.HomeValueBlock.S9Home = homeValue;
-                    row.AwayValueBlock.S9Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S9 = order.ToString();
+                        row.HomeValueBlock.S9Home = homeValue;
+                        row.AwayValueBlock.S9Away = awayValue;
+                        break;
+                    }
                 case 10:
-                {
-                    headerRow.S10 = order.ToString();
-                    row.HomeValueBlock.S10Home = homeValue;
-                    row.AwayValueBlock.S10Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S10 = order.ToString();
+                        row.HomeValueBlock.S10Home = homeValue;
+                        row.AwayValueBlock.S10Away = awayValue;
+                        break;
+                    }
                 case 11:
-                {
-                    headerRow.S11 = order.ToString();
-                    row.HomeValueBlock.S11Home = homeValue;
-                    row.AwayValueBlock.S11Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S11 = order.ToString();
+                        row.HomeValueBlock.S11Home = homeValue;
+                        row.AwayValueBlock.S11Away = awayValue;
+                        break;
+                    }
                 case 12:
-                {
-                    headerRow.S12 = order.ToString();
-                    row.HomeValueBlock.S12Home = homeValue;
-                    row.AwayValueBlock.S12Away = awayValue;
-                    break;
-                }
+                    {
+                        headerRow.S12 = order.ToString();
+                        row.HomeValueBlock.S12Home = homeValue;
+                        row.AwayValueBlock.S12Away = awayValue;
+                        break;
+                    }
                 default:
-                {
-                    break;
-                }
+                    {
+                        break;
+                    }
             }
         }
         #endregion Tennis
@@ -3858,7 +3859,7 @@ namespace Fanex.Age.UI.Reports.Result
                     }
                     else
                     {
-                        matchStatistics.SetHomeArr[i - 1]  = "-";
+                        matchStatistics.SetHomeArr[i - 1] = "-";
                         matchStatistics.SetAwayArr[i - 1] = "-";
                     }
                 }

@@ -341,7 +341,6 @@ table.boldrow
 #header_main
 {
 	height: 22px;
-	background: url(Images/bg_header01.jpg) no-repeat left bottom;
 	color: #9d1c1c;
 	font-weight: bold;
 	padding-left: 15px;
@@ -1072,7 +1071,7 @@ table.list tr
 
 .RptHeader
 {
-	background: #6A6969 url(Images/bg_header02.jpg) repeat-x scroll center top;
+	background-color: #576b9d;
 	color: #FFF;
 	font-size: 12px !important;
 	text-align: center;

@@ -4,7 +4,7 @@
  * Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors; Licensed MIT
  */
 (function( jQuery, window, undefined ) {
-"use strict";
+// "use strict";
 
 
 var warnedAbout = {};

@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿// "use strict";
 
 KenoModule.directive('agentPositionTakingElement', ['commonService', '$templateCache', function (commonService, $templateCache) {
     return {

@@ -14,7 +14,7 @@
 
 ;(function() {
 /*jshint eqeqeq:false curly:false latedef:false */
-"use strict";
+// "use strict";
 
 	function setup($) {
 		$.fn._fadeIn = $.fn.fadeIn;

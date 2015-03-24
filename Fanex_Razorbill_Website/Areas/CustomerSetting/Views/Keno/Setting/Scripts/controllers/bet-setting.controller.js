@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿// "use strict";
 
 KenoModule.controller('betSettingController', function ($scope, kenoRepositories) {
     kenoRepositories.getData().then(function () {

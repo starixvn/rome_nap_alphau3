@@ -5,7 +5,7 @@
 // Licensed under the MIT license.
 //
 (function() {
-	"use strict";
+	// "use strict";
 
 	var doT = {
 		version: '0.2.0',

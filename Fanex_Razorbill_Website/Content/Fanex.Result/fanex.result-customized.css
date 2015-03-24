@@ -35,7 +35,7 @@ table.fn-rs
 
 table.fn-rs tr.header, table.fn-rs .sub-header
 {
-    background: url("images/bg_header02.jpg") repeat-x scroll center top #6a6969;
+    background-color: #576b9d;
     height: 20px;
     color: #fff;
 }

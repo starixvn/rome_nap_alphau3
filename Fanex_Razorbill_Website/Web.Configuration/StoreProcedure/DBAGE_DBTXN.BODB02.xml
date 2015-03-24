@@ -5,8 +5,8 @@
     -->
   <Function Name="Update setting: PT/Comm/Bet setting">
     
-    <Setting Key="Acc_CustomerSelMAgentInfo_Multiple" SpName="Acc_CustomerSelMAgentInfo_Multiple" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
-    <Setting Key="Acc_CustomerSelSAgentInfo_Multiple" SpName="Acc_CustomerSelSAgentInfo_Multiple" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
+    <Setting Key="Acc_CustomerSelMAgentInfo_Multiple" SpName="Acc_CustomerSelMAgentInfo_Multiple" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Acc_CustomerSelSAgentInfo_Multiple" SpName="Acc_CustomerSelSAgentInfo_Multiple" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     
   </Function>
 
@@ -21,8 +21,8 @@
   
   <Function Name="Update setting: PT/Comm/Bet setting">
     
-    <Setting Key="Acc_CustomerSelMAgentInfo_Multiple" SpName="Acc_CustomerSelMAgentInfo_Multiple" DbName="DBTXN.bodb02.BODBDownlineNet" Plain="0" />    
-    <Setting Key="Acc_CustomerSelSAgentInfo_Multiple" SpName="Acc_CustomerSelSAgentInfo_Multiple" DbName="DBTXN.bodb02.BODBDownlineNet" Plain="0" />
+    <Setting Key="Acc_CustomerSelMAgentInfo_Multiple" SpName="Acc_CustomerSelMAgentInfo_Multiple" DbName="DBTXN.bodb02.BODBDownlineNetView" Plain="0" />    
+    <Setting Key="Acc_CustomerSelSAgentInfo_Multiple" SpName="Acc_CustomerSelSAgentInfo_Multiple" DbName="DBTXN.bodb02.BODBDownlineNetView" Plain="0" />
   </Function>
   
   -->

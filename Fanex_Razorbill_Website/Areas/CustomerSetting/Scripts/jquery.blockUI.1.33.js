@@ -13,7 +13,7 @@
 */
 
 ; (function () {
-    "use strict";
+    // "use strict";
 
     function setup($) {
         if (/^1\.(0|1|2)/.test($.fn.jquery)) {

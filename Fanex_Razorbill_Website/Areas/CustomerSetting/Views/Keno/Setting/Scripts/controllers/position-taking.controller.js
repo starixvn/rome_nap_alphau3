@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿// "use strict";
 
 KenoModule.controller('positionTakingController', function ($scope, kenoRepositories, ngDialog, $templateCache) {
     kenoRepositories.getData().then(

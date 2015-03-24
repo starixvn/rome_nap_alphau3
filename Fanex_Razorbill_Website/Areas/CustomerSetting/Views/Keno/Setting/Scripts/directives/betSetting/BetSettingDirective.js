@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿// "use strict";
 
 KenoModule.directive('betSettingElement', ['$templateCache', function ($templateCache) {
     return {
