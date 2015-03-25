@@ -182,7 +182,7 @@
     <input type="hidden" id="isOutright" name="isOutright" value="@Model.IsOutright.ToString()" />
     @Html.Hidden("RootURL", Url.Content("~/"))
     </form>
-    <script src="@Url.Content("~/Js/jQuery/jquery-1.8.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Js/jQuery/jquery-1.8.2.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/_Libs/FanexGrid/moment.js")"
         type="text/javascript"></script>
     <script src="@Url.Content("~/_Components/DateTimeControl/JSCalendar/js/jscal2.js?06")"
@@ -232,7 +232,7 @@
                 }
             });
         </script> 
-        @Scripts.Render("~/Areas/Report/Result/ResultScripts")
+        <script src="@Url.Content("~/Areas/Report/Views/Result/Scripts/Result.js")" type="text/javascript"></script>
     }
 </body>
 </html>
