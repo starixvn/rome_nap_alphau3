@@ -132,10 +132,11 @@ namespace Sunplus.Agent.UI._Authorization
 
             IUserSession session = CurrentUserSession;
             //Get Browser
-            Hashtable requestInfo = Sunplus.Agent.Model.Services.DeviceService.GetRequestInfo(Request);
+            Hashtable requestInfo = Sunplus.Agent.Model.Services.DeviceService.GetRequestInfo(Request);            
 
-            bool isSuccess = bo.InternalSignIn(userName, adminId, loginTime, requestInfo, out errCode, out errMsg, ref session);
-
+            bool isSuccess = (!string.IsNullOrWhiteSpace(CurrentUserSession.UserName) && CurrentUserSession.UserName.Equals(userName, StringComparison.OrdinalIgnoreCase))
+                ||  bo.InternalSignIn(userName, adminId, loginTime, requestInfo, out errCode, out errMsg, ref session);
+            
             if (!isSuccess)
             {
                 RedirectToLoginPage();
