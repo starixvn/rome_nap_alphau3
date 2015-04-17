@@ -24,7 +24,7 @@ namespace Fanex.Razorbill.Module.Report.Criteria.Result
         public int SportType { get; set; }
 
         [SpParam(Ignored = true)]
-        public bool IsViewTennisDetail { get; set; }
+        public bool IsViewDetail { get; set; }
 
         public int BetType { get; set; }
 
@@ -32,7 +32,7 @@ namespace Fanex.Razorbill.Module.Report.Criteria.Result
 
         public override string GetSettingKey()
         {
-            return this.IsViewTennisDetail ? "Age_Result_MatchSelResultDetail" : "Age_BetList_SelMatchResult";
+            return this.IsViewDetail ? "Age_Result_MatchSelResultDetail" : "Age_BetList_SelMatchResult";
         }
 
         public override bool IsValid()

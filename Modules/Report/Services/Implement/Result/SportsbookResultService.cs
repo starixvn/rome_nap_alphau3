@@ -70,13 +70,19 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
             };
         }
 
+        /// <summary>
+        /// Gets the FANEX result setting.
+        /// </summary>
+        /// <param name="sportType">Type of the sport.</param>
+        /// <returns>Result Setting Model.</returns>
         private static ResultSetting GetFanexResultSetting(int sportType)
         {
+            SportType type = (SportType)sportType;
             return new ResultSetting
             {
                 SportType = (SportType)sportType,
                 LanguageCode = UserSession.Current.Language,
-                VisibleDetailedLink = (sportType == (int)SportType.Tennis) ? true : false,
+                VisibleDetailedLink = type == SportType.Soccer || type == SportType.Tennis,
                 VisibleFreeHeader = true,
                 VisibleMatchCodeIDColumn = false
             };

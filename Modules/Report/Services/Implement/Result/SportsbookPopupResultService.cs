@@ -42,7 +42,7 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
             List<Sportsbook> sportsbooks = this._scoreInformationDataAccess.GetScoreInformation(ref criteria);
             ResultSetting resultSetting = GetFanexResultSetting(criteria);
 
-            return resultRequest.ViewTennisDetail ? 
+            return resultRequest.ViewDetail ? 
                 ResultEngine.HtmlGameDetailParser(sportsbooks[0], resultSetting).Replace("original-title", " title ") :
                 ResultEngine.HtmlParser(sportsbooks, resultSetting).Replace("original-title", " title ");
         }
@@ -55,7 +55,7 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
                 BetType = resultRequest.BetType,
                 SportType = resultRequest.SportId,
                 BetId = resultRequest.BetId,
-                IsViewTennisDetail = resultRequest.ViewTennisDetail
+                IsViewDetail = resultRequest.ViewDetail
             };
         }
 
