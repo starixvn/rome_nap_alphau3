@@ -38,8 +38,9 @@
     <Reference Include="Fanex.Age.Utility">
       <HintPath>..\Fanex.Age.Utility\Bin\Fanex.Age.Utility.dll</HintPath>
     </Reference>
-    <Reference Include="Fanex.BetList.Core">
-      <HintPath>..\..\packages\Fanex.BetList.Core.2.0.5.11\lib\net40\Fanex.BetList.Core.dll</HintPath>
+    <Reference Include="Fanex.BetList.Core, Version=2.1.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Fanex.BetList.Core.2.1.0.6-beta2\lib\net40\Fanex.BetList.Core.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Data">
       <HintPath>..\..\_Dependencies\_FanexLib\Fanex.Data.dll</HintPath>
