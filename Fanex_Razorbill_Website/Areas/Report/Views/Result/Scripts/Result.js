@@ -125,13 +125,11 @@ var ResultReportManager = function () {
             url += '&viewDetail=true';
         }
 
-        var width = 1052,
-            height = 600;
         if (parent.ageWnd) {
-            parent.ageWnd.open(url, '', 50, 30, width, height);
+            parent.ageWnd.open(url, '', 50, 30, 1052, 600);
         }
         else {
-            ageWnd.open(url, '', 10, 10, width, height);
+            ageWnd.open(url, '', 10, 10, 800, 400);
         }
     };
 };
