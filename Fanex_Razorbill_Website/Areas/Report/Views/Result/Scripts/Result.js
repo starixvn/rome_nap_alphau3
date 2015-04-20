@@ -126,10 +126,10 @@ var ResultReportManager = function () {
         }
 
         if (parent.ageWnd) {
-            parent.ageWnd.open(url, '', 50, 30, 800, 400);
+            parent.ageWnd.open(url, '', 50, 30, 800, 600);
         }
         else {
-            ageWnd.open(url, '', 10, 10, 800, 400);
+            ageWnd.open(url, '', 10, 10, 800, 600);
         }
     };
 };
