@@ -127,8 +127,8 @@
     <Setting Key="Age_Rpt_WinLossDetail_MAg" SpName="Age_Rpt_WinLossDetail_MAg_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_WinLossDetail_MAg_bettrans" SpName="Age_Rpt_WinLossDetail_MAg_bettrans" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_WinLossDetail_MAg_bettrans_New" SpName="Age_Rpt_WinLossDetail_MAg_bettrans_New" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Age_Rpt_WinLossDetail_MAg_New" SpName="Age_Rpt_WinLossDetail_MAg_New" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Age_Rpt_WinLossDetail_SAg" SpName="Age_Rpt_WinLossDetail_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Age_Rpt_WinLossDetail_MAg_New" SpName="Age_Rpt_WinLossDetail_MAg_New_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Age_Rpt_WinLossDetail_SAg" SpName="Age_Rpt_WinLossDetail_SAg_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_WinLossDetail_SAg_bettrans" SpName="Age_Rpt_WinLossDetail_SAg_bettrans" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_SelBalanceUpDay" SpName="Age_SelBalanceUpDay" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_Statement_Mem_BetSummary" SpName="Age_Statement_Mem_BetSummary" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
