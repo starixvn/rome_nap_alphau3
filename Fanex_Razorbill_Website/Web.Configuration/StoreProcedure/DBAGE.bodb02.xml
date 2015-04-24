@@ -360,9 +360,9 @@
     <Setting Key="Age_BetList_SelWinlossHR_Ag" SpName="Age_BetList_SelWinlossHR_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BetList_SelWinlossHR_MAg" SpName="Age_BetList_SelWinlossHR_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BetList_SelWinlossHR_SAg" SpName="Age_BetList_SelWinlossHR_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Age_BetList_SelWinlossOutright_Ag" SpName="Age_BetList_SelWinlossOutright_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Age_BetList_SelWinlossOutright_MAg" SpName="Age_BetList_SelWinlossOutright_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Age_BetList_SelWinlossOutright_SAg" SpName="Age_BetList_SelWinlossOutright_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Age_BetList_SelWinlossOutright_Ag" SpName="Age_BetList_SelWinlossOutright_Ag_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Age_BetList_SelWinlossOutright_MAg" SpName="Age_BetList_SelWinlossOutright_MAg_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Age_BetList_SelWinlossOutright_SAg" SpName="Age_BetList_SelWinlossOutright_SAg_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BetList_SelWinlossParlay_Ag" SpName="Age_BetList_SelWinlossParlay_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BetList_SelWinlossParlay_MAg" SpName="Age_BetList_SelWinlossParlay_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BetList_SelWinlossParlay_SAg" SpName="Age_BetList_SelWinlossParlay_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />

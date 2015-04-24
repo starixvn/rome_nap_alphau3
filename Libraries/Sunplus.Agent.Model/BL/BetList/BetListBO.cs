@@ -66,7 +66,7 @@ namespace Sunplus.Agent.Model.BL.BetList
         /// <param name="dateTo"></param>
         /// <param name="moveBetDate"></param>
         /// <returns></returns>
-        public DataTable GetWinlossOutright(DateTime dateFrom, DateTime dateTo, DateTime moveBetDate)
+        public DataTable GetWinlossOutright(DateTime dateFrom, DateTime dateTo, DateTime moveBetDate, int leagueId)
         {
             BetListDAO betListDAO = new BetListDAO();
             int customerId = CurrentSession.CustId;
@@ -74,15 +74,15 @@ namespace Sunplus.Agent.Model.BL.BetList
             DataTable outright = null;
             if (CurrentSession.IsAgent)
             {
-                outright = betListDAO.Age_BetList_SelWinlossOutright_Ag(customerId, dateFrom, dateTo, language, moveBetDate);
+                outright = betListDAO.Age_BetList_SelWinlossOutright_Ag(customerId, dateFrom, dateTo, language, moveBetDate, leagueId);
             }
             else if (CurrentSession.IsMaster)
             {
-                outright = betListDAO.Age_BetList_SelWinlossOutright_MAg(customerId, dateFrom, dateTo, language, moveBetDate);
+                outright = betListDAO.Age_BetList_SelWinlossOutright_MAg(customerId, dateFrom, dateTo, language, moveBetDate, leagueId);
             }
             else if (CurrentSession.IsSuper)
             {
-                outright = betListDAO.Age_BetList_SelWinlossOutright_SAg(customerId, dateFrom, dateTo, language, moveBetDate);
+                outright = betListDAO.Age_BetList_SelWinlossOutright_SAg(customerId, dateFrom, dateTo, language, moveBetDate, leagueId);
             }
             else
             {
