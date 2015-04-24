@@ -98,7 +98,7 @@
     <Setting Key="Age_Rpt_MatchSelResultEntered" SpName="Age_Rpt_MatchSelResultEntered_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_MatchWinLoss_Ag" SpName="Age_Rpt_MatchWinLoss_Ag_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="U3_Rpt_MatchWinLoss_Ag" SpName="U3_Rpt_MatchWinLoss_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Age_Rpt_MatchWinloss_SelLeagueBySport" SpName="Age_Rpt_MatchWinloss_SelLeagueBySport" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Age_Rpt_MatchWinloss_SelLeagueBySport" SpName="Age_Rpt_MatchWinloss_SelLeagueBySport_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_MatchWinLossDetail_Ag" SpName="Age_Rpt_MatchWinLossDetail_Ag_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_MatchWinLossDetail_MAg" SpName="Age_Rpt_MatchWinLossDetail_MAg_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_Rpt_MatchWinLossDetail_SAg" SpName="Age_Rpt_MatchWinLossDetail_SAg_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
