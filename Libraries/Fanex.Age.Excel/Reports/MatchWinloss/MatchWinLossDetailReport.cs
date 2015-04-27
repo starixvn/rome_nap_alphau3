@@ -252,6 +252,14 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                                 break;
                         }
 
+                        if (firstItem.BetGroup == 3 &&
+                            (firstItem.BetType == 9 || firstItem.BetType == 29))
+                        {
+                            // fro parlay only
+                            // Combination Mix parlay
+                            isInsertMatchInfoRow = false;
+                        }
+
                         if (isInsertMatchInfoRow)
                         {
                             resultSheet.CopyRow(templateSheet, 1, rowId);
