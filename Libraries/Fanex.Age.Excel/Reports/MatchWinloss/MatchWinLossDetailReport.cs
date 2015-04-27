@@ -112,7 +112,6 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                             case (int)Sunplus.Agent.Model.BL.Definitions.BetType.Outright: // 10
                                 if (currentMatchId == 0 || currentMatchId != match.MatchId)
                                 {
-                                    leagueName = betTypeName;
                                     matchName = string.Empty;
                                     isInsertMatchInfoRow = true;
                                     currentMatchId = match.MatchId;
