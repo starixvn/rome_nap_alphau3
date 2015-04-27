@@ -326,7 +326,7 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                         }
 
                         // show total
-                        if (isInsertMatchInfoRow)
+                        if (isInsertMatchInfoRow && firstItem.BetType != (int)Sunplus.Agent.Model.BL.Definitions.BetType.Outright)
                         {
                             resultSheet.CopyRow(templateSheet, 7, rowId);
                             values = new List<object>{Resources.Lang.subTotal,

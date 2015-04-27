@@ -612,8 +612,6 @@ namespace Fanex.Age.UI.Reports.MatchWinloss
                     matchBlock.MatchName.MatchName = string.Empty;
                     matchBlock.League = leagueName;
                 }
-
-                if (rowCount == 2) matchBlock.Hide(); // Outright header invisible when have 2 records
             }
             else if ((betType > 30 && betType < 34) || (betType > 40 && betType < 44)) // Racing
             {
