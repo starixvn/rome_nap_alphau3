@@ -189,9 +189,9 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
 
                                     string gameId = Resources.Lang.numbergameno + " " + firstItem.MatchCode;
 
-                                    if (!currentTitle.Equals(oldTitle))
+                                    if (!gameId.Equals(oldTitle))
                                     {
-                                        oldTitle = currentTitle;
+                                        oldTitle = gameId;
                                         isInsertMatchInfoRow = true;
                                         currentMatchId = match.MatchId;
 
