@@ -7,6 +7,11 @@ using Sunplus.Agent.Model.BL.Definitions;
 using Sunplus.Agent.Model.Entities;
 using Sunplus.Agent.Model.Entities.Permission;
 using Sunplus.Agent.Utilities;
+using Fanex.Caching;
+using CasinoSetting;
+using Sunplus.Agent.Model.BL.Bingo;
+using Sunplus.Agent.Model.BL.Casino;
+using System.Web;
 
 public partial class Index : System.Web.UI.Page
 {
@@ -86,6 +91,7 @@ public partial class Index : System.Web.UI.Page
         }
 
         Session["ph"] = Encryption.RandomString(new Random().Next(4, 8));
+        InitializeCaching();
 
         // Hot fix for Opera browser (IIS does sniffing user agent)
         Response.ContentType = "text/html";
@@ -104,5 +110,36 @@ public partial class Index : System.Web.UI.Page
             return Encryption.PearsonEncode(name);
         }
     }
+
+    /// <summary>
+    /// Initialize all configurations and caching one time only.
+    /// </summary>
+    public void InitializeCaching()
+    {
+        if (!initialized)
+        {
+            lock (locker)
+            {
+                if (!initialized)
+                {
+                    // Casino caching
+                    try
+                    {
+                        SettingMgr.GetInstance().Initialize(SiteEnum.AgentSite);
+                    }
+                    catch { }
+
+                    BingoBO bingo = new BingoBO(UserSession.Current.NetSessionId); // APILogger injection
+                    CasinoBO casino = new CasinoBO(UserSession.Current.NetSessionId); // APILogger injection
+
+                    // Init one time only
+                    initialized = true;
+                }
+            }
+        }
+    }
+
+    public static object locker = new object();
+    public static bool initialized = false;
 }
 

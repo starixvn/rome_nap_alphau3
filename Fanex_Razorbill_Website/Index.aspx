@@ -55,7 +55,7 @@
     <form id="agentSite" runat="server" style="height: 100%; width: 100%;">
     <table border="0" cellpadding="0" cellspacing="0" class="content">
         <tr>
-            <td class="mainpage" valign="top">               
+            <td class="mainpage" valign="top">         
                 <iframe src="<%=mainPage%>" onload="setURL();" frameborder="0" id="main" scrolling="auto"
                     name="main" width="100%" height="100%" marginwidth="0" marginheight="0" allowtransparency="yes">
                 </iframe>
@@ -70,8 +70,8 @@
     type="text/javascript"></script>
 <script src="../_MemberInfo/SetNickName/Resources/SetNickName.js?<%=TplCore.TplSettings.UrlVersion %>"
     type="text/javascript"></script>
-<%--<script src="../_Announcement/Resources/Announcement.js?<%=TplCore.TplSettings.UrlVersion %>"
-    type="text/javascript"></script>--%>
+<script src="../_Announcement/Resources/Announcement.js?<%=TplCore.TplSettings.UrlVersion %>"
+    type="text/javascript"></script>
 <script type="text/javascript">
     AGE.PERMISSIONS = '<%= (string)(Sunplus.Agent.Model.Entities.UserSession.Current.SubPageAccess) %>';
     AGE.prototype._SignOut = AGE.prototype.SignOut;
