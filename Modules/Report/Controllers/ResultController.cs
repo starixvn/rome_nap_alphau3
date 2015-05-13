@@ -250,7 +250,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         {
             if (!resultRequest.FromDate.HasValue)
             {
-                resultRequest.FromDate = DateTime.Now;
+                resultRequest.FromDate = DateTime.Today;
             }
 
             if (!resultRequest.ToDate.HasValue)
