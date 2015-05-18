@@ -101,7 +101,7 @@ namespace Sunplus.Agent.Model.DL.BetList
                 throw error;
             }
         }
-        
+
         #endregion
 
         #region WinlossOutright
@@ -114,7 +114,7 @@ namespace Sunplus.Agent.Model.DL.BetList
         /// <param name="language"></param>
         /// <param name="moveBetsDate"></param>
         /// <returns></returns>
-        public DataTable Age_BetList_SelWinlossOutright_Ag(int custId, DateTime dateFrom, DateTime dateTo, string language, DateTime moveBetsDate)
+        public DataTable Age_BetList_SelWinlossOutright_Ag(int custId, DateTime dateFrom, DateTime dateTo, string language, DateTime moveBetsDate, int leagueId)
         {
             Hashtable parameters = new Hashtable();
             parameters.Add("custid", custId);
@@ -122,6 +122,7 @@ namespace Sunplus.Agent.Model.DL.BetList
             parameters.Add("todate", dateTo);
             parameters.Add("language", language);
             parameters.Add("movebetsday", moveBetsDate);
+            parameters.Add("leagueid", leagueId);
 
             return ExecSpTable("Age_BetList_SelWinlossOutright_Ag", parameters);
         }
@@ -135,7 +136,7 @@ namespace Sunplus.Agent.Model.DL.BetList
         /// <param name="language"></param>
         /// <param name="moveBetsDate"></param>
         /// <returns></returns>
-        public DataTable Age_BetList_SelWinlossOutright_MAg(int custId, DateTime dateFrom, DateTime dateTo, string language, DateTime moveBetsDate)
+        public DataTable Age_BetList_SelWinlossOutright_MAg(int custId, DateTime dateFrom, DateTime dateTo, string language, DateTime moveBetsDate, int leagueId)
         {
             Hashtable parameters = new Hashtable();
             parameters.Add("custid", custId);
@@ -143,6 +144,7 @@ namespace Sunplus.Agent.Model.DL.BetList
             parameters.Add("todate", dateTo);
             parameters.Add("language", language);
             parameters.Add("movebetsday", moveBetsDate);
+            parameters.Add("leagueid", leagueId);
 
             return ExecSpTable("Age_BetList_SelWinlossOutright_MAg", parameters);
         }
@@ -156,7 +158,7 @@ namespace Sunplus.Agent.Model.DL.BetList
         /// <param name="language"></param>
         /// <param name="moveBetsDate"></param>
         /// <returns></returns>
-        public DataTable Age_BetList_SelWinlossOutright_SAg(int custId, DateTime dateFrom, DateTime dateTo, string language, DateTime moveBetsDate)
+        public DataTable Age_BetList_SelWinlossOutright_SAg(int custId, DateTime dateFrom, DateTime dateTo, string language, DateTime moveBetsDate, int leagueId)
         {
             Hashtable parameters = new Hashtable();
             parameters.Add("custid", custId);
@@ -164,10 +166,11 @@ namespace Sunplus.Agent.Model.DL.BetList
             parameters.Add("todate", dateTo);
             parameters.Add("language", language);
             parameters.Add("movebetsday", moveBetsDate);
+            parameters.Add("leagueid", leagueId);
 
             return ExecSpTable("Age_BetList_SelWinlossOutright_SAg", parameters);
         }
-        
+
         #endregion
 
         #region WinlossHR
@@ -779,7 +782,7 @@ namespace Sunplus.Agent.Model.DL.BetList
             parameters.Add("betteam", betteam);
             return ExecSpTable("Age_BetList_SelRunningByBettypeMatch_SAg", parameters);
         }
-        
+
         /// <summary>
         /// Get Running bets by bettype and match for super
         /// </summary>
@@ -1067,7 +1070,7 @@ namespace Sunplus.Agent.Model.DL.BetList
             parameters.Add("language", language);
 
             return ExecSpTable("Age_BetList_SelParlayDetail", parameters);
-        }    
+        }
 
         /// <summary>
         /// Get Combination Mix Parlay BetList Detail
@@ -1111,10 +1114,10 @@ namespace Sunplus.Agent.Model.DL.BetList
 
         #endregion
 
-        #region Cancel Betlist      
+        #region Cancel Betlist
 
         public DataTable Age_BetList_SelDeleted_UserList_Ag(int custId)
-        {            
+        {
             Hashtable parameters = new Hashtable();
             parameters.Add("custid", custId);
             return ExecSpTable("Age_BetList_SelDeleted_UserList_Ag", parameters);

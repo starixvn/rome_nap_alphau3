@@ -75,7 +75,8 @@ namespace Fanex.Razorbill.Module.Report.Repositories.Impl.Result
                 HomeValue = reader["HomeValue"] != DBNull.Value ? reader["HomeValue"].ToString() : string.Empty,
                 AwayValue = reader["AwayValue"] != DBNull.Value ? reader["AwayValue"].ToString() : string.Empty,
                 ResultStatusID = reader["ResultStatusID"] != DBNull.Value ? int.Parse(reader["ResultStatusID"].ToString()) : 0,
-                SettlementStatusID = reader["SettlementStatusID"] != DBNull.Value ? int.Parse(reader["SettlementStatusID"].ToString()) : 0
+                SettlementStatusID = reader["SettlementStatusID"] != DBNull.Value ? int.Parse(reader["SettlementStatusID"].ToString()) : 0,
+                OtherInfo = reader["OtherInfo"] != DBNull.Value ? reader["OtherInfo"].ToString() : string.Empty
             };
         }
 
@@ -95,10 +96,10 @@ namespace Fanex.Razorbill.Module.Report.Repositories.Impl.Result
             {
                 HomeId = reader["homeID"] != DBNull.Value ? Convert.ToInt32(reader["homeID"]) : 0,
                 AwayId = reader["awayID"] != DBNull.Value ? Convert.ToInt32(reader["awayID"]) : 0,
-                HtHomeScore = reader["hthomescore"] != DBNull.Value ? Convert.ToInt32(reader["hthomescore"]) : 0,
-                FinalHomeScore = reader["finalhomescore"] != DBNull.Value ? Convert.ToInt32(reader["finalhomescore"]) : 0,
-                HtAwayScore = reader["htawayscore"] != DBNull.Value ? Convert.ToInt32(reader["htawayscore"]) : 0,
-                FinalAwayScore = reader["finalawayscore"] != DBNull.Value ? Convert.ToInt32(reader["finalawayscore"]) : 0,
+                HtHomeScore = reader["hthomescore"] != DBNull.Value ? Convert.ToInt32(reader["hthomescore"]) : new int?(),
+                FinalHomeScore = reader["finalhomescore"] != DBNull.Value ? Convert.ToInt32(reader["finalhomescore"]) : new int?(),
+                HtAwayScore = reader["htawayscore"] != DBNull.Value ? Convert.ToInt32(reader["htawayscore"]) : new int?(),
+                FinalAwayScore = reader["finalawayscore"] != DBNull.Value ? Convert.ToInt32(reader["finalawayscore"]) : new int?(),
                 EventStatus = reader["eventstatus"] != DBNull.Value ? Convert.ToString(reader["eventstatus"]) : string.Empty,
                 KickOffTime = reader["kickofftime"] != DBNull.Value ? Convert.ToDateTime(reader["kickofftime"].ToString()) : DateTime.MinValue,
                 EventDate = reader["eventdate"] != DBNull.Value ? Convert.ToDateTime(reader["eventdate"].ToString()) : DateTime.MinValue,

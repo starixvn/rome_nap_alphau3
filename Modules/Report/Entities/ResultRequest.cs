@@ -16,7 +16,7 @@ namespace Fanex.Razorbill.Module.Report.Entities
     {
         public int MatchId { get; set; }
 
-        public bool ViewTennisDetail { get; set; }
+        public bool ViewDetail { get; set; }
 
         public int BetType { get; set; }
 

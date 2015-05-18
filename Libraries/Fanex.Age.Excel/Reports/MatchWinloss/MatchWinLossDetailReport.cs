@@ -88,7 +88,7 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                 MatchWinLossDetailItem parlayItem = null;
                 MatchWinLossDetailItem combineMixParlayItem = null;
                 int rowCount = data.Count();
-                var matchs = data.Select(p => new { p.MatchId, p.Race }).Distinct();
+                var matchs = data.Select(p => new { p.LeagueId, p.MatchId, p.Race }).Distinct();
                 var currentTitle = string.Empty;
                 var oldTitle = string.Empty;
                 var currentMatchId = 0;
@@ -99,7 +99,7 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                     string matchName = string.Empty;
 
                     // matchId = 0 is used for special betgroups (2 = Outright, 3 = Parlay)
-                    var items = data.Where(p => p.MatchId == match.MatchId && p.Race == match.Race);
+                    var items = data.Where(p => p.LeagueId == match.LeagueId && p.MatchId == match.MatchId && p.Race == match.Race);
                     if (items.Count() > 0)
                     {
                         var firstItem = items.First();
@@ -110,8 +110,11 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                         switch (firstItem.BetType)
                         {
                             case (int)Sunplus.Agent.Model.BL.Definitions.BetType.Outright: // 10
+                                if (currentMatchId == 0 || currentMatchId != match.MatchId)
                                 {
-                                    leagueName = betTypeName;
+                                    matchName = string.Empty;
+                                    isInsertMatchInfoRow = true;
+                                    currentMatchId = match.MatchId;
                                 }
                                 break;
 
@@ -186,9 +189,9 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
 
                                     string gameId = Resources.Lang.numbergameno + " " + firstItem.MatchCode;
 
-                                    if (!currentTitle.Equals(oldTitle))
+                                    if (!gameId.Equals(oldTitle))
                                     {
-                                        oldTitle = currentTitle;
+                                        oldTitle = gameId;
                                         isInsertMatchInfoRow = true;
                                         currentMatchId = match.MatchId;
 
@@ -249,11 +252,19 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                                 break;
                         }
 
+                        if (firstItem.BetGroup == 3 &&
+                            (firstItem.BetType == 9 || firstItem.BetType == 29))
+                        {
+                            // fro parlay only
+                            // Combination Mix parlay
+                            isInsertMatchInfoRow = false;
+                        }
+
                         if (isInsertMatchInfoRow)
                         {
                             resultSheet.CopyRow(templateSheet, 1, rowId);
                             string text = leagueName;
-                            text = leagueName + " >>> " + matchName;
+                            text = leagueName + (string.IsNullOrEmpty(matchName) ? string.Empty : " >>> " + matchName);
                             resultSheet.GetRow(rowId).WriteCells(colId, text.ToUpper());
                             rowId++;
                         }
@@ -315,7 +326,7 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                         }
 
                         // show total
-                        if (isInsertMatchInfoRow)
+                        if (isInsertMatchInfoRow && firstItem.BetType != (int)Sunplus.Agent.Model.BL.Definitions.BetType.Outright)
                         {
                             resultSheet.CopyRow(templateSheet, 7, rowId);
                             values = new List<object>{Resources.Lang.subTotal,

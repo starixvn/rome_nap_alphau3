@@ -76,7 +76,7 @@ namespace Fanex.BetList.Age.BetListCmd
             switch (this.betType)
             {
                 case 10: // outright                    
-                    this.result = this.betList.GetWinlossOutright(this.fdate, this.tdate, ReportsBO.MoveBetsDate);
+                    this.result = this.betList.GetWinlossOutright(this.fdate, this.tdate, ReportsBO.MoveBetsDate, this.leagueId);
                     break;
                 case 31: // horseracing
                 case 32:

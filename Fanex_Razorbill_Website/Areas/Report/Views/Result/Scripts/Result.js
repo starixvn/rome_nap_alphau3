@@ -18,7 +18,7 @@ var ResultReportManager = function () {
         rootURL: null,
         btnOutRight: null,
         btnNormal: null,
-        tennisDetailLink: null
+        detailLink: null
     };
 
     var cachedDOMElements = function () {
@@ -33,7 +33,7 @@ var ResultReportManager = function () {
         _table.rootURL = jQuery('#rootURL');
         _table.btnOutRight = jQuery('#btnOutRight');
         _table.btnNormal = jQuery('#btnNormal');
-        _table.tennisDetailLink = jQuery('.tennis-detail-link');
+        _table.detailLink = jQuery('.detail-link');
     };
 
     var setDateTimeRange = function (from, to) {
@@ -74,8 +74,8 @@ var ResultReportManager = function () {
             return false;
         });
 
-        _table.tennisDetailLink.click(function () {
-            self.ViewTennisDetail(this);
+        _table.detailLink.click(function () {
+            self.ViewDetail($(this));
         });
 
         _table.ddlSport.change(function (event, ui) {
@@ -117,18 +117,21 @@ var ResultReportManager = function () {
         location.href = isExportExcel ? url + "&IsExportExcel=true" : url;
     };
 
-    self.ViewTennisDetail = function (me) {
-        var width = 1052;
-        var height = 600;
-        var params = '?matchid=' + $(me).attr("data-match-id") + '&leagueid=' + $(me).attr("data-league-id") + '&sportid=5&viewTennisDetail=true';
+    self.ViewDetail = function (me) {
+        var sportid = _table.ddlSport.val();
+        var url = 'Report/Result/GetResult';
+        url += '?matchid=' + me.attr("data-match-id") + '&leagueid=' + me.attr("data-league-id") + '&sportid=' + sportid;
+        if (sportid == 1 || sportid == 5) { // Soccer + Tennis
+            url += '&viewDetail=true';
+        }
 
         if (parent.ageWnd) {
-            parent.ageWnd.open('Report/Result/GetResult' + params, '', 50, 100, width, height);
+            parent.ageWnd.open(url, '', 50, 30, 800, 600);
         }
         else {
-            ageWnd.open('Report/Result/GetResult' + params, '', 50, 100, width, height);
+            ageWnd.open(url, '', 10, 10, 800, 600);
         }
-    }
+    };
 };
 
 var resultReportManager;

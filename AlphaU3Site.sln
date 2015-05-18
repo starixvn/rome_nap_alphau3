@@ -23,7 +23,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Fanex_Razorbill_Website", "
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "61785"
+		VWDPort = "49950"
 		VWDVirtualPath = "/Fanex_Razorbill_Website"
 	EndProjectSection
 EndProject

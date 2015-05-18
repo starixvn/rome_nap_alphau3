@@ -81,7 +81,8 @@ namespace Fanex.BetList.Age.BetListHTMLBuilderExt.FooterBuilder
                 Template.Status.statusColSpan = statusColumns.ToString();
             }
 
-            IList<ITicket> filteredTickets = tickets.Where(ticket => ticket.Status.ToLower() != BetStatus.Running).ToList();
+            string[] excludeStatuses = new string[] { BetStatus.Running, BetStatus.Waiting };
+            IList<ITicket> filteredTickets = tickets.Where(ticket => !excludeStatuses.Contains(ticket.Status.ToLower())).ToList();
             
             decimal sumWinLoss = filteredTickets.Sum(ticket => ticket.Winlost);
             decimal sumPlayerComm = filteredTickets.Sum(ticket => ticket.PlayerComm);

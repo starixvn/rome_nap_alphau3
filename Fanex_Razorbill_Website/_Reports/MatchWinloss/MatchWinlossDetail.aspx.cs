@@ -603,9 +603,15 @@ namespace Fanex.Age.UI.Reports.MatchWinloss
 
             if (betType == (int)Sunplus.Agent.Model.BL.Definitions.BetType.Outright) // 10
             {
-                matchBlock.MatchName.Hide();
-                matchBlock.League = betTypeName;
-                if (rowCount == 2) matchBlock.Hide(); // Outright header invisible when have 2 records
+                if (currentMatchId == 0 || currentMatchId != matchId) // new match
+                {
+                    isInsertTotal = true;
+                    currentMatchId = matchId;
+                    leagueName = _exportToExcel ? leagueName : Formater.TruncateWithTip(leagueName, 33);
+                    currentTitle = matchBlock.ToString();
+                    matchBlock.MatchName.MatchName = string.Empty;
+                    matchBlock.League = leagueName;
+                }
             }
             else if ((betType > 30 && betType < 34) || (betType > 40 && betType < 44)) // Racing
             {

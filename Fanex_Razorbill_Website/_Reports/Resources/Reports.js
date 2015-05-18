@@ -38,6 +38,7 @@ function doViewBetList(leagueId, matchId, bettype, viewType, race, islive) {
     else {
         url = SetParameterValue("matchid", matchId, url);
         if (bettype == 10) { // Outright bet type
+            url = SetParameterValue("leagueid", leagueId, url);
             url = SetParameterValue("fdate", $("fdate").value, url);
             url = SetParameterValue("tdate", $("tdate").value, url);
         }
