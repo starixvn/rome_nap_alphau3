@@ -55,3 +55,5 @@ Libraries/Fanex.Age.Business.Interface/obj/Debug/DesignTimeResolveAssemblyRefere
 /Modules/Fanex.Razorbill.Module.Core/_Core.csproj.orig
 /Modules/Report/Report.csproj.orig
 /Libraries/Fanex.Age.Business.Interface/obj
+.vs/config/applicationhost.config
+Fanex_Razorbill_Website/vwd.webinfo
