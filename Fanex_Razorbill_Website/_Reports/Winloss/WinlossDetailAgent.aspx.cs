@@ -51,6 +51,12 @@ namespace Fanex.Age.UI.Reports.Winloss
                 RenderReportContent(tpl);
                 RenderHiddenField(tpl);
 
+                // Piwik
+                if (!Sunplus.Agent.Model.BL.Definitions.AppSettings.PiwikEnabled)
+                {
+                    tpl.Piwik.Clear();
+                }
+
                 writer.Write(tpl);
             }
 
