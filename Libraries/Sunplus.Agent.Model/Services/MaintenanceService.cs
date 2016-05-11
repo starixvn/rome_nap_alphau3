@@ -33,18 +33,24 @@ namespace Sunplus.Agent.Model.Services
             }
 
             startTime = endTime = null;
-            string url = AppSettings.LBUrl;
+            var isCheckedUM = ONEbook.UM.Configurations.UMClientConfiguration.Settings.EnableCheckUM;
             bool isUM = false;
 
-            if (string.IsNullOrEmpty(url))
+            if (!isCheckedUM)
             {
                 return false;
             }
 
             try
             {
-                UMBusiness business = new UMBusiness();
-                isUM = business.isUnderMaintainence(Sites.Agency, url, ref startTime, ref endTime);
+                var business = new ONEbook.UM.Services.Impl.MaintenanceService();
+                isUM = business.IsUnderMaintenance() && !business.IsPassUnderMaintenance();
+                if(isUM)
+                {
+                    var time = business.GetUnderMaintenanceTime();
+                    startTime = time.From;
+                    endTime = time.To;
+                }
             }
             catch (Exception ex)
             {
