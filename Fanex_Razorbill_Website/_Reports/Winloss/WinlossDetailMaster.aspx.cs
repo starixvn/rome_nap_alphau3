@@ -23,8 +23,6 @@ namespace Fanex.Age.UI.Reports.Winloss
         private bool _IsOldView = false;
         #endregion
 
-
-
         #region Override
 
         public override void RenderContent(HtmlTextWriter writer)
@@ -57,6 +55,12 @@ namespace Fanex.Age.UI.Reports.Winloss
                 RenderReportHeader(tpl);
                 RenderReportContent(tpl);
                 RenderHiddenField(tpl);
+
+                // Piwik
+                if (!Sunplus.Agent.Model.BL.Definitions.AppSettings.PiwikEnabled)
+                {
+                    tpl.Piwik.Clear();
+                }
 
                 writer.Write(tpl);
             }
@@ -103,8 +107,6 @@ namespace Fanex.Age.UI.Reports.Winloss
         }
 
         #endregion
-
-
 
         #region Helper
 

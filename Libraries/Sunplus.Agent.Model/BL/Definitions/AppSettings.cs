@@ -819,7 +819,40 @@ namespace Sunplus.Agent.Model.BL.Definitions
                 return GetValue("FPS_API");
             }
         }
-        
+
         #endregion Configurations
+
+        // Piwik
+        public static string PiwikUrl
+        {
+            get
+            {
+                return GetValue("PiwikUrl");
+            }
+        }
+
+        public static string PiwikScript
+        {
+            get
+            {
+                return GetValue("PiwikScript");
+            }
+        }
+
+        public static string PiwikSiteId
+        {
+            get
+            {
+                return GetValue("PiwikSiteId");
+            }
+        }
+
+        public static bool PiwikEnabled
+        {
+            get
+            {
+                return !string.IsNullOrWhiteSpace(PiwikSiteId);
+            }
+        }
     }
 }
