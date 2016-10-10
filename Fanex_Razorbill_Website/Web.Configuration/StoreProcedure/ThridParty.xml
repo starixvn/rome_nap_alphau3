@@ -18,5 +18,5 @@
     <Setting Key="TP_User_Customer_AutoInsertAccount" SpName="TP_User_Customer_AutoInsertAccount" DbName="LiveCasinoAdmin" />
     <Setting Key="TP_User_Customer_ManualInsertAccount" SpName="TP_User_Customer_ManualInsertAccount" DbName="LiveCasinoAdmin" />
     <Setting Key="TP_User_Customer_AutoInsertAccountFromExisting" SpName="TP_User_Customer_AutoInsertAccountFromExisting" DbName="LiveCasinoAdmin" />
-  </Function>
+  </Function> 
 </Functions>
