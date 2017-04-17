@@ -13,10 +13,14 @@
     <RootNamespace>Sunplus.Agent.UI.ScoreMap</RootNamespace>
     <AssemblyName>Sunplus.Agent.UI.ScoreMap</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
     <TargetFrameworkProfile />
     <OldToolsVersion>4.0</OldToolsVersion>
   </PropertyGroup>
