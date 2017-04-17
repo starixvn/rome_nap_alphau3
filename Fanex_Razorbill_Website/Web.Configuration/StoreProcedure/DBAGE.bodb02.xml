@@ -68,7 +68,7 @@
     <Setting Key="Age_LeagueSelRunning_Ag" SpName="Age_LeagueSelRunning_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_LeagueSelRunning_MAg" SpName="Age_LeagueSelRunning_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_LeagueSelRunning_SAg" SpName="Age_LeagueSelRunning_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Age_Result_LeagueSelByDate" SpName="Age_Result_LeagueSelByDate" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Age_Result_LeagueSelByDate" SpName="U3_Age_Result_LeagueSelByDate" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Acc_Set_HR_ResultSCRSel" SpName="Acc_Set_HR_ResultSCRSel" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_Result_MatchSelByLeague" SpName="Age_Result_MatchSelByLeague" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_Result_MatchSelGoalHistory" SpName="Age_Result_MatchSelGoalHistory" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
