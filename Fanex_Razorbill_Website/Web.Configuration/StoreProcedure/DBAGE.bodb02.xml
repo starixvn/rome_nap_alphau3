@@ -212,7 +212,7 @@
     <Setting Key="Acc_CustomerSelCheckEnable" SpName="Acc_CustomerSelCheckEnable" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
     <Setting Key="Acc_CustomerSelDisableHR" SpName="Acc_CustomerSelDisableHR" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
     <Setting Key="Acc_CustomerSelRBStatus" SpName="Acc_CustomerSelRBStatus" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Acc_CustomerSelStatus" SpName="Acc_CustomerSelStatus" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Acc_CustomerSelStatus" SpName="Acc_CustomerSelStatus" DbName="DBACC.bodb02.BODBDownlineNetView" Plain="0" />
   </Function>
   <Function Name="General info">
     <Setting Key="Acc_CustomerUpdUserSearch" SpName="Acc_CustomerUpdUserSearch" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
