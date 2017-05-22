@@ -12,18 +12,14 @@ namespace Fanex.Razorbill.Module.Report.Controllers
     using System;
     using System.Collections.Generic;
     using System.Data;
-    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
-    using Fanex.Age.UI.Reports.DTO.Result.Entities;
-    using Fanex.Common;
     using Fanex.Razorbill.Module.Core.Extensions;
     using Fanex.Razorbill.Module.Core.Web.Controllers;
     using Fanex.Razorbill.Module.Report.Entities;
     using Fanex.Razorbill.Module.Report.Services.Implement.Result;
-    using Fanex.Result.Core.DTO;
+    using Result.Core.Sportsbook.DTO;
     using Sunplus.Agent.Model.BL.Cache;
     using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.BL.Reports;
@@ -41,7 +37,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         private const int _MaxGamePerResultLine = 13;
         private DateTime _minReportDate = DateTime.Today;
         private string _outRightResult = string.Empty;
-        private List<OutRight> _outRights = null;
+        private List<Outright> _outRights = null;
         private object _reportData = null;
         private Dictionary<int, Action<ResultRequest>> _resultHandlers = new Dictionary<int, Action<ResultRequest>>();
         private Dictionary<int, Func<ResultRequest, ActionResult>> _exportExcelHandlers = new Dictionary<int, Func<ResultRequest, ActionResult>>();
@@ -427,7 +423,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             List<int> leagueIdList = new List<int>();
             var leagueRows = this._outRights.Where(r => r.SportType == resultRequest.SportId).ToList();
 
-            foreach (OutRight league in leagueRows)
+            foreach (Outright league in leagueRows)
             {
                 int leagueId = league.LeagueId;
 
@@ -454,7 +450,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             string sportOptions = string.Empty;
             List<int> sportIdList = new List<int>();
 
-            foreach (OutRight sport in this._outRights)
+            foreach (Outright sport in this._outRights)
             {
                 int sportId = Convert.ToInt32(sport.SportType);
 

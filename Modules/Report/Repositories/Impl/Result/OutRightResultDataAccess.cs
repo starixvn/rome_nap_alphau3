@@ -14,7 +14,7 @@ namespace Fanex.Razorbill.Module.Report.Repositories.Impl.Result
     using Fanex.Data;
     using Fanex.Razorbill.Module.Report.Criteria.Result;
     using Fanex.Razorbill.Module.Report.Repositories.Interface.Result;
-    using Fanex.Result.Core.DTO;
+    using Fanex.Result.Core.Sportsbook.DTO;
 
     /// <summary>
     /// The class OutRightResultDataAccess.
@@ -26,9 +26,9 @@ namespace Fanex.Razorbill.Module.Report.Repositories.Impl.Result
         /// </summary>
         /// <param name="criteria">The criterion.</param>
         /// <returns>The Out Right data.</returns>
-        public IEnumerable<OutRight> GetOutRightResult(GetOutRightResultCriteria criteria)
+        public IEnumerable<Outright> GetOutRightResult(GetOutRightResultCriteria criteria)
         {
-            var result = new List<OutRight>();
+            var result = new List<Outright>();
 
             using (var db = new ObjectDb(criteria.GetSettingKey()))
             {
@@ -36,7 +36,7 @@ namespace Fanex.Razorbill.Module.Report.Repositories.Impl.Result
                 {
                     while (reader.Read())
                     {
-                        result.Add(new OutRight
+                        result.Add(new Outright
                         {
                             EventDate = reader["eventdate"] != DBNull.Value ? DateTime.Parse(reader["eventdate"].ToString()) : DateTime.MinValue,
                             SportType = reader["sporttype"] != DBNull.Value ? int.Parse(reader["sporttype"].ToString()) : 0,

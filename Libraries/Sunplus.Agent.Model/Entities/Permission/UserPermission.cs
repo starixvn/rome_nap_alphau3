@@ -12,8 +12,8 @@ using System.Configuration;
 namespace Sunplus.Agent.Model.Entities.Permission
 {
     using System;
-    using Sunplus.Agent.Model.BL.Definitions;
     using Fanex.CustomerSetting.Module.KenoStatus.Configurations;
+    using Sunplus.Agent.Model.BL.Definitions;
 
     public class UserPermission : Sunplus.Agent.Model.Entities.Base.IEntity
     {
@@ -288,6 +288,14 @@ namespace Sunplus.Agent.Model.Entities.Permission
                 {
                     return false;
                 }
+            }
+        }
+
+        public static bool IsShowLucky3
+        {
+            get
+            {
+                return AppSettings.EnableLucky3 && !CurrentUserSession.IsLucky3Disabled;
             }
         }
 

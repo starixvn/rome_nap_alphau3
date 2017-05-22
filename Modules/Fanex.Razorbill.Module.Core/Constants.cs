@@ -29,5 +29,4 @@ namespace Fanex.Razorbill.Module.Core
         public const string ARES_MONTH_YEAR_FORMAT = "MMM-yy";
         public const string AGENT_DATE_FORMAT = "MM/dd/yyyy";
     }
-
 }

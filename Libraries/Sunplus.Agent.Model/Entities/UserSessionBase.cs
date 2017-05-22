@@ -113,6 +113,8 @@ namespace Sunplus.Agent.Model.Entities
 
         private const string ISSHOWSPORTBOOK = "IsShowSportbook";
         private const string REDIRECTREPORTLINK = "RedirectReportLink";
+
+        private const string ISLUCKY3DISABLED = "ISLUCKY3DISABLED";
         #endregion Contructors
 
         #region Misc
@@ -1387,6 +1389,20 @@ namespace Sunplus.Agent.Model.Entities
             set
             {
                 this.SetProperty(ISSHOWSPORTBOOK, value);
+            }
+        }
+
+        public bool IsLucky3Disabled
+        {
+            get
+            {
+                object value = this.GetProperty(ISLUCKY3DISABLED);
+                return (null == value) ? true : (bool)value;
+            }
+
+            set
+            {
+                this.SetProperty(ISLUCKY3DISABLED, value);
             }
         }
     }

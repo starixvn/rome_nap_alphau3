@@ -14,12 +14,15 @@ namespace Fanex.Age.UI.Reports
     using System.Data;
     using Fanex.Age.UI.Components;
     using Fanex.Age.UI.Reports.Components;
+    using Sunplus.Agent.Model.BL.Cache;
     using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities;
 
     public abstract class WinlossReports_Page : Reports_Page
     {
         #region Member Variables
+
+        protected const int Lucky3ProductId = 26;
 
         protected Dictionary<string, FilterElement> _filterCollection = null;
 
@@ -64,31 +67,32 @@ namespace Fanex.Age.UI.Reports
         {
             if (!UserSession.Current.IsShowSportbook)
             {
-                _filterCollection = new Dictionary<string, FilterElement>()
+                _filterCollection = new Dictionary<string, FilterElement>
                 {
                     {Filter_Control.SHOWALL, new FilterElement(Filter_Control.SHOWALL, Resources.Lang.all, "CheckAll()")},
                     {Filter_Control.SHOW_NUMBER_GAME, new FilterElement(Filter_Control.SHOW_NUMBER_GAME, Resources.Lang.numbergame, "IsCheck()")},
                     {Filter_Control.SHOW_LIVECASINO, new FilterElement(Filter_Control.SHOW_LIVECASINO, Resources.Lang.LiveCasino, "IsCheck()")},
-                    {Filter_Control.SHOW_IBC_BINGO, new FilterElement(Filter_Control.SHOW_IBC_BINGO, Resources.Bingo.bingo, "IsCheck()")}
+                    {Filter_Control.SHOW_IBC_BINGO, new FilterElement(Filter_Control.SHOW_IBC_BINGO, Resources.Bingo.bingo, "IsCheck()")},
+                    {Filter_Control.SHOW_LUCKY3, new FilterElement(Filter_Control.SHOW_LUCKY3, GetLucky3Name(), "IsCheck()")}
                 };
 
                 return;
             }
 
-            _filterCollection = new Dictionary<string, FilterElement>()
-                {
-                    {Filter_Control.SHOWALL, new FilterElement(Filter_Control.SHOWALL, Resources.Lang.all, "CheckAll()")},
-                    {Filter_Control.SHOWSB, new FilterElement(Filter_Control.SHOWSB, Resources.Lang.SB, "IsCheck()")},
-                    {Filter_Control.SHOWCASINO, new FilterElement(Filter_Control.SHOWCASINO, Resources.Lang.casino, "IsCheck()")},
-                    {Filter_Control.SHOWRB, new FilterElement(Filter_Control.SHOWRB, Resources.Lang.Racebook, "IsCheck()")},
-                    {Filter_Control.SHOW_NUMBER_GAME, new FilterElement(Filter_Control.SHOW_NUMBER_GAME, Resources.Lang.numbergame, "IsCheck()")},
-                    {Filter_Control.SHOW_IBC_BINGO, new FilterElement(Filter_Control.SHOW_IBC_BINGO, Resources.Bingo.bingo, "IsCheck()")},
-                    {Filter_Control.SHOW_P2P, new FilterElement(Filter_Control.SHOW_P2P, Resources.Lang.P2P, "IsCheck()")},
-                    {Filter_Control.SHOW_LIVECASINO, new FilterElement(Filter_Control.SHOW_LIVECASINO, Resources.Lang.LiveCasino, "IsCheck()")},
-                    {Filter_Control.SHOW_VIRTUALSPORTS, new FilterElement(Filter_Control.SHOW_VIRTUALSPORTS, Resources.Lang.VirtualSports, "IsCheck()")},
-                    {Filter_Control.SHOW_KENO, new FilterElement(Filter_Control.SHOW_KENO, Resources.Lang.Keno, "IsCheck()")}
-                    //{Filter_Control.SHOW_PROGRESSIVE_BONUS, new FilterElement(Filter_Control.SHOW_PROGRESSIVE_BONUS, Resources.Lang.Progressivebonus, "IsCheck()")},
-                };
+            _filterCollection = new Dictionary<string, FilterElement>
+            {
+                {Filter_Control.SHOWALL, new FilterElement(Filter_Control.SHOWALL, Resources.Lang.all, "CheckAll()")},
+                {Filter_Control.SHOWSB, new FilterElement(Filter_Control.SHOWSB, Resources.Lang.SB, "IsCheck()")},
+                {Filter_Control.SHOWCASINO, new FilterElement(Filter_Control.SHOWCASINO, Resources.Lang.casino, "IsCheck()")},
+                {Filter_Control.SHOWRB, new FilterElement(Filter_Control.SHOWRB, Resources.Lang.Racebook, "IsCheck()")},
+                {Filter_Control.SHOW_NUMBER_GAME, new FilterElement(Filter_Control.SHOW_NUMBER_GAME, Resources.Lang.numbergame, "IsCheck()")},
+                {Filter_Control.SHOW_IBC_BINGO, new FilterElement(Filter_Control.SHOW_IBC_BINGO, Resources.Bingo.bingo, "IsCheck()")},
+                {Filter_Control.SHOW_P2P, new FilterElement(Filter_Control.SHOW_P2P, Resources.Lang.P2P, "IsCheck()")},
+                {Filter_Control.SHOW_LIVECASINO, new FilterElement(Filter_Control.SHOW_LIVECASINO, Resources.Lang.LiveCasino, "IsCheck()")},
+                {Filter_Control.SHOW_VIRTUALSPORTS, new FilterElement(Filter_Control.SHOW_VIRTUALSPORTS, Resources.Lang.VirtualSports, "IsCheck()")},
+                {Filter_Control.SHOW_KENO, new FilterElement(Filter_Control.SHOW_KENO, Resources.Lang.Keno, "IsCheck()")},
+                {Filter_Control.SHOW_LUCKY3, new FilterElement(Filter_Control.SHOW_LUCKY3, GetLucky3Name(), "IsCheck()")}
+            };
         }
 
         public override void ProcessRequest(ref System.Collections.Hashtable p)
@@ -349,6 +353,11 @@ namespace Fanex.Age.UI.Reports
             else _sortingEnabled = false;
 
             return reportData;
+        }
+
+        protected string GetLucky3Name()
+        {
+            return CacheRef.GetProductName(Lucky3ProductId, "Lucky 3");
         }
 
         #endregion Helper

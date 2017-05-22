@@ -11,7 +11,7 @@ namespace Fanex.Razorbill.Module.Report.Repositories.Impl.Result
 {
     using System;
     using System.Data;
-    using Fanex.Result.Core.DTO;
+    using Fanex.Result.Core.Racing.DTO;
 
     /// <summary>
     /// The class BindingUtilities.

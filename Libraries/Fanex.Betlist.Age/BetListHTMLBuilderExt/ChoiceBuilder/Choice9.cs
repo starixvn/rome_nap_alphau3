@@ -41,6 +41,11 @@ namespace Fanex.BetList.Age.BetListHTMLBuilderExt.ChoiceBuilder
         /// </value>
         public Choice_Template Template { get; set; }
 
+        public string GetBetTypeName(ITicket ticket, ITicketHelper ticketHelper, List<ITicketData> ticketData)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Renders the specified ticket.
         /// </summary>
