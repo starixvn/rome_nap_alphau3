@@ -54,6 +54,10 @@
       <HintPath>..\..\packages\Fanex.BetList.Lucky3.1.0.0-beta10\lib\net40\Fanex.BetList.Lucky3.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Fanex.BetList.NumberGame, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Fanex.BetList.NumberGame.1.0.0.6\lib\net40\Fanex.BetList.NumberGame.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Fanex.Data">
       <HintPath>..\..\_Dependencies\_FanexLib\Fanex.Data.dll</HintPath>
     </Reference>
