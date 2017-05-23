@@ -113,8 +113,9 @@ function Winloss_SearchByDate(fdate, tdate, targetCustId, actionPage) {
     var showp2p = ($('chk_showp2p') && $('chk_showp2p').checked) ? '1' : '0';
     var showlivecasino = ($('chk_showlivecasino') && $('chk_showlivecasino').checked) ? '1' : '0';
     var showvs = ($('chk_showvs') && $('chk_showvs').checked) ? '1' : '0';
+    var showlk3 = ($('chk_showlk3') && $('chk_showlk3').checked) ? '1' : '0';
 
-    var NewFilterLeague = $('fdate').value + $('tdate').value + showsb + showrb + showng + showp2p + showlivecasino + showvs + $('isChanged').value;
+    var NewFilterLeague = $('fdate').value + $('tdate').value + showsb + showrb + showng + showp2p + showlivecasino + showvs + showlk3 + $('isChanged').value;
     if (_page.FilterLeague != null && _page.FilterLeague != NewFilterLeague) {
         _page.FilterLeague = NewFilterLeague;
         $('isChanged').value = '1';
