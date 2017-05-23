@@ -16,14 +16,15 @@ function SelectLeague() {
     var showp2p = ($('chk_showp2p') && $('chk_showp2p').checked) ? '1' : '0';
     var showlivecasino = ($('chk_showlivecasino') && $('chk_showlivecasino').checked) ? '1' : '0';
     var showvs = ($('chk_showvs') && $('chk_showvs').checked) ? '1' : '0';
-    var NewFilterLeague = $('fdate').value + $('tdate').value + showsb + showrb + showng + showp2p + showlivecasino + showvs + $('isChanged').value;
+    var showlk3 = ($('chk_showlk3') && $('chk_showlk3').checked) ? '1' : '0';
+    var NewFilterLeague = $('fdate').value + $('tdate').value + showsb + showrb + showng + showp2p + showlivecasino + showvs + showlk3 + $('isChanged').value;
     
     if (_page.FilterLeague != null && _page.FilterLeague != NewFilterLeague) {
         _page.FilterLeague = NewFilterLeague;
 
         http = jx.request(
         '../Common/SelectLeagues.aspx', onComplete, 'POST'
-           , 'fdate=' + $('fdate').value + '&tdate=' + $('tdate').value + '&showsb=' + showsb + '&showrb=' + showrb + '&showng=' + showng + '&showp2p=' + showp2p + '&showlivecasino=' + showlivecasino + '&showvs=' + showvs
+           , 'fdate=' + $('fdate').value + '&tdate=' + $('tdate').value + '&showsb=' + showsb + '&showrb=' + showrb + '&showng=' + showng + '&showp2p=' + showp2p + '&showlivecasino=' + showlivecasino + '&showvs=' + showvs + '&showlk3=' + showlk3
         );
     }
     else {
