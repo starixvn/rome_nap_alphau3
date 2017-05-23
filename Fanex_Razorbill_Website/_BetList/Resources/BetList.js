@@ -90,7 +90,6 @@ function ViewSportBookResult(matchid, bettype, race, sporttype, league, is_outri
     var width = 730;
     var height = 250;
     var params = '?matchid=' + matchid + '&bettype=' + bettype + '&race=' + race + '&sportId=' + sporttype + '&leagueId=' + league + '&isOutright=' + is_outright + '&refnum=' + refNo + '&betid=' + betid;
-
     if (parent.ageWnd) {
         parent.ageWnd.open(age.GetBaseUrl() + 'Report/Result/GetResult' + params, '', 50, 100, width, height);
     }
@@ -257,6 +256,13 @@ function OpenScoreMap(matchIds, bettype, liveindicator) {
         wnd.open(age.GetBaseUrl() + "_Forecast/ScoreMap.aspx?leagueId=-1&matchIds=" + matchIds + "&bettypes_live=" + bettype + "&bettypes_dead=-1", '', 50, 20, 1008, 480);
     else
         wnd.open(age.GetBaseUrl() + "_Forecast/ScoreMap.aspx?leagueId=-1&matchIds=" + matchIds + "&bettypes_live=-1&bettypes_dead=" + bettype, '', 50, 20, 1008, 480);
+}
+
+function showLucky3Details(transId, custId) {
+    var url = age.GetBaseUrl() + "Report/Lucky3/ViewDetail?TransactionId=" + transId + "&CustomerId=" + custId;
+    var title = "Lucky 3 Details";
+    var wnd = parent.ageWnd || ageWnd;
+    wnd.open(url, title, 50, 20, 830, 500);
 }
 
 RegisterStartUp(InitBetList);

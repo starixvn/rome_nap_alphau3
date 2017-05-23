@@ -295,7 +295,7 @@ namespace Sunplus.Agent.Model.Entities.Permission
         {
             get
             {
-                return AppSettings.EnableLucky3 && !CurrentUserSession.IsLucky3Disabled;
+                return AppSettings.EnableLucky3 && !CurrentUserSession.IsHideLucky3;
             }
         }
 

@@ -151,6 +151,8 @@ namespace Fanex.Age.UI.Reports
                     return Resources.Lang.VirtualSports;
                 case 202:
                     return Resources.Lang.Keno;
+                case 160:
+                    return GetLucky3Name();
             }
             return string.Empty;
         }

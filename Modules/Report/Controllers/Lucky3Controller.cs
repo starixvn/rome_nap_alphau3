@@ -1,8 +1,9 @@
-﻿using Fanex.BetListDetail.Lucky3.Criteria;
+﻿using System.Web.Mvc;
+using Fanex.BetListDetail.Lucky3.Criteria;
 using Fanex.BetListDetail.Lucky3.Services;
 using Fanex.Razorbill.Module.Core.Web.Controllers;
 using Fanex.Razorbill.Module.Report.Repositories.Impl;
-using System.Web.Mvc;
+using Sunplus.Agent.Model.Entities;
 
 namespace Fanex.Razorbill.Module.Report.Controllers
 {
@@ -21,6 +22,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
 
         public ActionResult ViewDetail(GetLucky3DetailParameter parameter)
         {
+            parameter.LevelId = UserSession.Current.RoleId;
             var result = lucky3Service.GetBetListDetail(parameter);
 
             return View(result);

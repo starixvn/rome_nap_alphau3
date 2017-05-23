@@ -14,122 +14,111 @@
 @league-color: #1d3968;
 @league-background: #cccccc;
 @row-even-background: #e5ebf2;
-@home-color:#6678e0;
-@away-color:#008d95;
+@home-color: #6678e0;
+@away-color: #008d95;
 @bg_pending: Yellow;
 @bg_postponed: #FDFD87;
-div.fn-rs-content-header
-{
+
+div.fn-rs-content-header {
     border: 1px solid @border-color;
     padding-right: 15px;
 }
 
-div.fn-rs-content-scroll
-{
-	max-height: 740px;
-	overflow-y: scroll;
-	-ms-overflow-y: scroll;
-	overflow-x: hidden;
-	-ms-overflow-x: hidden;
-	width: 100%;
-	max-height: 780px;
+div.fn-rs-content-scroll {
+    max-height: 740px;
+    overflow-y: scroll;
+    -ms-overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-x: hidden;
+    width: 100%;
+    max-height: 780px;
 }
-div.goal-record
-    {
-		float:right;
-		padding::5px 0px;
-		table
-        {
-        	min-width:180px;
-			 border-collapse: collapse;
-			  text-align: center;
-			th
-		   {
-				border-right: 1px solid @border-color;
-				font-weight: normal;
-				vertical-align: middle;
-				text-align: center;
-				color: #FFF !important;
-	
-           }
-			.header
-			{
-		 			color: @header-color;
-					 background-color: @header-background;
-			}
-			tbody{
-				td
-				{
-					border: solid 1px @border-color;
-					padding: 1px;
-					vertical-align: middle;
-				}
-            	.cl-goal
-				{
-					width: 50%;
-				}
-			}
-			}
+
+div.goal-record {
+    float: right;
+    padding: 5px 0px;
+
+    table {
+        min-width: 180px;
+        border-collapse: collapse;
+        text-align: center;
+
+        th {
+            border-right: 1px solid @border-color;
+            font-weight: normal;
+            vertical-align: middle;
+            text-align: center;
+            color: #FFF !important;
         }
-		
 
+        .header {
+            color: @header-color;
+            background-color: @header-background;
+        }
 
-table
-{
+        tbody {
+            td {
+                border: solid 1px @border-color;
+                padding: 1px;
+                vertical-align: middle;
+            }
+
+            .cl-goal {
+                width: 50%;
+            }
+        }
+    }
+}
+
+table {
     font-family: @font-style;
     font-size: @font-size;
-	&.popup
-    {
-	 min-width: 650px !important;
+
+    &.popup {
+        min-width: 650px !important;
     }
-	
-    &.fn-rs
-    {
+
+    &.fn-rs {
         border-collapse: collapse;
         width: 100%;
         min-width: 1000px;
         line-height: 17px;
         text-align: center;
-        thead
-		{
-           th
-		   {
-				border-right: 1px solid @border-color;
-				font-weight: normal;
-				vertical-align: middle;
-				text-align: center;
-				color: #FFF !important;
-				&.cl-title
-                {
-					color: @league-color;
-					background: @league-background;
 
-                }
-				
-           }
-        }
-		.header,.sub-header
-        {
-		 	    color: @header-color;
-				 background-color: @header-background;
-        }
-        tbody
-        {
-			tr
-            {
-				&.even
-                {
-                	background-color: @row-even-background;
+        thead {
+            th {
+                border-right: 1px solid @border-color;
+                font-weight: normal;
+                vertical-align: middle;
+                text-align: center;
+                color: #FFF !important;
+
+                &.cl-title {
+                    color: @league-color;
+                    background: @league-background;
                 }
             }
-            td
-            {
+        }
+
+        .header, .sub-header {
+            color: @header-color;
+            background-color: @header-background;
+        }
+
+        tbody {
+            tr {
+                &.even {
+                    background-color: @row-even-background;
+                }
+            }
+
+            td {
                 border: solid 1px @border-color;
                 padding: 1px;
                 vertical-align: middle;
             }
-            .cl-league
-            {
+
+            .cl-league {
                 color: @league-color;
                 background: @league-background;
                 vertical-align: middle;
@@ -137,238 +126,296 @@ table
                 text-align: left;
                 line-height: 7px;
                 height: 21px;
-				&.sub
-				{
-					
-					
-				}
+
+                &.sub {
+                }
             }
-			
-			.cl-team
-            {
-            	text-align:left;
+
+            .cl-team {
+                text-align: left;
             }
-            .cl-match
-            {
-                text-align:left;
+
+            .cl-match {
+                text-align: left;
                 font-size: 12px;
                 padding-left: 3px;
-                &.home
-                {
+
+                &.home {
                     color: @home-color;
                 }
-                &.away
-                {
+
+                &.away {
                     color: @away-color;
                 }
-				&.win
-                {
-                
-					font-weight:bold;
+
+                &.win {
+                    font-weight: bold;
                 }
-                div
-                {
+
+                div {
                     width: 14px;
-	                height: 14px;
-	                display: inline-block;
-                    &.first-goal
-                    {
+                    height: 14px;
+                    display: inline-block;
+
+                    &.first-goal {
                         background: url(@goal-icon) no-repeat -9px -32px;
-	                }
-                    &.last-goal
-                    {
+                    }
+
+                    &.last-goal {
                         background: url(@goal-icon) no-repeat -9px -16px;
-	                }
-                    &.first-half-first-goal
-                    {
+                    }
+
+                    &.first-half-first-goal {
                         background: url(@goal-icon) no-repeat -9px -65px;
                     }
-                    &.first-half-last-goal
-                    {
+
+                    &.first-half-last-goal {
                         background: url(@goal-icon) no-repeat no-repeat -9px -83px;
                     }
-					&.home
-                    {
-                    color:@home-color;
+
+                    &.home {
+                        color: @home-color;
                     }
-					&.away
-                    {
-                    color:@away-color;
+
+                    &.away {
+                        color: @away-color;
                     }
                 }
-				div.home ,div.away
-                {
-					width:100%;
-					display:inline-block;
-					margin-top:10px;
-					
+
+                div.home, div.away {
+                    width: 100%;
+                    display: inline-block;
+                    margin-top: 10px;
                 }
-				
-				
             }
-            .cl-f-score
-            {
+
+            .cl-f-score {
                 color: #fd537d;
             }
         }
 
-        .cl-m-code{
+        .cl-m-code {
             width: 112px;
-            .m-code
-            {
+
+            .m-code {
                 color: #599ced;
             }
         }
-        .cl-ko-time
-        {
+
+        .cl-ko-time {
             width: 90px;
         }
-		.cl-result
-        {
-        	text-align:center;
-			&.home
-            {
-				min-width:150px;
+
+        .cl-result {
+            text-align: center;
+
+            &.home {
+                min-width: 150px;
             }
-			&.away
-            {
-				min-width:150px;
+
+            &.away {
+                min-width: 150px;
             }
         }
-        .cl-match
-        {
-           min-width: 82px;
+
+        .cl-match {
+            min-width: 82px;
         }
-		.cl-s, .cl-ot, .cl-ei
-        {
-			width: 40px;
+
+        .cl-s, .cl-ot, .cl-ei {
+            width: 40px;
         }
-		.cl-totalgames,.cl-totalpoint
-        {
-			width: 42px;
-			color: #6877b4;
+
+        .cl-totalgames, .cl-totalpoint {
+            width: 42px;
+            color: #6877b4;
         }
-		.cl-totalset
-        {
+
+        .cl-totalset {
             width: 38px;
-			color: #fd537d;
+            color: #fd537d;
         }
-        .cl-ht-score, .cl-f-score
-        {
+
+        .cl-ht-score, .cl-f-score {
             width: 38px;
         }
-        .cl-status
-        {
+
+        .cl-status {
             text-transform: capitalize;
             width: 94px;
-            .detail-link
-			{
-				color: #0273FF;
-				cursor: pointer;
-				text-decoration: none;
-				&:hover
-				{
-					color: #D2592D;
-				}
-			}
-        }
-		.cl-bg-pending
-        {
-			background:@bg_pending;
-        }
-		.cl-bg-postponed
-        {
-        			background:@bg_postponed;
 
-        }
-    }
-	&.number-game
-    {
-		 /*header*/
-		.cl-result
-        {
-        	width:150px;
-			
-        }
-		.cl-warrior,.cl-lblOEFT,.cl-lbl1stball,.cl-lastball
-       
-        {
-			width:70px;
-        }
-		span.ball
-            {
-				padding: 5px 5px;
-				background: -moz-linear-gradient(top,#f2f2f2 0%, #ffffff 25%,#ffffff 50%, #ffffff 75%, #d1cdcd);
-				background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2),color-stop(0.25, #ffffff), color-stop(0.50, #ffffff), color-stop(0.75, #ffffff),to(#d1cdcd));
-				-moz-border-radius: 0px;
-				-webkit-border-radius: 0px;
-				border-radius: 0px;
-				border: 1px solid #5c5757;
-				text-shadow: 1px 0px 0px rgba(000,000,000,0.4), 1px 1px 0px rgba(255,255,255,0.4);
-				width: 27px !important;
-				display: inline-block;
-				text-align: center;
-				margin-left:2px;
-            }
-	
-    }
-	&.casino
-    {
-    	/*header*/
-		.cl-result
-        {
-        	width:334px;
-        }
-    }
-	&.racing
-    {
-		/* Header */
-    	.cl-race
-		{
-			width: 180px;
-		}
-	
-		td.cl-result
-        {
-        	font-weight: bold;
-			text-align:left;
-        }
+            .detail-link {
+                color: #0273FF;
+                cursor: pointer;
+                text-decoration: none;
 
-		.cl-win, .cl-place
-        {
-			width: 100px;
-        }
-		.cl-status
-        {
-			width: 150px;
-           .official {
-				color: red;
-				font-weight: bold;
+                &:hover {
+                    color: #D2592D;
+                }
             }
         }
-		/* Body */
-		.cl-race-name
-        {
-        	width: 83px;
+
+        .cl-bg-pending {
+            background: @bg_pending;
         }
-		.cl-placing
-        {
-			width: 50px;
-        }
-		.cl-engine-no
-        {
-			width: 48px;
+
+        .cl-bg-postponed {
+            background: @bg_postponed;
         }
     }
 
-    .row-noinfo
-    {
+    &.number-game {
+        /*header*/
+        .cl-result {
+            width: 150px;
+        }
+
+        .cl-warrior, .cl-lblOEFT, .cl-lbl1stball, .cl-lastball {
+            width: 70px;
+        }
+
+        span.ball {
+            padding: 5px 5px;
+            background: -moz-linear-gradient(top,#f2f2f2 0%, #ffffff 25%,#ffffff 50%, #ffffff 75%, #d1cdcd);
+            background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2),color-stop(0.25, #ffffff), color-stop(0.50, #ffffff), color-stop(0.75, #ffffff),to(#d1cdcd));
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+            border: 1px solid #5c5757;
+            text-shadow: 1px 0px 0px rgba(000,000,000,0.4), 1px 1px 0px rgba(255,255,255,0.4);
+            width: 27px !important;
+            display: inline-block;
+            text-align: center;
+            margin-left: 2px;
+        }
+    }
+
+    &.casino {
+        /*header*/
+        .cl-result {
+            width: 334px;
+        }
+    }
+
+    &.racing {
+        /* Header */
+        .cl-race {
+            width: 180px;
+        }
+
+        td.cl-result {
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .cl-win, .cl-place {
+            width: 100px;
+        }
+
+        .cl-status {
+            width: 150px;
+
+            .official {
+                color: red;
+                font-weight: bold;
+            }
+        }
+        /* Body */
+        .cl-race-name {
+            width: 83px;
+        }
+
+        .cl-placing {
+            width: 50px;
+        }
+
+        .cl-engine-no {
+            width: 48px;
+        }
+    }
+
+    .row-noinfo {
         border: 1px solid @border-color;
         border-top: 0;
         text-align: center;
         padding: 4px;
     }
-    tr.data:hover
-    {
+
+    tr.data:hover {
+    }
+
+    &.lucky3 {
+        .cl-prize {
+            width: 70px;
+        }
+
+        .cl-result {
+            width: 150px;
+        }
+
+        .lottoBall {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 12px;
+            color: #000;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 31px;
+            text-align: center;
+            background-image: url(images/lotto_ball.png);
+            background-repeat: no-repeat;
+        }
+
+        .lottoBall.red {
+            background-position: 0 0;
+        }
+
+        .lottoBall.blue {
+            background-position: 0 -30px;
+        }
+
+        .lottoBall.disable {
+            color: #999;
+            background-position: 0 -60px;
+        }
+
+        .lotto-bets .button i {
+            display: block;
+            width: 9px;
+            height: 19px;
+            background-image: url(images/icon_bets.png);
+        }
+
+        .lotto-bets .button + .button {
+            margin-right: 0;
+        }
+
+        .lotto-bets .min {
+            background-position: 0 -19px;
+        }
+
+        .lotto-bets .minus {
+            background-position: -10px -19px;
+        }
+
+        .lotto-bets .plus {
+            background-position: -20px -19px;
+        }
+
+        .lotto-bets .max {
+            background-position: -30px -19px;
+        }
+
+        .lotto-bets input {
+            float: left;
+            margin-left: 4px;
+            margin-right: 4px;
+            padding-top: 0;
+            padding-bottom: 0;
+            width: 16px;
+            height: 17px;
+            text-align: center;
+        }
     }
 }

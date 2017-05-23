@@ -5,13 +5,13 @@ namespace Fanex.Razorbill.Module.Report.Criteria.Lucky3
 {
     public class GetLucky3DetailCriteria : CriteriaBase
     {
-        public GetLucky3DetailCriteria(GetLucky3DetailParameter commandData)
+        public GetLucky3DetailCriteria(IGetLucky3DetailParameter commandData)
         {
             Criteria = commandData;
         }
 
         [SpParam(Ignored = true)]
-        private GetLucky3DetailParameter Criteria { get; set; }
+        private IGetLucky3DetailParameter Criteria { get; set; }
 
         public long CustId => Criteria.CustomerId;
 

@@ -29,7 +29,7 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
     /// </summary>
     public class SportsbookResultService : ISportsbookResultService
     {
-        private ISportsbookResultDataAccess _scoreInformationDataAccess;
+        private readonly ISportsbookResultDataAccess _scoreInformationDataAccess;
 
         public SportsbookResultService(ISportsbookResultDataAccess scoreInformationDataAccess)
         {

@@ -24,7 +24,7 @@ namespace Fanex.Age.UI.Components
         public const string SHOW_VIRTUALSPORTS = "showvs";
         public const string SHOW_PROGRESSIVE_BONUS = "showprogressivebonus";
         public const string SHOW_KENO = "showkeno";
-        public const string SHOW_LUCKY3 = "showlucky3";
+        public const string SHOW_LUCKY3 = "showlk3";
 
         private bool _isShowed = true;
         private DateTime _dateFrom;

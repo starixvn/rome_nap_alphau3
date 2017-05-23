@@ -603,9 +603,8 @@ namespace Sunplus.Agent.Model.Entities
             set;
         }
 
-        bool IsLucky3Disabled
-        {
-            get;
-        }
+        bool IsHideLucky3 { get; }
+
+        bool IsDisableLucky3 { get; }
     }
 }

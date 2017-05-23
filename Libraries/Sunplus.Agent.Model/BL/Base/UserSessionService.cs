@@ -282,9 +282,10 @@ namespace Sunplus.Agent.Model.BL
                 session.IsDisabledESports = (bool)values["disableesports"];
             }
 
-            if (values.Contains("disablelucky3"))
+            if (values.Contains("hidelucky3"))
             {
-                session.IsLucky3Disabled = (bool)values["disablelucky3"];
+                session.IsHideLucky3 = (bool)values["hidelucky3"];
+                session.IsDisableLucky3 = (bool)values["disablelucky3"];
             }
         }
     }

@@ -10,6 +10,7 @@
 namespace Fanex.Razorbill.Module.Report.Criteria.Result
 {
     using System;
+    using Core.Services.Impl;
     using Fanex.NAP.Framework.Data;
 
     /// <summary>
@@ -24,6 +25,14 @@ namespace Fanex.Razorbill.Module.Report.Criteria.Result
         public int SportType { get; set; }
 
         public bool IsShowAll { get; set; }
+
+        public DateTime MoveBetsDay
+        {
+            get
+            {
+                return ReportService.BalanceUp.MoveBetsDay;
+            }
+        }
 
         public override string GetSettingKey()
         {
