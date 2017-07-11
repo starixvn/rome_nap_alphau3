@@ -867,7 +867,7 @@ namespace Sunplus.Agent.Model.BL.Reports
         public DataTable GetResultMatchByLeague(DateTime date, int sportId, int leagueId)
         {
             string language = CurrentSession.Language;
-            return reportDAO.Age_Result_MatchSelByLeague(date, CurrentSession.CustId, sportId, leagueId, language);
+            return reportDAO.Age_Result_MatchSelByLeague(date, CurrentSession.CustId, sportId, leagueId, language, MoveBetsDate);
         }
 
         /// <summary>
@@ -884,7 +884,7 @@ namespace Sunplus.Agent.Model.BL.Reports
             ////TODO: ken test
             //return reportDAO.Age_Result_MatchSelByLeagueDS(date, 1338545, sportId, leagueId, language);
 
-            return reportDAO.Age_Result_MatchSelByLeagueDS(date, CurrentSession.CustId, sportId, leagueId, language);
+            return reportDAO.Age_Result_MatchSelByLeagueDS(date, CurrentSession.CustId, sportId, leagueId, language, MoveBetsDate);
 
         }
 

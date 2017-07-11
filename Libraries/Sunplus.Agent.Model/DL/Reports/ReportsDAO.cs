@@ -1205,11 +1205,7 @@ namespace Sunplus.Agent.Model.DL.Reports
         {
             Hashtable parameters = new Hashtable();
             parameters.Add("eventdate", date);
-
-            var storeProcedureName = UserSession.Current.IsShowSportbook ?
-                "Age_Result_SportSelByDate" :
-                "U3_Result_SportSelByDate";
-            return this.ExecSpTable(storeProcedureName, parameters);
+            return this.ExecSpTable("U3_Result_SportSelByDate", parameters);
         }
         #endregion
 
@@ -1221,7 +1217,7 @@ namespace Sunplus.Agent.Model.DL.Reports
         /// <param name="sportId"></param>
         /// <param name="leaugeId"></param>
         /// <returns></returns>
-        public DataTable Age_Result_MatchSelByLeague(DateTime date, int custId, int sportId, int leagueId, string language)
+        public DataTable Age_Result_MatchSelByLeague(DateTime date, int custId, int sportId, int leagueId, string language, DateTime moveBetsDate)
         {
             Hashtable parameters = new Hashtable();
             parameters.Add("fromdate", date);
@@ -1229,6 +1225,7 @@ namespace Sunplus.Agent.Model.DL.Reports
             parameters.Add("custid", custId);
             parameters.Add("leagueid", leagueId);
             parameters.Add("language", language);
+            parameters.Add("movebetsday", moveBetsDate);
             return this.ExecSpTable("Age_Result_MatchSelByLeague", parameters);
         }
 
@@ -1239,7 +1236,7 @@ namespace Sunplus.Agent.Model.DL.Reports
         /// <param name="sportId"></param>
         /// <param name="leaugeId"></param>
         /// <returns></returns>
-        public DataSet Age_Result_MatchSelByLeagueDS(DateTime date, int custId, int sportId, int leagueId, string language)
+        public DataSet Age_Result_MatchSelByLeagueDS(DateTime date, int custId, int sportId, int leagueId, string language, DateTime moveBetsDate)
         {
             Hashtable parameters = new Hashtable();
             parameters.Add("fromdate", date);
@@ -1248,6 +1245,7 @@ namespace Sunplus.Agent.Model.DL.Reports
             parameters.Add("leagueid", leagueId);
             parameters.Add("language", language);
             parameters.Add("isshowall", ConfigurationManager.AppSettings["LocalTest"] == "1");
+            parameters.Add("movebetsday", moveBetsDate);
             return this.ExecSpDataset("Age_Result_MatchSelByLeague", parameters);
         }
 

@@ -320,7 +320,7 @@ Paging.prototype.Go = function (index) {
 
         if (this.id == 'PortalPage_Paging') {
             tmp = tmp.replace('PortalPage.aspx', 'Announcement.aspx');
-            loadAnnouncement_Paging(tmp);
+            //loadAnnouncement_Paging(tmp);
         }
         else if (this.id == 'PortalPage_Paging_OL') {
             tmp = tmp.replace('PortalPage.aspx', 'OnlineList.aspx');
@@ -382,7 +382,7 @@ function continueExecution() {
     var url = location.href;
     url += '?lastPostTime=' + lastPostTime + '&' + _page.key;
     url = url.replace('PortalPage.aspx', 'Announcement.aspx');
-    loadAnnouncement(url, false);
+    //loadAnnouncement(url, false);
     $('divMore').innerHTML = _page.more;
     moreIsLoading = false;
 }
@@ -399,4 +399,4 @@ function ShowMoreAnnouncements() {
 
 //Load all infos
 
-RegisterStartUp("displayBlocks('none');loadBalanceInfo();loadStatistic();verifyOnlineList();loadAnnouncement('Announcement.aspx?' + _page.key, true);");
+RegisterStartUp("displayBlocks('none');loadBalanceInfo();loadStatistic();verifyOnlineList();");
