@@ -3,6 +3,6 @@
   <Function Name="Bet list">
     <Setting Key="Age_BetList_SelByDayAll_Mem_Old" SpName="Age_BetList_SelByDayAll_Mem_Old" DbName="DBARC.bodb_Archive.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BettransSelBetSlip_Old" SpName="Age_BettransSelBetSlip_Old" DbName="DBARC.bodb_Archive.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Age_BetList_SelWinLossByDate_Mem_Old" SpName="Age_BetList_SelWinLossByDate_Mem_Old" DbName="DBARC.bodb_Archive.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Age_BetList_SelWinLossByDate_Mem_Old" SpName="U3_Age_BetList_SelWinLossByDate_Mem_Old" DbName="DBARC.bodb_Archive.BODBDownlineNetView" Plain="0" />
   </Function>
 </Functions>

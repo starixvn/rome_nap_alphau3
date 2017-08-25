@@ -331,7 +331,7 @@
     <Setting Key="Age_BetList_SelWinlossByBettypeMatch_Ag" SpName="Age_BetList_SelWinlossByBettypeMatch_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BetList_SelWinlossByBettypeMatch_MAg" SpName="Age_BetList_SelWinlossByBettypeMatch_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BetList_SelWinlossByBettypeMatch_SAg" SpName="Age_BetList_SelWinlossByBettypeMatch_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Age_BetList_SelWinLossByDate_Mem" SpName="Age_BetList_SelWinLossByDate_Mem" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Age_BetList_SelWinLossByDate_Mem" SpName="U3_Age_BetList_SelWinLossByDate_Mem" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BetList_SelWinlossHR_Ag" SpName="Age_BetList_SelWinlossHR_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BetList_SelWinlossHR_MAg" SpName="Age_BetList_SelWinlossHR_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BetList_SelWinlossHR_SAg" SpName="Age_BetList_SelWinlossHR_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
