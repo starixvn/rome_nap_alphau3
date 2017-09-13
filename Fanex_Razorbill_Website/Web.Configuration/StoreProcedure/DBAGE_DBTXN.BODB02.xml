@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Functions>
+<Functions SiteName="AlphaU3">
   <Function Name="Update setting: PT/Comm/Bet setting">
     <Setting Key="Acc_CustomerSelMAgentInfo_Multiple" SpName="Acc_CustomerSelMAgentInfo_Multiple" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
     <Setting Key="Acc_CustomerSelSAgentInfo_Multiple" SpName="Acc_CustomerSelSAgentInfo_Multiple" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />

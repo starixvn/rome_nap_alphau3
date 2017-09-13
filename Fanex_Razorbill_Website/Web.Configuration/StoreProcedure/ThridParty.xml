@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Functions>
+<Functions SiteName="AlphaU3">
   <Function Name="Live Casino - Stake Level Setting">
     <Setting Key="TP_Admin_StakeLevel_GetGameTypeStakeLevel" SpName="TP_Admin_StakeLevel_GetGameTypeStakeLevel" DbName="LiveCasinoAdmin" Plain="1">
       <Mapping DataField="GameTypeID" ObjectProperty="Id" />

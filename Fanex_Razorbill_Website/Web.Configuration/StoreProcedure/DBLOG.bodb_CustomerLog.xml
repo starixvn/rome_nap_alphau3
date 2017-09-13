@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Functions>
+<Functions SiteName="AlphaU3">
   <Function Name="Write/View Logs">
     <Setting Key="WriteLog_UserLog_RunSP" SpName="WriteLog_UserLog_RunSP" DbName="DBLOG.bodb_CustomerLog.BODBDownlineNetView" />
     <Setting Key="Acc_UserLog_RunSPSel" SpName="Acc_UserLog_RunSPSel" DbName="DBLOG.bodb_CustomerLog.BODBDownlineNetView" />

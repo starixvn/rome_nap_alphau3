@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Functions>
+<Functions SiteName="AlphaU3">
   <Function Name="Update setting: Live Casino">
     <Setting Key="Acc_BalanceGameResetYesterday" SpName="Acc_BalanceGameResetYesterday" DbName="DBTXN.BODB02.BODBDownlineNetView" />
     <Setting Key="Acc_CustomerSelWinLimitLiveCS" SpName="Acc_CustomerSelWinLimitLiveCS" DbName="DBTXN.BODB02.BODBDownlineNetView" />

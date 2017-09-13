@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Functions>
+<Functions SiteName="AlphaU3">
   <Function Name="Message">
     <Setting Key="Dot_Msg_GetPrivateMessage" SpName="Dot_Msg_GetPrivateMessage" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0" />
     <Setting Key="Dot_Msg_GetPublicMessage" SpName="Dot_Msg_GetPublicMessage" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0" />
