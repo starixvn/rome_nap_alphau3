@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
-using Fanex.BetListDetail.Lucky3.Criteria;
-using Fanex.BetListDetail.Lucky3.Services;
+using Fanex.BetDetails.Lucky3.Criteria;
+using Fanex.BetDetails.Lucky3.Services;
 using Fanex.Razorbill.Module.Core.Web.Controllers;
 using Fanex.Razorbill.Module.Report.Repositories.Impl;
 using Sunplus.Agent.Model.Entities;

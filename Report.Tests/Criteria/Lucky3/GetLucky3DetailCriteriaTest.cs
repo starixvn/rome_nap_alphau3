@@ -1,4 +1,4 @@
-﻿using Fanex.BetListDetail.Lucky3.Criteria;
+﻿using Fanex.BetDetails.Lucky3.Criteria;
 using Fanex.Razorbill.Module.Report.Criteria.Lucky3;
 using NSubstitute;
 using NUnit.Framework;

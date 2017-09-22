@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using Fanex.BetListDetail.Lucky3.Criteria;
-using Fanex.BetListDetail.Lucky3.DataAccesses;
-using Fanex.BetListDetail.Lucky3.Models;
+using Fanex.BetDetails.Lucky3.Criteria;
+using Fanex.BetDetails.Lucky3.DataAccesses;
+using Fanex.BetDetails.Lucky3.Models;
 using Fanex.Data;
 using Fanex.Razorbill.Module.Report.Criteria.Lucky3;
 

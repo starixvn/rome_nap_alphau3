@@ -1,4 +1,4 @@
-﻿using Fanex.BetListDetail.Lucky3.Criteria;
+﻿using Fanex.BetDetails.Lucky3.Criteria;
 using Fanex.NAP.Framework.Data;
 
 namespace Fanex.Razorbill.Module.Report.Criteria.Lucky3
