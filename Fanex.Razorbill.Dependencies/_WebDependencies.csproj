@@ -62,7 +62,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.BetList.Lucky3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.BetList.Lucky3.1.0.0-beta10\lib\net40\Fanex.BetList.Lucky3.dll</HintPath>
+      <HintPath>..\packages\Fanex.BetList.Lucky3.1.0.0\lib\net40\Fanex.BetList.Lucky3.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.BetList.NumberGame, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
@@ -133,11 +133,11 @@
       <HintPath>..\_Dependencies\Fanex.Age\Fanex.Razorbill.Module.ContextualCustomer.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Result.Core, Version=2.0.9.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Result.Core-NPOI.2.0.6.2.0.9.1-beta\lib\net40\Fanex.Result.Core.dll</HintPath>
+      <HintPath>..\packages\Fanex.Result.Core-NPOI.2.0.6.2.0.9.1\lib\net40\Fanex.Result.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Result.Core.Base, Version=2.0.9.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Result.Core-NPOI.2.0.6.2.0.9.1-beta\lib\net40\Fanex.Result.Core.Base.dll</HintPath>
+      <HintPath>..\packages\Fanex.Result.Core-NPOI.2.0.6.2.0.9.1\lib\net40\Fanex.Result.Core.Base.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Result.Core.LiveCasino, Version=1.0.0.8, Culture=neutral, processorArchitecture=MSIL">
@@ -145,7 +145,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Result.Core.Lucky3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Result.Core-Lucky3.1.0.0.0-beta4\lib\net40\Fanex.Result.Core.Lucky3.dll</HintPath>
+      <HintPath>..\packages\Fanex.Result.Core-Lucky3.1.0.0.0\lib\net40\Fanex.Result.Core.Lucky3.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Result.Core.NumberGame, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
