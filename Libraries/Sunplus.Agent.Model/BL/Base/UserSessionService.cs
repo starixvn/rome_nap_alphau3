@@ -8,11 +8,11 @@
 
 namespace Sunplus.Agent.Model.BL
 {
-    using System.Collections;
-    using Sunplus.Agent.Model.Entities;
     using System;
-    using Sunplus.Agent.Model.BL.Definitions;
+    using System.Collections;
     using System.Text.RegularExpressions;
+    using Sunplus.Agent.Model.BL.Definitions;
+    using Sunplus.Agent.Model.Entities;
 
     public sealed class UserSessionService
     {
@@ -280,6 +280,12 @@ namespace Sunplus.Agent.Model.BL
             if (values.Contains("disableesports"))
             {
                 session.IsDisabledESports = (bool)values["disableesports"];
+            }
+
+            if (values.Contains("hidelucky3"))
+            {
+                session.IsHideLucky3 = (bool)values["hidelucky3"];
+                session.IsDisableLucky3 = (bool)values["disablelucky3"];
             }
         }
     }

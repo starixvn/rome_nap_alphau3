@@ -12,18 +12,14 @@ namespace Fanex.Razorbill.Module.Report.Controllers
     using System;
     using System.Collections.Generic;
     using System.Data;
-    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
-    using Fanex.Age.UI.Reports.DTO.Result.Entities;
-    using Fanex.Common;
     using Fanex.Razorbill.Module.Core.Extensions;
     using Fanex.Razorbill.Module.Core.Web.Controllers;
     using Fanex.Razorbill.Module.Report.Entities;
     using Fanex.Razorbill.Module.Report.Services.Implement.Result;
-    using Fanex.Result.Core.DTO;
+    using Result.Core.Sportsbook.DTO;
     using Sunplus.Agent.Model.BL.Cache;
     using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.BL.Reports;
@@ -41,7 +37,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         private const int _MaxGamePerResultLine = 13;
         private DateTime _minReportDate = DateTime.Today;
         private string _outRightResult = string.Empty;
-        private List<OutRight> _outRights = null;
+        private List<Outright> _outRights = null;
         private object _reportData = null;
         private Dictionary<int, Action<ResultRequest>> _resultHandlers = new Dictionary<int, Action<ResultRequest>>();
         private Dictionary<int, Func<ResultRequest, ActionResult>> _exportExcelHandlers = new Dictionary<int, Func<ResultRequest, ActionResult>>();
@@ -143,6 +139,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             _resultHandlers.Add((int)SportType.HorseRacing, this.RenderHorseRacing);
             _resultHandlers.Add((int)SportType.Greyhound, this.RenderHorseRacing);
             _resultHandlers.Add((int)SportType.Harness, this.RenderHorseRacing);
+            _resultHandlers.Add((int)SportType.Lucky3, this.RenderLucky3);
             _resultHandlers.Add((int)SportType.NumberGame, this.RenderNumberGame);
             _resultHandlers.Add((int)SportType.LiveCasino, this.RenderLiveCasino);
             _resultHandlers.Add((int)SportType.VirtualHorsesRacing, this.RenderVirtualHorsesRacing);
@@ -191,6 +188,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             _exportExcelHandlers.Add((int)SportType.HorseRacing, this.ExportRacing);
             _exportExcelHandlers.Add((int)SportType.Greyhound, this.ExportRacing);
             _exportExcelHandlers.Add((int)SportType.Harness, this.ExportRacing);
+            _exportExcelHandlers.Add((int)SportType.Lucky3, this.ExportLucky3);
             _exportExcelHandlers.Add((int)SportType.NumberGame, this.ExportNumberGame);
             _exportExcelHandlers.Add((int)SportType.VirtualHorsesRacing, this.ExportVirtualRacing);
             _exportExcelHandlers.Add((int)SportType.VirtualGreyhounds, this.ExportVirtualRacing);
@@ -427,7 +425,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             List<int> leagueIdList = new List<int>();
             var leagueRows = this._outRights.Where(r => r.SportType == resultRequest.SportId).ToList();
 
-            foreach (OutRight league in leagueRows)
+            foreach (Outright league in leagueRows)
             {
                 int leagueId = league.LeagueId;
 
@@ -454,7 +452,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             string sportOptions = string.Empty;
             List<int> sportIdList = new List<int>();
 
-            foreach (OutRight sport in this._outRights)
+            foreach (Outright sport in this._outRights)
             {
                 int sportId = Convert.ToInt32(sport.SportType);
 
@@ -523,6 +521,15 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         private void GetSportListForNormalResults(Dictionary<string, DataTable> viewData, ResultRequest resultRequest)
         {
             DataTable sportList = _ReportBO.GetResultSportByDate(resultRequest.FromDate.Value);
+
+            if (!UserPermission.IsShowLucky3)
+            {
+                DataRow[] lucky3 = sportList.Select("sporttype=" + ((int)SportType.Lucky3).ToString());
+                foreach (DataRow dr in lucky3)
+                {
+                    sportList.Rows.Remove(dr);
+                }
+            }
 
             // Delete number game if IsShowNumberGame=false
             if (!UserPermission.IsShowNumberGame)
@@ -812,6 +819,14 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             ViewBag.Result = result;
         }
 
+        private void RenderLucky3(ResultRequest resultRequest)
+        {
+            string result = resultRequest.MatchId > 0 ?
+                new Lucky3PopupResultService().GetResult(resultRequest.MatchId) :
+                new Lucky3ResultService().GetResult(resultRequest.FromDate.Value, resultRequest.LeagueId, resultRequest.SportId);
+            ViewBag.Result = result;
+        }
+
         /// <summary>
         /// Render number result.
         /// </summary>
@@ -822,6 +837,16 @@ namespace Fanex.Razorbill.Module.Report.Controllers
                 new NumberGamePopupResultService().GetResult(resultRequest.MatchId) :
                 new NumberGameResultService().GetResult(resultRequest.FromDate.Value, resultRequest.LeagueId, resultRequest.SportId);
             ViewBag.Result = result;
+        }
+
+        private ActionResult ExportLucky3(ResultRequest resultRequest)
+        {
+            MemoryStream excelResult = new Lucky3ResultService().ExportExcel(
+                resultRequest.FromDate.Value,
+                resultRequest.SportId,
+                resultRequest.LeagueId,
+                Server.MapPath(@"~/App_Data/Fanex.Result/"));
+            return File(excelResult.ToArray(), "application/vnd.ms-excel", "Result.xls");
         }
 
         private ActionResult ExportNumberGame(ResultRequest resultRequest)

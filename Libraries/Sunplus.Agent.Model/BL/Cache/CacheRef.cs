@@ -146,7 +146,12 @@ namespace Sunplus.Agent.Model.BL.Cache
 
             return RefData.GetOddsTypeName(oddsTypeId.ToString(), CurrentTWLanguage);
         }
-        
+
+        public static string GetProductName(int productId, string defaultName = "")
+        {
+            return RefData.GetResourceDataByRefIdAndResourceId("Product", productId.ToString(), CurrentTWLanguage, defaultName);
+        }
+
         private static string Invoke(string functionName, object[] parameters)
         {
             int length = (parameters == null) ? 0 : parameters.Length;

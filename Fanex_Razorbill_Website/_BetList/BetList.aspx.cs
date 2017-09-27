@@ -401,6 +401,7 @@ namespace Sunplus.Agent.UI._BetList
                     {Filter_Control.SHOW_VIRTUALSPORTS, new FilterElement(Filter_Control.SHOW_VIRTUALSPORTS, Resources.Lang.VirtualSports, "IsCheck()")},
                     {Filter_Control.SHOW_PROGRESSIVE_BONUS, new FilterElement(Filter_Control.SHOW_PROGRESSIVE_BONUS, Resources.Lang.Progressivebonus, "IsCheck()")},
                     {Filter_Control.SHOW_KENO, new FilterElement(Filter_Control.SHOW_KENO, Resources.Lang.Keno, "IsCheck()")},
+                    {Filter_Control.SHOW_LUCKY3, new FilterElement(Filter_Control.SHOW_LUCKY3, GetLucky3Name(), "IsCheck()")}
                 };
 		}
 

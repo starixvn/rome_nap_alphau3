@@ -53,9 +53,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_Dependencies\_Cache\Enyim.Caching.dll</HintPath>
     </Reference>
-    <Reference Include="Fanex.BetList.Core, Version=2.0.5.11, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\_Dependencies\Fanex.Age\BetListCore\Fanex.BetList.Core.dll</HintPath>
+    <Reference Include="Fanex.BetList.BetTrade, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.BetList.Core.2.39.1\lib\net40\Fanex.BetList.BetTrade.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.BetList.Core, Version=2.39.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.BetList.Core.2.39.1\lib\net40\Fanex.BetList.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.BetList.Lucky3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.BetList.Lucky3.1.0.0\lib\net40\Fanex.BetList.Lucky3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.BetList.NumberGame, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.BetList.NumberGame.1.0.0.6\lib\net40\Fanex.BetList.NumberGame.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Common">
       <HintPath>..\_Dependencies\_FanexLib\Fanex.Common.dll</HintPath>
@@ -120,8 +132,33 @@
     <Reference Include="Fanex.Razorbill.Module.ContextualCustomer">
       <HintPath>..\_Dependencies\Fanex.Age\Fanex.Razorbill.Module.ContextualCustomer.dll</HintPath>
     </Reference>
-    <Reference Include="Fanex.Result.Core">
-      <HintPath>..\_Dependencies\FanexResult\Fanex.Result.Core.dll</HintPath>
+    <Reference Include="Fanex.Result.Core, Version=2.0.9.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Result.Core-NPOI.2.0.6.2.0.9.1\lib\net40\Fanex.Result.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Result.Core.Base, Version=2.0.9.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Result.Core-NPOI.2.0.6.2.0.9.1\lib\net40\Fanex.Result.Core.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Result.Core.LiveCasino, Version=1.0.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Result.Core-LiveCasino.1.0.0.8\lib\net40\Fanex.Result.Core.LiveCasino.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Result.Core.Lucky3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Result.Core-Lucky3.1.0.0.0\lib\net40\Fanex.Result.Core.Lucky3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Result.Core.NumberGame, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Result.Core-NumberGame.1.0.1.0\lib\net40\Fanex.Result.Core.NumberGame.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Result.Core.Racing, Version=1.0.0.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Result.Core-Racing.1.0.0.9\lib\net40\Fanex.Result.Core.Racing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Result.Core.Sportsbook, Version=1.0.8.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Result.Core-Sportsbook.1.0.8.8\lib\net40\Fanex.Result.Core.Sportsbook.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="FluentValidation, Version=3.2.0.0, Culture=neutral, PublicKeyToken=a82054b837897c66, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -256,8 +293,13 @@
     <Reference Include="NPOI.OpenXmlFormats">
       <HintPath>..\packages\NPOI.2.0.6\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
-    <Reference Include="RemotingRef">
-      <HintPath>..\_Dependencies\RemotingRef.dll</HintPath>
+    <Reference Include="RazorEngine, Version=3.7.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.7.0\lib\net40\RazorEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RemotingRef, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RemotingRef.2.0.0.9\lib\net40\RemotingRef.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="RSACryptoPad">
       <HintPath>..\_Dependencies\RSACryptoPad.dll</HintPath>
@@ -326,7 +368,7 @@
       <HintPath>..\_Dependencies\_Web\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -346,8 +388,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TplCore">
-      <HintPath>..\packages\TplCore.1.0.4694.29951\lib\net40\TplCore.dll</HintPath>
+    <Reference Include="TplCore, Version=1.0.4854.17253, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TplCore.1.0.4854.17254\lib\net40\TplCore.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="UMControllerLibrary">
       <HintPath>..\_Dependencies\UMControllerLibrary.dll</HintPath>

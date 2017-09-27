@@ -15,7 +15,7 @@ namespace Fanex.Razorbill.Module.Report.Repositories.Impl.Result
     using Fanex.Data;
     using Fanex.Razorbill.Module.Report.Criteria.Result;
     using Fanex.Razorbill.Module.Report.Repositories.Interface.Result;
-    using Fanex.Result.Core.DTO;
+    using Fanex.Result.Core.Sportsbook.DTO;
 
     /// <summary>
     /// The class SportsBookPopupResultDataAccess.

@@ -24,6 +24,7 @@ namespace Fanex.Age.UI.Components
         public const string SHOW_VIRTUALSPORTS = "showvs";
         public const string SHOW_PROGRESSIVE_BONUS = "showprogressivebonus";
         public const string SHOW_KENO = "showkeno";
+        public const string SHOW_LUCKY3 = "showlk3";
 
         private bool _isShowed = true;
         private DateTime _dateFrom;
@@ -158,6 +159,10 @@ namespace Fanex.Age.UI.Components
                 else if (string.Compare(elementName, SHOW_KENO) == 0)
                 {
                     CheckPermission(UserPermission.EnableKeno, SHOW_KENO);
+                }
+                else if (string.Compare(elementName, SHOW_LUCKY3) == 0)
+                {
+                    CheckPermission(UserPermission.IsShowLucky3, SHOW_LUCKY3);
                 }
             }
 

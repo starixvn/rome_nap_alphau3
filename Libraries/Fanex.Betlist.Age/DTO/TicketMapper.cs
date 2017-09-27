@@ -114,7 +114,13 @@ namespace Fanex.BetList.Age.DTO
 
             {"BetCheck","betcheck"},
 
-            {"CommStatus","comstatus"},                      
+            {"CommStatus","comstatus"},
+
+            {"TransDesc","transdesc"},
+
+            {"OddsSpread","OddsSpread"},
+
+            {"Currency","Currency"}
         };
     }
 }

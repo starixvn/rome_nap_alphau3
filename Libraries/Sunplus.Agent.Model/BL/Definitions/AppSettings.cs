@@ -15,8 +15,8 @@ using System.Configuration;
 namespace Sunplus.Agent.Model.BL.Definitions
 {
     using System;
-    using System.Web;
     using System.Collections.Generic;
+    using System.Web;
 
     public enum UserTypes : int
     {
@@ -852,6 +852,15 @@ namespace Sunplus.Agent.Model.BL.Definitions
             get
             {
                 return !string.IsNullOrWhiteSpace(PiwikSiteId);
+            }
+        }
+        // ----- End Piwik -----
+
+        public static bool EnableLucky3
+        {
+            get
+            {
+                return GetValue("EnableLucky3") == "1";
             }
         }
     }

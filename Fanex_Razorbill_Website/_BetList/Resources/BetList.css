@@ -94,3 +94,6 @@ div.ticketList div.void > div.match, div.ticketList div.void div.firstGoal, div.
 .comm_note .title { background-image: url("Images/note_title.png"); background-position: right top; background-repeat: repeat-x; float: left; margin-left: 15px; padding-right: 5px; }
 .comm_note .title span { background-image: url("Images/note_title.png"); background-position: left top; background-repeat: repeat-x; color: #fff; display: block; line-height: 18px; margin-left: -5px; padding: 0 5px 0 10px; text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.7); }
 .comm_note .content { margin: 25px 20px 10px 20px; clear: both; }
+.lucky3 {color: #b50000;font-weight:bold !important;}
+.lucky3 .handicap {display:block;}
+.lucky3 .num-of-bets {color:#606060;}

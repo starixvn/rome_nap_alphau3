@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Functions>
+  <Function Name="Customer Status">
+    <Setting Key="Acc_CustomerSelStatus" SpName="Acc_CustomerSelStatus_xtest" DbName="DBACC.bodb02.BODBDownlineNetView" Plain="0" />
+  </Function>
+  <Function Name="Lucky 3 Bet List Detail">
+    <Setting Key="Acc_BetList_Lucky3_Detail" SpName="Acc_BetList_Lucky3_Detail_xtest" DbName="DBACC.bodb02.BODBDownlineNetView" Plain="0">
+      <Mapping DataField="TransId" ObjectProperty="TransactionId"></Mapping>
+      <Mapping DataField="CustId" ObjectProperty="CustomerId"></Mapping>
+      <Mapping DataField="TransDesc" ObjectProperty="TransactionDescription"></Mapping>
+      <Mapping DataField="sDiscount" ObjectProperty="SuperDiscount"></Mapping>
+      <Mapping DataField="aDiscount" ObjectProperty="AgentDiscount"></Mapping>
+      <Mapping DataField="SComm" ObjectProperty="SuperCommission"></Mapping>
+      <Mapping DataField="AComm" ObjectProperty="AgentCommission"></Mapping>
+      <Mapping DataField="Comm" ObjectProperty="MasterCommmission"></Mapping>
+      <Mapping DataField="Discount" ObjectProperty="MasterCommmission"></Mapping>
+    </Setting>
+  </Function>
+</Functions>

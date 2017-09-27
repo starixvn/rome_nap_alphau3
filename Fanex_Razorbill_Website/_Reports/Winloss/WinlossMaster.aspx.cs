@@ -9,7 +9,6 @@
 namespace Fanex.Age.UI.Reports.Winloss
 {
     using System;
-    using System.Collections.Generic;
     using System.Data;
     using System.Web.UI;
     using Fanex.Age.UI.Components;
@@ -23,34 +22,10 @@ namespace Fanex.Age.UI.Reports.Winloss
 
         protected override void InitCheckBox()
         {
-            if (!UserSession.Current.IsShowSportbook)
-            {
-                _filterCollection = new Dictionary<string, FilterElement>()
-                {
-                    {Filter_Control.SHOWALL, new FilterElement(Filter_Control.SHOWALL, Resources.Lang.all, "CheckAll()")},
-                    {Filter_Control.SHOW_NUMBER_GAME, new FilterElement(Filter_Control.SHOW_NUMBER_GAME, Resources.Lang.numbergame, "IsCheck()")},
-                    {Filter_Control.SHOW_LIVECASINO, new FilterElement(Filter_Control.SHOW_LIVECASINO, Resources.Lang.LiveCasino, "IsCheck()")},
-                    {Filter_Control.SHOW_IBC_BINGO, new FilterElement(Filter_Control.SHOW_IBC_BINGO, Resources.Bingo.bingo, "IsCheck()")}
-                };
+            base.InitCheckBox();
 
-                return;
-            }
-
-            _filterCollection = new Dictionary<string, FilterElement>()
-                {
-                    {Filter_Control.SHOWALL, new FilterElement(Filter_Control.SHOWALL, Resources.Lang.all, "CheckAll()")},
-                    {Filter_Control.SHOWSB, new FilterElement(Filter_Control.SHOWSB, Resources.Lang.SB, "IsCheck()")},
-                    {Filter_Control.SHOWCASINO, new FilterElement(Filter_Control.SHOWCASINO, Resources.Lang.casino, "IsCheck()")},
-                    {Filter_Control.SHOWRB, new FilterElement(Filter_Control.SHOWRB, Resources.Lang.Racebook, "IsCheck()")},
-                    {Filter_Control.SHOW_NUMBER_GAME, new FilterElement(Filter_Control.SHOW_NUMBER_GAME, Resources.Lang.numbergame, "IsCheck()")},
-                    {Filter_Control.SHOW_IBC_BINGO, new FilterElement(Filter_Control.SHOW_IBC_BINGO, Resources.Bingo.bingo, "IsCheck()")},
-                    {Filter_Control.SHOW_P2P, new FilterElement(Filter_Control.SHOW_P2P, Resources.Lang.P2P, "IsCheck()")},
-                    {Filter_Control.SHOW_LIVECASINO, new FilterElement(Filter_Control.SHOW_LIVECASINO, Resources.Lang.LiveCasino, "IsCheck()")},
-                    {Filter_Control.SHOW_VIRTUALSPORTS, new FilterElement(Filter_Control.SHOW_VIRTUALSPORTS, Resources.Lang.VirtualSports, "IsCheck()")},
-                    {Filter_Control.SHOW_KENO, new FilterElement(Filter_Control.SHOW_KENO, Resources.Lang.Keno, "IsCheck()")}
-                };
-
-            if (Fanex.CustomerSetting.Module.ProgressiveBonus.Configurations.ProgressiveSection.Instance.Active)
+            if (UserSession.Current.IsShowSportbook &&
+                Fanex.CustomerSetting.Module.ProgressiveBonus.Configurations.ProgressiveSection.Instance.Active)
             {
                 _filterCollection.Add(
                     Filter_Control.SHOW_PROGRESSIVE_BONUS,
@@ -118,8 +93,6 @@ namespace Fanex.Age.UI.Reports.Winloss
         }
 
         #endregion
-
-
 
         #region Helper
 

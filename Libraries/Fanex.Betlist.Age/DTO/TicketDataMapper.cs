@@ -36,7 +36,11 @@ namespace Fanex.BetList.Age.DTO
 
             {"MasterPT","mpositiontaking"},
 
-            {"AgentPT","apositiontaking"}
+            {"AgentPT","apositiontaking"},
+
+            {"TransDesc","transdesc"},
+
+            {"OddsSpread","OddsSpread"}
         };
     }
 }

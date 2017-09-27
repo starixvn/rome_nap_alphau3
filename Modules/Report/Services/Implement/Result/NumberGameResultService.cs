@@ -18,6 +18,7 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
     using Fanex.Razorbill.Module.Report.Repositories.Interface.Result;
     using Fanex.Razorbill.Module.Report.Services.Interface.Result;
     using Fanex.Result.Core;
+    using Fanex.Result.Core.Base;
     using Sunplus.Agent.Model.BL.Cache;
     using Sunplus.Agent.Model.Entities;
 

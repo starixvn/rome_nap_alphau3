@@ -47,10 +47,18 @@
       <HintPath>..\..\_Dependencies\_FanexLib\Fanex.NAP.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RemotingRef, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RemotingRef.2.0.0.9\lib\net40\RemotingRef.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
+    <Reference Include="TplCore, Version=1.0.4854.17253, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\TplCore.1.0.4854.17254\lib\net40\TplCore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\LimtedCountryAccessSection.cs" />
@@ -80,7 +88,9 @@
     <Compile Include="Services\ReportTimer.cs" />
     <Compile Include="Services\ReportTimeRangeService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -41,9 +41,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IBCFile, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Fanex.File.1.0.0\lib\net40\IBCFile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="RemotingRef">
-      <HintPath>..\..\_Dependencies\RemotingRef.dll</HintPath>
+    <Reference Include="RemotingRef, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RemotingRef.2.0.0.9\lib\net40\RemotingRef.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SPSRemoting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SPSRemoting.1.0.0\lib\net40\SPSRemoting.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -61,8 +70,8 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="TplCore, Version=1.0.4854.17253, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\TplCore.1.0.4694.29951\lib\net40\TplCore.dll</HintPath>
+      <HintPath>..\..\packages\TplCore.1.0.4854.17254\lib\net40\TplCore.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -288,6 +297,9 @@
   <ItemGroup>
     <Folder Include="Result\Criteria\" />
     <Folder Include="Result\DataAccess\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

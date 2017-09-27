@@ -73,6 +73,7 @@ namespace Fanex.Age.UI.Reports.Monitor
             string SHOWP2P = "showp2p";
             string SHOWLIVECASINO = "showlivecasino";
             string SHOWVS = "showvs";
+            string SHOWLK3 = "showlk3";
 
             List<KeyValuePair<string, bool>> list = new List<KeyValuePair<string, bool>>();
             if (!String.IsNullOrEmpty(Request[SHOWSB]))
@@ -87,6 +88,8 @@ namespace Fanex.Age.UI.Reports.Monitor
                 list.Add(new KeyValuePair<string, bool>(SHOWLIVECASINO, Request[SHOWLIVECASINO] == "1" ? true : false));
             if (!String.IsNullOrEmpty(Request[SHOWLIVECASINO]))
                 list.Add(new KeyValuePair<string, bool>(SHOWVS, Request[SHOWVS] == "1" ? true : false));
+            if (!String.IsNullOrEmpty(Request[SHOWLK3]))
+                list.Add(new KeyValuePair<string, bool>(SHOWLK3, Request[SHOWLK3] == "1" ? true : false));
 
             _arrSportIds = list;
         }

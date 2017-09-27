@@ -19,7 +19,8 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
     using Fanex.Razorbill.Module.Report.Repositories.Interface.Result;
     using Fanex.Razorbill.Module.Report.Services.Interface.Result;
     using Fanex.Result.Core;
-    using Fanex.Result.Core.DTO;
+    using Fanex.Result.Core.Base;
+    using Fanex.Result.Core.Sportsbook.DTO;
     using Sunplus.Agent.Model.BL.Cache;
     using Sunplus.Agent.Model.Entities;
 
@@ -51,7 +52,7 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
         /// <returns>
         /// The result for OUTRIGHT.
         /// </returns>
-        public string GetResult(DateTime fromDate, DateTime toDate, int sportId, int leagueId, out List<OutRight> outRights)
+        public string GetResult(DateTime fromDate, DateTime toDate, int sportId, int leagueId, out List<Outright> outRights)
         {
             var criteria = GetCriteria(fromDate, toDate);
             var result = this._outRightResultDataAccess.GetOutRightResult(criteria);
@@ -68,7 +69,7 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
             }
 
             ResultSetting resultSetting = GetFanexResultSetting();
-            return ResultEngine.HtmlParser<OutRight>(result.ToList(), resultSetting);
+            return ResultEngine.HtmlParser<Outright>(result.ToList(), resultSetting);
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
                 result = result.Where(o => o.LeagueId == leagueId);
             }
 
-            return ResultEngine.ExcelParser<OutRight>(
+            return ResultEngine.ExcelParser<Outright>(
                 result.ToList(),
                 GetExportExcelSetting(excelTemplatePath, GetExcelTitle(sportId, fromDate, toDate, leagueId)));
         }
@@ -114,7 +115,7 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
             return new ResultSetting
             {
                 LanguageCode = UserSession.Current.Language,
-                IsOutRight = true,
+                IsOutright = true,
                 IsPopUp = false,
                 VisibleMatchCodeIDColumn = false
             };
@@ -125,7 +126,7 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
             return new ResultSetting
             {
                 LanguageCode = UserSession.Current.Language,
-                IsOutRight = true,
+                IsOutright = true,
                 IsPopUp = false,
                 ExcelTitle = excelTitle,
                 ExcelTemplatePath = excelTemplatePath

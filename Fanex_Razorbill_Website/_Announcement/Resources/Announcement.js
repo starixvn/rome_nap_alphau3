@@ -126,4 +126,4 @@ function CheckShowedMessage(id) {
     return false;
 }
 
-RegisterStartUp(LoadAnnouncement);
+//RegisterStartUp(LoadAnnouncement);

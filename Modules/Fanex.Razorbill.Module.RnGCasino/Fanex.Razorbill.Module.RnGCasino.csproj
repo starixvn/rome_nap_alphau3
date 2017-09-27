@@ -45,6 +45,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\_Dependencies\_Web\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RemotingRef, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RemotingRef.2.0.0.9\lib\net40\RemotingRef.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Sunplus.Libraries.AOP">
       <HintPath>..\..\_Dependencies\SunplusLib\Sunplus.Libraries.AOP.dll</HintPath>
     </Reference>
@@ -60,6 +64,10 @@
       <HintPath>..\..\_Dependencies\_Web\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.XML" />
+    <Reference Include="TplCore, Version=1.0.4854.17253, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\TplCore.1.0.4854.17254\lib\net40\TplCore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -137,6 +145,9 @@
       <Project>{AF2E11AA-2A92-47AC-86FA-4D48B0AEB5D7}</Project>
       <Name>_Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
