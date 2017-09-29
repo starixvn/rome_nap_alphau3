@@ -4436,4 +4436,7 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
   <data name="ContactUs" xml:space="preserve">
     <value>聯絡我們</value>
   </data>
+  <data name="GameNo" xml:space="preserve">
+    <value>Game No</value>
+  </data>
 </root>
