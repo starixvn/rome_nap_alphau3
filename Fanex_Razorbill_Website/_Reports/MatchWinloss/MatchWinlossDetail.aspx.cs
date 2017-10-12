@@ -662,6 +662,20 @@ namespace Fanex.Age.UI.Reports.MatchWinloss
                     matchBlock.League = leagueNameTitle;
                 }
             }
+            else if (1600 <= betType && betType <= 1610) // Lucky 3
+            {
+                if (currentMatchId == 0 || currentMatchId != matchId) // new match
+                {
+                    string lucky3Name = GetLucky3Name();
+                    isInsertTotal = true;
+                    currentMatchId = matchId;
+                    matchBlock.MatchName.MatchName = string.Format("{0} {1} {2}", lucky3Name, Resources.Lang.GameNo, dr["matchcode"]);
+
+                    leagueName = _exportToExcel ? leagueName : Formater.TruncateWithTip(leagueName, 33);
+                    currentTitle = matchBlock.ToString();
+                    matchBlock.League = lucky3Name + " - " + leagueName;
+                }
+            }
             else if (betType > 1100 && betType <= 1104) // For Live Casino
             {
                 string leagueNameTitle = Resources.Lang.LiveCasino;

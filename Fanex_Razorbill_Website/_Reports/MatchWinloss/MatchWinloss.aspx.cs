@@ -19,6 +19,8 @@ namespace Fanex.Age.UI.Reports.MatchWinloss
     {
         #region Variable
 
+        private const int Lucky3ProductId = 26;
+
         #endregion Variable
 
         #region Override
@@ -155,6 +157,10 @@ namespace Fanex.Age.UI.Reports.MatchWinloss
                     {
                         eventName = Resources.Lang.numbergameno + " " + dr["matchcode"];
                     }
+                    else if (1600 <= betType && betType <= 1610) // Lucky 3
+                    {
+                        eventName = string.Format("{0} {1} {2}", GetLucky3Name(), Resources.Lang.GameNo, dr["matchcode"]);
+                    }
                     else if (betType > 1100 && betType <= 1104) // For Live Casino
                     {
                         eventName = Resources.Lang.LiveCasino + ": " + CacheRef.GetBettype(dr["bettype"]) + " " + dr["showtime"].ToString();
@@ -208,6 +214,11 @@ namespace Fanex.Age.UI.Reports.MatchWinloss
         private void RenderReportTimeDisclaimer(MatchWinloss_Template template)
         {
             template.ReportSearchHeader.SetReportTimeDisclaimer(string.Format(Resources.Lang.ViewDataFromDate, MinReportDateString));
+        }
+
+        private string GetLucky3Name()
+        {
+            return Sunplus.Agent.Model.BL.Cache.CacheRef.GetProductName(Lucky3ProductId, "Lucky 3");
         }
 
         #endregion Render Utility

@@ -20,6 +20,7 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
     /// </summary>
     public class MatchWinLossReport : TemplateReport, IReportBuilder
     {
+        private const int Lucky3ProductId = 26;
         private MatchWinLossReportBuilder _builder;
 
         public MatchWinLossReport(string filePath, MatchWinLossReportBuilder builder)
@@ -87,6 +88,10 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                     {
                         eventName = Resources.Lang.numbergameno + " " + item.MatchCode;
                     }
+                    else if (1600 <= item.BetTypeId && item.BetTypeId <= 1610) // Lucky 3
+                    {
+                        eventName = string.Format("{0} {1} {2}", GetLucky3Name(), "Game No", item.MatchCode);
+                    }
                     else if (item.BetTypeId > 1100 && item.BetTypeId <= 1104) // For Live Casino
                     {
                         eventName = Resources.Lang.LiveCasino + ": " + CacheRef.GetBettype(item.BetTypeId) + " " + item.ShowTime;
@@ -143,6 +148,11 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
 
             hssfWorkbook.RemoveSheetAt(hssfWorkbook.GetSheetIndex(templateSheet));
             return hssfWorkbook;
+        }
+
+        private string GetLucky3Name()
+        {
+            return Sunplus.Agent.Model.BL.Cache.CacheRef.GetProductName(Lucky3ProductId, "Lucky 3");
         }
     }
 }

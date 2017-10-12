@@ -8,6 +8,7 @@
 
 namespace Fanex.Age.Business.Reports.MatchWinloss
 {
+    using System;
     using System.Collections.Generic;
     using System.Data;
     using System.Linq;
@@ -23,17 +24,17 @@ namespace Fanex.Age.Business.Reports.MatchWinloss
             var result = (from c in dt.AsEnumerable()
                           select new MatchWinLossItem
                           {
-                              BetTypeId = c.Field<short>("bettype"),
-                              HomeId = c.Field<int>("homeid"),
-                              AwayId = c.Field<int>("awayid"),
-                              MatchId = c.Field<int>("matchid"),
-                              MatchCode = c.Field<string>("matchcode"),
-                              ShowTime = c.Field<string>("showtime"),
-                              GrossComm = c.Field<decimal>("grosscomm"),
-                              Comm = c.Field<decimal>("commission"),
-                              PositionTaking = c.Field<decimal>("positiontaking"),
-                              LiveIndicator = c.Field<int>("liveindicator"),
-                              IsNeutral = c.Field<bool>("isneutral")
+                              BetTypeId = Convert.ToInt16(c["bettype"]), //c.Field<short>("bettype"),
+                              HomeId = Convert.ToInt32(c["homeid"]), //c.Field<int>("homeid"),
+                              AwayId = Convert.ToInt32(c["awayid"]), //c.Field<int>("awayid"),
+                              MatchId = Convert.ToInt32(c["matchid"]), //c.Field<int>("matchid"),
+                              MatchCode = c["matchcode"].ToString(), //c.Field<string>("matchcode"),
+                              ShowTime = c["showtime"].ToString(), //c.Field<string>("showtime"),
+                              GrossComm = Convert.ToDecimal(c["grosscomm"]), //c.Field<decimal>("grosscomm"),
+                              Comm = Convert.ToDecimal(c["commission"]), //c.Field<decimal>("commission"),
+                              PositionTaking = Convert.ToDecimal(c["positiontaking"]), //c.Field<decimal>("positiontaking"),
+                              LiveIndicator = Convert.ToInt32(c["liveindicator"]), //c.Field<int>("liveindicator"),
+                              IsNeutral = Convert.ToBoolean(c["isneutral"]) //c.Field<bool>("isneutral")
                           }).ToList();
 
             foreach (var item in result)

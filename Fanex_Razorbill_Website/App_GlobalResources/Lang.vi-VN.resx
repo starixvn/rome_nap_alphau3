@@ -4728,4 +4728,7 @@ Vui lòng điền vào mẫu phía dưới để thiết lập giá trị cho M�
   <data name="ContactUs" xml:space="preserve">
     <value>Contact Us</value>
   </data>
+  <data name="GameNo" xml:space="preserve">
+    <value>Game No</value>
+  </data>
 </root>

@@ -12,6 +12,7 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
 
     internal class MatchWinLossDetailReport : TemplateReport, IReportBuilder
     {
+        private const int Lucky3ProductId = 26;
         private MatchWinLossDetailReportBuilder _builder;
 
         public MatchWinLossDetailReport(string filePath, MatchWinLossDetailReportBuilder builder)
@@ -242,9 +243,19 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                                 {
                                     if (currentMatchId == 0 || currentMatchId != match.MatchId)
                                     {
-                                        var homeName = Sunplus.Agent.Model.BL.Cache.CacheRef.GetTeamName(firstItem.HomeId) + (firstItem.IsNeutral ? Resources.Lang.IsNeutral : string.Empty);
-                                        var awayName = Sunplus.Agent.Model.BL.Cache.CacheRef.GetTeamName(firstItem.AwayId);
-                                        matchName = homeName + "-vs-" + awayName;
+                                        if (1600 <= firstItem.BetType && firstItem.BetType <= 1610)
+                                        {
+                                            string lucky3Name = GetLucky3Name();
+                                            leagueName = lucky3Name + " - " + leagueName;
+                                            matchName = string.Format("{0} {1} {2}", lucky3Name, "Game No", firstItem.MatchCode);
+                                        }
+                                        else
+                                        {
+                                            var homeName = Sunplus.Agent.Model.BL.Cache.CacheRef.GetTeamName(firstItem.HomeId) + (firstItem.IsNeutral ? Resources.Lang.IsNeutral : string.Empty);
+                                            var awayName = Sunplus.Agent.Model.BL.Cache.CacheRef.GetTeamName(firstItem.AwayId);
+                                            matchName = homeName + "-vs-" + awayName;
+                                        }
+
                                         isInsertMatchInfoRow = true;
                                         currentMatchId = match.MatchId;
                                     }
@@ -459,6 +470,11 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
 
             hssfWorkbook.RemoveSheetAt(hssfWorkbook.GetSheetIndex(templateSheet));
             return hssfWorkbook;
+        }
+
+        private string GetLucky3Name()
+        {
+            return Sunplus.Agent.Model.BL.Cache.CacheRef.GetProductName(Lucky3ProductId, "Lucky 3");
         }
     }
 }
