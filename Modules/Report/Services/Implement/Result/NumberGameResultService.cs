@@ -59,7 +59,8 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement.Result
             {
                 FromDate = fromDate,
                 LeagueID = leagueId,
-                Language = UserSession.Current.Language
+                Language = UserSession.Current.Language,
+                SportType = (int)SportType.NumberGame
             };
         }
 

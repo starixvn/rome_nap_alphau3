@@ -23,6 +23,8 @@ namespace Fanex.Razorbill.Module.Report.Criteria.Result
 
         public string Language { get; set; }
 
+        public int SportType { get; set; }
+
         public override string GetSettingKey()
         {
             return "Age_Result_MatchSelNumberGameByLeague";
