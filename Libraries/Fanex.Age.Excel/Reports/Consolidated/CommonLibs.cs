@@ -41,10 +41,10 @@ namespace Fanex.Age.Excel.Reports.Consolidated
                     break;
                 case -2:
                 case -3:
-                    result = Resources.Lang.baseon + " " + RemotingRef.RefData.GetExchangeData(currencyId * -1).Currency;
+                    //result = Resources.Lang.baseon + " " + RemotingRef.RefData.GetExchangeData(currencyId * -1).Currency;
                     break;
                 default:
-                    result = Resources.Lang.viewunder + " " + RemotingRef.RefData.GetExchangeData(currencyId).Currency;
+                    //result = Resources.Lang.viewunder + " " + RemotingRef.RefData.GetExchangeData(currencyId).Currency;
                     break;
             }
             return result;

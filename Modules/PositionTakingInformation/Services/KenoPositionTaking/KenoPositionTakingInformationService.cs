@@ -197,32 +197,13 @@ namespace Fanex.Razorbill.Module.PositionTaking.Services.KenoPositionTaking
                                  select new BetTypeModel()
                                  {
                                      Id = bettype.Key,
-                                     Name = RemotingRef.RefData.GetBetTypeName(bettype.Key.ToString(), RefmotingRefLang(SessionExtension.Language))
+                                     Name = CacheRef.GetBettype(bettype.Key.ToString())
                                  };
             
             if (bettypesActive.Any())
             {
                 positionTakingList.BetTypes = bettypesActive.ToList();
             }            
-        }
-
-        /// <summary>
-        /// Language converting.
-        /// </summary>
-        /// <param name="systemLanguage">The current system language.</param>
-        /// <returns>Return result.</returns>
-        private string RefmotingRefLang(string systemLanguage)
-        {
-            switch (systemLanguage)
-            {
-                case "en-US": return "en";
-                case "zh-TW": return "ch"; // Traditional
-                case "zh-CN": return "cs"; // Simplified
-                case "ja-JP": return "jp";
-                case "th-TH": return "th"; // Thai
-                case "ko-KR": return "ko";
-                default: return "en";
-            }
         }
     }
 }

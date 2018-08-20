@@ -167,10 +167,10 @@ namespace Fanex.Age.UI.Reports
                     break;
                 case -2:
                 case -3:
-                    textConvert = Resources.Lang.baseon + " " + RemotingRef.RefData.GetExchangeData(currency * -1).Currency;
+                    //textConvert = Resources.Lang.baseon + " " + RemotingRef.RefData.GetExchangeData(currency * -1).Currency;
                     break;
                 default:
-                    textConvert = Resources.Lang.viewunder + " " + RemotingRef.RefData.GetExchangeData(currency).Currency;
+                    //textConvert = Resources.Lang.viewunder + " " + RemotingRef.RefData.GetExchangeData(currency).Currency;
                     break;
             }
             return textConvert;

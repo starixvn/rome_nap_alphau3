@@ -132,7 +132,7 @@ namespace Fanex.Razorbill.Module.Report.Services.Implement
             var worksheet = _workbook.CreateSheet(sheetName);
             var titleRow = worksheet.CreateRow(0);
             var titleCell = titleRow.CreateCell(0);
-            titleCell.SetCellValue(sheetName + " " + criteria.FromDate.ToString("MM/dd/yyyy") + "-->" + criteria.ToDate.ToString("MM/dd/yyyy") + (criteria.Currency == 0 ? " - " + ResourceExtension.GetResource(ResourceClass, "allcurrencies") : " - " + ResourceExtension.GetResource(ResourceClass, "viewunder") + " " + RemotingRef.RefData.GetExchangeData(criteria.Currency).Currency));
+            titleCell.SetCellValue(sheetName + " " + criteria.FromDate.ToString("MM/dd/yyyy") + "-->" + criteria.ToDate.ToString("MM/dd/yyyy") + (criteria.Currency == 0 ? " - " + ResourceExtension.GetResource(ResourceClass, "allcurrencies") : " - " + ResourceExtension.GetResource(ResourceClass, "viewunder") + " " + criteria.Currency.ToString()));// RemotingRef.RefData.GetExchangeData(criteria.Currency).Currency));
 
             titleCell.CellStyle = _titleStyle;
 

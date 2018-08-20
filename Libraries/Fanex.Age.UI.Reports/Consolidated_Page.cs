@@ -136,7 +136,7 @@ namespace Fanex.Age.UI.Reports
                 contentBlock.level = GetLevelTitle(Convert.ToInt32(row["roleid"]));
                 contentBlock.turnover = Formater.DecFormat(row[prefix + "turnover"], 2);
                 contentBlock.username = row["username"] as string;
-                contentBlock.currency = RemotingRef.RefData.GetExchangeData(Convert.ToInt32(row["currency"])).Currency;
+                contentBlock.currency = row["currency"] as string;// RemotingRef.RefData.GetExchangeData(Convert.ToInt32(row["currency"])).Currency;
 
                 contentBlock.mem_winloss = Formater.DecFormat(row[prefix + "member_winlost"], 2);
                 contentBlock.mem_comm = Formater.DecFormat(row[prefix + "member_comm"], 2);
@@ -161,7 +161,7 @@ namespace Fanex.Age.UI.Reports
         public static void RenderTotalBaseOnCurrency(DataTable dtb, Consolidated_Template tpl)
         {
             Consolidated_ExcelContents_ContentTotalBaseCurrency_Block tplBlock = new Consolidated_ExcelContents_ContentTotalBaseCurrency_Block();
-            tplBlock.basecurrency = Resources.Lang.basecurrency + " " + RemotingRef.RefData.GetExchangeData(2).Currency;
+            tplBlock.basecurrency = Resources.Lang.basecurrency + " ";// + RemotingRef.RefData.GetExchangeData(2).Currency;
             tplBlock.turnover = Formater.DecFormat(dtb.Compute("SUM(rmturnover)", ""), 2);
             tplBlock.mem_winloss = Formater.DecFormat(dtb.Compute("SUM(rmmember_winlost)", ""), 2);
             tplBlock.mem_comm = Formater.DecFormat(dtb.Compute("SUM(rmmember_comm)", ""), 2);
@@ -180,7 +180,7 @@ namespace Fanex.Age.UI.Reports
             tplBlock.betcount = Formater.DecFormat(dtb.Compute("SUM(betcount)", ""), 0);
             tpl.ExcelContents.ContentTotalBaseCurrency.Append(tplBlock);
 
-            tplBlock.basecurrency = Resources.Lang.basecurrency + " " + RemotingRef.RefData.GetExchangeData(3).Currency;
+            tplBlock.basecurrency = Resources.Lang.basecurrency + " ";// + RemotingRef.RefData.GetExchangeData(3).Currency;
             tplBlock.turnover = Formater.DecFormat(dtb.Compute("SUM(usdturnover)", ""), 2);
             tplBlock.mem_winloss = Formater.DecFormat(dtb.Compute("SUM(usdmember_winlost)", ""), 2);
             tplBlock.mem_comm = Formater.DecFormat(dtb.Compute("SUM(usdmember_comm)", ""), 2);
@@ -247,7 +247,7 @@ namespace Fanex.Age.UI.Reports
                 else
                     tplBlock.RemoveTd = null;
 
-                tplBlock.currency = RemotingRef.RefData.GetExchangeData(Convert.ToInt32(grp.currency)).Currency;
+                tplBlock.currency = grp.currency.ToString();// RemotingRef.RefData.GetExchangeData(Convert.ToInt32(grp.currency)).Currency;
                 tplBlock.turnover = Formater.DecFormat(grp.totalTurnOver, 2);
 
                 tplBlock.mem_winloss = Formater.DecFormat(grp.totalMemberWinlost, 2);
@@ -306,7 +306,7 @@ namespace Fanex.Age.UI.Reports
                 else
                     tplBlock.RemoveTd = null;
 
-                tplBlock.currency = RemotingRef.RefData.GetExchangeData(Convert.ToInt32(grp.currency)).Currency;
+                tplBlock.currency = grp.currency.ToString();// RemotingRef.RefData.GetExchangeData(Convert.ToInt32(grp.currency)).Currency;
                 tplBlock.turnover = Formater.DecFormat(grp.totalTurnOver, 2);
 
                 tplBlock.mem_winloss = Formater.DecFormat(grp.totalMemberWinlost, 2);

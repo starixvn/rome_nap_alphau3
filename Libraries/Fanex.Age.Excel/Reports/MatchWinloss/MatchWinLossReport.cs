@@ -82,7 +82,7 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                     string eventName = string.Empty;
                     if ((item.BetTypeId > 50 && item.BetTypeId < 57) || (item.BetTypeId > 60 && item.BetTypeId < 67)) // Finance
                     {
-                        eventName = CacheRef.GetFncIndexName(item.HomeId);
+                        eventName = string.Empty;// CacheRef.GetFncIndexName(item.HomeId);
                     }
                     else if (item.BetTypeId > 80 && item.BetTypeId < 121) // Number Game
                     {

@@ -73,7 +73,7 @@ namespace Fanex.Razorbill.Report.Services.Consolidation.Impl
 
                     res.Level = ReportService.GetLevelTitle(res.LevelID);
 
-                    res.CurrencyName = RemotingRef.RefData.GetExchangeData(res.CurrencyID).Currency;
+                    res.CurrencyName = res.CurrencyID.ToString(); // RemotingRef.RefData.GetExchangeData(res.CurrencyID).Currency;
 
                     if (criteria.ReportType == 1)
                     {

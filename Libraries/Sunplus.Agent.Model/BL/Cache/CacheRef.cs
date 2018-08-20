@@ -3,40 +3,19 @@ using System.Configuration;
 
 namespace Sunplus.Agent.Model.BL.Cache
 {
-    using System;
+    using Fanex.Caching;
+    using Fanex.RemotingRef;
+    using Sunplus.Agent.Model.Services;
     using System.Collections.Generic;
     using System.Reflection;
     using System.Threading;
 
-    using Fanex.Caching;
-    using RemotingRef;
-
-    using Sunplus.Agent.Model.Services;
-
     public class CacheRef
     {
-        private static Type refDataType = typeof(RefData);
         private static Dictionary<string, MethodInfo> methodInfos = new Dictionary<string, MethodInfo>();
         private static ICache velocityCache = CacheService.CreateInstance(CacheType.MemoryCache);
-
-        public static string CurrentTWLanguage
-        {
-            get 
-            {
-                switch (Thread.CurrentThread.CurrentCulture.Name)
-                {
-                    case "en-US": return "en";
-                    case "zh-TW": return "ch"; // Traditional
-                    case "zh-CN": return "cs"; // Simplified
-                    case "ja-JP": return "jp";
-                    case "th-TH": return "th"; // Thai
-                    case "ko-KR": return "ko"; // Korean
-                    case "vi-VN": return "vn"; // Vietnamese
-                    default: return "en";
-                }
-            }
-        }
-
+        private static IRemotingRefService remotingRefService = new RemotingRefService();
+        
         private static bool IsWebService
         {
             get
@@ -61,95 +40,85 @@ namespace Sunplus.Agent.Model.BL.Cache
 
             if (IsWebService)
             {
-                return Invoke("GetBetTypeName", new object[] { bettypeId.ToString(), CurrentTWLanguage, string.Empty, resourceId});
+                return Invoke("GetBetTypeName", new object[] { bettypeId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty, resourceId});
             }
 
-            return RefData.GetBetTypeName(bettypeId.ToString(), CurrentTWLanguage, string.Empty, resourceId);
+            return remotingRefService.GetBetTypeName(bettypeId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty, resourceId);
         }
 
         public static string GetSportName(object sportId)
         {
             if (IsWebService)
             {
-                return Invoke("GetSportName", new object[] { sportId.ToString(), CurrentTWLanguage, string.Empty });
+                return Invoke("GetSportName", new object[] { sportId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty });
             }
 
-            return RefData.GetSportName(sportId.ToString(), CurrentTWLanguage, string.Empty);
+            return remotingRefService.GetSportName(sportId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty);
         }
 
         public static string GetTeamName(object teamId)
         {
             if (IsWebService)
             {
-                return Invoke("GetTeamName", new object[] { teamId.ToString(), CurrentTWLanguage, string.Empty });
+                return Invoke("GetTeamName", new object[] { teamId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty });
             }
 
-            return RefData.GetTeamName(teamId.ToString(), CurrentTWLanguage, string.Empty);
+            return remotingRefService.GetTeamName(teamId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty);
         }
 
         public static string GetRouletteBetItem(object itemId)
         {
             if (IsWebService)
             {
-                return Invoke("GetRouletteBetItem", new object[] { itemId.ToString(), CurrentTWLanguage, string.Empty });
+                return Invoke("GetRouletteBetItem", new object[] { itemId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty });
             }
 
-            return RefData.GetRouletteBetItem(itemId.ToString(), CurrentTWLanguage, string.Empty);
+            return remotingRefService.GetRouletteBetItem(itemId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty);
         }
 
         public static string GetCasinoBetItem(object betStatusId)
         {
             if (IsWebService)
             {
-                return Invoke("GetCasinoBetItem", new object[] { betStatusId.ToString(), CurrentTWLanguage, string.Empty });
+                return Invoke("GetCasinoBetItem", new object[] { betStatusId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty });
             }
 
-            return RefData.GetCasinoBetItem(betStatusId.ToString(), CurrentTWLanguage, string.Empty);
+            return remotingRefService.GetCasinoBetItem(betStatusId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty);
         }
 
         public static string GetLeagueName(object leagueId)
         {
             if (IsWebService)
             {
-                return Invoke("GetLeagueName", new object[] { leagueId.ToString(), CurrentTWLanguage, string.Empty });
+                return Invoke("GetLeagueName", new object[] { leagueId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty });
             }
 
-            return RefData.GetLeagueName(leagueId.ToString(), CurrentTWLanguage, string.Empty);
-        }
-
-        public static string GetFncIndexName(object indexId)
-        {
-            if (IsWebService)
-            {
-                return Invoke("GetFncIndexName", new object[] { indexId.ToString(), CurrentTWLanguage });
-            }
-
-            return RefData.GetFncIndexName(indexId.ToString(), CurrentTWLanguage);
+            return remotingRefService.GetLeagueName(leagueId.ToString(), Thread.CurrentThread.CurrentCulture.Name, string.Empty);
         }
 
         public static string GetHorseTeamName(object codeId)
         {
             if (IsWebService)
             {
-                return Invoke("GetHorseTeamName", new object[] { codeId.ToString(), CurrentTWLanguage });
+                return Invoke("GetHorseTeamName", new object[] { codeId.ToString(), Thread.CurrentThread.CurrentCulture.Name });
             }
 
-            return RefData.GetHorseTeamName(codeId.ToString(), CurrentTWLanguage);
+            return remotingRefService.GetHorseTeamName(codeId.ToString(), Thread.CurrentThread.CurrentCulture.Name);
         }
 
         public static string GetOddsTypeName(object oddsTypeId)
         {
             if (IsWebService)
             {
-                return Invoke("GetOddsTypeName", new object[] { oddsTypeId.ToString(), CurrentTWLanguage });
+                return Invoke("GetOddsTypeName", new object[] { oddsTypeId.ToString(), Thread.CurrentThread.CurrentCulture.Name });
             }
 
-            return RefData.GetOddsTypeName(oddsTypeId.ToString(), CurrentTWLanguage);
+            return remotingRefService.GetOddsTypeName(oddsTypeId.ToString(), Thread.CurrentThread.CurrentCulture.Name);
         }
 
         public static string GetProductName(int productId, string defaultName = "")
         {
-            return RefData.GetResourceDataByRefIdAndResourceId("Product", productId.ToString(), CurrentTWLanguage, defaultName);
+            return remotingRefService.GetResourceDataByRefIdAndResourceId("Product", productId.ToString(), Thread.CurrentThread.CurrentCulture.Name, defaultName);
         }
 
         private static string Invoke(string functionName, object[] parameters)

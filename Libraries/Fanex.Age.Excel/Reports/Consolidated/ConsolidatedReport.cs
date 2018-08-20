@@ -108,7 +108,7 @@ namespace Fanex.Age.Excel.Reports.Consolidated
                                     breakdownText,
                                     Reports.CommonLibs.GetLevelTitle(item.RoleId),
                                     item.Username,
-                                    RemotingRef.RefData.GetExchangeData(item.Currency).Currency,
+                                    item.Currency.ToString(),//RemotingRef.RefData.GetExchangeData(item.Currency).Currency,
                                     item.RM_Turnover,
                                     item.RM_MemberWinloss,
                                     item.RM_MemberComm,
@@ -128,7 +128,7 @@ namespace Fanex.Age.Excel.Reports.Consolidated
                                     breakdownText,
                                     Reports.CommonLibs.GetLevelTitle(item.RoleId),
                                     item.Username,
-                                    RemotingRef.RefData.GetExchangeData(item.Currency).Currency,
+                                    item.Currency.ToString(),// RemotingRef.RefData.GetExchangeData(item.Currency).Currency,
                                     item.USD_Turnover,
                                     item.USD_MemberWinloss,
                                     item.USD_MemberComm,
@@ -148,7 +148,7 @@ namespace Fanex.Age.Excel.Reports.Consolidated
                                     breakdownText,
                                     Reports.CommonLibs.GetLevelTitle(item.RoleId),
                                     item.Username,
-                                    RemotingRef.RefData.GetExchangeData(item.Currency).Currency,
+                                    item.Currency.ToString(), // RemotingRef.RefData.GetExchangeData(item.Currency).Currency,
                                     item.Turnover,
                                     item.MemberWinloss,
                                     item.MemberComm,
@@ -252,7 +252,7 @@ namespace Fanex.Age.Excel.Reports.Consolidated
                             Resources.Lang.total,
                             "",
                             "",
-                            RemotingRef.RefData.GetExchangeData(item.Currency).Currency,
+                            item.Currency.ToString(), // RemotingRef.RefData.GetExchangeData(item.Currency).Currency,
                             item.TotalTurnover,
                             item.TotalMemberWinloss,
                             item.TotalMemberComm,
@@ -279,7 +279,7 @@ namespace Fanex.Age.Excel.Reports.Consolidated
                 double total_RM_OwnerTotal = _builder.Data.Sum(p => p.RM_OwnerTotal);
                 resultSheet.GetRow(rowId).WriteCells(
                     colId,
-                    Resources.Lang.basecurrency + " " + RemotingRef.RefData.GetExchangeData(2).Currency,
+                    Resources.Lang.basecurrency + " " + "2", // RemotingRef.RefData.GetExchangeData(2).Currency,
                     "",
                     "",
                     "",
@@ -302,7 +302,7 @@ namespace Fanex.Age.Excel.Reports.Consolidated
                 double total_USD_OwnerTotal = _builder.Data.Sum(p => p.USD_OwnerTotal);
                 resultSheet.GetRow(rowId).WriteCells(
                     colId,
-                    Resources.Lang.basecurrency + " " + RemotingRef.RefData.GetExchangeData(3).Currency,
+                    Resources.Lang.basecurrency + " " + "3", // RemotingRef.RefData.GetExchangeData(3).Currency,
                     "",
                     "",
                     "",
