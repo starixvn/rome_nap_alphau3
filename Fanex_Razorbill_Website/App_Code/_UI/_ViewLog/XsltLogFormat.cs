@@ -193,7 +193,7 @@ namespace Sunplus.Agent.UI._ViewLog
         {
             return string.Format("{0} {1}",
                 getResource("disabled"),
-                RemotingRef.RefData.GetBetTypeName(disableBettype, CacheRef.GetTWLang(CurrentUserSession.Language)));
+                CacheRef.GetBettype(disableBettype));
         }
 
         #endregion

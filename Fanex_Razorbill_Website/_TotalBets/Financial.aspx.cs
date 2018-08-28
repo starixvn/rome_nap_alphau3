@@ -80,7 +80,7 @@ namespace Fanex.Age.UI.TotalBets
                     if (i == 0 || currentIndexId != indexId)
                     {
                         stockBlock.BetType.Clear();
-                        stockBlock.IndexName = Sunplus.Agent.Model.BL.Cache.CacheRef.GetFncIndexName(indexId);
+                        stockBlock.IndexName = indexId.ToString();
                         // Default value for each bettype
                         markBetType = new int[6] { 0, 0, 0, 0, 0, 0 };
                         for (int j = 0; j < betTypeBlocks.Length; j++)

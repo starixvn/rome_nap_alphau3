@@ -233,7 +233,7 @@ public class UpdateCSSetting : IHttpHandler, IReadOnlySessionState
             return;
         }
         else
-        {   
+        {
             if (request["insert"] != "true") // Not in new customer case
             {
                 context.Response.Write("<script> parent.showErrMsg('" + Resources.Lang.updatesuccessfull + "', 1); </script>");
@@ -478,7 +478,7 @@ public class UpdateCSSetting : IHttpHandler, IReadOnlySessionState
             #region Update Customer Status and BetSetting
             var isSync = true;
             //bool isDisableCasino = !(request[Globals.ID_CHECKBOX_DISABLEDCASINO] != null || request["insert"] == "true" || isInserting);
-            bool isDisableCasino = request[Globals.ID_CHECKBOX_DISABLEDCASINO] == null ? true : false;                        
+            bool isDisableCasino = request[Globals.ID_CHECKBOX_DISABLEDCASINO] == null ? true : false;
             bool isUpdateDownline = isDisableCasino || (request[Globals.ID_CHECKBOX_DISABLEDCASINO_DL] != null);
 
             if (UserSession.Current.IsCasinoDisabled)
@@ -513,39 +513,39 @@ public class UpdateCSSetting : IHttpHandler, IReadOnlySessionState
             }
             else if (!isMultiple || (isMultiple && currentStatus == "0")) // 0 = not sync yet
             {
-                isSync = customer.InsertCustSetting(
-                     Globals.CASINO_GROUP1,
-                     custId,
-                     currentCustomer.UserName,
-                     currentCustomer.UserName2,
-                     currentCustomer.FirstName,
-                     currentCustomer.LastName,
-                     currentCustomer.UserPwd,
-                     currentCustomer.Phone,
-                     currentCustomer.MobilePhone,
-                     currentCustomer.Currency,
-                     currentCustomer.Fax,
-                     currentCustomer.Closed,
-                     currentCustomer.Suspend,
-                     false, // Default is false, later upd UpdateCustEnablePT
-                     maxWin,
-                     maxLose,
-                     isMaxTransfer,
-                     maxTransfer, // Max transfer credit
-                     currentCustomer.SIBCCustID, // sid
-                     currentCustomer.MIBCCustID, // mid
-                     currentCustomer.AIBCCustID, // aid
-                     ptByGameType,
-                     (UserSession.Current.RoleId - 1).ToString(),
-                     DateTime.Now,
-                     Sunplus.Agent.Model.Common.AgentIPFormat.GetClientIP(),
-                     UserSession.Current.CustId, 
-                     UserSession.Current.SubAccId == 0 ? UserSession.Current.UserName : UserSession.Current.SubUserName, 
-                     2, 
-                     autoReset,                   
-					 false,
-					 false
-                     );
+                //          isSync = customer.InsertCustSetting(
+                //               Globals.CASINO_GROUP1,
+                //               custId,
+                //               currentCustomer.UserName,
+                //               currentCustomer.UserName2,
+                //               currentCustomer.FirstName,
+                //               currentCustomer.LastName,
+                //               currentCustomer.UserPwd,
+                //               currentCustomer.Phone,
+                //               currentCustomer.MobilePhone,
+                //               currentCustomer.Currency,
+                //               currentCustomer.Fax,
+                //               currentCustomer.Closed,
+                //               currentCustomer.Suspend,
+                //               false, // Default is false, later upd UpdateCustEnablePT
+                //               maxWin,
+                //               maxLose,
+                //               isMaxTransfer,
+                //               maxTransfer, // Max transfer credit
+                //               currentCustomer.SIBCCustID, // sid
+                //               currentCustomer.MIBCCustID, // mid
+                //               currentCustomer.AIBCCustID, // aid
+                //               ptByGameType,
+                //               (UserSession.Current.RoleId - 1).ToString(),
+                //               DateTime.Now,
+                //               Sunplus.Agent.Model.Common.AgentIPFormat.GetClientIP(),
+                //               UserSession.Current.CustId, 
+                //               UserSession.Current.SubAccId == 0 ? UserSession.Current.UserName : UserSession.Current.SubUserName, 
+                //               2, 
+                //               autoReset,                   
+                //false,
+                //false
+                //               );
 
                 if (!isSync)
                 {

@@ -632,7 +632,7 @@ namespace Fanex.Age.UI.Reports.MatchWinloss
                 if (!String.IsNullOrEmpty(leagueName)) leagueNameTitle += "-" + leagueName;
 
                 //string indexName = CacheRef.GetTeamName(r["homeid"]);
-                string indexName = CacheRef.GetFncIndexName(dr["homeid"]);
+                string indexName = dr["homeid"].ToString();
                 String title = leagueName + indexName;
 
                 if (currentTitle != title)
