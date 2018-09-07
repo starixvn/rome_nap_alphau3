@@ -14,6 +14,10 @@
 <%@ Import Namespace="Sunplus.Agent.Model.BL.Authorization" %>
 <%@ Import Namespace="CaptchaMvc.Infrastructure" %>
 <%@ Import Namespace="CaptchaMvc.Interface" %>
+<%@ Import Namespace="Fanex.BetList.Core" %>
+<%@ Import Namespace="Fanex.BetList.Core.RemotingRef" %>
+<%@ Import Namespace="Fanex.Result.Core.Base" %>
+<%@ Import Namespace="Fanex.Result.Core.RemotingRef" %>
 <script RunAt="server">
 
     public static void RegisterRoutes(RouteCollection routes)
@@ -35,7 +39,12 @@
         AreaRegistration.RegisterAllAreas();
         RegisterRoutes(RouteTable.Routes);
         RegisterGlobalFilters(GlobalFilters.Filters);
-
+        Fanex.RemotingRef.RefDataTypeContainer
+            .ConnectTo(new Uri(ConfigurationManager.AppSettings["Fanex.RemotingRef.Service"]))
+            .FromApplication("Alpha U3")
+            .SupportOnlyDefaultLanguage();
+        BetListManager.RegisterRemotingRef(new Fanex.BetList.Core.RemotingRef.CacheRef());
+        ResultCoreManager.RegisterRefDataHelper(new RefDataHelper());
 
     }
 

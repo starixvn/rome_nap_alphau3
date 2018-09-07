@@ -151,7 +151,7 @@ namespace Fanex.Age.UI.Reports.MatchWinloss
                     //if (bettype == 51 || bettype == 52)
                     if ((betType > 50 && betType < 57) || (betType > 60 && betType < 67)) // Finance
                     {
-                        eventName = Sunplus.Agent.Model.BL.Cache.CacheRef.GetFncIndexName(dr["homeid"]);
+                        eventName = dr["homeid"].ToString();
                     }
                     else if (betType > 80 && betType < 121) // Number Game
                     {

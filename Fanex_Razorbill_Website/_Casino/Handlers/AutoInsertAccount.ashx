@@ -57,35 +57,35 @@ namespace Sunplus.Agent.UI._Casino
 
             try
             {
-				bool enableBonus = false;
-				bool enableJackpot = false;
-                isSuccess = customer.AutoInsertAccount(
-                    CasinoNo,
-                    custInfo.IBCCustID,
-                    custInfo.UserName,
-                    custInfo.UserName2,
-                    custInfo.FirstName,
-                    custInfo.LastName,
-                    custInfo.UserPwd,
-                    custInfo.Phone,
-                    custInfo.MobilePhone,
-                    custInfo.Currency,
-                    custInfo.Fax,
-                    custInfo.Closed,
-                    custInfo.Suspend,
-                    custInfo.IsEnablePT,
-                    custInfo.SIBCCustID,
-                    custInfo.MIBCCustID,
-                    custInfo.AIBCCustID,
-                    custInfo.RoleId.ToString(),
-					enableBonus,
-					enableJackpot,
-                    DateTime.Now,
-                    Sunplus.Agent.Model.Common.AgentIPFormat.GetClientIP(),
-                    CurrentUserSession.CustId,
-                    CurrentUserSession.UserName,
-                    FromSystem
-                    );
+                bool enableBonus = false;
+                bool enableJackpot = false;
+                //           isSuccess = customer.AutoInsertAccount(
+                //               CasinoNo,
+                //               custInfo.IBCCustID,
+                //               custInfo.UserName,
+                //               custInfo.UserName2,
+                //               custInfo.FirstName,
+                //               custInfo.LastName,
+                //               custInfo.UserPwd,
+                //               custInfo.Phone,
+                //               custInfo.MobilePhone,
+                //               custInfo.Currency,
+                //               custInfo.Fax,
+                //               custInfo.Closed,
+                //               custInfo.Suspend,
+                //               custInfo.IsEnablePT,
+                //               custInfo.SIBCCustID,
+                //               custInfo.MIBCCustID,
+                //               custInfo.AIBCCustID,
+                //               custInfo.RoleId.ToString(),
+                //enableBonus,
+                //enableJackpot,
+                //               DateTime.Now,
+                //               Sunplus.Agent.Model.Common.AgentIPFormat.GetClientIP(),
+                //               CurrentUserSession.CustId,
+                //               CurrentUserSession.UserName,
+                //               FromSystem
+                //               );
             }
             catch (Exception e)
             {

@@ -157,7 +157,7 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                                     {
                                         currentTitle += "-" + leagueName;
                                     }
-                                    string indexName = string.Empty;// Sunplus.Agent.Model.BL.Cache.CacheRef.GetFncIndexName(firstItem.HomeId);
+                                    string indexName = firstItem.HomeId.ToString();// Sunplus.Agent.Model.BL.Cache.CacheRef.GetFncIndexName(firstItem.HomeId);
 
                                     if (!currentTitle.Equals(oldTitle))
                                     {
