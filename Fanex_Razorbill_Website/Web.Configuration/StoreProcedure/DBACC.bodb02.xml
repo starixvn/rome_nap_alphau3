@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Functions>
   <Function Name="Customer Status">
-    <Setting Key="Acc_CustomerSelStatus" SpName="U3_CustomerSelStatus" DbName="DBACC.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Acc_CustomerSelStatus" SpName="U3_CustomerSelStatus_UAT4" DbName="DBACC.bodb02.BODBDownlineNetView" Plain="0" />
   </Function>
   <Function Name="Lucky 3 Bet List Detail">
     <Setting Key="Acc_BetList_Lucky3_Detail" SpName="Acc_BetList_Lucky3_Detail_xtest" DbName="DBACC.bodb02.BODBDownlineNetView" Plain="0">
