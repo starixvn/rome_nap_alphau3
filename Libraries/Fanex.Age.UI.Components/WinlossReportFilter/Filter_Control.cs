@@ -25,6 +25,7 @@ namespace Fanex.Age.UI.Components
         public const string SHOW_PROGRESSIVE_BONUS = "showprogressivebonus";
         public const string SHOW_KENO = "showkeno";
         public const string SHOW_LUCKY3 = "showlk3";
+        public const string SHOW_HAPPY5 = "showhappy5";
 
         private bool _isShowed = true;
         private DateTime _dateFrom;

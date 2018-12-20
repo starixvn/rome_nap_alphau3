@@ -64,6 +64,7 @@ namespace Sunplus.Agent.Model.BL.Definitions
         Lucky3 = 160,
         NumberGame = 161,
         LiveCasino = 162,
+        Happy5 = 164,
         VirtualSports = 180, // Virtual Soccer
         VirtualHorsesRacing = 181,
         VirtualGreyhounds = 182,

@@ -249,6 +249,10 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                                             leagueName = lucky3Name + " - " + leagueName;
                                             matchName = string.Format("{0} {1} {2}", lucky3Name, "Game No", firstItem.MatchCode);
                                         }
+                                        else if (firstItem.BetType >= 8101 && firstItem.BetType <= 8120)
+                                        {
+                                            matchName = "No. " + firstItem.MatchCode;
+                                        }
                                         else
                                         {
                                             var homeName = Sunplus.Agent.Model.BL.Cache.CacheRef.GetTeamName(firstItem.HomeId) + (firstItem.IsNeutral ? Resources.Lang.IsNeutral : string.Empty);

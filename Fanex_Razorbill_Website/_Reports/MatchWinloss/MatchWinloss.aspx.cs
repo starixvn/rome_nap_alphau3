@@ -157,6 +157,10 @@ namespace Fanex.Age.UI.Reports.MatchWinloss
                     {
                         eventName = Resources.Lang.numbergameno + " " + dr["matchcode"];
                     }
+                    else if (betType >= 8101 && betType <= 8120) // Happy 5
+                    {
+                        eventName = "No." + " " + dr["matchcode"];
+                    }
                     else if (1600 <= betType && betType <= 1610) // Lucky 3
                     {
                         eventName = string.Format("{0} {1} {2}", GetLucky3Name(), Resources.Lang.GameNo, dr["matchcode"]);
