@@ -90,7 +90,7 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                     }
                     else if (item.BetTypeId >= 8101 && item.BetTypeId <= 8120) // happy 5
                     {
-                        eventName = "No." + " " + item.MatchCode;
+                        eventName = "Happy 5 No." + " " + item.MatchCode;
                     }
                     else if (1600 <= item.BetTypeId && item.BetTypeId <= 1610) // Lucky 3
                     {
