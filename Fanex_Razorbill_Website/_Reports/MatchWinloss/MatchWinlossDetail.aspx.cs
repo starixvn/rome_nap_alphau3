@@ -662,6 +662,24 @@ namespace Fanex.Age.UI.Reports.MatchWinloss
                     matchBlock.League = leagueNameTitle;
                 }
             }
+            else if (betType >= 8101 && betType <= 8120) // happy 5
+            {
+                string leagueNameTitle = "Happy 5";
+                leagueName = _exportToExcel ? leagueName : Formater.TruncateWithTip(leagueName, 23).Trim();
+                if (!String.IsNullOrEmpty(leagueName)) leagueNameTitle += "-" + leagueName;
+
+                string gameId = "No." + " " + dr["matchcode"].ToString();
+                String title = leagueName + gameId;
+
+                if (currentTitle != title)
+                {
+                    isInsertTotal = true;
+                    currentTitle = title;
+                    currentMatchId = matchId;
+                    matchBlock.MatchName.MatchName = gameId;
+                    matchBlock.League = leagueNameTitle;
+                }
+            }
             else if (1600 <= betType && betType <= 1610) // Lucky 3
             {
                 if (currentMatchId == 0 || currentMatchId != matchId) // new match
