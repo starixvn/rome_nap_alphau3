@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module", "Module", "{0518A800-34CB-4B4B-A939-719A3BC74E25}"
 EndProject
@@ -90,10 +90,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Razorbill.Module.RnGCasino", "Modules\Fanex.Razorbill.Module.RnGCasino\Fanex.Razorbill.Module.RnGCasino.csproj", "{D28D1620-2217-4F4F-A477-1B1CC16F841F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Razorbill.Module.Company", "Fanex.Razorbill.Module.Company\Fanex.Razorbill.Module.Company.csproj", "{F6F0FBDE-43F4-4B6C-BA8D-3B26F6FAF701}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BF934AF4-12AC-43A0-9BB9-E8B8B31C6C48}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Report.Tests", "Report.Tests\Report.Tests.csproj", "{23BAAD70-B1E9-4A00-9D51-1B8FA90057A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -224,10 +220,6 @@ Global
 		{F6F0FBDE-43F4-4B6C-BA8D-3B26F6FAF701}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6F0FBDE-43F4-4B6C-BA8D-3B26F6FAF701}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6F0FBDE-43F4-4B6C-BA8D-3B26F6FAF701}.Release|Any CPU.Build.0 = Release|Any CPU
-		{23BAAD70-B1E9-4A00-9D51-1B8FA90057A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23BAAD70-B1E9-4A00-9D51-1B8FA90057A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23BAAD70-B1E9-4A00-9D51-1B8FA90057A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23BAAD70-B1E9-4A00-9D51-1B8FA90057A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -263,7 +255,9 @@ Global
 		{B16D7197-46C8-4CF2-BEB2-5AF5BEA3E796} = {0518A800-34CB-4B4B-A939-719A3BC74E25}
 		{D28D1620-2217-4F4F-A477-1B1CC16F841F} = {0518A800-34CB-4B4B-A939-719A3BC74E25}
 		{F6F0FBDE-43F4-4B6C-BA8D-3B26F6FAF701} = {0518A800-34CB-4B4B-A939-719A3BC74E25}
-		{23BAAD70-B1E9-4A00-9D51-1B8FA90057A4} = {BF934AF4-12AC-43A0-9BB9-E8B8B31C6C48}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E9612D2-A0CC-4C71-950D-DE929E7ABB04}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Fanex.Razorbill.vsmdi
