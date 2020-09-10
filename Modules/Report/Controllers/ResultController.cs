@@ -139,10 +139,8 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             _resultHandlers.Add((int)SportType.HorseRacing, this.RenderHorseRacing);
             _resultHandlers.Add((int)SportType.Greyhound, this.RenderHorseRacing);
             _resultHandlers.Add((int)SportType.Harness, this.RenderHorseRacing);
-            _resultHandlers.Add((int)SportType.Lucky3, this.RenderLucky3);
             _resultHandlers.Add((int)SportType.NumberGame, this.RenderNumberGame);
             _resultHandlers.Add((int)SportType.Happy5, this.RenderHappy5);
-            _resultHandlers.Add((int)SportType.LiveCasino, this.RenderLiveCasino);
             _resultHandlers.Add((int)SportType.VirtualHorsesRacing, this.RenderVirtualHorsesRacing);
             _resultHandlers.Add((int)SportType.VirtualGreyhounds, this.RenderVirtualHorsesRacing);
             _resultHandlers.Add((int)SportType.VirtualMotors, this.RenderVirtualHorsesRacing);
@@ -189,7 +187,6 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             _exportExcelHandlers.Add((int)SportType.HorseRacing, this.ExportRacing);
             _exportExcelHandlers.Add((int)SportType.Greyhound, this.ExportRacing);
             _exportExcelHandlers.Add((int)SportType.Harness, this.ExportRacing);
-            _exportExcelHandlers.Add((int)SportType.Lucky3, this.ExportLucky3);
             _exportExcelHandlers.Add((int)SportType.NumberGame, this.ExportNumberGame);
             _exportExcelHandlers.Add((int)SportType.Happy5, this.ExportHappy5);
             _exportExcelHandlers.Add((int)SportType.VirtualHorsesRacing, this.ExportVirtualRacing);
@@ -812,24 +809,6 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         }
 
         /// <summary>
-        /// Render LiveCasino.
-        /// </summary>
-        /// <param name="resultRequest">The excel block.</param>
-        private void RenderLiveCasino(ResultRequest resultRequest)
-        {
-            string result = new LiveCasinoPopupResultService().GetResult(resultRequest.MatchId, resultRequest.BetType, resultRequest.LeagueId.ToString());
-            ViewBag.Result = result;
-        }
-
-        private void RenderLucky3(ResultRequest resultRequest)
-        {
-            string result = resultRequest.MatchId > 0 ?
-                new Lucky3PopupResultService().GetResult(resultRequest.MatchId) :
-                new Lucky3ResultService().GetResult(resultRequest.FromDate.Value, resultRequest.LeagueId, resultRequest.SportId);
-            ViewBag.Result = result;
-        }
-
-        /// <summary>
         /// Render number result.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
@@ -847,16 +826,6 @@ namespace Fanex.Razorbill.Module.Report.Controllers
                 new Happy5PopupResultService().GetResult(resultRequest.MatchId) :
                 new Happy5ResultService().GetResult(resultRequest.FromDate.Value, resultRequest.LeagueId, resultRequest.SportId);
             ViewBag.Result = result;
-        }
-
-        private ActionResult ExportLucky3(ResultRequest resultRequest)
-        {
-            MemoryStream excelResult = new Lucky3ResultService().ExportExcel(
-                resultRequest.FromDate.Value,
-                resultRequest.SportId,
-                resultRequest.LeagueId,
-                Server.MapPath(@"~/App_Data/Fanex.Result/"));
-            return File(excelResult.ToArray(), "application/vnd.ms-excel", "Result.xls");
         }
 
         private ActionResult ExportNumberGame(ResultRequest resultRequest)
