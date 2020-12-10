@@ -106,7 +106,7 @@ namespace Fanex.Age.UI.Reports.BetList
                            .AddTrans(ticket, ticketHelper)
                            .AddChoice(ticket, ticketHelper, ticketData)
                            .AddOdds(ticket, ticketData, funcGetOddsTypeName)
-                           .AddStake(ticket)
+                           .AddStake(ticket, ticketHelper)
                            .AddStatus(ticket, ticketHelper, ticketData, isAdminCanViewVNIP);
                 }
 
@@ -150,7 +150,7 @@ namespace Fanex.Age.UI.Reports.BetList
                            .AddTrans(ticket, "<td class='c'>", "</td>")
                            .AddChoice(ticket, ticketHelper, ticketData, "<td class='r bl_evt'><div>", "</div></td>", false)
                            .AddOdds(ticket, ticketData, "<td class='bl_underdog'>", "</td>", funcGetOddsTypeName)
-                           .AddStake(ticket, "<td class='bl_underdog'>", "</td>")
+                           .AddStake(ticket, ticketHelper, "<td class='bl_underdog'>", "</td>")
                            .AddStatus(ticket, ticketHelper, ticketData, "<td class='c'>", "</td>", isAdminCanViewVNIP)
                            .Append("</tr>");
 

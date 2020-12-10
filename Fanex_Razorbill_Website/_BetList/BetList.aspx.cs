@@ -243,7 +243,7 @@ namespace Sunplus.Agent.UI._BetList
                     builder
                         .AddChoice(ticket, ticketHelper, ticketData)
                         .AddOdds(ticket, ticketData, funcGetOddsTypeName)
-                        .AddStake(ticket);
+                        .AddStake(ticket, ticketHelper);
 
                     if (isShowWinLost)
                     {
@@ -335,7 +335,7 @@ namespace Sunplus.Agent.UI._BetList
                             .AddTrans(ticket, "<td class='c nonbreak'>", "</td>")
                             .AddChoice(ticket, ticketHelper, ticketData, "<td class='r bl_evt'><div>", "</div></td>", isShowScoremap)
                             .AddOdds(ticket, ticketData, "<td class='bl_underdog nonbreak'>", "</td>", funcGetOddsTypeName)
-                            .AddStake(ticket, "<td class='bl_underdog'>", "</td>");
+                            .AddStake(ticket, ticketHelper, "<td class='bl_underdog'>", "</td>");
 
                     if (isShowWinLost)
                     {
