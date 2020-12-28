@@ -215,7 +215,7 @@ namespace Fanex.Age.UI.Reports.BetList
                     .AddTrans(ticket, "<td class='c nonbreak'>", "</td>")
                     .AddChoice(ticket, ticketHelper, ticketData, "<td class='r bl_evt'>", "</td>", isShowScoremap)
                     .AddOdds(ticket, ticketData, "<td class='bl_underdog nonbreak'>", "</td>", funcGetOddsTypeName)
-                    .AddStake(ticket, "<td class='bl_underdog'>", "</td>");
+                    .AddStake(ticket, ticketHelper, "<td class='bl_underdog'>", "</td>");
 
                 if (isShowWinLost)
                 {

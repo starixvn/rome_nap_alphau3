@@ -121,7 +121,7 @@ namespace Fanex.Age.UI.Reports.Monitor
                            .AddTrans(ticket, "<td class='c nonbreak'>", "</td>")
                            .AddChoice(ticket, ticketHelper, null, "<td class='r bl_evt'><div>", "</div></td>", isShowScoremap)
                            .AddOdds(ticket, ticketData, "<td class='bl_underdog nonbreak'>", "</td>", funcGetOddsTypeName)
-                           .AddStake(ticket, "<td class='bl_underdog'>", "</td>")
+                           .AddStake(ticket, ticketHelper, "<td class='bl_underdog'>", "</td>")
                            .AddStatus(ticket, ticketHelper, null, "<td class='c'>", "</td>", isAdminCanViewVNIP)
                            .Append("</tr>");
             }

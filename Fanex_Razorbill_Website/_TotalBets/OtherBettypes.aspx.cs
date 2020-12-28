@@ -189,7 +189,7 @@ namespace Fanex.Age.UI.TotalBets
                     builder
                         .AddChoice(ticket, ticketHelper, ticketData)
                         .AddOdds(ticket, ticketData, funcGetOddsTypeName)
-                        .AddStake(ticket);
+                        .AddStake(ticket, ticketHelper);
 
                     if (isShowWinLost)
                     {
