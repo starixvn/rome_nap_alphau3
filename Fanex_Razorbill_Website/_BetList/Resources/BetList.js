@@ -60,7 +60,7 @@ function ViewBetSlip(transid, winlostdate, isrunning, league) {
 }
 
 function ViewResult(matchid, race, bettype, sporttype, refno, username, winlostdate, refno_mixparlay, league, is_outright, betid) {
-	if (bettype == 71 || bettype == 72) { // Casino Games & Casino Progressive Bonus
+    if (bettype == 71 || bettype == 72) { // Casino Games & Casino Progressive Bonus
         ViewCasinoResult(refno, bettype, username);
     } else if (bettype == 73) {
         ViewBingoResult(refno, username);
@@ -68,6 +68,9 @@ function ViewResult(matchid, race, bettype, sporttype, refno, username, winlostd
         ViewMixParlayResult(refno_mixparlay, winlostdate, bettype);
     } else if (bettype == 1000 || bettype == 1001 || bettype == 1002) {  // P2P Game
         ViewP2PResult(refno, bettype, username);
+    }
+    else if (bettype >= 3601 && bettype <= 3610) {
+        getLinkedGamesParam(sporttype, betid, refno);
     } else {
         ViewSportBookResult(matchid, bettype, race, sporttype, league, is_outright, refno, betid);
     }
@@ -106,6 +109,18 @@ function ViewP2PResult(refno, bettype, uname) {
 
     var url = age.GetBaseUrl() + '_BetList/P2P/TableSession.aspx' + params;
     window.location.href = url;
+}
+
+function getLinkedGamesParam(sporttype, custId, transId3rd) {
+    var width = 945;
+    var height = 700;
+    var params = '?sportId=' + sporttype + '&custId=' + custId + '&transId3rd=' + transId3rd;
+    if (parent.ageWnd) {
+        parent.ageWnd.open(age.GetBaseUrl() + 'Result/LinkedGamesResult' + params, '', 50, 100, width, height);
+    }
+    else {
+        ageWnd.open(age.GetBaseUrl() + 'Result/LinkedGamesResult' + params, '', 50, 100, width, height);
+    }
 }
 
 function ViewCasinoResult(refno, bettype, uname) {
@@ -158,7 +173,8 @@ function showMP(transid) {
     var divEvent = $('divEvent_' + transid);
     if (divEvent.style.display == 'none') {
         if (divEvent.innerHTML == "") {
-            ajax.Request(age.GetBaseUrl() + "_BetList/MixParlay/MixParlay.aspx", { method: 'get', parameters: 'transid=' + transid,
+            ajax.Request(age.GetBaseUrl() + "_BetList/MixParlay/MixParlay.aspx", {
+                method: 'get', parameters: 'transid=' + transid,
                 onComplete: function (data) {
                     divEvent.innerHTML = data.responseText;
                     divEvent.style.display = '';
@@ -178,7 +194,8 @@ function showCombMP(transid, orderID) {
     var divEvent = $('divEvent_' + transid + orderID);
     if (divEvent.style.display == 'none') {
         if (divEvent.innerHTML == "") {
-            ajax.Request(age.GetBaseUrl() + "_BetList/MixParlay/CombinationMixParlay.aspx", { method: 'get', parameters: 'transid=' + transid,
+            ajax.Request(age.GetBaseUrl() + "_BetList/MixParlay/CombinationMixParlay.aspx", {
+                method: 'get', parameters: 'transid=' + transid,
                 onComplete: function (data) {
                     divEvent.innerHTML = data.responseText;
                     divEvent.style.display = '';

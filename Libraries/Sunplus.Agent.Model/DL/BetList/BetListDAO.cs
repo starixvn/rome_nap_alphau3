@@ -17,6 +17,20 @@ namespace Sunplus.Agent.Model.DL.BetList
 
     public class BetListDAO : Sunplus.Agent.Model.DL.Base.DAOBase
     {
+
+        public DataTable Age_BetList_ByBetType(int custId, DateTime dateFrom, DateTime dateTo, DateTime moveBetsDate, int roleId, int bettype)
+        {
+            Hashtable parameters = new Hashtable();
+            parameters.Add("custid", custId);
+            parameters.Add("fromdate", dateFrom);
+            parameters.Add("todate", dateTo);
+            parameters.Add("movebetsday", moveBetsDate);
+            parameters.Add("roleid", roleId);
+            parameters.Add("bettype", bettype);
+
+            return ExecSpTable("U3_BetList_SelWinLossByBetType", parameters);
+        }
+
         #region GetWinLossByDateAndMem
         /// <summary>
         /// Report/WinLoss --> BetList

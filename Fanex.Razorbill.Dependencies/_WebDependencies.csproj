@@ -69,8 +69,8 @@
       <HintPath>..\packages\Fanex.BetList.Lucky3.1.1.0\lib\net40\Fanex.BetList.Lucky3.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.BetList.NumberGame, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.BetList.NumberGame.1.3.0\lib\net40\Fanex.BetList.NumberGame.dll</HintPath>
+    <Reference Include="Fanex.BetList.NumberGame, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.BetList.NumberGame.1.4.0\lib\net40\Fanex.BetList.NumberGame.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Common">
       <HintPath>..\_Dependencies\_FanexLib\Fanex.Common.dll</HintPath>
@@ -147,6 +147,9 @@
     <Reference Include="Fanex.Result.Core.Happy5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Result.Core.Happy5.1.0.0.0\lib\net40\Fanex.Result.Core.Happy5.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Result.Core.LinkedGames, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Result.Core.LinkedGames.1.0.0\lib\net40\Fanex.Result.Core.LinkedGames.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Result.Core.LiveCasino, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Result.Core-LiveCasino.1.0.1\lib\net40\Fanex.Result.Core.LiveCasino.dll</HintPath>
@@ -365,6 +368,7 @@
       <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>

@@ -20,7 +20,16 @@ namespace Sunplus.Agent.Model.BL.BetList
     {
         public BetListBO(string netSessionId)
             : base(netSessionId)
-        { 
+        {
+        }
+
+        public DataTable GetWinlossByBetType(DateTime dateFrom, DateTime dateTo, DateTime moveBetDate, int bettype)
+        {
+            var betListDAO = new BetListDAO();
+            int customerId = CurrentSession.CustId;
+            var outright = betListDAO.Age_BetList_ByBetType(customerId, dateFrom, dateTo, moveBetDate, CurrentSession.RoleId, bettype);
+
+            return outright;
         }
 
         #region MixParlay
@@ -255,7 +264,7 @@ namespace Sunplus.Agent.Model.BL.BetList
 
             return deletedBets;
         }
-        
+
         /// <summary>
         /// Get deleted bets
         /// If user is agent or master, set roleid = 1
@@ -381,7 +390,7 @@ namespace Sunplus.Agent.Model.BL.BetList
 
             return runningBets;
         }
-        
+
         /// <summary>
         /// Get Running bets by bettype and match for agent
         /// </summary>
@@ -575,7 +584,7 @@ namespace Sunplus.Agent.Model.BL.BetList
             return mixParlay;
         }
         #endregion
-        
+
         #region Combination MixParlay
 
         /// <summary>
@@ -606,7 +615,7 @@ namespace Sunplus.Agent.Model.BL.BetList
             BetListDAO betListDAO = new BetListDAO();
             string language = CurrentSession.LangKey;
 
-            return betListDAO.Acc_BetlistCombinationParlay_Details(refno, language, transid, betid, custId, ReportsBO.BalanceUpDate, ReportsBO.MoveBetsDate);          
+            return betListDAO.Acc_BetlistCombinationParlay_Details(refno, language, transid, betid, custId, ReportsBO.BalanceUpDate, ReportsBO.MoveBetsDate);
         }
 
         #endregion
@@ -646,12 +655,12 @@ namespace Sunplus.Agent.Model.BL.BetList
             BetListDAO betListDAO = new BetListDAO();
             DataTable betList = new DataTable();
             betList = betListDAO.Age_BetList_SelDeleted(custId, roleId, CurrentSession.LangKey, out outDataTable);
-            return betList;      
+            return betList;
         }
 
         public DataTable GetCancelBetList_UserList(int custId, int roleId)
         {
-            BetListDAO betListDAO = new BetListDAO();            
+            BetListDAO betListDAO = new BetListDAO();
             DataTable dt = null;
 
             if (((int)UserTypes.Agent).Equals(roleId))
@@ -669,7 +678,7 @@ namespace Sunplus.Agent.Model.BL.BetList
 
             return dt;
         }
-        
+
         #endregion
 
         #region WinlossByDateAndMem
