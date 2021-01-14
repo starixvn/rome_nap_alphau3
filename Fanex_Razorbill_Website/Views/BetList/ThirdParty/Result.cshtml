@@ -1,0 +1,18 @@
+﻿@using Fanex.Razorbill.Module.Report.ViewModels.Result
+@model ThirdPartyResultViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" rel="Stylesheet"
+          href="@Url.Content("~/Views/BetList/Style/ThirdParty.css")" />
+    <title>@Model.Title</title>
+</head>
+<body>
+    <div class="third-party-result">
+        <iframe src="@Model.Result" frameborder="0" class="handhistory-iframe"></iframe>
+    </div>
+</body>
+</html>

@@ -39,6 +39,9 @@ namespace Fanex.Age.UI
         public const string DISABLED = " disabled";
 
         #region BetList
+
+        public const string BetListWinLossByBetType = "WLByBetType";
+
         /// <summary>
         /// BestList Winloss by date
         /// </summary>

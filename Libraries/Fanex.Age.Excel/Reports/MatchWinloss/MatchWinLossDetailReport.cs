@@ -86,6 +86,7 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
             if (data.Count > 0)
             {
                 int id = 1;
+                var happy5LinkedGames = new List<MatchWinLossDetailItem>();
                 MatchWinLossDetailItem parlayItem = null;
                 MatchWinLossDetailItem combineMixParlayItem = null;
                 int rowCount = data.Count();
@@ -267,8 +268,9 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                                 break;
                         }
 
-                        if (firstItem.BetGroup == 3 &&
-                            (firstItem.BetType == 9 || firstItem.BetType == 29))
+                        if ((firstItem.BetGroup == 3 &&
+                            (firstItem.BetType == 9 || firstItem.BetType == 29)) ||
+                            (firstItem.BetGroup == 4 && firstItem.BetType >= 3601 && firstItem.BetType <= 3610))
                         {
                             // fro parlay only
                             // Combination Mix parlay
@@ -299,6 +301,12 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                                     combineMixParlayItem = item;
                                     continue;
                                 }
+                            }
+
+                            if (item.BetGroup == 4 && 3601 <= item.BetType && item.BetType <= 3610)
+                            {
+                                happy5LinkedGames.Add(item);
+                                continue;
                             }
 
                             if (id % 2 == 0)
@@ -372,7 +380,7 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
 
                 // total values wihout parlay
                 resultSheet.CopyRow(templateSheet, 9, rowId);
-                var newItems = data.Where(p => p.BetGroup != 3);
+                var newItems = data.Where(p => p.BetGroup != 3 && p.BetGroup != 4);
                 values = new List<object> {Resources.Lang.total,
                     newItems.Sum(p => p.Turnover),
                     newItems.Sum(p => p.GrossComm),
@@ -397,11 +405,12 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                 rowId++;
 
                 // show parlay
-                if (parlayItem != null || combineMixParlayItem != null)
+                if (parlayItem != null || combineMixParlayItem != null || happy5LinkedGames.Any())
                 {
                     var parlayItems = new List<MatchWinLossDetailItem>();
                     if (parlayItem != null) parlayItems.Add(parlayItem);
                     if (combineMixParlayItem != null) parlayItems.Add(combineMixParlayItem);
+                    parlayItems.AddRange(happy5LinkedGames);
                     foreach (var item in parlayItems)
                     {
                         if (item != null)
@@ -427,6 +436,10 @@ namespace Fanex.Age.Excel.Reports.MatchWinloss
                                     break;
                             }
 
+                            if (3601 <= item.BetType && item.BetType <= 3610)
+                            {
+                                betTypeName = Sunplus.Agent.Model.BL.Cache.CacheRef.GetBettype(item.BetType);
+                            }
                             values = new List<object>{betTypeName, item.Turnover, item.GrossComm,
                                 item.MemberWinloss, item.MemberComm, item.MemberTotal};
                             if (checkAgent)

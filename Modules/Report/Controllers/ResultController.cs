@@ -1,12 +1,3 @@
-// --------------------------------------------------------------------------
-// <copyright file="ResultController.cs" company="Nexcel Solutions Vietnam">
-// Copyright (c) Nexcel Solutions Vietnam. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------
-// <history>
-//   <change who="Paul.Nguyen" date="2014.12.23">Need to do more refactoring in the future.</change>
-// </history>
-
 namespace Fanex.Razorbill.Module.Report.Controllers
 {
     using System;
@@ -19,6 +10,8 @@ namespace Fanex.Razorbill.Module.Report.Controllers
     using Fanex.Razorbill.Module.Core.Web.Controllers;
     using Fanex.Razorbill.Module.Report.Entities;
     using Fanex.Razorbill.Module.Report.Services.Implement.Result;
+    using Fanex.Razorbill.Module.Report.ViewModels.Result;
+    using Fanex.Result.Core.LinkedGames;
     using Result.Core.Sportsbook.DTO;
     using Sunplus.Agent.Model.BL.Cache;
     using Sunplus.Agent.Model.BL.Definitions;
@@ -56,6 +49,15 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             {
                 return new ReportsBO(UserSession.Current.NetSessionId);
             }
+        }
+
+        public ActionResult LinkedGamesResult(int sportId, string custId, string transId3rd)
+        {
+            var sportName = CacheRef.GetSportName(sportId);
+            var service = new LinkedGamesResult();
+            var result = service.GetResult(custId, transId3rd, isDesktop: true);
+
+            return View("~/Views/BetList/ThirdParty/Result.cshtml", new ThirdPartyResultViewModel(sportName, result));
         }
 
         /// <summary>

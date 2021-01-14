@@ -343,6 +343,7 @@
     <Setting Key="Age_BettransSelBetSlip" SpName="Age_BettransSelBetSlip" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_BetList_SelMatchResultSS" SpName="Age_BetList_SelMatchResultSS" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_Result_MatchSelResultDetail" SpName="Age_Result_MatchSelResultDetail" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="U3_BetList_SelWinLossByBetType" SpName="U3_BetList_SelWinLossByBetType" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
   </Function>
   <Function Name="Progressive Bonus">
     <Setting Key="CustomerSelCasinoBonusStatus" SpName="Acc_CustomerSelCasinoBonusStatus" DbName="DBCUST.CustDB.BODBDownlineNetView" />
