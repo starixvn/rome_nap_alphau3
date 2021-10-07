@@ -385,3 +385,12 @@ table.happy5 .cl-result {
 table.happy5 .cl-detail-result {
   width: 70px;
 }
+
+.info {
+    background: url("images/info-icon.png");
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    display: inline-block;
+    cursor: pointer;
+}

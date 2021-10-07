@@ -60,6 +60,14 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             return View("~/Views/BetList/ThirdParty/Result.cshtml", new ThirdPartyResultViewModel(sportName, result));
         }
 
+        public ActionResult Soccer5Result(int sportId, string matchId, string balls)
+        {
+            var sportName = CacheRef.GetSportName(sportId);
+            var service = new LinkedGamesResult();
+            var result = service.GetSoccer5Result(matchId, balls, isDesktop: true);
+
+            return View("~/Views/BetList/ThirdParty/Result.cshtml", new ThirdPartyResultViewModel(sportName, result));
+        }
         /// <summary>
         /// Gets the result.
         /// </summary>
