@@ -100,6 +100,19 @@ var ResultReportManager = function () {
             jQuery("#tdtdatetext").css({ "display": "none" });
             jQuery("#tdToDateCal").css({ "display": "none" });
         }
+
+        showSoccer5Result = function (matchId, balls) {
+            var url = 'Result/Soccer5Result';
+            var sportid = _table.ddlSport.val();
+            url += '?matchid=' + matchId + '&balls=' + balls + '&sportid=' + sportid;
+
+            if (parent.ageWnd) {
+                parent.ageWnd.open(url, '', 50, 30, 800, 600);
+            }
+            else {
+                ageWnd.open(url, '', 10, 10, 800, 600);
+            }
+        };
     };
 
     self.GenerateDataForNormal = function () {
@@ -132,9 +145,12 @@ var ResultReportManager = function () {
             ageWnd.open(url, '', 10, 10, 800, 600);
         }
     };
+
+    
 };
 
 var resultReportManager;
+var showSoccer5Result;
 jQuery(document).ready(function () {
     resultReportManager = new ResultReportManager();
     resultReportManager.initPage();
