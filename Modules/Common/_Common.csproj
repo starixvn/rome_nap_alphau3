@@ -68,7 +68,9 @@
     <Compile Include="Configurations\ReportLink\ReportLinkSection.cs" />
     <Compile Include="Contants\SessionKey.cs" />
     <Compile Include="Criteria\LimitedCountryAccessCriteria.cs" />
+    <Compile Include="Criteria\GetIPInformationCriteria.cs" />
     <Compile Include="Criteria\ReportTimeRangeCriteria.cs" />
+    <Compile Include="Entities\IPInformationModel.cs" />
     <Compile Include="Entities\IPRangeEntity.cs" />
     <Compile Include="Enums\ReportTimeRangeType.cs" />
     <Compile Include="Helpers\IPHelper.cs" />

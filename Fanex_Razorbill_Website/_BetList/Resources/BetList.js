@@ -264,7 +264,7 @@ function InitBetList() {
 }
 
 function OpenIPInfo(ip) {
-    ageWnd.open(age.GetBaseUrl() + '_IPInfo/IpInfo.aspx?ip=' + ip, '', 300, 100, 400, 170);
+    ageWnd.open(age.GetBaseUrl() + '_IPInfo/IpInfo.aspx?ip=' + ip, '', 300, 100, 400, 200);
 }
 
 function OpenScoreMap(matchIds, bettype, liveindicator) {

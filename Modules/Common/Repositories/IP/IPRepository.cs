@@ -10,6 +10,7 @@ namespace Fanex.Razorbill.Module.Common.Repositories.IP
     using System.Data;
     using Fanex.Common;
     using Fanex.Data;
+    using Fanex.Razorbill.Module.Common.Criteria;
     using Fanex.Razorbill.Module.Common.Entities;
 
     /// <summary>
@@ -35,6 +36,28 @@ namespace Fanex.Razorbill.Module.Common.Repositories.IP
                         To = Converter.To<double>(reader["ipto"]),
                         IsManual = Converter.ToBool(reader["ismanual"])
                     });
+                }
+            }
+
+            return ips;
+        }
+
+        public IPInformationModel GetIPInformation(string ip)
+        {
+            var ips = new IPInformationModel();
+            var criteria = new GetIPInformationCriteria { Ip = ip };
+            using (ObjectDb objDb = new ObjectDb(criteria.GetSettingKey()))
+            {
+                IDataReader reader = objDb.ExecuteReader(criteria.GetSpParams());
+                while (reader.Read())
+                {
+                    ips = new IPInformationModel
+                    {
+                        CountryLong = Converter.To<string>(reader["countryLONG"]),
+                        CountryShort = Converter.To<string>(reader["countrySHORT"]),
+                        IpRegion = Converter.To<string>(reader["ipRegion"]),
+                        IpCity = Converter.To<string>(reader["ipCity"]),
+                    };
                 }
             }
 

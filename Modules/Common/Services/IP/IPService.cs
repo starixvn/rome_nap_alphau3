@@ -46,5 +46,8 @@ namespace Fanex.Razorbill.Module.Common.Services.IP
 
             return ipsFromDB;
         }
+
+        public IPInformationModel GetIPInformation(string ip)
+            => _repository.GetIPInformation(ip);
     }
 }
