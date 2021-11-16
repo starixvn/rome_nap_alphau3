@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Fanex.Agent.UI._IPInfo;
+using Fanex.Razorbill.Module.Common.Services.IP;
 using Sunplus.Core.Common.IPs;
 using Sunplus.Core.Common.IPs.DAL;
 
@@ -42,12 +44,16 @@ namespace Sunplus.Agent.UI._IPInfo
             template.lblcountry = Resources.Lang.country;
             template.lblcity = Resources.Lang.city;
             template.ipnote = string.Format(Resources.Lang.ipnote, "Whois.ashx?ip=" + this.IP);
+            template.ipv6note = Resources.Lang.ipv6note;
+            template.ipv6example = Resources.Lang.ipv6example;
+            template.ipv61 = Resources.Lang.ipv61;
+            template.ipv62 = Resources.Lang.ipv62;
 
-            string currentIP = this.IP;
-            IPTable ipInfo = IpUtils.LocationFromIP(currentIP);
-            template.ip = currentIP;
+            IPService ipService = new IPService();
+            var ipInfo = ipService.GetIPInformation(this.IP);
+            template.ip = this.IP;
             template.countryname = ipInfo.CountryLong;
-            template.cityname = ipInfo.City;
+            template.cityname = ipInfo.IpCity;
             template.flagpath = "../Flags/" + ipInfo.CountryShort + ".gif";
             writer.Write(template);
         }

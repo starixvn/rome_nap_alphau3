@@ -4479,4 +4479,16 @@ Please use the form below to set your Security Code now.</value>
   <data name="GameNo" xml:space="preserve">
     <value>Game No</value>
   </data>
+  <data name="ipv61" xml:space="preserve">
+    <value>- IP address 1: 2001:db8:3333:4444:5555:6666:1.2.3.4</value>
+  </data>
+  <data name="ipv62" xml:space="preserve">
+    <value>- IP address 2: 2001:0db8:3333:4444:5555:6666:0102:0304</value>
+  </data>
+  <data name="ipv6example" xml:space="preserve">
+    <value>For example:</value>
+  </data>
+  <data name="ipv6note" xml:space="preserve">
+    <value>For IPv6, the same IP address may be displayed differently.</value>
+  </data>
 </root>

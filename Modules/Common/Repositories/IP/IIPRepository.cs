@@ -12,5 +12,6 @@ namespace Fanex.Razorbill.Module.Common.Repositories.IP
     public interface IIPRepository
     {
         IList<IPRangeEntity> GetVNIPs();
+        IPInformationModel GetIPInformation(string ip);
     }
 }
