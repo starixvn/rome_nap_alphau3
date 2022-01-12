@@ -59,7 +59,7 @@ function ViewBetSlip(transid, winlostdate, isrunning, league) {
     }
 }
 
-function ViewResult(matchid, race, bettype, sporttype, refno, username, winlostdate, refno_mixparlay, league, is_outright, betid) {
+function ViewResult(matchid, race, bettype, sporttype, refno, username, winlostdate, refno_mixparlay, league, is_outright, betid, gameId3rd, custId, transId3rd, siteId) {
     if (bettype == 71 || bettype == 72) { // Casino Games & Casino Progressive Bonus
         ViewCasinoResult(refno, bettype, username);
     } else if (bettype == 73) {
@@ -70,7 +70,7 @@ function ViewResult(matchid, race, bettype, sporttype, refno, username, winlostd
         ViewP2PResult(refno, bettype, username);
     }
     else if (bettype >= 3601 && bettype <= 3610) {
-        getLinkedGamesParam(sporttype, betid, refno);
+        getLinkedGamesParam(sporttype, custId, refno, gameId3rd, betid, siteId);
     } else {
         ViewSportBookResult(matchid, bettype, race, sporttype, league, is_outright, refno, betid);
     }
@@ -111,10 +111,10 @@ function ViewP2PResult(refno, bettype, uname) {
     window.location.href = url;
 }
 
-function getLinkedGamesParam(sporttype, custId, transId3rd) {
+function getLinkedGamesParam(sportId, custId, transId3rd, gameId3rd, currencyId, siteId) {
     var width = 945;
     var height = 700;
-    var params = '?sportId=' + sporttype + '&custId=' + custId + '&transId3rd=' + transId3rd;
+    var params = '?sportId=' + sportId + '&custId=' + custId + '&transId3rd=' + transId3rd + '&gameId3rd=' + gameId3rd + '&currencyId=' + currencyId + '&siteId=' + siteId;
     if (parent.ageWnd) {
         parent.ageWnd.open(age.GetBaseUrl() + 'Result/LinkedGamesResult' + params, '', 50, 100, width, height);
     }
