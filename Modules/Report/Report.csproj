@@ -79,7 +79,7 @@
       <HintPath>..\..\packages\Fanex.Result.Core.Happy5.1.0.2\lib\net40\Fanex.Result.Core.Happy5.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Result.Core.LinkedGames, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Fanex.Result.Core.LinkedGames.1.0.3-thirdparty-02\lib\net40\Fanex.Result.Core.LinkedGames.dll</HintPath>
+      <HintPath>..\..\packages\Fanex.Result.Core.LinkedGames.1.0.3\lib\net40\Fanex.Result.Core.LinkedGames.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Result.Core.LiveCasino, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Fanex.Result.Core-LiveCasino.1.0.1\lib\net40\Fanex.Result.Core.LiveCasino.dll</HintPath>
@@ -104,7 +104,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Result.Core.ThirdParty, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Fanex.Result.Core.ThirdPartyResult.1.0.0.1-beta-03\lib\net461\Fanex.Result.Core.ThirdParty.dll</HintPath>
+      <HintPath>..\..\packages\Fanex.Result.Core.ThirdPartyResult.1.0.0.1\lib\net461\Fanex.Result.Core.ThirdParty.dll</HintPath>
     </Reference>
     <Reference Include="HandHistoryLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
