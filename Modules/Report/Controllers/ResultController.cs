@@ -12,12 +12,14 @@ namespace Fanex.Razorbill.Module.Report.Controllers
     using Fanex.Razorbill.Module.Report.Services.Implement.Result;
     using Fanex.Razorbill.Module.Report.ViewModels.Result;
     using Fanex.Result.Core.LinkedGames;
+    using Fanex.Result.Core.ThirdParty;
     using Result.Core.Sportsbook.DTO;
     using Sunplus.Agent.Model.BL.Cache;
     using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.BL.Reports;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
+    using Fanex.Result.Core.ThirdParty.Models;
 
     /// <summary>
     /// FOOBET controller.
@@ -32,8 +34,8 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         private string _outRightResult = string.Empty;
         private List<Outright> _outRights = null;
         private object _reportData = null;
-        private Dictionary<int, Action<ResultRequest>> _resultHandlers = new Dictionary<int, Action<ResultRequest>>();
-        private Dictionary<int, Func<ResultRequest, ActionResult>> _exportExcelHandlers = new Dictionary<int, Func<ResultRequest, ActionResult>>();
+        private Dictionary<int, Action<Entities.ResultRequest>> _resultHandlers = new Dictionary<int, Action<Entities.ResultRequest>>();
+        private Dictionary<int, Func<Entities.ResultRequest, ActionResult>> _exportExcelHandlers = new Dictionary<int, Func<Entities.ResultRequest, ActionResult>>();
 
         private string _MinReportDateString
         {
@@ -51,11 +53,12 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             }
         }
 
-        public ActionResult LinkedGamesResult(int sportId, string custId, string transId3rd)
+        public ActionResult LinkedGamesResult(int sportId, int custId, string transId3rd, string gameId3rd, int currencyId, string siteId)
         {
             var sportName = CacheRef.GetSportName(sportId);
-            var service = new LinkedGamesResult();
-            var result = service.GetResult(custId, transId3rd, isDesktop: true);
+            var service = new ThirdPartyResult("LinkedGamesResultConfigs");
+            var resultRequest = new Fanex.Result.Core.ThirdParty.Models.ResultRequest(custId, transId3rd, gameId3rd, currencyId, siteId);
+            var result = service.GetResultGET(resultRequest);
 
             return View("~/Views/BetList/ThirdParty/Result.cshtml", new ThirdPartyResultViewModel(sportName, result));
         }
@@ -73,7 +76,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
         /// <returns>The object of ActionResult.</returns>
-        public ActionResult GetResult(ResultRequest resultRequest)
+        public ActionResult GetResult(Entities.ResultRequest resultRequest)
         {
             SetDefaultRequestValues(resultRequest);
             GetReportMinMaxDateRange(resultRequest);
@@ -92,7 +95,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             }
         }
 
-        private static string[] GetResultTitle(ResultRequest resultRequest)
+        private static string[] GetResultTitle(Entities.ResultRequest resultRequest)
         {
             return new string[] 
             { 
@@ -214,7 +217,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
         /// <returns>The object of ActionResult.</returns>
-        private ActionResult GetResultForExportExcel(ResultRequest resultRequest)
+        private ActionResult GetResultForExportExcel(Entities.ResultRequest resultRequest)
         {
             if (resultRequest.IsOutright)
             {
@@ -222,7 +225,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             }
             else
             {
-                Func<ResultRequest, ActionResult> exportExcelHandler = this._exportExcelHandlers.ContainsKey(resultRequest.SportId) ?
+                Func<Entities.ResultRequest, ActionResult> exportExcelHandler = this._exportExcelHandlers.ContainsKey(resultRequest.SportId) ?
                         this._exportExcelHandlers[resultRequest.SportId] :
                         this._exportExcelHandlers[(int)SportType.None];
 
@@ -235,7 +238,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
         /// <param name="reportData">The report data.</param>
-        private void AddDetailInformationIntoReportDataInCaseOfTennisSportType(ResultRequest resultRequest, DataTable reportData)
+        private void AddDetailInformationIntoReportDataInCaseOfTennisSportType(Entities.ResultRequest resultRequest, DataTable reportData)
         {
             if (resultRequest.SportId == (int)SportType.Tennis)
             {
@@ -253,7 +256,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Sets the default request values.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void SetDefaultRequestValues(ResultRequest resultRequest)
+        private void SetDefaultRequestValues(Entities.ResultRequest resultRequest)
         {
             if (!resultRequest.FromDate.HasValue)
             {
@@ -266,7 +269,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             }
         }
 
-        private void GetReportMinMaxDateRange(ResultRequest resultRequest)
+        private void GetReportMinMaxDateRange(Entities.ResultRequest resultRequest)
         {
             _minReportDate = ReportsBO.BalanceUpDate;
             ViewBag.MinReportDate = _minReportDate.ToShortDateString();
@@ -276,7 +279,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the content.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderContent(ResultRequest resultRequest)
+        private void RenderContent(Entities.ResultRequest resultRequest)
         {
             this.RenderReportHeader(resultRequest);
             ViewBag.ReportTimeDisclaimerContent = string.Format(ResourceExtension.GetResource(_ResourceClass, "ViewDataFromDate"), _MinReportDateString);
@@ -302,7 +305,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             }
         }
 
-        private void RenderReportContentMixParlay(ResultRequest resultRequest)
+        private void RenderReportContentMixParlay(Entities.ResultRequest resultRequest)
         {
             string result = new ParlayPopupResultService().GetResult(resultRequest.RefNum);
             ViewBag.Result = result;
@@ -312,7 +315,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the content of the report.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderReportContent(ResultRequest resultRequest)
+        private void RenderReportContent(Entities.ResultRequest resultRequest)
         {
             if (resultRequest.IsOutright)
             {
@@ -325,7 +328,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
                     ViewBag.ResultTitle = string.Join(null, GetResultTitle(resultRequest));
                 }
 
-                Action<ResultRequest> resultHandler = this._resultHandlers.ContainsKey(resultRequest.SportId) ?
+                Action<Entities.ResultRequest> resultHandler = this._resultHandlers.ContainsKey(resultRequest.SportId) ?
                     this._resultHandlers[resultRequest.SportId] :
                     this._resultHandlers[(int)SportType.None];
 
@@ -337,7 +340,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render sport and league dropdown list.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderSportCriteria(ResultRequest resultRequest)
+        private void RenderSportCriteria(Entities.ResultRequest resultRequest)
         {
             if (resultRequest.SportId == 0)
             {
@@ -360,7 +363,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render sport and league dropdown list for normal result.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderNormalSportCriteria(ResultRequest resultRequest)
+        private void RenderNormalSportCriteria(Entities.ResultRequest resultRequest)
         {
             DataTable sportList = (this._reportData as Dictionary<string, DataTable>)["SportList"];
             DataTable leagueList = (this._reportData as Dictionary<string, DataTable>)["LeagueList"];
@@ -411,7 +414,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render sport and league dropdown list for outright result.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderOutrightSportCriteria(ResultRequest resultRequest)
+        private void RenderOutrightSportCriteria(Entities.ResultRequest resultRequest)
         {
             if (this._outRights.Count == 0)
             {
@@ -428,7 +431,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the outright sport criteria for league drop down list.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderOutrightSportCriteriaForLeagueDropDownList(ResultRequest resultRequest)
+        private void RenderOutrightSportCriteriaForLeagueDropDownList(Entities.ResultRequest resultRequest)
         {
             string leagueOptions = string.Empty;
             List<int> leagueIdList = new List<int>();
@@ -456,7 +459,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the outright sport criteria for sport drop down list.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderOutrightSportCriteriaForSportDropDownList(ResultRequest resultRequest)
+        private void RenderOutrightSportCriteriaForSportDropDownList(Entities.ResultRequest resultRequest)
         {
             string sportOptions = string.Empty;
             List<int> sportIdList = new List<int>();
@@ -489,7 +492,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
         /// <returns>The report data.</returns>
-        private object InvokeData(ResultRequest resultRequest)
+        private object InvokeData(Entities.ResultRequest resultRequest)
         {
             var viewData = new Dictionary<string, DataTable>();
 
@@ -516,7 +519,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             return viewData;
         }
 
-        private void GetLeagueListForNormalResults(Dictionary<string, DataTable> viewData, ResultRequest resultRequest)
+        private void GetLeagueListForNormalResults(Dictionary<string, DataTable> viewData, Entities.ResultRequest resultRequest)
         {
             DataTable leagueList = _ReportBO.GetResultLeagueByDate(resultRequest.FromDate.Value, resultRequest.SportId);
             viewData.Add("LeagueList", leagueList);
@@ -527,7 +530,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// </summary>
         /// <param name="viewData">The view data.</param>
         /// <param name="resultRequest">The result request.</param>
-        private void GetSportListForNormalResults(Dictionary<string, DataTable> viewData, ResultRequest resultRequest)
+        private void GetSportListForNormalResults(Dictionary<string, DataTable> viewData, Entities.ResultRequest resultRequest)
         {
             DataTable sportList = _ReportBO.GetResultSportByDate(resultRequest.FromDate.Value);
 
@@ -569,7 +572,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             }
         }
 
-        private bool ShouldSetDefaultSportId(ResultRequest resultRequest, DataTable sportList)
+        private bool ShouldSetDefaultSportId(Entities.ResultRequest resultRequest, DataTable sportList)
         {
             return (!IsViewMatchResultPopup(resultRequest.MatchId) && (!resultRequest.IsChangeSportType && sportList.Rows.Count > 0))
                 || (resultRequest.SportId == 0 && sportList.Rows.Count > 0);
@@ -579,7 +582,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render Report header.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderReportHeader(ResultRequest resultRequest)
+        private void RenderReportHeader(Entities.ResultRequest resultRequest)
         {
             this.RenderReportHeaderForHeaderTitle(resultRequest);
             this.RenderReportHeaderForRightButtons(resultRequest);
@@ -595,7 +598,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the report header for right buttons.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderReportHeaderForRightButtons(ResultRequest resultRequest)
+        private void RenderReportHeaderForRightButtons(Entities.ResultRequest resultRequest)
         {
             ViewBag.NormalResultTitle = ResourceExtension.GetResource(_ResourceClass, "lblNormal");
             ViewBag.OutrightResultTitle = ResourceExtension.GetResource(_ResourceClass, "lblOutRight");
@@ -611,7 +614,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the report header for header title.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderReportHeaderForHeaderTitle(ResultRequest resultRequest)
+        private void RenderReportHeaderForHeaderTitle(Entities.ResultRequest resultRequest)
         {
             switch (resultRequest.BetType)
             {
@@ -631,7 +634,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the report header in case of keno is enabled.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderReportHeaderInCaseOfKenoIsEnabled(ResultRequest resultRequest)
+        private void RenderReportHeaderInCaseOfKenoIsEnabled(Entities.ResultRequest resultRequest)
         {
             ViewBag.HideKenoTitle = false;
             var sessionTmp = "/(S(" + UserSession.Current.NetSessionId + "))/";
@@ -669,12 +672,12 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render outright result.
         /// </summary>
         /// <param name="resultRequest">The result request.</param>
-        private void RenderOutright(ResultRequest resultRequest)
+        private void RenderOutright(Entities.ResultRequest resultRequest)
         {
             ViewBag.Result = this._outRightResult;
         }
 
-        private ActionResult ExportOutright(ResultRequest resultRequest)
+        private ActionResult ExportOutright(Entities.ResultRequest resultRequest)
         {
             MemoryStream excelResult = new OutRightResultService().ExportExcel(
                 resultRequest.FromDate.Value,
@@ -689,7 +692,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render badminton result.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderBadminton(ResultRequest resultRequest)
+        private void RenderBadminton(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new SportsbookPopupResultService().GetResult(resultRequest) :
@@ -698,7 +701,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             ViewBag.Result = result;
         }
 
-        private ActionResult ExportSportsBook(ResultRequest resultRequest)
+        private ActionResult ExportSportsBook(Entities.ResultRequest resultRequest)
         {
             MemoryStream excelResult = new SportsbookResultService().ExportExcel(
                 resultRequest.FromDate.Value,
@@ -712,7 +715,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render soccer result.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderSoccer(ResultRequest resultRequest)
+        private void RenderSoccer(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new SportsbookPopupResultService().GetResult(resultRequest) :
@@ -725,7 +728,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render BasketBall result.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderBasketBall(ResultRequest resultRequest)
+        private void RenderBasketBall(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new SportsbookPopupResultService().GetResult(resultRequest) :
@@ -738,7 +741,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render hockey Result.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderHockey(ResultRequest resultRequest)
+        private void RenderHockey(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new SportsbookPopupResultService().GetResult(resultRequest) :
@@ -751,7 +754,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render tennis result.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderTennis(ResultRequest resultRequest)
+        private void RenderTennis(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new SportsbookPopupResultService().GetResult(resultRequest) :
@@ -764,7 +767,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render base ball result.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderBaseBall(ResultRequest resultRequest)
+        private void RenderBaseBall(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                  new SportsbookPopupResultService().GetResult(resultRequest) :
@@ -777,7 +780,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render billiard result.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderBilliard(ResultRequest resultRequest)
+        private void RenderBilliard(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new SportsbookPopupResultService().GetResult(resultRequest) :
@@ -790,7 +793,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render horse racing result.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderHorseRacing(ResultRequest resultRequest)
+        private void RenderHorseRacing(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new RacingPopupResultService().GetResult(resultRequest.MatchId, this.GetRaceNumber(resultRequest.Race), resultRequest.SportId) :
@@ -799,7 +802,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             ViewBag.Result = result;
         }
 
-        private ActionResult ExportRacing(ResultRequest resultRequest)
+        private ActionResult ExportRacing(Entities.ResultRequest resultRequest)
         {
             MemoryStream excelResult = new RacingResultService().ExportExcel(
                 resultRequest.FromDate.Value,
@@ -813,7 +816,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render other sport result.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderOtherSport(ResultRequest resultRequest)
+        private void RenderOtherSport(Entities.ResultRequest resultRequest)
         {
             ViewBag.Result = new SportsbookResultService().GetResult(resultRequest.FromDate.Value, resultRequest.SportId, resultRequest.LeagueId);
         }
@@ -822,7 +825,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Render number result.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderNumberGame(ResultRequest resultRequest)
+        private void RenderNumberGame(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new NumberGamePopupResultService().GetResult(resultRequest.MatchId) :
@@ -830,7 +833,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             ViewBag.Result = result;
         }
 
-        private void RenderHappy5(ResultRequest resultRequest)
+        private void RenderHappy5(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new Happy5PopupResultService().GetResult(resultRequest.MatchId) :
@@ -838,7 +841,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             ViewBag.Result = result;
         }
 
-        private ActionResult ExportNumberGame(ResultRequest resultRequest)
+        private ActionResult ExportNumberGame(Entities.ResultRequest resultRequest)
         {
             MemoryStream excelResult = new NumberGameResultService().ExportExcel(
                 resultRequest.FromDate.Value,
@@ -848,7 +851,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             return File(excelResult.ToArray(), "application/vnd.ms-excel", "Result.xls");
         }
 
-        private ActionResult ExportHappy5(ResultRequest resultRequest)
+        private ActionResult ExportHappy5(Entities.ResultRequest resultRequest)
         {
             MemoryStream excelResult = new Happy5ResultService().ExportExcel(
                 resultRequest.FromDate.Value,
@@ -862,7 +865,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the virtual horses racing.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderVirtualHorsesRacing(ResultRequest resultRequest)
+        private void RenderVirtualHorsesRacing(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new RacingPopupResultService().GetResultForVirtualRacing(resultRequest.MatchId, this.GetRaceNumber(resultRequest.Race), resultRequest.SportId) :
@@ -871,7 +874,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
             ViewBag.Result = result;
         }
 
-        private ActionResult ExportVirtualRacing(ResultRequest resultRequest)
+        private ActionResult ExportVirtualRacing(Entities.ResultRequest resultRequest)
         {
             MemoryStream excelResult = new VirtualRacingResultService().ExportExcel(
                 resultRequest.FromDate.Value,
@@ -885,7 +888,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the virtual tennis.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderVirtualTennis(ResultRequest resultRequest)
+        private void RenderVirtualTennis(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new SportsbookPopupResultService().GetResult(resultRequest) :
@@ -898,7 +901,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the virtual soccer.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderVirtualSoccer(ResultRequest resultRequest)
+        private void RenderVirtualSoccer(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new SportsbookPopupResultService().GetResult(resultRequest) :
@@ -911,7 +914,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the virtual cycling.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderVirtualCycling(ResultRequest resultRequest)
+        private void RenderVirtualCycling(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new RacingPopupResultService().GetResultForVirtualRacing(resultRequest.MatchId, this.GetRaceNumber(resultRequest.Race), resultRequest.SportId) :
@@ -924,7 +927,7 @@ namespace Fanex.Razorbill.Module.Report.Controllers
         /// Renders the virtual speedway.
         /// </summary>
         /// <param name="resultRequest">The excel block.</param>
-        private void RenderVirtualSpeedway(ResultRequest resultRequest)
+        private void RenderVirtualSpeedway(Entities.ResultRequest resultRequest)
         {
             string result = resultRequest.MatchId > 0 ?
                 new RacingPopupResultService().GetResultForVirtualRacing(resultRequest.MatchId, this.GetRaceNumber(resultRequest.Race), resultRequest.SportId) :
